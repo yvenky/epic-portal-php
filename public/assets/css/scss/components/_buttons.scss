@@ -1,0 +1,105 @@
+/* ---------------------------------------------------------------- */
+/* Buttons                                                     
+/* ---------------------------------------------------------------- */
+.form-cancel-btn,
+.form-submit-btn,
+.form-next-btn,
+.form-prev-btn,
+.dark-grey-btn {
+    border: none;
+    outline: none;
+    display: inline-block;
+    font-size: 14px;
+    padding: 15px 60px;
+    text-align: center;
+    font-weight: 600;
+    transition: $trs_ease_0_25;
+}
+.form-next-btn,
+.form-submit-btn {
+    color: $color_black;
+    background: $color_primary;
+    margin-left: 10px;
+    &:hover {
+        color: $color_black;
+        background: darken( $color_primary, 10% );
+    }
+}
+.form-prev-btn,
+.dark-grey-btn,
+.form-cancel-btn {
+    color: $color_black;
+    background: $color_dark_grey;
+    &:hover {
+        color: $color_black;
+        background: darken( $color_dark_grey, 10% );
+    }
+}
+.table-edit-btn, 
+.table-view-btn,
+.table-delete-btn  {
+    width: 40px;
+    height: 40px; 
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    transition: $trs_ease_0_25;
+}
+.table-edit-btn {
+    background:  darken( $color_dark_grey, 10% );
+    color: $color_black;
+    &:hover {
+        color: $color_black;
+        background: darken( $color_dark_grey, 20% );
+    }
+}
+.table-delete-btn {
+    background:  darken( $color_dark_grey, 10% );
+    color: $color_black;
+    &:hover {
+        color: $color_black;
+        background: darken( $color_dark_grey, 20% );
+    }
+}
+.table-view-btn {
+    background:  darken( $color_dark_grey, 10% );
+    color: $color_black;
+    &:hover {
+        color: $color_black;
+        background: darken( $color_dark_grey, 20% );
+    }
+}
+.google-sign-btn, .login-submit-btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    display: block;
+    font-size: 14px;
+    padding: 15px 60px;
+    text-align: center;
+    color: $color_black;
+    font-weight: 600;
+    background: $color_primary;
+    transition: $trs_ease_0_25;
+    &:hover {
+        color: $color_black;
+        background: darken( $color_primary, 10% );
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query ( max-width : 992px ) 
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width: 992px) {
+    .form-btn-flex-between {
+        button {
+            flex: 1;
+        }
+    }
+    .form-cancel-btn,
+    .form-submit-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}

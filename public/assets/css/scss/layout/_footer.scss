@@ -1,0 +1,27 @@
+/* ---------------------------------------------------------------- */
+/* Footer                   
+/* ---------------------------------------------------------------- */
+.site-footer {
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 111;
+    height: 60px;
+    display: flex;
+    text-align: center;
+    background: $color_white;
+    justify-content: center;
+    align-items: center;
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query ( max-width : 992px ) 
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width: 992px) {
+    .site-footer {
+       height: 60px;
+       p {
+           font-size: 14px;
+       }
+    }
+}
