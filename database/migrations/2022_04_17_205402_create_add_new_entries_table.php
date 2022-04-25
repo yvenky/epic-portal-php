@@ -17,7 +17,6 @@ class CreateAddNewEntriesTable extends Migration
             $table->increments('id'); 
             $table->string('add_partner_entity_name'); 
             $table->string('add_partner_entity_ein');
-            $table->string('add_partner_entity_web_file_number')->nullable();
             $table->string('add_partner_entity_docs'); 
             $table->string('add_partner_managing_member_1'); 
             $table->string('add_partner_managing_member_2')->nullable();

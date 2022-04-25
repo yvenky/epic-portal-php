@@ -31,7 +31,6 @@ class newentitycontroller extends Controller
         $request->validate([
             'add_partner_entity_name'                       => 'required',
             'add_partner_entity_ein'                        => 'required',
-            'add_partner_entity_web_file_number'            => 'required',
             'add_partner_entity_docs'                       => 'required',
             'add_partner_managing_member_1'                 => 'required',
             'add_partner_managing_member_2'                 => 'required',
@@ -45,8 +44,7 @@ class newentitycontroller extends Controller
         $data = new AddNewEntry();
  
         $data-> add_partner_entity_name             = $request-> add_partner_entity_name; 
-        $data-> add_partner_entity_ein              = $request-> add_partner_entity_ein; 
-        $data-> add_partner_entity_web_file_number  = $request-> add_partner_entity_web_file_number; 
+        $data-> add_partner_entity_ein              = $request-> add_partner_entity_ein;  
         $data-> add_partner_entity_docs             = $request-> add_partner_entity_docs;
         $data-> add_partner_managing_member_1       = $request-> add_partner_managing_member_1; 
         $data-> add_partner_managing_member_2       = $request-> add_partner_managing_member_2; 
@@ -119,7 +117,6 @@ class newentitycontroller extends Controller
         $lists=AddNewEntry::find($id);
         $lists-> add_partner_entity_name             = $request-> add_partner_entity_name; 
         $lists-> add_partner_entity_ein              = $request-> add_partner_entity_ein; 
-        $lists-> add_partner_entity_web_file_number  = $request-> add_partner_entity_web_file_number; 
         $lists-> add_partner_entity_docs             = $request-> add_partner_entity_docs;
         $lists-> add_partner_managing_member_1       = $request-> add_partner_managing_member_1; 
         $lists-> add_partner_managing_member_2       = $request-> add_partner_managing_member_2; 

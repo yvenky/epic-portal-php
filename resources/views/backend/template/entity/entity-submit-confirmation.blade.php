@@ -44,13 +44,6 @@
             </div>
             @endif
 
-            @if ( $lists->add_partner_entity_web_file_number )
-            <div class="form-flex-box-text-item">
-                <span>Web File Number</span>
-                <p>{{$lists->add_partner_entity_web_file_number}}</p>
-            </div>
-            @endif
-
             @if ( $lists->add_partner_entity_docs )
             <div class="form-flex-box-text-item">
                 <span>Entity Docs</span>

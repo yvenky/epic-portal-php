@@ -23,6 +23,12 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
+                        <div class="form-flex-item-box">
+                            <label for="add_partner_entity_ein">EIN</label>
+                            <input type="text" class="form-control" name="add_partner_entity_ein" id="add_partner_entity_ein">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
                         <div class="form-flex-item-box order-error-select">
                             <label for="expense_date">Managing Member 1</label>
                             <select class="select-member-1-wrap form-control select2" name="add_partner_managing_member_1" data-select2-id="managing-member-1-select" tabindex="-1" aria-hidden="false">
@@ -48,19 +54,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="form-flex-item-box">
-                            <label for="add_partner_entity_ein">EIN</label>
-                            <input type="text" class="form-control" name="add_partner_entity_ein" id="add_partner_entity_ein">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-flex-item-box">
-                            <label for="add_partner_entity_web_file_number">Web File Number</label>
-                            <input type="text" class="form-control" name="add_partner_entity_web_file_number" id="add_partner_entity_web_file_number">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="form-flex-item-box">
                             <label for="add_partner_entity_docs">Entity Docs</label>
                             <input type="text" class="form-control" name="add_partner_entity_docs" id="add_partner_entity_docs">
