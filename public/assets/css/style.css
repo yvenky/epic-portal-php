@@ -849,6 +849,16 @@ div.dataTables_wrapper div.dataTables_filter .form-control:focus {
   display: inline-block;
 }
 
+.form-flex-box-text-item P a {
+  color: #000;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.form-flex-box-text-item P a:hover {
+  color: #fe9900;
+}
+
 .success-message-member {
   text-align: center;
   padding: 20px;

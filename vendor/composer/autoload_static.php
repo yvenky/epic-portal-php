@@ -604,6 +604,7 @@ class ComposerStaticInit17c4a119eeef40ca2ac0582fecd43a3e
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\PropertyController' => __DIR__ . '/../..' . '/app/Http/Controllers/PropertyController.php',
         'App\\Http\\Controllers\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestController.php',
         'App\\Http\\Controllers\\newPartnerRegistrationInd' => __DIR__ . '/../..' . '/app/Http/Controllers/newPartnerRegistrationInd.php',
         'App\\Http\\Controllers\\newentitycontroller' => __DIR__ . '/../..' . '/app/Http/Controllers/newentitycontroller.php',
