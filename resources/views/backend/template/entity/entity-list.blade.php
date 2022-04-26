@@ -22,7 +22,6 @@
                             <th>#</th>
                             <th>Entity Name</th>
                             <th>EIN</th>
-                            <th>Web File Number</th>
                             <th>Entity Docs</th>
                             <th></th>
                         </tr>
@@ -34,7 +33,6 @@
                             <td>{{$i++}}</td>
                             <td>{{$list->add_partner_entity_name}}</td>
                             <td>{{$list->add_partner_entity_ein}}</td>
-                            <td>{{$list->add_partner_entity_web_file_number}}</td> 
                             <td>
                                 <a href="{{$list->add_partner_entity_docs}}" class="table-url-link">Entity Docs Link</a>
                             </td>    

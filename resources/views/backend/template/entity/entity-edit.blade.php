@@ -57,12 +57,6 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="add_partner_entity_web_file_number">Web File Number</label>
-                            <input type="text" class="form-control" name="add_partner_entity_web_file_number" value="{{$lists->add_partner_entity_web_file_number}}" id="add_partner_entity_web_file_number">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-flex-item-box">
                             <label for="add_partner_entity_docs">Entity Docs</label>
                             <input type="text" class="form-control" name="add_partner_entity_docs" value="{{$lists->add_partner_entity_docs}}" id="add_partner_entity_docs">
                         </div>

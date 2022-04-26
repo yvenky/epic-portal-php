@@ -17,8 +17,7 @@ class AddNewEntry extends Model
     protected $fillable = [
         
         'add_partner_entity_name',                      
-        'add_partner_entity_ein',                        
-        'add_partner_entity_web_file_number',       
+        'add_partner_entity_ein',                 
         'add_partner_entity_docs',                    
         'add_partner_managing_member_1',               
         'add_partner_managing_member_2',                
