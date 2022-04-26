@@ -22,6 +22,7 @@ return array(
     'App\\Http\\Middleware\\TrustHosts' => $baseDir . '/app/Http/Middleware/TrustHosts.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Logging\\CreateStackdriverLogger' => $baseDir . '/app/Logging/CreateStackdriverLogger.php',
     'App\\Models\\AddNewEntry' => $baseDir . '/app/Models/AddNewEntry.php',
     'App\\Models\\EntityMembers' => $baseDir . '/app/Models/EntityMembers.php',
     'App\\Models\\Property' => $baseDir . '/app/Models/Property.php',

@@ -617,6 +617,7 @@ class ComposerStaticInit17c4a119eeef40ca2ac0582fecd43a3e
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Logging\\CreateStackdriverLogger' => __DIR__ . '/../..' . '/app/Logging/CreateStackdriverLogger.php',
         'App\\Models\\AddNewEntry' => __DIR__ . '/../..' . '/app/Models/AddNewEntry.php',
         'App\\Models\\EntityMembers' => __DIR__ . '/../..' . '/app/Models/EntityMembers.php',
         'App\\Models\\Property' => __DIR__ . '/../..' . '/app/Models/Property.php',
