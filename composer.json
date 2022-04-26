@@ -65,10 +65,6 @@
         "sort-packages": true,
         "platform": {
             "php": "7.4"
-        },
-        "allow-plugins": {
-            "kylekatarnls/update-helper": true,
-            "symfony/thanks": true
         }
     },
     "minimum-stability": "dev",
