@@ -275,6 +275,29 @@
        }
      });
    }
+   if( jQuery("#add-new-property-form").length > 0 ){
+      jQuery("#add-new-property-form").validate({
+        errorElement: "p",
+        errorClass: "error-text",
+        rules: {
+          property_address: {
+            required: true,
+          },
+          property_map_right_url: {
+            required:true,
+          },
+        },
+        messages: {
+          property_address: {
+            required: "Entity Name is required"
+          },
+          property_map_right_url: { 
+            required: "Contract required",
+          },
+        }
+      });
+    }
+
 
    if( jQuery("#add-new-entity-partner-edit-form").length > 0 ){
 

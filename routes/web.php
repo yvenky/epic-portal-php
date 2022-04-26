@@ -5,6 +5,7 @@ use App\Http\Controllers\newentitycontroller;
 use App\Http\Controllers\masterTemplate;	
 use App\Http\Controllers\newPartnerRegistrationInd;	
 use App\Http\Controllers\TestController;	
+use App\Http\Controllers\PropertyController;	
 
 /*	
 |--------------------------------------------------------------------------	
@@ -48,3 +49,12 @@ Route::get('investor-list-edit/{id}', [newPartnerRegistrationInd::class, 'edit']
 Route::put('investor-list-update/{id}', [newPartnerRegistrationInd::class, 'update']); 
 Route::get('investor-view/{id}', [newPartnerRegistrationInd::class, 'show']);
 Route::get('investor-submit-confirmation/{id}', [newPartnerRegistrationInd::class, 'confirmation']);
+
+
+// Property CRUD Links
+Route::get('/add-new-property', [PropertyController::class, 'index'])->name('add-new-property');
+Route::post('/property-submit', [PropertyController::class, 'create']);	
+Route::get('property-submit-confirmation/{id}', [PropertyController::class, 'confirmation']);
+Route::get('property-list-edit/{id}', [PropertyController::class, 'edit']);
+Route::put('property-list-update/{id}', [PropertyController::class, 'update']);
+Route::get('property-view/{id}', [PropertyController::class, 'show']);

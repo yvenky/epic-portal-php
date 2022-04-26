@@ -63,8 +63,8 @@
                             <div class="tooltip-sidebar-link"><p>View Investor List</p></div>
                         </li>
                         <li>
-                            <a href="add-property.html">Add Property</a>
-                            <span><a href="add-property.html"><i class="fas fa-hand-holding-usd"></i></a></span>
+                            <a href="{{ url( 'add-new-property' ) }}">Add Property</a>
+                            <span><a href="{{ url( 'add-new-property' ) }}"><i class="fas fa-hand-holding-usd"></i></a></span>
                             <div class="tooltip-sidebar-link"><p>Add Property</p></div>
                         </li>
                         <li>
