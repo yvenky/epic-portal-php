@@ -75,7 +75,7 @@
         <div class="form-content">
             <div class="form-btn-flex-between pt-2">
             <a href="{{url()->previous() }}" class="form-cancel-btn">Cancel</a>
-                 <button type="button" class="form-submit-btn"><a href="{{url('add-new-property')}}" style="color:black">Add New Investor</a></button>
+                 <button type="button" class="form-submit-btn"><a href="{{url('add-new-property')}}" style="color:black">Add New Property</a></button>
              </div>
         </div>
     </div>  
