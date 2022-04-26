@@ -76,7 +76,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                     <div class="form-btn-flex-between">
-                        <button type="button" class="form-cancel-btn"><a href="{{url()->previous()}}" style="color:black">Cancel</a></button>
+                        <a href="{{url()->previous() }}" class="form-cancel-btn">Cancel</a>
                         <button type="submit" class="form-submit-btn">Submit</button>
                     </div>
                     </div>

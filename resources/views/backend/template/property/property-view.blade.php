@@ -1,8 +1,6 @@
 @extends('backend.inc.master')
 
 @section('main-content')
-
-
 <section class="panel-wrapper panel-center">
     <div class="form-wrapper">
         <div class="form-heading details-view-edit-wrap">
@@ -76,7 +74,7 @@
         </div>
         <div class="form-content">
             <div class="form-btn-flex-between pt-2">
-                <button type="button" class="form-cancel-btn"><a href="{{url('investor-list')}}" style="color:black">Home</a></button>
+            <a href="{{url()->previous() }}" class="form-cancel-btn">Cancel</a>
                  <button type="button" class="form-submit-btn"><a href="{{url('add-new-property')}}" style="color:black">Add New Investor</a></button>
              </div>
         </div>

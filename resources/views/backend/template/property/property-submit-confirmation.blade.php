@@ -82,7 +82,7 @@
         </div>
         <div class="form-content">
             <div class="form-btn-flex-between pt-4">
-                <button type="button" class="form-cancel-btn"><a href="{{url('property-list')}}" style="color:black">Home</a></button>
+                <a href="{{url()->previous() }}" class="form-cancel-btn">Cancel</a>
                  <button type="button" class="form-submit-btn"><a href="{{url('add-new-property')}}" style="color:black">Add New Property</a></button>
              </div>
         </div>

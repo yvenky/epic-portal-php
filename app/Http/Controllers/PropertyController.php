@@ -62,6 +62,12 @@ class PropertyController extends Controller
         //
     }
 
+    public function show_list(){
+        $lists= Property::all();
+
+        return view('backend.template.property.property-list' , ['lists' => $lists]);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -109,7 +115,7 @@ class PropertyController extends Controller
         $lists-> property_phase_env_inspection       = $request-> property_phase_env_inspection; 
         $lists-> property_attorney_feedback          = $request-> property_attorney_feedback; 
         $lists->update();
-        return back()->with('success-message-edit','Property Updated Successfully');
+        return redirect('property-list')->with('success-message-edit','Property Updated Successfully');
 
     }
 
@@ -119,9 +125,14 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        $lists = Property::find($id);
+        $lists->delete();
+      
+       
+        return redirect('property-list')->with('success-message-delete', $lists->property_address .' Remove Successfully');
+
     }
 
     public function confirmation($id )

@@ -58,3 +58,5 @@ Route::get('property-submit-confirmation/{id}', [PropertyController::class, 'con
 Route::get('property-list-edit/{id}', [PropertyController::class, 'edit']);
 Route::put('property-list-update/{id}', [PropertyController::class, 'update']);
 Route::get('property-view/{id}', [PropertyController::class, 'show']);
+Route::get('property-list', [PropertyController::class, 'show_list']);
+Route::get('property-list-delete/{id}', [PropertyController::class, 'delete']);	
