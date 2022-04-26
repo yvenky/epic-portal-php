@@ -1,4 +1,4 @@
-runtime: php74  # language of the app
+runtime: php # language of the app 
 env: flex     # let app engine know we use flexible environment
 
 runtime_config:
@@ -12,7 +12,9 @@ env_variables:
  # Put production environment variables here.
  APP_ENV: local   # or production
  APP_DEBUG : true # or false 
- APP_KEY: base64:HnRhgClNzPNzeRql62C6Fk7BS2Dn9Em31zHSikOJk7s= 
+ APP_KEY: base64:DNAB9FYotNW69ZExKJopnmDSWOt0M7G5383aBH4n5Hc= 
+ APP_STORAGE: /tmp
+ VIEW_COMPILED_PATH: /tmp
 #go to generate app key paragraf in this tutorial
 
  CACHE_DRIVER: database 
@@ -29,7 +31,7 @@ env_variables:
  DB_DATABASE: epicestates
  DB_USERNAME: root
  DB_PASSWORD: 
- DB_SOCKET: /cloudsql/epicestates #here need instance from cloudsql
+ DB_SOCKET: "/cloudsql/epicportal:us-central1:epicportaldb" #here need instance from cloudsql
 
  QUEUE_DRIVER: database #in case you execute queued jobs
 
@@ -41,10 +43,10 @@ env_variables:
 
  LOG_DELETE:  true # this is a parameter added by us in the project .env file. You can add here any setting you would add to your .env file
 
- GOOGLE_VISION_PROJECT_ID : epic-portal-projects
+ GOOGLE_VISION_PROJECT_ID : epicportal
 
 #we need this for the flex environment
 beta_settings:
    # for Cloud SQL, set this value to the Cloud SQL connection name,
    # e.g. "project:region:cloudsql-instance"
-   cloud_sql_instances: project:cloudsql-instance  #here need cloudsql instance
+   cloud_sql_instances: "epicportal:us-central1:epicportaldb"  #here need cloudsql instance
