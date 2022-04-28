@@ -1,13 +1,3 @@
-# This file describes an application. You can have multiple applications
-# in the same project.
-
-
-
-
-
-skip_files:
- - .env #we want to skip this to make sure we don’t mess stuff up on the server
-
     
 runtime: php
 env: flex
@@ -16,26 +6,32 @@ runtime_config:
     
     document_root: public #folder where index.php is
 
+skip_files:
+ - .env #we want to skip this to make sure we don’t mess stuff up on the server
+
 env_variables:
  # Put production environment variables here.
+ APP_LOG: errorlog
  APP_ENV: local   # or production
  APP_DEBUG : true # or false 
  APP_KEY: base64:XHQAcSWyhH/Mwk4erGFZWdGNsIIT3hZRQbpYXCPqz5w= 
  APP_STORAGE: /tmp
  VIEW_COMPILED_PATH: /tmp
+ CACHE_DRIVER: database
+ SESSION_DRIVER: database
  
 # follow the part of the tutorial on setting up your SQL database
  DB_CONNECTION: mysql
- DB_HOST: 127.0.0.1
+ DB_HOST: localhost
  DB_DATABASE: epicportalnew
  DB_USERNAME: epicportalnew
  DB_PASSWORD: epicportalnew
- DB_SOCKET: /cloudsql/epicportal:us-central1:epicportalnew  #here need instance from cloudsql
+ DB_SOCKET: "/cloudsql/epicportal:us-central1:epicportalnew"  #here need instance from cloudsql
 
- GOOGLE_VISION_PROJECT_ID : epicportal
+ #GOOGLE_VISION_PROJECT_ID : epicportal
 
 #we need this for the flex environment
 beta_settings:
    # for Cloud SQL, set this value to the Cloud SQL connection name,
    # e.g. "project:region:cloudsql-instance"
-   cloud_sql_instances: "epicportal:us-central1:epicportalnew=tcp:3306"
+   cloud_sql_instances: "epicportal:us-central1:epicportalnew"
