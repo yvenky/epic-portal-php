@@ -1,13 +1,17 @@
 
 
 <?php $__env->startSection('main-content'); ?>
-
-
+<!--// Main Area Start //-->
 <section class="panel-wrapper panel-center">
+    <?php if(Session::has('success-message')): ?> 
+    <div class="alert alert-success" role="alert">
+        <?php echo e(Session::get('success-message')); ?>
+
+      </div>
+     <?php endif; ?> 
     <div class="form-wrapper">
-        <div class="form-heading details-view-edit-wrap">
+        <div class="form-heading">
             <h6>Investor Details</h6>
-            <a href="<?php echo e(url('investor-list-edit/'.$lists->id)); ?>" title="Edit Investor"><i class="fa fa-edit"></i></a>
         </div>
         <div class="form-content">
             <div class="form-flex-box-text-item">
@@ -66,15 +70,10 @@
                 <span>Zipcode</span>
                 <p><?php echo e($lists->partner_individual_zip_code); ?></p>
             </div>
-
-            <div class="form-btn-flex-between pt-2">
-                <button type="button" class="form-cancel-btn"><a href="<?php echo e(url('investor-list')); ?>" style="color:black">Home</a></button>
-                 <button type="button" class="form-submit-btn"><a href="<?php echo e(url('new-partner-registration')); ?>" style="color:black">Add New Investor</a></button>
-             </div>
-
         </div>
-    </div>  
-   
+      
+    </div>
 </section>
+
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/newregistration/investor-view.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/newregistration/investor-submit-confirmation.blade.php ENDPATH**/ ?>

@@ -43,7 +43,7 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
-        "post-install-cmd": [
+        "post-deploy-cmd": [
             "chmod -R 755 bootstrap\/cache",
             "php artisan config:cache",
             "php artisan route:cache"
