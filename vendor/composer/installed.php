@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '87b115c6affa854d40cdc1db0d053333356c1260',
+        'reference' => '6c495642e1f339c788864c71ed54519b6edc5ff2',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -167,12 +167,12 @@
             'dev_requirement' => false,
         ),
         'google/cloud-core' => array(
-            'pretty_version' => 'v1.44.2',
-            'version' => '1.44.2.0',
+            'pretty_version' => 'v1.44.3',
+            'version' => '1.44.3.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../google/cloud-core',
             'aliases' => array(),
-            'reference' => 'd495545a53479297b440bee499daad50137fd55e',
+            'reference' => 'eac417a907beaa3bc2783a17b90c0113b7aa86e6',
             'dev_requirement' => false,
         ),
         'google/cloud-error-reporting' => array(
@@ -490,7 +490,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '87b115c6affa854d40cdc1db0d053333356c1260',
+            'reference' => '6c495642e1f339c788864c71ed54519b6edc5ff2',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

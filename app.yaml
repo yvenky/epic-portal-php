@@ -23,10 +23,11 @@ env_variables:
 # follow the part of the tutorial on setting up your SQL database
  DB_CONNECTION: mysql
  DB_HOST: localhost
- DB_DATABASE: epicportalnew
- DB_USERNAME: epicportalnew
- DB_PASSWORD: epicportalnew
- DB_SOCKET: "/cloudsql/epicportal:us-central1:epicportalnew"  #here need instance from cloudsql
+ DB_PORT: 3306
+ DB_DATABASE: epicdevdb
+ DB_USERNAME: epicdbdevuser
+ DB_PASSWORD: epicdbdevuser
+ DB_SOCKET: "/cloudsql/epicportal:us-central1:epicportaldb"  #here need instance from cloudsql
 
  #GOOGLE_VISION_PROJECT_ID : epicportal
 
@@ -34,4 +35,4 @@ env_variables:
 beta_settings:
    # for Cloud SQL, set this value to the Cloud SQL connection name,
    # e.g. "project:region:cloudsql-instance"
-   cloud_sql_instances: "epicportal:us-central1:epicportalnew"
+   cloud_sql_instances: "epicportal:us-central1:epicportaldb"
