@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/gsutil'
+- name: 'gcr.io/cloud-builders/docker'
   args:
     - cp
     - .env.testing
@@ -22,12 +22,12 @@ steps:
     - app
     - vendor/bin/phpunit
     - --no-coverage
-- name: 'gcr.io/cloud-builders/gsutil'
+- name: 'gcr.io/cloud-builders/docker'
   args:
     - cp
     - ${_APP_YAML_CONFIG}
     - app.yaml
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/cloud-builders/docker'
   args:
     - app
     - deploy
