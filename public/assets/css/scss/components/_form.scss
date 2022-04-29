@@ -158,6 +158,13 @@
                     }
                 }
             }
+            .text-link-dark {
+                color: $color_black;
+                transition: all 0.25s ease;
+                &:hover {
+                    color: $color_primary !important;
+                }
+            }
         }
         tfoot {
             tr {

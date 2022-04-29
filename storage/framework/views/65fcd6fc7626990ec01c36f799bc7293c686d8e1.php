@@ -1,14 +1,15 @@
-@extends('backend.inc.master')
 
-@section('main-content')
+
+<?php $__env->startSection('main-content'); ?>
 
 <section class="panel-wrapper panel-center">
     <div class="form-wrapper">
         <div class="form-heading">
             <h6>New Partner Invidual Registration</h6>
         </div>
-        <form id="new-partner-invidual-registration-form" action="{{url('new-partner-registration-submit')}}" method="POST" accept-charset="UTF-8">
-           {{ csrf_field() }}
+        <form id="new-partner-invidual-registration-form" action="<?php echo e(url('new-partner-registration-submit')); ?>" method="POST" accept-charset="UTF-8">
+           <?php echo e(csrf_field()); ?>
+
             <div class="step-wrapper">
                 <span class="step">Your Details</span>
                 <span class="step">Your Spouse Details</span>
@@ -209,4 +210,5 @@
     </div>
 </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/newregistration/new-partner-registration-ind.blade.php ENDPATH**/ ?>

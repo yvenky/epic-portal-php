@@ -7,6 +7,7 @@ use App\Models\partnerRegistrationInd;
 use App\Models\City;
 use App\Models\State;
 use APP\DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class newPartnerRegistrationInd extends Controller
 {
@@ -17,7 +18,6 @@ class newPartnerRegistrationInd extends Controller
      */
     public function index()
     {
-     
         return view('backend.template.newregistration.new-partner-registration-ind');
     }
     
@@ -64,9 +64,7 @@ class newPartnerRegistrationInd extends Controller
         
         $data_new ->save();
     
-
-      //return back()->with('success-message','New Partner Add Successfully');
-      return redirect('investor-submit-confirmation/'. $data_new->id )->with('success-message', 'New Partner Add Successfully');
+      return redirect('investor-submit-confirmation/'. $data_new->id )->with('success-message', 'New Investor Added Successfully');
     }
     /**
      * Store a newly created resource in storage.
@@ -157,7 +155,7 @@ class newPartnerRegistrationInd extends Controller
         $lists->delete();
       
         $full_name =  $lists->partner_individual_first_name . " " .  $lists->partner_individual_last_name;
-        return back()->with('success-message-delete', $full_name.' Remove Successfully');
+        return back()->with('success-message-delete', $full_name.' Deleted Successfully');
 
     }
 

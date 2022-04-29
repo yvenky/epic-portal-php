@@ -40,38 +40,38 @@
         }
      );
   }
-  // Search Select 
-  function matchStart(params, data) {
-     if (jQuery.trim(params.term) === '') {
-       return data;
-     }
 
-     if (typeof data.children === 'undefined') {
-       return null;
-     }
-     var filteredChildren = [];
-     jQuery.each(data.children, function (idx, child) {
-       if (child.text.toUpperCase().indexOf(params.term.toUpperCase()) == 0) {
-         filteredChildren.push(child);
-       }
-     });
-     if (filteredChildren.length) {
-       var modifiedData = $.extend({}, data, true);
-       modifiedData.children = filteredChildren;
-       return modifiedData;
-     }
-     return null;
+
+  function matchStart(params, data) {
+    if ($.trim(params.term) === '') {
+      return data;
+    }
+    if (typeof data.children === 'undefined') {
+      return null;
+    }
+    var filteredChildren = [];
+    $.each(data.children, function (idx, child) {
+      if (child.text.toUpperCase().indexOf(params.term.toUpperCase()) == 0) {
+        filteredChildren.push(child);
+      }
+    });
+    if (filteredChildren.length) {
+      var modifiedData = $.extend({}, data, true);
+      modifiedData.children = filteredChildren;
+      return modifiedData;
+    }
+    return null;
    }
-   if( jQuery(".select-member-1-wrap").length > 0)  {
-     jQuery(".select-member-1-wrap").select2({
-       matcher: matchStart
-     });
-   }
-   if( jQuery(".select-member-2-wrap").length > 0)  {
-     jQuery(".select-member-2-wrap").select2({
-       matcher: matchStart
-     });
-   }
+
+  if( jQuery(".select-matcher-obj").length > 0)  {
+    jQuery(".select-matcher-obj").select2({
+      matcher: matchStart
+    });
+  }
+
+  if( jQuery(".select-dropdown-obj").length > 0)  {
+    jQuery(".select-dropdown-obj").select2();
+  }
 
    // Validate
    var val	=	{
@@ -187,14 +187,105 @@
 
 
    if( jQuery("#investor-edit-form-modal").length > 0)  {
-    $("#investor-edit-form-modal").multiStepForm(
-      {
-        beforeSubmit : function(form, submit){
-        
+
+    jQuery("#investor-edit-form-modal").validate({
+      errorElement: "p",
+      rules: {
+        partner_individual_first_name: {
+          required: true,
         },
-        validations:val,
+        partner_individual_last_name: {
+          required: true,
+        },
+        partner_individual_employment_status: {
+          required: true,
+        },
+        partner_individual_household_income: {
+          required: true,
+        },
+        partner_individual_email_address: {
+          required: true,
+          email: true
+        },
+        // Step 2
+        partner_individual_spouse_first_name: {
+          required: true,
+        },
+        partner_individual_spouse_last_name: {
+          required: true,
+        },
+        partner_individual_employment_status_spouse: {
+          required: true,
+        },
+        partner_individual_spouse_email_address: {
+          required: true,
+          email: true
+        },
+        // Step 3
+        partner_individual_street: {
+          required: true,
+        },
+        partner_individual_city: {
+          required: true,
+        },
+        partner_individual_state: {
+          required: true,
+        },
+        partner_individual_zip_code: {
+          required: true,
+          minlength:5,
+          maxlength:5,
+          digits:true
+        }
+      },
+
+      // Specify validation error messages
+      messages: {
+        // Step 1
+        partner_individual_first_name: 		"First name is required",
+        partner_individual_last_name: 		"Last name is required",
+        partner_individual_email_address: {
+          required: 	"Email is required",
+          email: 		"Please enter a valid e-mail",
+        },
+        partner_individual_employment_status: {
+          required: "Please Select Employment Status"
+        },
+        partner_individual_household_income: {
+          required: "Please Select Household Income"
+        },
+        // Step 2
+        partner_individual_spouse_first_name: {
+          required: "Spouse First name is required",
+        },
+        partner_individual_spouse_last_name: {
+          required: "Spouse Last name is required"
+        },
+        partner_individual_employment_status_spouse: {
+          required: "Please Select Spouse Employment Status"
+        },
+        partner_individual_spouse_email_address: {
+          required: 	"Email is required",
+          email: 		"Please enter a valid e-mail",
+        },
+        // Step 3
+        partner_individual_street: {
+          required: "Street is required"
+        },
+        partner_individual_city: {
+          required: "City is required"
+        },
+        partner_individual_state: {
+          required: "State is required"
+        },
+        partner_individual_zip_code:{
+          required: 	"Zip Code is requied",
+          maxlength: 	"Zip code must be 5 digits",
+          minlength: 	"Zip code must be 5 digits",
+          digits: 	"Please enter a valid zip code"
+        }
       }
-    ).navigateTo(0);      
+    });
   }
 
    
@@ -247,7 +338,7 @@
         add_partner_entity_name: {
            required: "Entity Name is required"
          },
-         add_partner_add_partner_managing_member_1: {
+         add_partner_managing_member_1: {
            required: "Please Select Member"
          },
          add_partner_entity_ein: { 
@@ -289,10 +380,10 @@
         },
         messages: {
           property_address: {
-            required: "Entity Name is required"
+            required: "Property Address is required"
           },
           property_map_right_url: { 
-            required: "Contract required",
+            required: "Property Map Right Url required",
           },
         }
       });

@@ -459,6 +459,16 @@ p {
   text-align: center;
 }
 
+.form-wrapper .table-data-table tbody .text-link-dark {
+  color: #000;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.form-wrapper .table-data-table tbody .text-link-dark:hover {
+  color: #fe9900 !important;
+}
+
 .form-wrapper .table-data-table tfoot tr {
   border: none;
 }

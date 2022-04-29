@@ -1,19 +1,20 @@
-@extends('backend.inc.master')
 
-@section('main-content')
+
+<?php $__env->startSection('main-content'); ?>
 <!--// Main Area Start //-->
 <section class="panel-wrapper panel-center">
-    @if(Session::has('success-message')) 
+    <?php if(Session::has('success-message')): ?> 
     <div class="alert alert-success" role="alert">
-        {{Session::get('success-message')}}
+        <?php echo e(Session::get('success-message')); ?>
+
       </div>
-     @endif 
+     <?php endif; ?> 
     <div class="form-wrapper">
         <div class="form-heading">
             <h6>New Partner Entity Registration</h6>
         </div>
-        <form action="{{url('entity-submit')}}" method="POST" id="add-new-entity-partner-form">
-            @csrf
+        <form action="<?php echo e(url('entity-submit')); ?>" method="POST" id="add-new-entity-partner-form">
+            <?php echo csrf_field(); ?>
             <div class="form-content pb-0">
                 <div class="row mt-4">
                     <div class="col-lg-6">
@@ -34,9 +35,9 @@
                                 <select name="add_partner_managing_member_1" class="form-select select-matcher-obj select2" id="add_partner_managing_member_1_select"  data-select2-id="managing-member-1_select"  aria-label="Default select example">
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-1_select">
                                     <option value="">Please Select</option>
-                                    @foreach ( $users as $user ) 
-                                        <option value="{{$user->partner_individual_first_name.' '.$user->partner_individual_last_name}}">{{$user->partner_individual_first_name." ".$user->partner_individual_last_name}}</option>
-                                    @endforeach
+                                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                        <option value="<?php echo e($user->partner_individual_first_name.' '.$user->partner_individual_last_name); ?>"><?php echo e($user->partner_individual_first_name." ".$user->partner_individual_last_name); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </optgroup>
                             </select>
                         </div>     
@@ -47,9 +48,9 @@
                             <select name="add_partner_managing_member_2" class="form-select select-matcher-obj select2" id="add_partner_managing_member_2_select"  data-select2-id="managing-member-2_select"  aria-label="Default select example">
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-2_select">
                                     <option value="">Please Select</option>
-                                    @foreach ( $users as $user ) 
-                                        <option value="{{$user->partner_individual_first_name.' '.$user->partner_individual_last_name}}">{{$user->partner_individual_first_name." ".$user->partner_individual_last_name}}</option>
-                                    @endforeach
+                                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                        <option value="<?php echo e($user->partner_individual_first_name.' '.$user->partner_individual_last_name); ?>"><?php echo e($user->partner_individual_first_name." ".$user->partner_individual_last_name); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </optgroup>
                             </select>
                         </div>
@@ -156,7 +157,7 @@
             </div>
             <div class="form-content pt-0">
                 <div class="form-btn-flex-between">
-                    <button type="button" class="form-cancel-btn"><a href="{{url()->previous()}}" style="color:black">Cancel</a></button>
+                    <button type="button" class="form-cancel-btn"><a href="<?php echo e(url()->previous()); ?>" style="color:black">Cancel</a></button>
                     <button type="submit" class="form-submit-btn">Submit</button>
                 </div>
             </div>
@@ -166,4 +167,5 @@
  
 <!--// Main Area End //-->
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/entity/add-new-entry.blade.php ENDPATH**/ ?>

@@ -47,7 +47,7 @@ class PropertyController extends Controller
         
         $data ->save();
 
-        return redirect('property-submit-confirmation/'. $data->id )->with('success-message', 'New Property Add Successfully');
+        return redirect('property-submit-confirmation/'. $data->id )->with('success-message', 'New Property Added Successfully');
         
     }
 
@@ -115,7 +115,7 @@ class PropertyController extends Controller
         $lists-> property_phase_env_inspection       = $request-> property_phase_env_inspection; 
         $lists-> property_attorney_feedback          = $request-> property_attorney_feedback; 
         $lists->update();
-        return redirect('property-list')->with('success-message-edit','Property Updated Successfully');
+        return redirect('property-list')->with('success-message-edit', $lists-> property_address. ' Updated Successfully');
 
     }
 
@@ -131,7 +131,7 @@ class PropertyController extends Controller
         $lists->delete();
       
        
-        return redirect('property-list')->with('success-message-delete', $lists->property_address .' Remove Successfully');
+        return redirect('property-list')->with('success-message-delete', $lists->property_address .' Deleted Successfully');
 
     }
 

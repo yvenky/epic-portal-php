@@ -33,7 +33,6 @@ class newentitycontroller extends Controller
             'add_partner_entity_ein'                        => 'required',
             'add_partner_entity_docs'                       => 'required',
             'add_partner_managing_member_1'                 => 'required',
-            'add_partner_managing_member_2'                 => 'required',
             'add_partner_entity_address_street'             => 'required',
             'add_partner_entity_address_city'                           => 'required',
             'add_partner_entity_address_state'                          => 'required',
@@ -56,7 +55,7 @@ class newentitycontroller extends Controller
         $data->save();
      
 
-        return redirect('entity-submit-confirmation/'. $data->id )->with('success-message', 'New Entity Add Successfully');
+        return redirect('entity-submit-confirmation/'. $data->id )->with('success-message', $data->add_partner_entity_name .' Added Successfully');
     }
 
     /**
@@ -126,7 +125,7 @@ class newentitycontroller extends Controller
         $lists-> add_partner_entity_address_zipcode  = $request-> add_partner_entity_address_zipcode; 
    
         $lists->update();
-        return back()->with('success-message-edit','Entity Updated Successfully');
+        return back()->with('success-message-edit', $lists-> add_partner_entity_name . ' Updated Successfully');
     }
 
     /**
@@ -141,7 +140,7 @@ class newentitycontroller extends Controller
         $lists->delete();
       
         
-        return back()->with('success-message-delete','Entity Remove Successfully');
+        return back()->with('success-message-delete', $lists-> add_partner_entity_name .' Deleted Successfully');
     }
 
     public function confirmation($id )

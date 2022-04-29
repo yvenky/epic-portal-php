@@ -1,20 +1,21 @@
-@extends('backend.inc.master')
 
-@section('main-content')
+
+<?php $__env->startSection('main-content'); ?>
 
 <section class="panel-wrapper panel-center">
-    @if(Session::has('success-message')) 
+    <?php if(Session::has('success-message')): ?> 
     <div class="alert alert-success" role="alert">
-        {{Session::get('success-message')}}
+        <?php echo e(Session::get('success-message')); ?>
+
       </div>
-     @endif 
+     <?php endif; ?> 
      <div class="form-wrapper">
         <div class="form-heading">
             <h6>Add New Property</h6>
         </div>
         <div class="form-content">
-            <form action="{{url('property-submit')}}" method="POST" id="add-new-property-form">
-                @csrf
+            <form action="<?php echo e(url('property-submit')); ?>" method="POST" id="add-new-property-form">
+                <?php echo csrf_field(); ?>
                 <div class="row mt-4">
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
@@ -74,7 +75,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                     <div class="form-btn-flex-between">
-                        <a href="{{url()->previous() }}" class="form-cancel-btn">Cancel</a>
+                        <a href="<?php echo e(url()->previous()); ?>" class="form-cancel-btn">Cancel</a>
                         <button type="submit" class="form-submit-btn">Submit</button>
                     </div>
                     </div>
@@ -83,4 +84,5 @@
         </div>
     </div>
  </section>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/property/add-new-property.blade.php ENDPATH**/ ?>
