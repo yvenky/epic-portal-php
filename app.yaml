@@ -14,7 +14,7 @@ env_variables:
  APP_LOG: errorlog
  APP_ENV: local   # or production
  APP_DEBUG : true # or false 
- APP_KEY: base64:XHQAcSWyhH/Mwk4erGFZWdGNsIIT3hZRQbpYXCPqz5w= 
+ APP_KEY: base64:DiLDz8WgcUmQXkmgxbWZcIsRWltAA4Q84Fd3zPHQpTY=
  APP_STORAGE: /tmp
  VIEW_COMPILED_PATH: /tmp
  CACHE_DRIVER: database
