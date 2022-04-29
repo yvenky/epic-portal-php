@@ -3,13 +3,6 @@
 <?php $__env->startSection('main-content'); ?>
 
 <section class="panel-wrapper panel-center">
-
-    <?php if(Session::has('success-message')): ?> 
-    <div class="alert alert-success" role="alert">
-        <?php echo e(Session::get('success-message')); ?>
-
-      </div>
-     <?php endif; ?> 
     <div class="form-wrapper">
         <div class="form-heading details-view-edit-wrap">
             <h6>Entity Details</h6>
@@ -72,7 +65,6 @@
             <?php endif; ?>
 
             <?php if( $lists->add_partner_entity_address_state ): ?>
-
             <div class="form-flex-box-text-item">
                 <span>State</span>
                 <?php if( $lists->add_partner_entity_address_state ==  "AA" ): ?>
@@ -207,4 +199,4 @@
    
 </section>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/entity/entity-submit-confirmation.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views\backend\template\entity\entity-view.blade.php ENDPATH**/ ?>

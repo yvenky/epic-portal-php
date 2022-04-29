@@ -11,64 +11,66 @@
      <?php endif; ?> 
      <div class="form-wrapper">
         <div class="form-heading">
-            <h6>Add New Property</h6>
+            <h6>Edit Property</h6>
         </div>
         <div class="form-content">
-            <form action="<?php echo e(url('property-submit')); ?>" method="POST" id="add-new-property-form">
+            <form action="<?php echo e(url('property-list-update/'.$lists->id)); ?>" method="POST" id="add-new-property-form">
                 <?php echo csrf_field(); ?>
+                <?php echo method_field('PUT'); ?>
+
                 <div class="row mt-4">
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_address">Property Address </label>
-                            <input type="text" class="form-control" name="property_address" id="property_address">
+                            <input type="text" class="form-control" name="property_address" value="<?php echo e($lists->property_address); ?>"  id="property_address">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_of_acres"># Of Acres</label>
-                            <input type="text" class="form-control" name="property_of_acres" id="property_of_acres">
+                            <input type="text" class="form-control" name="property_of_acres" value="<?php echo e($lists->property_of_acres); ?>" id="property_of_acres">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_map_right_url">Map Right Url</label>
-                            <input type="text" class="form-control" name="property_map_right_url" id="property_map_right_url">
+                            <input type="text" class="form-control" name="property_map_right_url" value="<?php echo e($lists->property_map_right_url); ?>" id="property_map_right_url">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_contract_url">Contract</label>
-                            <input type="text" class="form-control" name="property_contract_url" id="property_contract_url">
+                            <input type="text" class="form-control" name="property_contract_url" value="<?php echo e($lists->property_contract_url); ?>" id="property_contract_url">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_survey_url">Survey Url</label>
-                            <input type="text" class="form-control" name="property_survey_url" id="property_survey_url">
+                            <input type="text" class="form-control" name="property_survey_url" value="<?php echo e($lists->property_survey_url); ?>" id="property_survey_url">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_closing_documents">Closing Documents</label>
-                            <input type="text" class="form-control" name="property_closing_documents" id="property_closing_documents">
+                            <input type="text" class="form-control" name="property_closing_documents" value="<?php echo e($lists->property_closing_documents); ?>" id="property_closing_documents">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_appraisal">Appraisal</label>
-                            <input type="text" class="form-control" name="property_appraisal" id="property_appraisal">
+                            <input type="text" class="form-control" name="property_appraisal" value="<?php echo e($lists->property_appraisal); ?>" id="property_appraisal">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_phase_env_inspection">Phase Env Inspection</label>
-                            <input type="text" class="form-control" name="property_phase_env_inspection" id="property_phase_env_inspection">
+                            <input type="text" class="form-control" name="property_phase_env_inspection" value="<?php echo e($lists->property_phase_env_inspection); ?>" id="property_phase_env_inspection">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-flex-item-box">
                             <label for="property_attorney_feedback">Attorney Feedback</label>
-                            <input type="text" class="form-control" name="property_attorney_feedback" id="property_attorney_feedback">
+                            <input type="text" class="form-control" name="property_attorney_feedback" value="<?php echo e($lists->property_attorney_feedback); ?>" id="property_attorney_feedback">
                         </div>
                     </div>
                 </div>
@@ -84,5 +86,7 @@
         </div>
     </div>
  </section>
+
+
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/property/add-new-property.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views\backend\template\property\property-list-edit.blade.php ENDPATH**/ ?>
