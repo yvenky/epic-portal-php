@@ -5,7 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=7.4.0",
         "fruitcake/laravel-cors": "^2.0",
         "google/cloud-error-reporting": "^0.19.0",
         "google/cloud-logging": "^1.24",
