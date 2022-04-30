@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\newentitycontroller;	
 use App\Http\Controllers\masterTemplate;	
 use App\Http\Controllers\newPartnerRegistrationInd;	
-use App\Http\Controllers\TestController;	
+use App\Http\Controllers\Investor;	
 use App\Http\Controllers\PropertyController;	
 
 /*	
@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('index');	
 });	
 
-Route::get('/test', [TestController::class,'index']);	
+Route::get('/test', [Investor::class,'show']);	
 
 
 // Entity routing	

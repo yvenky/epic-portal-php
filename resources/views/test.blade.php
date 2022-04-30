@@ -2,66 +2,61 @@
 
 @section('main-content')
 
-<div class="container box">
-  
-    <div class="container">
-        <h2>Laravel 8 Country State City Dropdown</h2>
-        <form>
-            <div class="form-group">
-    
-            <select id="country" class="form-control" >
-                <option value="">Select Country</option>
-                @foreach($country as $list)
-                    <option value="{{$list->id}}">{{$list->country}}</option>
-                @endforeach
-            </select>
+<div class="container">
+       
+
+    <div class="row">
+        @foreach ( $lists as $item)
+        <div class="col-lg-4 mt-3">
+            <div class="card">
+
+                <div class="card-body">
+                    <p><span>First name</span> {{$item->FIRST_NAME}}</p>
             
-            <br/>
-            <select id="state" class="form-control" >
-                <option value="">Select State</option>
-            </select>
-            <br/>
+            <p><span>last Name</span> {{$item->LAST_NAME}}</p>
+    
+            <p><span>address id</span> {{$item->ADDRESS_ID }}</p>
+
+            @php
+            $get_address = DB::table('ADDRESS')
+                        ->where('id', '=', $item->ADDRESS_ID)
+                        ->get();
+            @endphp
+
+
+
+
+              @foreach ($get_address as $adress)
+                  {{$adress->STREET_1}}<br>
+                  {{$adress->STREET_2}}<br>
+                  {{$adress->CITY}}<br>
+    
+                  {{$adress->ZIP_CODE}}<br>
+              @endforeach              
+
+
+
+
+            <p><span>email address</span> {{$item->EMAIL_ADDRESS }}</p>
+            <p><span>PHone Number</span> {{$item->PHONE_NUMBER	 }}</p>
+            <p><span>EMPLOYMENT STATUS</span> {{$item->EMPLOYMENT_STATUS	 }}</p>
+                </div>
             
-            <select id="city" class="form-control" >
-                <option value="">Select City</option>
-            </select>
-    
-    
-            </div>
-          </form>
+             </div>
+
         </div>
-    
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
-    
-            <script>
-            jQuery(document).ready(function(){
-                jQuery('#country').change(function(){
-                    let cid=jQuery(this).val();
-                    jQuery('#city').html('<option value="">Select City</option>')
-                    jQuery.ajax({
-                        url:'/getState',
-                        type:'post',
-                        data:'cid='+cid+'&_token={{csrf_token()}}',
-                        success:function(result){
-                            jQuery('#state').html(result)
-                        }
-                    });
-                });
-                
-                jQuery('#state').change(function(){
-                    let sid=jQuery(this).val();
-                    jQuery.ajax({
-                        url:'/getCity',
-                        type:'post',
-                        data:'sid='+sid+'&_token={{csrf_token()}}',
-                        success:function(result){
-                            jQuery('#city').html(result)
-                        }
-                    });
-                });
-                
-            });
-                
-            </script>
+        @endforeach
+    </div>
+
+
+</div>
+
+
+<div class="form-flex-box-text-item">
+
+
+
+
+   
+</div>
 @endsection
