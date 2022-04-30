@@ -22,12 +22,12 @@ steps:
     - app
     - vendor/bin/phpunit
     - --no-coverage
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/epicportal/docker'
   args:
     - cp
     - ${_APP_YAML_CONFIG}
     - app.yaml
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/epicportal/docker'
   args:
     - app
     - deploy
