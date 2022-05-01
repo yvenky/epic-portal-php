@@ -15,7 +15,7 @@
             
             <p><span>last Name</span> {{$item->LAST_NAME}}</p>
     
-            <p><span>address id</span> {{$item->ADDRESS_ID }}</p>
+            <p><span>address id</span> {{$item->ADDRESS_ID}}</p>
 
             @php
             $get_address = DB::table('ADDRESS')
