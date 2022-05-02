@@ -14,9 +14,27 @@ class INVESTOR extends Model
      *
      * @var array<int, string>
      */
-    
+
+
  protected $fillable = [
     'FIRST_NAME',
-    'LAST_NAME'
+    'LAST_NAME',
+    'ADDRESS_ID',
+    'EMAIL_ADDRESS',
+    'PHONE_NUMBER',
+    'EMPLOYMENT_STATUS',
+    'HOUSEHOLD_INCOME',
+    'SPOUSE_FIRSTNAME',
+    'SPOUSE_LASTNAME',
+    'SPOUSE_EMAIL',
+    'SPOUSE_PHONE_NO',
+    'SPOUSE_EMPLOYMENT_STATUS',
+
 ];
+
+public function address()
+{
+    return $this->belongsTo(addressController::class,'ADDRESS_ID');
+}
+
 }

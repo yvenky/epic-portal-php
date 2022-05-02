@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\INVESTOR;
+use DB;
 
-
-class Investor extends Controller
+class investorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +16,7 @@ class Investor extends Controller
      */
     public function index()
     {
-      echo "dasdsa";
-    }
-    
-    public function show()
-    {
-        //$lists=INVESTOR::all();
-
-        $lists = DB::table('INVESTOR')->get();
-        $address_table = DB::table('ADDRESS')->get();
-
-      
-        return view('test' , ['lists' => $lists, 'address_table',$address_table]);
+        //
     }
 
     /**
@@ -51,6 +40,23 @@ class Investor extends Controller
         //
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showinvestortest()
+    {
+       $lists=INVESTOR::all();
+
+        //$lists = DB::table('INVESTOR')->get();
+       // $address_table = DB::table('ADDRESS')->get();
+
+      
+        //return view('test' , ['lists' => $lists, 'address_table',$address_table]);
+        return view('test',['lists' => $lists]);
+    }
 
     /**
      * Show the form for editing the specified resource.
