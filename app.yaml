@@ -1,6 +1,6 @@
     
 runtime: php
-env: flex
+env: standard
 
 manual_scaling:
   instances: 1
