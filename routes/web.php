@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('index');	
 });	
 
-Route::get('/test', [investorController::class,'showinvestortest']);	
+Route::get('/test', [investorController::class,'show']);	
 
 
 // Entity routing	

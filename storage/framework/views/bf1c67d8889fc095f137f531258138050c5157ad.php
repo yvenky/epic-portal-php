@@ -1,8 +1,8 @@
 
 
 <?php $__env->startSection('main-content'); ?>
-
-<div class="form-wrapper">
+<section class="panel-wrapper panel-center">
+ <div class="form-wrapper">
     <div class="form-heading details-view-edit-wrap">
         <h6>Investor Details</h6>
         <a href="<?php echo e(url('investor-list-edit/')); ?>" title="Edit Investor"><i class="fa fa-edit"></i></a>
@@ -206,14 +206,15 @@
             <span>Zip Code</span>
             <p><?php echo e($list->address->ZIP_CODE); ?></p>
         </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        
         <div class="form-btn-flex-between pt-2">
             <a href="<?php echo e(url('investor-list')); ?>" class="form-cancel-btn">Home</a>
             <a href="<?php echo e(url('new-partner-registration')); ?>" class="form-submit-btn">Add Investor</a>
          </div>
     </div>
-</div>  
-
+    
+ </div>  
+ <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </section>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/test.blade.php ENDPATH**/ ?>

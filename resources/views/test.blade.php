@@ -1,8 +1,8 @@
 @extends('backend.inc.master')
 
 @section('main-content')
-
-<div class="form-wrapper">
+<section class="panel-wrapper panel-center">
+ <div class="form-wrapper">
     <div class="form-heading details-view-edit-wrap">
         <h6>Investor Details</h6>
         <a href="{{url('investor-list-edit/')}}" title="Edit Investor"><i class="fa fa-edit"></i></a>
@@ -206,13 +206,14 @@
             <span>Zip Code</span>
             <p>{{$list->address->ZIP_CODE}}</p>
         </div>
-        @endforeach
+        
         <div class="form-btn-flex-between pt-2">
             <a href="{{url('investor-list')}}" class="form-cancel-btn">Home</a>
             <a href="{{url('new-partner-registration')}}" class="form-submit-btn">Add Investor</a>
          </div>
     </div>
-</div>  
-
+    
+ </div>  
+ @endforeach
 </section>
 @endsection

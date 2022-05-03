@@ -46,16 +46,16 @@ class investorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showinvestortest()
+    public function show()
     {
-       $lists=INVESTOR::all();
+        $lists=INVESTOR::all();
 
         //$lists = DB::table('INVESTOR')->get();
        // $address_table = DB::table('ADDRESS')->get();
 
       
         //return view('test' , ['lists' => $lists, 'address_table',$address_table]);
-        return view('test',['lists' => $lists]);
+        return view('test',['lists' => $lists ]);
     }
 
     /**

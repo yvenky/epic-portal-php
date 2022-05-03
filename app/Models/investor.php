@@ -15,7 +15,7 @@ class INVESTOR extends Model
      * @var array<int, string>
      */
 
-
+ protected $table ='INVESTOR';
  protected $fillable = [
     'FIRST_NAME',
     'LAST_NAME',
@@ -34,7 +34,7 @@ class INVESTOR extends Model
 
 public function address()
 {
-    return $this->belongsTo(addressController::class,'ADDRESS_ID');
+    return $this->belongsTo(ADDRESS::class,'ADDRESS_ID');
 }
 
 }
