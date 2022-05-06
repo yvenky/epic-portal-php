@@ -63,6 +63,12 @@
                                 <input type="text" class="form-control required" name="EMAIL_ADDRESS" value="{{$lists->EMAIL_ADDRESS}}" id="EMAIL_ADDRESS">
                             </div>
                         </div>
+                        <div class="col-lg-6">
+                            <div class="form-flex-item-box">
+                                <label for="PHONE_NUMBER">Phone Number</label>
+                                <input type="text" class="form-control required" name="PHONE_NUMBER" value="{{$lists->PHONE_NUMBER	}}" id="PHONE_NUMBER">
+                            </div>
+                        </div>
                     </div>
                 </div>         
                 <div class="form-heading top-border">
@@ -96,6 +102,12 @@
                             <div class="form-flex-item-box">
                                 <label for="SPOUSE_EMAIL">Spouse Email Address</label>
                                 <input type="text" class="form-control" name="SPOUSE_EMAIL" value="{{$lists->SPOUSE_EMAIL}}" id="SPOUSE_EMAIL">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-flex-item-box">
+                                <label for="SPOUSE_PHONE_NO">Spouse Phone Number</label>
+                                <input type="text" class="form-control required" name="SPOUSE_PHONE_NO" value="{{$lists->SPOUSE_PHONE_NO}}" id="SPOUSE_PHONE_NO">
                             </div>
                         </div>
                     </div>

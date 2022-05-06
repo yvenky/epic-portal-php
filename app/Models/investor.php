@@ -16,6 +16,7 @@ class INVESTOR extends Model
      */
 
  protected $table ='INVESTOR';
+ public  $timestamps = false;
  protected $fillable = [
     'ID',
     'FIRST_NAME',

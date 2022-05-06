@@ -16,7 +16,9 @@ class investorController extends Controller
      */
     public function index()
     {
-        //
+        $lists= INVESTOR::all();
+
+        return view('backend.template.investor.investor-list' , ['lists' => $lists]);
     }
 
     /**
@@ -80,11 +82,11 @@ class investorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $lists=INVESTOR::all();
+        $lists=INVESTOR::find($id);
 
-        return view('backend.template.investor.investor-view',['lists' => $lists ]);
+        return view('backend.template.investor.investor-view',['lists' => $lists, 'ID' => $id ]);
     }
 
     /**
@@ -111,25 +113,20 @@ class investorController extends Controller
     {
         $lists=INVESTOR::find($id);
 
-        
-        $lists->partner_individual_first_name                  = $req->partner_individual_first_name; 
-        $lists->partner_individual_last_name                   = $req->partner_individual_last_name; 
-        $lists->partner_individual_email_address               = $req->partner_individual_email_address;
-        $lists->partner_individual_spouse_first_name           = $req->partner_individual_spouse_first_name; 
-        $lists->partner_individual_spouse_last_name            = $req->partner_individual_spouse_last_name; 
-        $lists->partner_individual_spouse_email_address        = $req->partner_individual_spouse_email_address;
-        $lists->partner_individual_employment_status           = $req->partner_individual_employment_status; 
-        $lists->partner_individual_household_income            = $req->partner_individual_household_income; 
-        $lists->partner_individual_employment_status_spouse    = $req->partner_individual_employment_status_spouse; 
-        $lists->partner_individual_street                      = $req->partner_individual_street;
-        $lists->partner_individual_zip_code                    = $req->partner_individual_zip_code; 
-        $lists->partner_individual_city                        = $req->partner_individual_city; 
-        $lists->partner_individual_state                       = $req->partner_individual_state;
+        $lists->FIRST_NAME                  = $req->FIRST_NAME; 
+        $lists->LAST_NAME                   = $req->LAST_NAME; 
+        $lists->EMAIL_ADDRESS               = $req->EMAIL_ADDRESS;
+        $lists->PHONE_NUMBER                = $req->PHONE_NUMBER; 
+        $lists->EMPLOYMENT_STATUS           = $req->EMPLOYMENT_STATUS; 
+        $lists->HOUSEHOLD_INCOME	        = $req->HOUSEHOLD_INCOME; 
+        $lists->SPOUSE_FIRSTNAME	        = $req->SPOUSE_FIRSTNAME; 
+        $lists->SPOUSE_LASTNAME	            = $req->SPOUSE_LASTNAME; 
+        $lists->SPOUSE_EMAIL	            = $req->SPOUSE_EMAIL; 
+        $lists->SPOUSE_PHONE_NO	            = $req->SPOUSE_PHONE_NO; 
+        $lists->SPOUSE_EMPLOYMENT_STATUS    = $req->SPOUSE_EMPLOYMENT_STATUS; 
    
         $lists->update();
-       // return back()->with('success-message-edit','Entity Updated Successfully');
-
-        $full_name =  $lists->partner_individual_first_name . " " .  $lists->partner_individual_last_name;
+        $full_name =  $lists->FIRST_NAME . " " .  $lists->FIRST_NAME;
         
         return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
     }
@@ -140,8 +137,12 @@ class investorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        $lists=INVESTOR::find($id);
+        $lists->delete();
+      
+        $full_name =  $lists->FIRST_NAME . " " .  $lists->FIRST_NAME;
+        return back()->with('success-message-delete', $full_name.' Deleted Successfully');
     }
 }

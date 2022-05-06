@@ -42,10 +42,10 @@ Route::get('entity-submit-confirmation/{id}', [newentitycontroller::class, 'conf
 
 // Route::get('/new-partner-registration', [newPartnerRegistrationInd::class, 'index']);	
 // Route::post('/new-partner-registration-submit', [newPartnerRegistrationInd ::class, 'create']);	
+
 // Route::get('/investor-list', [newPartnerRegistrationInd ::class, 'showInvestorList']);	
-// Route::get('investor-list-delete/{id}', [newPartnerRegistrationInd::class, 'delete']);	
-// Route::get('investor-list-edit/{id}', [newPartnerRegistrationInd::class, 'edit']);	
-// Route::put('investor-list-update/{id}', [newPartnerRegistrationInd::class, 'update']); 
+
+
 // Route::get('investor-view/{id}', [newPartnerRegistrationInd::class, 'show']);
 // Route::get('investor-submit-confirmation/{id}', [newPartnerRegistrationInd::class, 'confirmation']);
 
@@ -66,6 +66,10 @@ Route::get('property-list-delete/{id}', [PropertyController::class, 'delete']);
  *  Investor Routes
 */
 Route::controller(investorController::class)->group(function () {
-    Route::get('/investor-view', 'show');	
+    Route::get('/investor-list', 'index');	
+    Route::get('/investor-view/{id}', 'show');	
     Route::get('investor-edit/{id}', 'edit');	
+    Route::put('investor-update/{id}','update');
+    Route::get('investor-delete/{id}', 'delete');
+    //Route::get('investor-submit-confirmation/{id}','confirmation');
 });

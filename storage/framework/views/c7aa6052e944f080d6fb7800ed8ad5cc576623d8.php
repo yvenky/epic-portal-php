@@ -3,46 +3,45 @@
 <?php $__env->startSection('main-content'); ?>
 <section class="panel-wrapper panel-center">
  <div class="form-wrapper">
- <?php $__currentLoopData = $lists; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $list): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="form-heading details-view-edit-wrap">
         <h6>Investor Details</h6>
-        <a href="<?php echo e(url('investor-edit/'.$list->ID)); ?>" title="Edit Investor"><i class="fa fa-edit"></i></a>
+        <a href="<?php echo e(url('investor-edit/'.$lists->ID)); ?>" title="Edit Investor"><i class="fa fa-edit"></i></a>
     </div>
     <div class="form-content">
         <div class="form-flex-box-text-item">
             <span>Full Name</span>
-            <p><?php echo e($list->FIRST_NAME.' '.$list->LAST_NAME); ?></p>
+            <p><?php echo e($lists->FIRST_NAME.' '.$lists->LAST_NAME); ?></p>
             
         </div>
         <div class="form-flex-box-text-item">
             <span>Employment Status</span>
-            <?php if( $list->EMPLOYMENT_STATUS ==  "SE" ): ?>
+            <?php if( $lists->EMPLOYMENT_STATUS ==  "SE" ): ?>
                 <p>Self Employed</p>
-            <?php elseif( $list->EMPLOYMENT_STATUS ==  "W2" ): ?> 
+            <?php elseif( $lists->EMPLOYMENT_STATUS ==  "W2" ): ?> 
                 <p>W2</p>
-            <?php elseif( $list->EMPLOYMENT_STATUS ==  "HM" ): ?>
+            <?php elseif( $lists->EMPLOYMENT_STATUS ==  "HM" ): ?>
                 <p>Home Maker</p>
             <?php endif; ?>
         </div>
         <div class="form-flex-box-text-item">
             <span>Household Income</span>
-            <?php if( $list->HOUSEHOLD_INCOME ==  "0" ): ?>
+            <?php if( $lists->HOUSEHOLD_INCOME ==  "0" ): ?>
                 <p>Upto 100000</p>
-            <?php elseif( $list->HOUSEHOLD_INCOME ==  "1" ): ?> 
+            <?php elseif( $lists->HOUSEHOLD_INCOME ==  "1" ): ?> 
                 <p>100000 to 200000</p>
-            <?php elseif( $list->HOUSEHOLD_INCOME ==  "2" ): ?>
+            <?php elseif( $lists->HOUSEHOLD_INCOME ==  "2" ): ?>
                 <p>200K to 300K</p>
-            <?php elseif( $list->HOUSEHOLD_INCOME ==  "3" ): ?>
+            <?php elseif( $lists->HOUSEHOLD_INCOME ==  "3" ): ?>
                 <p>300K to 400K</p>
-            <?php elseif( $list->HOUSEHOLD_INCOME ==  "4" ): ?>
+            <?php elseif( $lists->HOUSEHOLD_INCOME ==  "4" ): ?>
                 <p>400K to 500K</p>
-            <?php elseif( $list->HOUSEHOLD_INCOME ==  "5" ): ?>
+            <?php elseif( $lists->HOUSEHOLD_INCOME ==  "5" ): ?>
                 <p>More Than 500K</p>
             <?php endif; ?>
         </div>
         <div class="form-flex-box-text-item">
             <span>Email Address</span>
-            <p><?php echo e($list->EMAIL_ADDRESS); ?></p>
+            <p><?php echo e($lists->EMAIL_ADDRESS); ?></p>
         </div>
     </div>
 
@@ -52,23 +51,23 @@
     <div class="form-content">
         <div class="form-flex-box-text-item">
             <span>Spouse Full Name</span>
-            <p><?php echo e($list->SPOUSE_FIRSTNAME.' '.$list->SPOUSE_LASTNAME); ?></p>
+            <p><?php echo e($lists->SPOUSE_FIRSTNAME.' '.$lists->SPOUSE_LASTNAME); ?></p>
         </div>
         <div class="form-flex-box-text-item">
             <span>Spouse Employment Status</span>
-            <?php if( $list->SPOUSE_EMPLOYMENT_STATUS ==  "SE" ): ?>
+            <?php if( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "SE" ): ?>
                 <p>Self Employed</p>
-            <?php elseif( $list->SPOUSE_EMPLOYMENT_STATUS ==  "W2" ): ?> 
+            <?php elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "W2" ): ?> 
                 <p>W2</p>
-            <?php elseif( $list->SPOUSE_EMPLOYMENT_STATUS ==  "F" ): ?> 
+            <?php elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "F" ): ?> 
                 <p>F</p>
-            <?php elseif( $list->SPOUSE_EMPLOYMENT_STATUS ==  "HM" ): ?>
+            <?php elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "HM" ): ?>
                 <p>Home Maker</p>
             <?php endif; ?>
         </div>
         <div class="form-flex-box-text-item">
             <span>Spouse Email Address</span>
-            <p><?php echo e($list->SPOUSE_EMAIL); ?></p>
+            <p><?php echo e($lists->SPOUSE_EMAIL); ?></p>
         </div>
         
     </div>
@@ -78,141 +77,140 @@
     <div class="form-content">
         <div class="form-flex-box-text-item">
             <span>Street</span>
-            <p><?php echo e($list->address->STREET_1); ?></p>
+            <p><?php echo e($lists->address->STREET_1); ?></p>
         </div>
         <div class="form-flex-box-text-item">
             <span>City</span>
-            <p><?php echo e($list->partner_individual_city); ?></p>
+            <p><?php echo e($lists->partner_individual_city); ?></p>
         </div>
         <div class="form-flex-box-text-item">
             <span>State</span>
-            <?php if( $list->address->STATE ==  "AA" ): ?>
+            <?php if( $lists->address->STATE ==  "AA" ): ?>
                 <p>Armed Forces America</p>
-            <?php elseif( $list->address->STATE ==  "AE" ): ?> 
+            <?php elseif( $lists->address->STATE ==  "AE" ): ?> 
                 <p>Armed Forces</p>
-            <?php elseif( $list->address->STATE ==  "AK" ): ?>
+            <?php elseif( $lists->address->STATE ==  "AK" ): ?>
                 <p>Alaska</p>
-            <?php elseif( $list->address->STATE ==  "AL" ): ?>
+            <?php elseif( $lists->address->STATE ==  "AL" ): ?>
                 <p>Alabama</p>
-            <?php elseif( $list->address->STATE ==  "AP" ): ?>
+            <?php elseif( $lists->address->STATE ==  "AP" ): ?>
                 <p>Armed Forces Pacific</p>
-            <?php elseif( $list->address->STATE ==  "AR" ): ?>
+            <?php elseif( $lists->address->STATE ==  "AR" ): ?>
                 <p>Arkansas</p>
-            <?php elseif( $list->address->STATE ==  "AZ" ): ?>
+            <?php elseif( $lists->address->STATE ==  "AZ" ): ?>
                 <p>Arizona</p>
-            <?php elseif( $list->address->STATE ==  "CA" ): ?>
+            <?php elseif( $lists->address->STATE ==  "CA" ): ?>
                 <p>California</p>
-            <?php elseif( $list->address->STATE ==  "CO" ): ?>
+            <?php elseif( $lists->address->STATE ==  "CO" ): ?>
                 <p>Colorado</p>
-            <?php elseif( $list->address->STATE ==  "CT" ): ?>
+            <?php elseif( $lists->address->STATE ==  "CT" ): ?>
                 <p>Connecticut</p>
-            <?php elseif( $list->address->STATE ==  "DC" ): ?>
+            <?php elseif( $lists->address->STATE ==  "DC" ): ?>
                 <p>Washington DC</p>
-            <?php elseif( $list->address->STATE ==  "DE" ): ?>
+            <?php elseif( $lists->address->STATE ==  "DE" ): ?>
                 <p>Delaware</p>
-            <?php elseif( $list->address->STATE ==  "FL" ): ?>
+            <?php elseif( $lists->address->STATE ==  "FL" ): ?>
                 <p>Florida</p>
-            <?php elseif( $list->address->STATE ==  "GA" ): ?>
+            <?php elseif( $lists->address->STATE ==  "GA" ): ?>
                 <p>Georgia</p>
-            <?php elseif( $list->address->STATE ==  "GU" ): ?>
+            <?php elseif( $lists->address->STATE ==  "GU" ): ?>
                 <p>Guam</p>
-            <?php elseif( $list->address->STATE ==  "HI" ): ?>
+            <?php elseif( $lists->address->STATE ==  "HI" ): ?>
                 <p>Hawaii</p>
-            <?php elseif( $list->address->STATE ==  "IA" ): ?>
+            <?php elseif( $lists->address->STATE ==  "IA" ): ?>
                 <p>Iowa</p>
-            <?php elseif( $list->address->STATE ==  "ID" ): ?>
+            <?php elseif( $lists->address->STATE ==  "ID" ): ?>
                 <p>Idaho</p>
-            <?php elseif( $list->address->STATE ==  "IL" ): ?>
+            <?php elseif( $lists->address->STATE ==  "IL" ): ?>
                 <p>Illinois</p>
-            <?php elseif( $list->address->STATE ==  "IN" ): ?>
+            <?php elseif( $lists->address->STATE ==  "IN" ): ?>
                 <p>Indiana</p>
-            <?php elseif( $list->address->STATE ==  "KS" ): ?>
+            <?php elseif( $lists->address->STATE ==  "KS" ): ?>
                 <p>Kansas</p>
-            <?php elseif( $list->address->STATE ==  "KY" ): ?>
+            <?php elseif( $lists->address->STATE ==  "KY" ): ?>
                 <p>Kentucky</p>
-            <?php elseif( $list->address->STATE ==  "LA" ): ?>
+            <?php elseif( $lists->address->STATE ==  "LA" ): ?>
                 <p>Louisiana</p>
-            <?php elseif( $list->address->STATE ==  "MA" ): ?>
+            <?php elseif( $lists->address->STATE ==  "MA" ): ?>
                 <p>Massachusetts</p>
-            <?php elseif( $list->address->STATE ==  "MD" ): ?>
+            <?php elseif( $lists->address->STATE ==  "MD" ): ?>
                 <p>Maryland</p>
-            <?php elseif( $list->address->STATE ==  "ME" ): ?>
+            <?php elseif( $lists->address->STATE ==  "ME" ): ?>
                 <p>Maine</p>
-            <?php elseif( $list->address->STATE ==  "MI" ): ?>
+            <?php elseif( $lists->address->STATE ==  "MI" ): ?>
                 <p>Michigan</p>
-            <?php elseif( $list->address->STATE ==  "MN" ): ?>
+            <?php elseif( $lists->address->STATE ==  "MN" ): ?>
                 <p>Mississippi</p>
-            <?php elseif( $list->address->STATE ==  "MO" ): ?>
+            <?php elseif( $lists->address->STATE ==  "MO" ): ?>
                 <p>Missouri</p>
-            <?php elseif( $list->address->STATE ==  "MT" ): ?>
+            <?php elseif( $lists->address->STATE ==  "MT" ): ?>
                 <p>Montana</p>
-            <?php elseif( $list->address->STATE ==  "NC" ): ?>
+            <?php elseif( $lists->address->STATE ==  "NC" ): ?>
                 <p>North Carolina</p>
-            <?php elseif( $list->address->STATE ==  "ND" ): ?>
+            <?php elseif( $lists->address->STATE ==  "ND" ): ?>
                 <p>North Dakota</p>
-            <?php elseif( $list->address->STATE ==  "NE" ): ?>
+            <?php elseif( $lists->address->STATE ==  "NE" ): ?>
                 <p>Nebraska</p>
-            <?php elseif( $list->address->STATE ==  "NH" ): ?>
+            <?php elseif( $lists->address->STATE ==  "NH" ): ?>
                 <p>New Hampshire</p>
-            <?php elseif( $list->address->STATE ==  "NJ" ): ?>
+            <?php elseif( $lists->address->STATE ==  "NJ" ): ?>
                 <p>New Jersey</p>
-            <?php elseif( $list->address->STATE ==  "NM" ): ?>
+            <?php elseif( $lists->address->STATE ==  "NM" ): ?>
                 <p>New Mexico</p>
-            <?php elseif( $list->address->STATE ==  "NV" ): ?>
+            <?php elseif( $lists->address->STATE ==  "NV" ): ?>
                 <p>Nevada</p>
-            <?php elseif( $list->address->STATE ==  "NY" ): ?>
+            <?php elseif( $lists->address->STATE ==  "NY" ): ?>
                 <p>New York</p>
-            <?php elseif( $list->address->STATE ==  "OH" ): ?>
+            <?php elseif( $lists->address->STATE ==  "OH" ): ?>
                 <p>Ohio</p>
-            <?php elseif( $list->address->STATE ==  "OK" ): ?>
+            <?php elseif( $lists->address->STATE ==  "OK" ): ?>
                 <p>Oklahoma</p>
-            <?php elseif( $list->address->STATE ==  "OR" ): ?>
+            <?php elseif( $lists->address->STATE ==  "OR" ): ?>
                 <p>Oregon</p>
-            <?php elseif( $list->address->STATE ==  "PA" ): ?>
+            <?php elseif( $lists->address->STATE ==  "PA" ): ?>
                 <p>Pennsylvania</p>
-            <?php elseif( $list->address->STATE ==  "PR" ): ?>
+            <?php elseif( $lists->address->STATE ==  "PR" ): ?>
                 <p>Puerto Rico</p>
-            <?php elseif( $list->address->STATE ==  "RI" ): ?>
+            <?php elseif( $lists->address->STATE ==  "RI" ): ?>
                 <p>Rhode Island</p>
-            <?php elseif( $list->address->STATE ==  "RI" ): ?>
+            <?php elseif( $lists->address->STATE ==  "RI" ): ?>
                 <p>South Carolina</p>
-            <?php elseif( $list->address->STATE ==  "SD" ): ?>
+            <?php elseif( $lists->address->STATE ==  "SD" ): ?>
                 <p>South Dakota</p>
-            <?php elseif( $list->address->STATE ==  "TN" ): ?>
+            <?php elseif( $lists->address->STATE ==  "TN" ): ?>
                 <p>Tennessee</p>
-            <?php elseif( $list->address->STATE ==  "TX" ): ?>
+            <?php elseif( $lists->address->STATE ==  "TX" ): ?>
                 <p>Texas</p>
-            <?php elseif( $list->address->STATE ==  "UT" ): ?>
+            <?php elseif( $lists->address->STATE ==  "UT" ): ?>
                 <p>Utah</p>
-            <?php elseif( $list->address->STATE ==  "VA" ): ?>
+            <?php elseif( $lists->address->STATE ==  "VA" ): ?>
                 <p>Virginia</p>
-            <?php elseif( $list->address->STATE ==  "VI" ): ?>
+            <?php elseif( $lists->address->STATE ==  "VI" ): ?>
                 <p>Virgin Islands</p>
-            <?php elseif( $list->address->STATE ==  "VT" ): ?>
+            <?php elseif( $lists->address->STATE ==  "VT" ): ?>
                 <p>Vermont</p>
-            <?php elseif( $list->address->STATE ==  "WA" ): ?>
+            <?php elseif( $lists->address->STATE ==  "WA" ): ?>
                 <p>Washington</p>
-            <?php elseif( $list->address->STATE ==  "WI" ): ?>
+            <?php elseif( $lists->address->STATE ==  "WI" ): ?>
                 <p>Wisconsin</p>
-            <?php elseif( $list->address->STATE ==  "WV" ): ?>
+            <?php elseif( $lists->address->STATE ==  "WV" ): ?>
                 <p>West Virginia</p>
-            <?php elseif( $list->address->STATE ==  "WY" ): ?>
+            <?php elseif( $lists->address->STATE ==  "WY" ): ?>
                 <p>Wyoming</p>
             <?php endif; ?>
         </div>
         <div class="form-flex-box-text-item">
             <span>Zip Code</span>
-            <p><?php echo e($list->address->ZIP_CODE); ?></p>
+            <p><?php echo e($lists->address->ZIP_CODE); ?></p>
         </div>
         
         <div class="form-btn-flex-between pt-2">
-            <a href="<?php echo e(url('investor-list')); ?>" class="form-cancel-btn">Home</a>
+            <a href="<?php echo e(url('investor-lists')); ?>" class="form-cancel-btn">Home</a>
             <a href="<?php echo e(url('new-partner-registration')); ?>" class="form-submit-btn">Add Investor</a>
          </div>
     </div>
     
  </div>  
- <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </section>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/investor/investor-view.blade.php ENDPATH**/ ?>

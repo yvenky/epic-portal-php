@@ -78,148 +78,41 @@
        // Specify validation rules
        errorElement: "p",
        rules: {
-         partner_individual_first_name: {
-           required: true,
-         },
-         partner_individual_last_name: {
-           required: true,
-         },
-         partner_individual_employment_status: {
-           required: true,
-         },
-         partner_individual_household_income: {
-           required: true,
-         },
-         partner_individual_email_address: {
-           required: true,
-           email: true
-         },
-         // Step 2
-         partner_individual_spouse_first_name: {
-           required: true,
-         },
-         partner_individual_spouse_last_name: {
-           required: true,
-         },
-         partner_individual_employment_status_spouse: {
-           required: true,
-         },
-         partner_individual_spouse_email_address: {
-           required: true,
-           email: true
-         },
-         // Step 3
-         partner_individual_street: {
-           required: true,
-         },
-         partner_individual_city: {
-           required: true,
-         },
-         partner_individual_state: {
-           required: true,
-         },
-         partner_individual_zip_code: {
-           required: true,
-           minlength:5,
-           maxlength:5,
-           digits:true
-         }
-       },
-
-       // Specify validation error messages
-       messages: {
-         // Step 1
-         partner_individual_first_name: 		"First name is required",
-         partner_individual_last_name: 		"Last name is required",
-         partner_individual_email_address: {
-           required: 	"Email is required",
-           email: 		"Please enter a valid e-mail",
-         },
-         partner_individual_employment_status: {
-           required: "Please Select Employment Status"
-         },
-         partner_individual_household_income: {
-           required: "Please Select Household Income"
-         },
-         // Step 2
-         partner_individual_spouse_first_name: {
-           required: "Spouse First name is required",
-         },
-         partner_individual_spouse_last_name: {
-           required: "Spouse Last name is required"
-         },
-         partner_individual_employment_status_spouse: {
-           required: "Please Select Spouse Employment Status"
-         },
-         partner_individual_spouse_email_address: {
-           required: 	"Email is required",
-           email: 		"Please enter a valid e-mail",
-         },
-         // Step 3
-         partner_individual_street: {
-           required: "Street is required"
-         },
-         partner_individual_city: {
-           required: "City is required"
-         },
-         partner_individual_state: {
-           required: "State is required"
-         },
-         partner_individual_zip_code:{
-           required: 	"Zip Code is requied",
-           maxlength: 	"Zip code must be 5 digits",
-           minlength: 	"Zip code must be 5 digits",
-           digits: 	"Please enter a valid zip code"
-         }
-       }
-   }
-
-   if( jQuery("#new-partner-invidual-registration-form").length > 0)  {
-     $("#new-partner-invidual-registration-form").multiStepForm(
-       {
-         beforeSubmit : function(form, submit){
-         
-         },
-         validations:val,
-       }
-     ).navigateTo(0);      
-   }
-
-
-   if( jQuery("#investor-edit-form-modal").length > 0)  {
-
-    jQuery("#investor-edit-form-modal").validate({
-      errorElement: "p",
-      rules: {
-        partner_individual_first_name: {
+        FIRST_NAME: {
           required: true,
         },
-        partner_individual_last_name: {
+        LAST_NAME: {
           required: true,
         },
-        partner_individual_employment_status: {
-          required: true,
-        },
-        partner_individual_household_income: {
-          required: true,
-        },
-        partner_individual_email_address: {
+        EMAIL_ADDRESS: {
           required: true,
           email: true
+        },
+        EMPLOYMENT_STATUS: {
+          required: true,
+        },
+        HOUSEHOLD_INCOME: {
+          required: true,
+        },
+        PHONE_NUMBER: {
+          required: true,
         },
         // Step 2
-        partner_individual_spouse_first_name: {
+        SPOUSE_FIRSTNAME: {
           required: true,
         },
-        partner_individual_spouse_last_name: {
+        SPOUSE_LASTNAME: {
           required: true,
         },
-        partner_individual_employment_status_spouse: {
+        SPOUSE_EMPLOYMENT_STATUS: {
           required: true,
         },
-        partner_individual_spouse_email_address: {
+        SPOUSE_EMAIL: {
           required: true,
           email: true
+        },
+        SPOUSE_PHONE_NO: {
+          required: true,
         },
         // Step 3
         partner_individual_street: {
@@ -242,30 +135,161 @@
       // Specify validation error messages
       messages: {
         // Step 1
-        partner_individual_first_name: 		"First name is required",
-        partner_individual_last_name: 		"Last name is required",
-        partner_individual_email_address: {
+        FIRST_NAME: 		"First name is required",
+        LAST_NAME: 		"Last name is required",
+        EMAIL_ADDRESS: {
           required: 	"Email is required",
           email: 		"Please enter a valid e-mail",
         },
-        partner_individual_employment_status: {
+        EMPLOYMENT_STATUS: {
           required: "Please Select Employment Status"
         },
-        partner_individual_household_income: {
+        HOUSEHOLD_INCOME: {
           required: "Please Select Household Income"
         },
+        PHONE_NUMBER: {
+          required: "Phone number is required"
+        },
         // Step 2
-        partner_individual_spouse_first_name: {
+        SPOUSE_FIRSTNAME: {
           required: "Spouse First name is required",
         },
-        partner_individual_spouse_last_name: {
+        SPOUSE_LASTNAME: {
           required: "Spouse Last name is required"
         },
-        partner_individual_employment_status_spouse: {
+        SPOUSE_EMPLOYMENT_STATUS: {
           required: "Please Select Spouse Employment Status"
         },
-        partner_individual_spouse_email_address: {
+        SPOUSE_PHONE_NO: {
+          required: "Spouse Phone number is required"
+        },
+        SPOUSE_EMAIL: {
+          required: 	"Spouse Email is required",
+          email: 		"Please enter a valid e-mail",
+        },
+        // Step 3
+        partner_individual_street: {
+          required: "Street is required"
+        },
+        partner_individual_city: {
+          required: "City is required"
+        },
+        partner_individual_state: {
+          required: "State is required"
+        },
+        partner_individual_zip_code:{
+          required: 	"Zip Code is requied",
+          maxlength: 	"Zip code must be 5 digits",
+          minlength: 	"Zip code must be 5 digits",
+          digits: 	"Please enter a valid zip code"
+        }
+      }
+   }
+
+   if( jQuery("#new-partner-invidual-registration-form").length > 0)  {
+     $("#new-partner-invidual-registration-form").multiStepForm(
+       {
+         beforeSubmit : function(form, submit){
+         
+         },
+         validations:val,
+       }
+     ).navigateTo(0);      
+   }
+
+
+   if( jQuery("#investor-edit-form-modal").length > 0)  {
+
+    jQuery("#investor-edit-form-modal").validate({
+      errorElement: "p",
+      rules: {
+        FIRST_NAME: {
+          required: true,
+        },
+        LAST_NAME: {
+          required: true,
+        },
+        EMAIL_ADDRESS: {
+          required: true,
+          email: true
+        },
+        EMPLOYMENT_STATUS: {
+          required: true,
+        },
+        HOUSEHOLD_INCOME: {
+          required: true,
+        },
+        PHONE_NUMBER: {
+          required: true,
+        },
+        // Step 2
+        SPOUSE_FIRSTNAME: {
+          required: true,
+        },
+        SPOUSE_LASTNAME: {
+          required: true,
+        },
+        SPOUSE_EMPLOYMENT_STATUS: {
+          required: true,
+        },
+        SPOUSE_EMAIL: {
+          required: true,
+          email: true
+        },
+        SPOUSE_PHONE_NO: {
+          required: true,
+        },
+        // Step 3
+        partner_individual_street: {
+          required: true,
+        },
+        partner_individual_city: {
+          required: true,
+        },
+        partner_individual_state: {
+          required: true,
+        },
+        partner_individual_zip_code: {
+          required: true,
+          minlength:5,
+          maxlength:5,
+          digits:true
+        }
+      },
+
+      // Specify validation error messages
+      messages: {
+        // Step 1
+        FIRST_NAME: 		"First name is required",
+        LAST_NAME: 		"Last name is required",
+        EMAIL_ADDRESS: {
           required: 	"Email is required",
+          email: 		"Please enter a valid e-mail",
+        },
+        EMPLOYMENT_STATUS: {
+          required: "Please Select Employment Status"
+        },
+        HOUSEHOLD_INCOME: {
+          required: "Please Select Household Income"
+        },
+        PHONE_NUMBER: {
+          required: "Phone number is required"
+        },
+        // Step 2
+        SPOUSE_FIRSTNAME: {
+          required: "Spouse First name is required",
+        },
+        SPOUSE_LASTNAME: {
+          required: "Spouse Last name is required"
+        },
+        SPOUSE_EMPLOYMENT_STATUS: {
+          required: "Please Select Spouse Employment Status"
+        },
+        SPOUSE_PHONE_NO: {
+          required: "Spouse Phone number is required"
+        },
+        SPOUSE_EMAIL: {
+          required: 	"Spouse Email is required",
           email: 		"Please enter a valid e-mail",
         },
         // Step 3
