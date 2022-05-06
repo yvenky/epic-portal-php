@@ -40,7 +40,6 @@ class investorController extends Controller
             'SPOUSE_PHONE_NO'           => 'required',
             'SPOUSE_EMPLOYMENT_STATUS'  => 'required',
             'partner_individual_state'  => 'required',
-       
         ]);
 
         $data_new  = new INVESTOR();
@@ -85,7 +84,7 @@ class investorController extends Controller
     {
         $lists=INVESTOR::all();
 
-        return view('test',['lists' => $lists ]);
+        return view('backend.template.investor.investor-view',['lists' => $lists ]);
     }
 
     /**
@@ -96,7 +95,9 @@ class investorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $lists=INVESTOR::find($id);
+      
+        return view('backend.template.investor.investor-edit' , ['lists' => $lists]);
     }
 
     /**
@@ -106,9 +107,31 @@ class investorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req, $id)
     {
-        //
+        $lists=INVESTOR::find($id);
+
+        
+        $lists->partner_individual_first_name                  = $req->partner_individual_first_name; 
+        $lists->partner_individual_last_name                   = $req->partner_individual_last_name; 
+        $lists->partner_individual_email_address               = $req->partner_individual_email_address;
+        $lists->partner_individual_spouse_first_name           = $req->partner_individual_spouse_first_name; 
+        $lists->partner_individual_spouse_last_name            = $req->partner_individual_spouse_last_name; 
+        $lists->partner_individual_spouse_email_address        = $req->partner_individual_spouse_email_address;
+        $lists->partner_individual_employment_status           = $req->partner_individual_employment_status; 
+        $lists->partner_individual_household_income            = $req->partner_individual_household_income; 
+        $lists->partner_individual_employment_status_spouse    = $req->partner_individual_employment_status_spouse; 
+        $lists->partner_individual_street                      = $req->partner_individual_street;
+        $lists->partner_individual_zip_code                    = $req->partner_individual_zip_code; 
+        $lists->partner_individual_city                        = $req->partner_individual_city; 
+        $lists->partner_individual_state                       = $req->partner_individual_state;
+   
+        $lists->update();
+       // return back()->with('success-message-edit','Entity Updated Successfully');
+
+        $full_name =  $lists->partner_individual_first_name . " " .  $lists->partner_individual_last_name;
+        
+        return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
     }
 
     /**

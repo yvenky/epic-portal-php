@@ -23,7 +23,6 @@ Route::get('/', function () {
     return view('index');	
 });	
 
-Route::get('/test', [investorController::class,'show']);	
 
 
 // Entity routing	
@@ -41,14 +40,14 @@ Route::get('entity-submit-confirmation/{id}', [newentitycontroller::class, 'conf
 
 //New partner registration routing	
 
-Route::get('/new-partner-registration', [newPartnerRegistrationInd::class, 'index']);	
-Route::post('/new-partner-registration-submit', [newPartnerRegistrationInd ::class, 'create']);	
-Route::get('/investor-list', [newPartnerRegistrationInd ::class, 'showInvestorList']);	
-Route::get('investor-list-delete/{id}', [newPartnerRegistrationInd::class, 'delete']);	
-Route::get('investor-list-edit/{id}', [newPartnerRegistrationInd::class, 'edit']);	
-Route::put('investor-list-update/{id}', [newPartnerRegistrationInd::class, 'update']); 
-Route::get('investor-view/{id}', [newPartnerRegistrationInd::class, 'show']);
-Route::get('investor-submit-confirmation/{id}', [newPartnerRegistrationInd::class, 'confirmation']);
+// Route::get('/new-partner-registration', [newPartnerRegistrationInd::class, 'index']);	
+// Route::post('/new-partner-registration-submit', [newPartnerRegistrationInd ::class, 'create']);	
+// Route::get('/investor-list', [newPartnerRegistrationInd ::class, 'showInvestorList']);	
+// Route::get('investor-list-delete/{id}', [newPartnerRegistrationInd::class, 'delete']);	
+// Route::get('investor-list-edit/{id}', [newPartnerRegistrationInd::class, 'edit']);	
+// Route::put('investor-list-update/{id}', [newPartnerRegistrationInd::class, 'update']); 
+// Route::get('investor-view/{id}', [newPartnerRegistrationInd::class, 'show']);
+// Route::get('investor-submit-confirmation/{id}', [newPartnerRegistrationInd::class, 'confirmation']);
 
 
 // Property CRUD Links
@@ -60,3 +59,13 @@ Route::put('property-list-update/{id}', [PropertyController::class, 'update']);
 Route::get('property-view/{id}', [PropertyController::class, 'show']);
 Route::get('property-list', [PropertyController::class, 'show_list']);
 Route::get('property-list-delete/{id}', [PropertyController::class, 'delete']);	
+
+
+
+/*
+ *  Investor Routes
+*/
+Route::controller(investorController::class)->group(function () {
+    Route::get('/investor-view', 'show');	
+    Route::get('investor-edit/{id}', 'edit');	
+});

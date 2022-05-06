@@ -21,8 +21,6 @@ class ADDRESS extends Model
     'CITY',
     'STATE',
     'ZIP_CODE',
-  
-
 ];
 
 }

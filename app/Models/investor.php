@@ -17,6 +17,7 @@ class INVESTOR extends Model
 
  protected $table ='INVESTOR';
  protected $fillable = [
+    'ID',
     'FIRST_NAME',
     'LAST_NAME',
     'ADDRESS_ID',
@@ -29,7 +30,6 @@ class INVESTOR extends Model
     'SPOUSE_EMAIL',
     'SPOUSE_PHONE_NO',
     'SPOUSE_EMPLOYMENT_STATUS',
-
 ];
 
 public function address()
