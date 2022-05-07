@@ -5,18 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class INVESTOR extends Model
+class investor extends Model
 {
     use HasFactory;
 
     /**
      * The attributes that are mass assignable.
-     *
+     *public function address_all(){
+    return $this->hasMany(ADDRESS::class);
+        }
      * @var array<int, string>
+     * 
      */
 
- protected $table ='INVESTOR';
- public  $timestamps = false;
+ protected $table ='investor';
+ public  $timestamps = true;
  protected $fillable = [
     'FIRST_NAME',
     'LAST_NAME',
@@ -34,6 +37,8 @@ class INVESTOR extends Model
 
 public function address()
 {
-    return $this->belongsTo(ADDRESS::class,'ADDRESS_ID');
+    return $this->hasMany(address::class,'ADDRESS_ID');
 }
+
+
 }

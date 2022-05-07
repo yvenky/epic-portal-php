@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\INVESTOR;
-use App\Models\ADDRESS;
+use App\Models\investor;
+use App\Models\address;
 use App\Models\city;
 use APP\DB;
 
@@ -36,7 +36,7 @@ class investorController extends Controller
             'partner_individual_state'  => 'required',
         ]);
 
-        $data_new  = new INVESTOR();
+        $data_new  = new investor();
         
 
         $data_new -> FIRST_NAME                  = $req-> FIRST_NAME; 
@@ -52,13 +52,12 @@ class investorController extends Controller
         $data_new -> SPOUSE_PHONE_NO             = $req-> SPOUSE_PHONE_NO; 
         $data_new -> SPOUSE_EMPLOYMENT_STATUS    = $req-> SPOUSE_EMPLOYMENT_STATUS; 
 
-        $data_add  = new ADDRESS();
+        $data_add  = new address();
         $data_add -> STREET_1               = $req-> STREET_1; 
         $data_add -> CITY                   = $req-> CITY; 
         $data_add -> STATE                  = $req-> STATE;
         $data_add -> ZIP_CODE               = $req-> ZIP_CODE; 
         
-
         
         $data_new->address()->save($data_add);
     
