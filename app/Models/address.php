@@ -16,12 +16,17 @@ class address extends Model
      * @var array<int, string>
      */
     protected $table = 'address';
-    public  $timestamps = true;
     protected $fillable = [
         'STREET_1',
         'CITY',
         'STATE',
         'ZIP_CODE',
     ];
+
+    public function investor()
+    {
+   
+        return $this->hasMany(investor::class)->withTimestamps();
+    }
 
 }
