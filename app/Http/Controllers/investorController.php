@@ -13,9 +13,9 @@ class investorController extends Controller
 {
     public function index()
     {
-        $lists= INVESTOR::all();
+        
 
-        return view('backend.template.investor.investor-list' , ['lists' => $lists]);
+        return view('backend.template.investor.investor-registration');
     }
 
     public function create(Request $req)
@@ -64,6 +64,12 @@ class investorController extends Controller
         return view('backend.template.investor.investor-view',['lists' => $lists, 'ID' => $id ]);
     }
 
+    public function showList()
+    {
+        $lists= INVESTOR::all();
+
+        return view('backend.template.investor.investor-list' , ['lists' => $lists]);
+    }
     public function edit($id)
     {
         $lists=INVESTOR::find($id);

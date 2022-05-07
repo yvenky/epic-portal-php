@@ -60,7 +60,8 @@ Route::get('property-list-delete/{id}', [PropertyController::class, 'delete']);
  *  Investor Routes
 */
 Route::controller(investorController::class)->group(function () {
-    Route::get('/investor-list', 'index');	
+    Route::get('/investor-registration','index');
+    Route::get('/investor-list', 'showList');
     Route::get('/investor-view/{id}', 'show');	
     Route::get('investor-edit/{id}', 'edit');	
     Route::put('investor-update/{id}','update');

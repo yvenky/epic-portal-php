@@ -53,8 +53,8 @@
                 <nav>
                     <ul>
                         <li class="menu-item-dashboard <?php echo e((request()->is('new-partner-registration')) ? 'active' : ''); ?>">
-                            <a href="<?php echo e(url('new-partner-registration')); ?>">Add Investor</a>
-                            <span><a href="<?php echo e(url('new-partner-registration')); ?>"><i  class="fas fa-user-plus"></i></a></span>
+                            <a href="<?php echo e(url('investor-registration')); ?>">Add Investor</a>
+                            <span><a href="<?php echo e(url('investor-registration')); ?>"><i  class="fas fa-user-plus"></i></a></span>
                             <div class="tooltip-sidebar-link"><p>Add Investor</p></div>
                         </li>
                         <li class="menu-item-dashboard <?php echo e((request()->is('investor-list')) ? 'active' : ''); ?>">
