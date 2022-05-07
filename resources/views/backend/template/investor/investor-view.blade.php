@@ -43,6 +43,10 @@
             <span>Email Address</span>
             <p>{{$lists->EMAIL_ADDRESS}}</p>
         </div>
+        <div class="form-flex-box-text-item">
+            <span>Phone Number</span>
+            <p>{{$lists->PHONE_NUMBER}}</p>
+        </div>
     </div>
 
     <div class="form-heading top-border">
@@ -69,7 +73,10 @@
             <span>Spouse Email Address</span>
             <p>{{$lists->SPOUSE_EMAIL}}</p>
         </div>
-        
+        <div class="form-flex-box-text-item">
+            <span>Spouse Phone Number</span>
+            <p>{{$lists->SPOUSE_PHONE_NO}}</p>
+        </div>
     </div>
     <div class="form-heading top-border">
         <h6>Investor Address  Details</h6>
@@ -81,7 +88,7 @@
         </div>
         <div class="form-flex-box-text-item">
             <span>City</span>
-            <p>{{$lists->partner_individual_city}}</p>
+            <p>{{$lists->address->CITY}}</p>
         </div>
         <div class="form-flex-box-text-item">
             <span>State</span>
@@ -205,7 +212,7 @@
         </div>
         
         <div class="form-btn-flex-between pt-2">
-            <a href="{{url('investor-lists')}}" class="form-cancel-btn">Home</a>
+            <a href="{{url('/')}}" class="form-cancel-btn">Home</a>
             <a href="{{url('new-partner-registration')}}" class="form-submit-btn">Add Investor</a>
          </div>
     </div>

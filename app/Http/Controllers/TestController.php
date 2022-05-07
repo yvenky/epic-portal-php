@@ -18,26 +18,10 @@ class TestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
+        
+    }
 		
 	
-	
-       /**
-        * return cities list
-        *
-        * @return json
-
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
-    {
-       
-       //
-        
-
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -68,7 +52,7 @@ class TestController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

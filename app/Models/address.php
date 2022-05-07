@@ -15,12 +15,12 @@ class ADDRESS extends Model
      *
      * @var array<int, string>
      */
- protected $table = 'ADDRESS';
- protected $fillable = [
-    'STREET_1',
-    'CITY',
-    'STATE',
-    'ZIP_CODE',
-];
-
+    protected $table = 'ADDRESS';
+    public  $timestamps = false;
+    protected $fillable = [
+        'STREET_1',
+        'CITY',
+        'STATE',
+        'ZIP_CODE',
+    ];
 }

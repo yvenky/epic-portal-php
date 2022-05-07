@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;	
 use App\Http\Controllers\newentitycontroller;	
 use App\Http\Controllers\masterTemplate;	
-use App\Http\Controllers\newPartnerRegistrationInd;	
 use App\Http\Controllers\investorController;	
 use App\Http\Controllers\PropertyController;	
 
@@ -43,11 +42,6 @@ Route::get('entity-submit-confirmation/{id}', [newentitycontroller::class, 'conf
 // Route::get('/new-partner-registration', [newPartnerRegistrationInd::class, 'index']);	
 // Route::post('/new-partner-registration-submit', [newPartnerRegistrationInd ::class, 'create']);	
 
-// Route::get('/investor-list', [newPartnerRegistrationInd ::class, 'showInvestorList']);	
-
-
-// Route::get('investor-view/{id}', [newPartnerRegistrationInd::class, 'show']);
-// Route::get('investor-submit-confirmation/{id}', [newPartnerRegistrationInd::class, 'confirmation']);
 
 
 // Property CRUD Links
@@ -71,5 +65,5 @@ Route::controller(investorController::class)->group(function () {
     Route::get('investor-edit/{id}', 'edit');	
     Route::put('investor-update/{id}','update');
     Route::get('investor-delete/{id}', 'delete');
-    //Route::get('investor-submit-confirmation/{id}','confirmation');
+    Route::get('investor-submit-confirmation/{id}','confirmation');
 });

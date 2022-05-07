@@ -3,6 +3,7 @@
 <?php $__env->startSection('main-content'); ?>
 <section class="panel-wrapper panel-center">
  <div class="form-wrapper">
+
     <div class="form-heading details-view-edit-wrap">
         <h6>Investor Details</h6>
         <a href="<?php echo e(url('investor-edit/'.$lists->ID)); ?>" title="Edit Investor"><i class="fa fa-edit"></i></a>
@@ -220,4 +221,4 @@
  </div>  
 </section>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/investor/investor-view.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/investor/investor-submit-confirmation.blade.php ENDPATH**/ ?>

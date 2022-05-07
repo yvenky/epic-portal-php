@@ -1,15 +1,23 @@
 
 
 <?php $__env->startSection('main-content'); ?>
+
 <section class="panel-wrapper panel-center">
+
+    <?php if(Session::has('success-message')): ?> 
+    <div class="alert alert-success" role="alert">
+        <?php echo e(Session::get('success-message')); ?>
+
+      </div>
+     <?php endif; ?> 
     <div class="form-wrapper">
         <div class="form-heading details-view-edit-wrap">
-            <h6>Property Details</h6>
+            <h6>Property  Details</h6>
             <a href="<?php echo e(url('property-list-edit/'.$lists->id)); ?>" title="Edit Property"><i class="fa fa-edit"></i></a>
         </div>
         <div class="form-content">
-           
-        <?php if( $lists->property_address ): ?>
+
+            <?php if( $lists->property_address ): ?>
                 <div class="form-flex-box-text-item">
                     <span>Property Address</span>
                     <p><?php echo e($lists->property_address); ?></p>
@@ -71,9 +79,10 @@
                 <p><a href="https://<?php echo e($lists->property_attorney_feedback); ?>" target="_blank">Attorney Feedback</a></p>
             </div>
             <?php endif; ?>
+
         </div>
         <div class="form-content">
-            <div class="form-btn-flex-between pt-2">
+            <div class="form-btn-flex-between pt-4">
                 <a href="<?php echo e(url()->previous()); ?>" class="form-cancel-btn">Cancel</a>
                 <a href="<?php echo e(url('add-new-property')); ?>" class="form-submit-btn">Add Property</a>
              </div>
@@ -82,4 +91,4 @@
    
 </section>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views\backend\template\property\property-view.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/property/property-submit-confirmation.blade.php ENDPATH**/ ?>

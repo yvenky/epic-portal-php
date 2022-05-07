@@ -12,10 +12,9 @@
         <div class="form-heading">
             <h6>Your Details</h6>
         </div>
-        <!-- {{$lists->SPOUSE_EMPLOYMENT_STATUS}} -->
         <form action="{{url('investor-update/'.$lists->ID)}}" method="POST" id="investor-edit-form-modal">
-            @csrf
-            @method('PUT')
+                @csrf
+                @method('PUT')
                 <div class="form-content pb-0">
                     <div class="row">
                         <div class="col-lg-6">
@@ -40,6 +39,7 @@
                                 <select name="EMPLOYMENT_STATUS" class="form-select" value="{{$lists->EMPLOYMENT_STATUS}}"aria-label="Default select example">
                                     <option value="SE" {{$lists->EMPLOYMENT_STATUS == "SE" ? 'selected': ''}}>Self Employed</option>
                                     <option value="W2" {{$lists->EMPLOYMENT_STATUS == "W2" ? 'selected': ''}}>W2</option>
+                                    <option value="F" {{$lists->EMPLOYMENT_STATUS == "F" ? 'selected': ''}}>F</option>
                                     <option value="HM" {{$lists->EMPLOYMENT_STATUS == "HM" ? 'selected': ''}}>Home Maker</option>
                                 </select>
                             </div>
@@ -94,6 +94,7 @@
                                 <select name="SPOUSE_EMPLOYMENT_STATUS" class="form-select" value="{{$lists->SPOUSE_EMPLOYMENT_STATUS }}" aria-label="Default select example">
                                     <option value="SE" {{$lists->SPOUSE_EMPLOYMENT_STATUS  == "SE" ? 'selected': ''}}>Self Employed</option>
                                     <option value="W2" {{$lists->SPOUSE_EMPLOYMENT_STATUS  == "W2" ? 'selected': ''}}>W2</option>
+                                    <option value="F" {{$lists->SPOUSE_EMPLOYMENT_STATUS  == "F" ? 'selected': ''}}>F</option>
                                     <option value="HM" {{$lists->SPOUSE_EMPLOYMENT_STATUS  == "HM" ? 'selected': ''}}>Home Maker</option>
                                 </select>
                             </div>

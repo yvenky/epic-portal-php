@@ -13,10 +13,9 @@
         <div class="form-heading">
             <h6>Your Details</h6>
         </div>
-        <!-- <?php echo e($lists->SPOUSE_EMPLOYMENT_STATUS); ?> -->
         <form action="<?php echo e(url('investor-update/'.$lists->ID)); ?>" method="POST" id="investor-edit-form-modal">
-            <?php echo csrf_field(); ?>
-            <?php echo method_field('PUT'); ?>
+                <?php echo csrf_field(); ?>
+                <?php echo method_field('PUT'); ?>
                 <div class="form-content pb-0">
                     <div class="row">
                         <div class="col-lg-6">
@@ -41,6 +40,7 @@
                                 <select name="EMPLOYMENT_STATUS" class="form-select" value="<?php echo e($lists->EMPLOYMENT_STATUS); ?>"aria-label="Default select example">
                                     <option value="SE" <?php echo e($lists->EMPLOYMENT_STATUS == "SE" ? 'selected': ''); ?>>Self Employed</option>
                                     <option value="W2" <?php echo e($lists->EMPLOYMENT_STATUS == "W2" ? 'selected': ''); ?>>W2</option>
+                                    <option value="F" <?php echo e($lists->EMPLOYMENT_STATUS == "F" ? 'selected': ''); ?>>F</option>
                                     <option value="HM" <?php echo e($lists->EMPLOYMENT_STATUS == "HM" ? 'selected': ''); ?>>Home Maker</option>
                                 </select>
                             </div>
@@ -95,6 +95,7 @@
                                 <select name="SPOUSE_EMPLOYMENT_STATUS" class="form-select" value="<?php echo e($lists->SPOUSE_EMPLOYMENT_STATUS); ?>" aria-label="Default select example">
                                     <option value="SE" <?php echo e($lists->SPOUSE_EMPLOYMENT_STATUS  == "SE" ? 'selected': ''); ?>>Self Employed</option>
                                     <option value="W2" <?php echo e($lists->SPOUSE_EMPLOYMENT_STATUS  == "W2" ? 'selected': ''); ?>>W2</option>
+                                    <option value="F" <?php echo e($lists->SPOUSE_EMPLOYMENT_STATUS  == "F" ? 'selected': ''); ?>>F</option>
                                     <option value="HM" <?php echo e($lists->SPOUSE_EMPLOYMENT_STATUS  == "HM" ? 'selected': ''); ?>>Home Maker</option>
                                 </select>
                             </div>
