@@ -61,10 +61,11 @@ Route::get('property-list-delete/{id}', [PropertyController::class, 'delete']);
 */
 Route::controller(investorController::class)->group(function () {
     Route::get('/investor-registration','index');
+    Route::post('/investor-submit','create');
     Route::get('/investor-list', 'showList');
     Route::get('/investor-view/{id}', 'show');	
     Route::get('investor-edit/{id}', 'edit');	
     Route::put('investor-update/{id}','update');
     Route::get('investor-delete/{id}', 'delete');
-    Route::get('investor-submit-confirmation/{id}','confirmation');
+    //Route::get('investor-submit-confirmation/{id}','confirmation');
 });

@@ -3,11 +3,16 @@
 @section('main-content')
 
 <section class="panel-wrapper panel-center">
+    @if(Session::has('success-message')) 
+    <div class="alert alert-success" role="alert">
+        {{Session::get('success-message')}}
+      </div>
+     @endif 
     <div class="form-wrapper">
         <div class="form-heading">
             <h6>Investor Invidual Registration</h6>
         </div>
-        <form id="new-partner-invidual-registration-form" action="{{url('new-partner-registration-submit')}}" method="POST" accept-charset="UTF-8">
+        <form id="new-partner-invidual-registration-form" action="{{url('/investor-submit')}}" method="POST" accept-charset="UTF-8">
            {{ csrf_field() }}
             <div class="step-wrapper">
                 <span class="step">Your Details</span>
@@ -21,7 +26,7 @@
                             <div class="form-flex-item-box">
                                 <fieldset>
                                     <label for="partner_individual_first_name">First Name</label>
-                                    <input type="text" class="form-control" name="partner_individual_first_name" id="partner_individual_first_name">
+                                    <input type="text" class="form-control" name="FIRST_NAME" id="partner_individual_first_name">
                                 </fieldset>
                             </div>
                         </div>
@@ -29,14 +34,14 @@
                             <div class="form-flex-item-box">
                                 <fieldset>
                                     <label for="partner_individual_last_name">Last Name</label>
-                                    <input type="text" class="form-control" name="partner_individual_last_name" id="partner_individual_last_name">
+                                    <input type="text" class="form-control" name="LAST_NAME" id="partner_individual_last_name">
                                 </fieldset>
                             </div>
                         </div>                                               
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="partner_individual_employment_status">Employment Status</label>
-                                <select name="partner_individual_employment_status" class="form-select select-dropdown-obj select2" id="partner_individual_employment_status" aria-label="Default select example">
+                                <select name="EMPLOYMENT_STATUS" class="form-select select-dropdown-obj select2" id="partner_individual_employment_status" aria-label="Default select example">
                                     <option value="">Please Select</option>
                                     <option value="SE">Self Employed</option>
                                     <option value="W2">W2</option>
@@ -47,7 +52,7 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="partner_individual_household_income">Household Income</label>
-                                <select name="partner_individual_household_income" class="form-select select-dropdown-obj select2" id="partner_individual_household_income" aria-label="Default select example">
+                                <select name="HOUSEHOLD_INCOME" class="form-select select-dropdown-obj select2" id="partner_individual_household_income" aria-label="Default select example">
                                     <option value="">Please Select</option>
                                     <option value="0">Upto 100000</option>
                                     <option value="1">100000 to 200000</option>
@@ -61,7 +66,13 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_email_address">Email Address</label>
-                                <input type="text" class="form-control required" name="partner_individual_email_address" id="partner_individual_email_address">
+                                <input type="text" class="form-control required" name="EMAIL_ADDRESS" id="partner_individual_email_address">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-flex-item-box">
+                                <label for="partner_individual_PHONE_NUMBER">Phone Number</label>
+                                <input type="text" class="form-control required" name="PHONE_NUMBER" id="partner_individual_PHONE_NUMBER">
                             </div>
                         </div>
                     </div>
@@ -73,19 +84,19 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_spouse_first_name">Spouse First Name</label>
-                                <input type="text" class="form-control" placeholder="" name="partner_individual_spouse_first_name" id="partner_individual_spouse_first_name">
+                                <input type="text" class="form-control" placeholder="" name="SPOUSE_FIRSTNAME" id="partner_individual_spouse_first_name">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_spouse_last_name">Spouse Last Name</label>
-                                <input type="text" class="form-control" name="partner_individual_spouse_last_name" id="partner_individual_spouse_last_name">
+                                <input type="text" class="form-control" name="SPOUSE_LASTNAME" id="partner_individual_spouse_last_name">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="partner_individual_employment_status_spouse">Employment Status</label>
-                                <select name="partner_individual_employment_status_spouse" class="form-select select-dropdown-obj" id="partner_individual_employment_status_spouse"  aria-label="Default select example">
+                                <select name="SPOUSE_EMPLOYMENT_STATUS" class="form-select select-dropdown-obj" id="partner_individual_employment_status_spouse"  aria-label="Default select example">
                                     <option value="">Please Select</option>
                                     <option value="SE">Self Employed</option>
                                     <option value="W2">W2</option>
@@ -96,7 +107,13 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_spouse_email_address">Email Address</label>
-                                <input type="text" class="form-control" name="partner_individual_spouse_email_address" id="partner_individual_spouse_email_address">
+                                <input type="text" class="form-control" name="SPOUSE_EMAIL" id="partner_individual_spouse_email_address">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-flex-item-box">
+                                <label for="partner_individual_spouse_phone_no">Phone Number</label>
+                                <input type="text" class="form-control" name="SPOUSE_PHONE_NO" id="partner_individual_spouse_phone_no">
                             </div>
                         </div>
                     </div>
@@ -108,20 +125,20 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_street_1">Street</label>
-                                <input type="text" class="form-control" name="partner_individual_street" id="partner_individual_street_1">
+                                <input type="text" class="form-control" name="STREET_1" id="partner_individual_street_1">
                                
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_city">City</label>
-                                <input type="text" class="form-control" name="partner_individual_city" id="partner_individual_city">
+                                <input type="text" class="form-control" name="CITY" id="partner_individual_city">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="partner_individual_state">State</label>
-                                <select name="partner_individual_state" class="form-select select2 select-matcher-obj" id="partner_individual_state"  data-select2-id="partner_individual_state_select"  aria-label="Default select example">
+                                <select name="STATE" class="form-select select2 select-matcher-obj" id="partner_individual_state"  data-select2-id="partner_individual_state_select"  aria-label="Default select example">
                                     <optgroup label="Please Select State" data-select2-id="partner_individual_state_select">
                                         <option value="">Please Select</option>
                                         <option value="AA">Armed Forces America</option>
@@ -188,7 +205,7 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_zip_code">Zip Code</label>
-                                <input type="text" class="form-control"  name="partner_individual_zip_code" id="partner_individual_zip_code">
+                                <input type="text" class="form-control"  name="ZIP_CODE" id="partner_individual_zip_code">
                             </div>
                         </div>
                     </div>

@@ -23,4 +23,5 @@ class ADDRESS extends Model
         'STATE',
         'ZIP_CODE',
     ];
+
 }

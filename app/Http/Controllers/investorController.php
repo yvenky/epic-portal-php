@@ -37,6 +37,7 @@ class investorController extends Controller
         ]);
 
         $data_new  = new INVESTOR();
+        
 
         $data_new -> FIRST_NAME                  = $req-> FIRST_NAME; 
         $data_new -> LAST_NAME                   = $req-> LAST_NAME; 
@@ -50,11 +51,19 @@ class investorController extends Controller
         $data_new -> SPOUSE_EMAIL                = $req-> SPOUSE_EMAIL; 
         $data_new -> SPOUSE_PHONE_NO             = $req-> SPOUSE_PHONE_NO; 
         $data_new -> SPOUSE_EMPLOYMENT_STATUS    = $req-> SPOUSE_EMPLOYMENT_STATUS; 
-        $data_new -> partner_individual_state    = $req-> partner_individual_state; 
+
+        $data_add  = new ADDRESS();
+        $data_add -> STREET_1               = $req-> STREET_1; 
+        $data_add -> CITY                   = $req-> CITY; 
+        $data_add -> STATE                  = $req-> STATE;
+        $data_add -> ZIP_CODE               = $req-> ZIP_CODE; 
         
-        $data_new ->save();
+
+        
+        $data_new->address()->save($data_add);
     
-      return redirect('investor-submit-confirmation/'. $data_new->id )->with('success-message', 'New Investor Added Successfully');
+      return redirect('investor-list')->with('success-message', 'New Investor Added Successfully');
+     //return back()->with(['success-message' => 'New Investor Added Successfully']);
     }
 
     public function show($id)
@@ -105,12 +114,12 @@ class investorController extends Controller
         return back()->with('success-message-delete', $full_name.' Deleted Successfully');
     }
 
-    public function confirmation($id )
+    /*public function confirmation($id )
     {
         $lists=INVESTOR::find($id);
           
         return view('backend.template.investor.investor-submit-confirmation' , ['lists' => $lists]);
         
-    }
+    }*/
 
 }

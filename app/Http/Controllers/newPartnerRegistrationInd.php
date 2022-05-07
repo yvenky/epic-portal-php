@@ -64,7 +64,7 @@ class newPartnerRegistrationInd extends Controller
         
         $data_new ->save();
     
-      return redirect('investor-submit-confirmation/'. $data_new->id )->with('success-message', 'New Investor Added Successfully');
+      //return redirect('investor-submit-confirmation/'. $data_new->id )->with('success-message', 'New Investor Added Successfully');
     }
     /**
      * Store a newly created resource in storage.
