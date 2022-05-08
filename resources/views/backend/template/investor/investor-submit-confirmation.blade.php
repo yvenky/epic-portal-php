@@ -2,6 +2,11 @@
 
 @section('main-content')
 <section class="panel-wrapper panel-center">
+    @if(Session::has('success-message')) 
+    <div class="alert alert-success" role="alert">
+        {{Session::get('success-message')}}
+      </div>
+     @endif 
  <div class="form-wrapper">
 
     <div class="form-heading details-view-edit-wrap">

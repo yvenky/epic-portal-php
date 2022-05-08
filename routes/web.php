@@ -58,7 +58,7 @@ Route::get('property-list-delete/{id}', [PropertyController::class, 'delete']);
 
 /*
  *  Investor Routes
-*/
+
 Route::controller(investorController::class)->group(function () {
     Route::get('/investor-registration','index');
     Route::post('/investor-submit','create');
@@ -67,5 +67,16 @@ Route::controller(investorController::class)->group(function () {
     Route::get('investor-edit/{id}', 'edit');	
     Route::put('investor-update/{id}','update');
     Route::get('investor-delete/{id}', 'delete');
-    //Route::get('investor-submit-confirmation/{id}','confirmation');
+    Route::get('investor-submit-confirmation/{id}','confirmation');
 });
+*/
+// investor CRUD Links
+
+Route::get('/investor-registration', [investorController::class, 'index']);
+Route::post('/investor-submit', [investorController::class, 'store']);	
+Route::get('investor-submit-confirmation/{id}', [investorController::class, 'confirmation']);
+Route::get('investor-edit/{id}', [investorController::class, 'edit']);
+Route::put('investor-update/{id}', [investorController::class, 'update']);
+Route::get('/investor-view/{id}', [investorController::class, 'show']);
+Route::get('/investor-list', [investorController::class, 'showList']);
+Route::get('investor-delete/{id}', [investorController::class, 'delete']);	

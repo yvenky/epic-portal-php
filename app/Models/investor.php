@@ -36,12 +36,16 @@ class investor extends Model
      * Get the user that owns the investor
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
+   */
     public function address()
     {
    
-        return $this->belongsToMany(address::class,'ADDRESS_ID')->withTimestamps();
+        return $this->belongsTo(address::class,'ADDRESS_ID');
     }
-
+  
+    public function address_all()
+    {
+    return $this->belongsToMany('App\address');
+    }
 
 }

@@ -24,9 +24,8 @@ class address extends Model
     ];
 
     public function investor()
-    {
-   
-        return $this->hasMany(investor::class)->withTimestamps();
-    }
+{
+    return $this->hasMany('App\investor');
+}
 
 }

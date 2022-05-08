@@ -18,7 +18,7 @@ class investorController extends Controller
         return view('backend.template.investor.investor-registration');
     }
 
-    public function create(Request $req)
+    public function store(Request $req)
     {
         $req->validate([
             'FIRST_NAME'                => 'required',
@@ -51,19 +51,37 @@ class investorController extends Controller
         $data_new -> SPOUSE_EMAIL                = $req-> SPOUSE_EMAIL; 
         $data_new -> SPOUSE_PHONE_NO             = $req-> SPOUSE_PHONE_NO; 
         $data_new -> SPOUSE_EMPLOYMENT_STATUS    = $req-> SPOUSE_EMPLOYMENT_STATUS; 
+        $data_new -> STREET_1             = $req->input('STREET_1'); 
+        $data_new -> CITY            = $req-> $req->input('CITY');
+        $data_new -> STATE             = $req-> $req->input('STATE');
+        $data_new -> ZIP_CODE              =$req->input('ZIP_CODE'); 
 
-        $data_add  = new address();
-        $data_add -> STREET_1               = $req-> STREET_1; 
+        
+         $data_new->save();
+
+     
+      /*  
+       $data_add  = new address();$data_add -> STREET_1               = $req-> STREET_1; 
         $data_add -> CITY                   = $req-> CITY; 
         $data_add -> STATE                  = $req-> STATE;
         $data_add -> ZIP_CODE               = $req-> ZIP_CODE; 
+        $data_add->CITY= $req->input('CITY');
+        $data_add->STATE = $req->input('STATE');
+        $data_add->ZIP_CODE  = $req->input('ZIP_CODE');
+      
         
-        
-        $data_new->address()->save($data_add);
+        $data_new->address_all()->save($data_add);
+        //$data_add>save();
     
-      return redirect('investor-list')->with('success-message', 'New Investor Added Successfully');
-     //return back()->with(['success-message' => 'New Investor Added Successfully']);
+      //return ('investor-list')->with('success-message', 'New Investor Added Successfully');
+     //return back()->with(['success-message' => 'New Investor Added Successfully']);*/
+     Toastr::success('New Investor Added Successfully:)','success-message');
+     //return redirect('/investor-submit-confirmation'. $data_new->id )->with('success-message', 'New Investor Added Successfully');
+
+     return view('backend.template.investor.investor-submit-confirmation');
     }
+
+
 
     public function show($id)
     {
@@ -113,12 +131,12 @@ class investorController extends Controller
         return back()->with('success-message-delete', $full_name.' Deleted Successfully');
     }
 
-    /*public function confirmation($id )
+    public function confirmation($id )
     {
         $lists=INVESTOR::find($id);
           
         return view('backend.template.investor.investor-submit-confirmation' , ['lists' => $lists]);
         
-    }*/
+    }
 
 }
