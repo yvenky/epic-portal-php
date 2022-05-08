@@ -60,7 +60,7 @@ class investorController extends Controller
         $data_add -> ZIP_CODE               = $req-> ZIP_CODE; 
       
         
-        $data_new->address_all()->save($data_add);
+        $data_new->address()->save($data_add);
         //$data_add>save();
     
       //return ('investor-list')->with('success-message', 'New investor Added Successfully');
@@ -108,10 +108,19 @@ class investorController extends Controller
         $lists->SPOUSE_EMAIL	            = $request->SPOUSE_EMAIL; 
         $lists->SPOUSE_PHONE_NO	            = $request->SPOUSE_PHONE_NO; 
         $lists->SPOUSE_EMPLOYMENT_STATUS    = $request->SPOUSE_EMPLOYMENT_STATUS; 
-        $lists->update();
-       
+        
+       $lists->update();
+       // dd($lists);
+
+       $add = INVESTOR::find($id)->address;
+        $add->STREET_1              = $request->STREET_1; 
+        $add->CITY                  = $request->CITY; 
+        $add->STATE                 = $request->STATE;
+        $add->ZIP_CODE              = $request->ZIP_CODE;
+       $add->update();
+    
         $full_name =  $lists->FIRST_NAME . " " .  $lists->LAST_NAME;
-        return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
+       return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
     }
 
     public function delete($id)

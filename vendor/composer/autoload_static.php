@@ -621,6 +621,7 @@ class ComposerStaticInit17c4a119eeef40ca2ac0582fecd43a3e
         'App\\Models\\ADDRESS' => __DIR__ . '/../..' . '/app/Models/ADDRESS.php',
         'App\\Models\\AddNewEntry' => __DIR__ . '/../..' . '/app/Models/AddNewEntry.php',
         'App\\Models\\EntityMembers' => __DIR__ . '/../..' . '/app/Models/EntityMembers.php',
+        'App\\Models\\INVESTOR' => __DIR__ . '/../..' . '/app/Models/INVESTOR.php',
         'App\\Models\\Property' => __DIR__ . '/../..' . '/app/Models/Property.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\city' => __DIR__ . '/../..' . '/app/Models/city.php',

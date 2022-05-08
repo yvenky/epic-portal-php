@@ -23,9 +23,10 @@ class ADDRESS extends Model
         'ZIP_CODE',
     ];
 
-  /*  public function investor()
+    public function investor()
 {
     return $this->hasMany('App\INVESTOR');
-}*/
+    //return $this->hasMany(INVESTOR::class);
+}
 
 }

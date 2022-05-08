@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\ADDRESS;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,6 +17,7 @@ class INVESTOR extends Model
      */
 
     protected $table ='INVESTOR';
+
     protected $fillable = [
     'FIRST_NAME',
     'LAST_NAME',
@@ -43,9 +44,5 @@ class INVESTOR extends Model
         return $this->belongsTo(ADDRESS::class,'ADDRESS_ID');
     }
   
-    public function address_all()
-    {
-    return $this->belongsToMany('App\ADDRESS');
-    }
  
 }
