@@ -1135,17 +1135,17 @@
         },
         {
             "name": "google/cloud-core",
-            "version": "v1.44.3",
-            "version_normalized": "1.44.3.0",
+            "version": "v1.44.4",
+            "version_normalized": "1.44.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-core.git",
-                "reference": "eac417a907beaa3bc2783a17b90c0113b7aa86e6"
+                "reference": "971b7e163e0cc2b282c462d3a709891af7004d53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/eac417a907beaa3bc2783a17b90c0113b7aa86e6",
-                "reference": "eac417a907beaa3bc2783a17b90c0113b7aa86e6",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/971b7e163e0cc2b282c462d3a709891af7004d53",
+                "reference": "971b7e163e0cc2b282c462d3a709891af7004d53",
                 "shasum": ""
             },
             "require": {
@@ -1171,7 +1171,7 @@
                 "opis/closure": "May be used to serialize closures to process jobs in the batch daemon. Please require version ^3.",
                 "symfony/lock": "Required for the Spanner cached based session pool. Please require the following commit: 3.3.x-dev#1ba6ac9"
             },
-            "time": "2022-04-27T23:24:15+00:00",
+            "time": "2022-05-04T00:38:37+00:00",
             "bin": [
                 "bin/google-cloud-batch"
             ],
@@ -1196,23 +1196,23 @@
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
             "support": {
-                "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.44.3"
+                "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.44.4"
             },
             "install-path": "../google/cloud-core"
         },
         {
             "name": "google/cloud-error-reporting",
-            "version": "v0.19.0",
-            "version_normalized": "0.19.0.0",
+            "version": "v0.19.1",
+            "version_normalized": "0.19.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-errorreporting.git",
-                "reference": "e8b929b598fb7b95f3d53a0d25484b1dc5e0ea41"
+                "reference": "21f702c631ea337843e26adb7e53c24e65b7b764"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-errorreporting/zipball/e8b929b598fb7b95f3d53a0d25484b1dc5e0ea41",
-                "reference": "e8b929b598fb7b95f3d53a0d25484b1dc5e0ea41",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-errorreporting/zipball/21f702c631ea337843e26adb7e53c24e65b7b764",
+                "reference": "21f702c631ea337843e26adb7e53c24e65b7b764",
                 "shasum": ""
             },
             "require": {
@@ -1228,7 +1228,7 @@
                 "ext-grpc": "The gRPC extension allows more granular control over Error Reporting",
                 "ext-protobuf": "Provides a significant increase in throughput over the pure PHP protobuf implementation. See https://cloud.google.com/php/grpc for installation instructions."
             },
-            "time": "2022-01-12T16:19:20+00:00",
+            "time": "2022-05-04T00:38:37+00:00",
             "type": "library",
             "extra": {
                 "component": {
@@ -1251,23 +1251,23 @@
             ],
             "description": "Stackdriver Error Reporting Client for PHP",
             "support": {
-                "source": "https://github.com/googleapis/google-cloud-php-errorreporting/tree/v0.19.0"
+                "source": "https://github.com/googleapis/google-cloud-php-errorreporting/tree/v0.19.1"
             },
             "install-path": "../google/cloud-error-reporting"
         },
         {
             "name": "google/cloud-logging",
-            "version": "v1.24.0",
-            "version_normalized": "1.24.0.0",
+            "version": "v1.24.1",
+            "version_normalized": "1.24.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-logging.git",
-                "reference": "caab5a43de6225f028226c0226121a748ee60a3f"
+                "reference": "d02f20dc2e661aeb891182ee4f5cee8213bc00f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-logging/zipball/caab5a43de6225f028226c0226121a748ee60a3f",
-                "reference": "caab5a43de6225f028226c0226121a748ee60a3f",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-logging/zipball/d02f20dc2e661aeb891182ee4f5cee8213bc00f3",
+                "reference": "d02f20dc2e661aeb891182ee4f5cee8213bc00f3",
                 "shasum": ""
             },
             "require": {
@@ -1295,7 +1295,7 @@
                 "ext-protobuf": "Provides a significant increase in throughput over the pure PHP protobuf implementation. See https://cloud.google.com/php/grpc for installation instructions.",
                 "psr/log": "For using the PSR logger"
             },
-            "time": "2022-03-30T03:18:53+00:00",
+            "time": "2022-05-04T00:38:37+00:00",
             "type": "library",
             "extra": {
                 "component": {
@@ -1318,7 +1318,7 @@
             ],
             "description": "Stackdriver Logging Client for PHP",
             "support": {
-                "source": "https://github.com/googleapis/google-cloud-php-logging/tree/v1.24.0"
+                "source": "https://github.com/googleapis/google-cloud-php-logging/tree/v1.24.1"
             },
             "install-path": "../google/cloud-logging"
         },
@@ -2020,17 +2020,17 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.83.10",
-            "version_normalized": "8.83.10.0",
+            "version": "v8.83.11",
+            "version_normalized": "8.83.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "148ae59b7da6c3db6736374d357c5aaef9506fb7"
+                "reference": "d85c34179f209977043502441f9e44ca432a14b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/148ae59b7da6c3db6736374d357c5aaef9506fb7",
-                "reference": "148ae59b7da6c3db6736374d357c5aaef9506fb7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d85c34179f209977043502441f9e44ca432a14b4",
+                "reference": "d85c34179f209977043502441f9e44ca432a14b4",
                 "shasum": ""
             },
             "require": {
@@ -2149,7 +2149,7 @@
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
-            "time": "2022-04-27T14:07:37+00:00",
+            "time": "2022-05-03T14:47:00+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2196,17 +2196,17 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.14.0",
-            "version_normalized": "1.14.0.0",
+            "version": "v1.14.1",
+            "version_normalized": "1.14.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "453c66fde4109eb49e12299ffe3bf0d667983447"
+                "reference": "9a7348dedfccc894718a21f71c09d669747e3f33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/453c66fde4109eb49e12299ffe3bf0d667983447",
-                "reference": "453c66fde4109eb49e12299ffe3bf0d667983447",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/9a7348dedfccc894718a21f71c09d669747e3f33",
+                "reference": "9a7348dedfccc894718a21f71c09d669747e3f33",
                 "shasum": ""
             },
             "require": {
@@ -2215,7 +2215,7 @@
                 "illuminate/support": "^8.0|^9.0",
                 "php": "^7.3|^8.0"
             },
-            "time": "2022-04-27T13:10:22+00:00",
+            "time": "2022-05-02T13:58:40+00:00",
             "bin": [
                 "bin/sail"
             ],
@@ -3049,17 +3049,17 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.57.0",
-            "version_normalized": "2.57.0.0",
+            "version": "2.58.0",
+            "version_normalized": "2.58.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "4a54375c21eea4811dbd1149fe6b246517554e78"
+                "reference": "97a34af22bde8d0ac20ab34b29d7bfe360902055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4a54375c21eea4811dbd1149fe6b246517554e78",
-                "reference": "4a54375c21eea4811dbd1149fe6b246517554e78",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/97a34af22bde8d0ac20ab34b29d7bfe360902055",
+                "reference": "97a34af22bde8d0ac20ab34b29d7bfe360902055",
                 "shasum": ""
             },
             "require": {
@@ -3077,10 +3077,11 @@
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^0.12.54 || ^1.0",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.14",
+                "phpunit/php-file-iterator": "^2.0.5",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.23",
                 "squizlabs/php_codesniffer": "^3.4"
             },
-            "time": "2022-02-13T18:13:33+00:00",
+            "time": "2022-04-25T19:31:17+00:00",
             "bin": [
                 "bin/carbon"
             ],
@@ -4819,17 +4820,17 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.11.2",
-            "version_normalized": "0.11.2.0",
+            "version": "v0.11.4",
+            "version_normalized": "0.11.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "7f7da640d68b9c9fec819caae7c744a213df6514"
+                "reference": "05c544b339b112226ad14803e1e5b09a61957454"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/7f7da640d68b9c9fec819caae7c744a213df6514",
-                "reference": "7f7da640d68b9c9fec819caae7c744a213df6514",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/05c544b339b112226ad14803e1e5b09a61957454",
+                "reference": "05c544b339b112226ad14803e1e5b09a61957454",
                 "shasum": ""
             },
             "require": {
@@ -4844,17 +4845,15 @@
                 "symfony/console": "4.4.37 || 5.3.14 || 5.3.15 || 5.4.3 || 5.4.4 || 6.0.3 || 6.0.4"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.2",
-                "hoa/console": "3.17.05.02"
+                "bamarni/composer-bin-plugin": "^1.2"
             },
             "suggest": {
                 "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
                 "ext-pdo-sqlite": "The doc command requires SQLite to work.",
                 "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well.",
-                "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
-                "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
+                "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history."
             },
-            "time": "2022-02-28T15:28:54+00:00",
+            "time": "2022-05-06T12:49:14+00:00",
             "bin": [
                 "bin/psysh"
             ],
@@ -4894,7 +4893,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.11.2"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.4"
             },
             "install-path": "../psy/psysh"
         },

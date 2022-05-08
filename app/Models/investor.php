@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class investor extends Model
+class INVESTOR extends Model
 {
     use HasFactory;
 
@@ -16,8 +16,8 @@ class investor extends Model
      * 
      */
 
- protected $table ='investor';
- protected $fillable = [
+    protected $table ='INVESTOR';
+    protected $fillable = [
     'FIRST_NAME',
     'LAST_NAME',
     'ADDRESS_ID',
@@ -30,22 +30,22 @@ class investor extends Model
     'SPOUSE_EMAIL',
     'SPOUSE_PHONE_NO',
     'SPOUSE_EMPLOYMENT_STATUS',
-];
+   ];
 
     /**
      * Get the user that owns the investor
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-   */
+  */
     public function address()
     {
    
-        return $this->belongsTo(address::class,'ADDRESS_ID');
+        return $this->belongsTo(ADDRESS::class,'ADDRESS_ID');
     }
   
     public function address_all()
     {
-    return $this->belongsToMany('App\address');
+    return $this->belongsToMany('App\ADDRESS');
     }
-
+ 
 }

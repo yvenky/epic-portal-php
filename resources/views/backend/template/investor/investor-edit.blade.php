@@ -121,19 +121,19 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_street_1">Street</label>
-                                <input type="text" class="form-control" name="partner_individual_street" value="{{$lists->address->STREET_1}}" id="partner_individual_street">
+                                <input type="text" class="form-control" name="STREET_1" value="{{$lists->address->STREET_1}}" id="partner_individual_street">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_city">City</label>
-                                <input type="text" class="form-control" name="partner_individual_city" value="{{$lists->address->CITY}}" id="partner_individual_city">
+                                <input type="text" class="form-control" name="CITY" value="{{$lists->address->CITY}}" id="partner_individual_city">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="partner_individual_state">State</label>
-                                <select name="partner_individual_state" class="form-select select2 select-matcher-obj" id="partner_individual_state"  data-select2-id="partner_individual_state_select"  aria-label="Default select example">
+                                <select name="STATE" class="form-select select2 select-matcher-obj" id="partner_individual_state"  data-select2-id="partner_individual_state_select"  aria-label="Default select example">
                                     <optgroup label="Please Select State" data-select2-id="partner_individual_state_select">
                                         <option value="AA" {{$lists->address->STATE == "AA" ? 'selected': ''}}>Armed Forces America</option>
                                         <option value="AE" {{$lists->address->STATE == "AE" ? 'selected': ''}}>Armed Forces</option>
@@ -199,7 +199,7 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box">
                                 <label for="partner_individual_zip_code">Zip Code</label>
-                                <input type="text" class="form-control"  name="partner_individual_zip_code" value="{{$lists->address->ZIP_CODE}}" id="partner_individual_zip_code">
+                                <input type="text" class="form-control"  name="ZIP_CODE" value="{{$lists->address->ZIP_CODE}}" id="partner_individual_zip_code">
                             </div>
                         </div>
                     </div>                

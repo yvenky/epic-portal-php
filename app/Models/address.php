@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class address extends Model
+class ADDRESS extends Model
 {
    
     use HasFactory;
@@ -15,7 +15,7 @@ class address extends Model
      *
      * @var array<int, string>
      */
-    protected $table = 'address';
+    protected $table = 'ADDRESS';
     protected $fillable = [
         'STREET_1',
         'CITY',
@@ -23,9 +23,9 @@ class address extends Model
         'ZIP_CODE',
     ];
 
-    public function investor()
+  /*  public function investor()
 {
-    return $this->hasMany('App\investor');
-}
+    return $this->hasMany('App\INVESTOR');
+}*/
 
 }

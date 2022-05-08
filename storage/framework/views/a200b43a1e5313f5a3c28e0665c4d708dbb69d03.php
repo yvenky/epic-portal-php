@@ -13,9 +13,8 @@
         <div class="form-heading">
             <h6>Investor Invidual Registration</h6>
         </div>
-        <form id="new-partner-invidual-registration-form" action="<?php echo e(url('/investor-submit')); ?>" method="POST" accept-charset="UTF-8">
-           <?php echo e(csrf_field()); ?>
-
+        <form action="<?php echo e(url('investor-submit')); ?>" method="POST"  id="new-partner-invidual-registration-form">
+           <?php echo csrf_field(); ?>
             <div class="step-wrapper">
                 <span class="step">Your Details</span>
                 <span class="step">Your Spouse Details</span>
@@ -220,7 +219,7 @@
                     </div>
                     <div class="form-right-btn">
                         <button type="button" class="next form-next-btn" id="step-form-next-btn">Next</button>
-                        <button type="button" class="submit form-next-btn">Submit</button>
+                        <button type="button"  class="submit form-next-btn">Submit</button>
                     </div>
                 </div>
             </div>

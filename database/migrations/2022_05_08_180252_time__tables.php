@@ -13,9 +13,9 @@ class TimeTables extends Migration
      */
     public function up()
     {
-        Schema::table('investor', function (Blueprint $table) {
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->default(DB::raw('NULL ON UPDATE CURRENT_TIMESTAMP'))->nullable();
+        Schema::table('INVESTOR', function (Blueprint $table) {
+            $table->timestamp('CREATED_AT')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('UPDATED_AT')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
@@ -26,7 +26,7 @@ class TimeTables extends Migration
      */
     public function down()
     {
-        Schema::table('investor', function (Blueprint $table) {
+        Schema::table('INVESTOR', function (Blueprint $table) {
             //
         });
     }
