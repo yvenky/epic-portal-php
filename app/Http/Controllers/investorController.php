@@ -98,6 +98,7 @@ class investorController extends Controller
     public function update(Request $request, $id)
     {
         $lists = INVESTOR::find($id);
+        
         $lists->FIRST_NAME                  = $request->FIRST_NAME; 
         $lists->LAST_NAME                   = $request->LAST_NAME; 
         $lists->EMAIL_ADDRESS               = $request->EMAIL_ADDRESS;
@@ -110,37 +111,19 @@ class investorController extends Controller
         $lists->SPOUSE_PHONE_NO	            = $request->SPOUSE_PHONE_NO; 
         $lists->SPOUSE_EMPLOYMENT_STATUS    = $request->SPOUSE_EMPLOYMENT_STATUS; 
 
-        $attributes = $request->validate([
-            'FIRST_NAME' => 'nullable',
-            'LAST_NAME' => 'nullable',
-            'EMAIL_ADDRESS' => 'nullable',
-            'PHONE_NUMBER' => 'nullable',
-            'EMPLOYMENT_STATUS' => 'nullable',
-            'HOUSEHOLD_INCOME' => 'nullable',
-            'SPOUSE_FIRSTNAME' => 'nullable',
-            'SPOUSE_LASTNAME' => 'nullable',
-            'SPOUSE_EMAIL' => 'nullable',
-            'SPOUSE_PHONE_NO' => 'nullable',
-            'SPOUSE_EMPLOYMENT_STATUS' => 'nullable',
-        ]);
-        
-         $lists->update();
 
-
-       $add = ADDRESS::find($id);
+        $add = ADDRESS::find($id);
         $add->STREET_1              = $request->STREET_1; 
         $add->CITY                  = $request->CITY; 
         $add->STATE                 = $request->STATE;
         $add->ZIP_CODE              = $request->ZIP_CODE;
-       
-        $add->update();
+  
+        $lists->address()->save($add);
+        $lists->push();
+
         $full_name =  $lists->FIRST_NAME . " " .  $lists->LAST_NAME;
-      
-       
-          
-        if(INVESTOR::findOrFail($id)->update($attributes)){
-            return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
-        }
+        
+        return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
 
     }
 

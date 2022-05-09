@@ -15,7 +15,7 @@
         </div>
         <form action="<?php echo e(url('investor-update/'.$lists->ID)); ?>" method="POST" id="investor-edit-form-modal">
                 <?php echo csrf_field(); ?>
-                <?php echo method_field('PATCH'); ?>
+                <?php echo method_field('PUT'); ?>
                 <div class="form-content pb-0">
                     <div class="row">
                         <div class="col-lg-6">

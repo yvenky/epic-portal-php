@@ -14,7 +14,7 @@
         </div>
         <form action="{{url('investor-update/'.$lists->ID)}}" method="POST" id="investor-edit-form-modal">
                 @csrf
-                @method('PATCH')
+                @method('PUT')
                 <div class="form-content pb-0">
                     <div class="row">
                         <div class="col-lg-6">

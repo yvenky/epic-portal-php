@@ -76,7 +76,7 @@ Route::get('/investor-registration', [investorController::class, 'index']);
 Route::post('/investor-submit', [investorController::class, 'create']);	
 Route::get('investor-submit-confirmation/{id}', [investorController::class, 'confirmation']);
 Route::get('investor-edit/{id}', [investorController::class, 'edit']);
-Route::patch('investor-update/{id}', [investorController::class, 'update']);
+Route::put('investor-update/{id}', [investorController::class, 'update']);
 Route::get('/investor-view/{id}', [investorController::class, 'show']);
 Route::get('/investor-list', [investorController::class, 'showList']);
 Route::get('investor-delete/{id}', [investorController::class, 'delete']);	
