@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use DB;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if (!app()->runningInConsole()) {
+            $query = DB::table('users')->first();
+            \View::share('user', $query);
+        }
     }
 }

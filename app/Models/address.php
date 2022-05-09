@@ -16,6 +16,7 @@ class ADDRESS extends Model
      * @var array<int, string>
      */
     protected $table = 'ADDRESS';
+    public $timestamps = false;
     protected $fillable = [
         'STREET_1',
         'CITY',

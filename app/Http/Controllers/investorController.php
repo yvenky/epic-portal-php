@@ -9,6 +9,7 @@ use App\Models\ADDRESS;
 use App\Models\city;
 use APP\DB;
 
+
 class investorController extends Controller
 {
     public function index()
@@ -108,19 +109,39 @@ class investorController extends Controller
         $lists->SPOUSE_EMAIL	            = $request->SPOUSE_EMAIL; 
         $lists->SPOUSE_PHONE_NO	            = $request->SPOUSE_PHONE_NO; 
         $lists->SPOUSE_EMPLOYMENT_STATUS    = $request->SPOUSE_EMPLOYMENT_STATUS; 
-        
-       $lists->update();
-       // dd($lists);
 
-       $add = INVESTOR::find($id)->address;
+        $attributes = $request->validate([
+            'FIRST_NAME' => 'nullable',
+            'LAST_NAME' => 'nullable',
+            'EMAIL_ADDRESS' => 'nullable',
+            'PHONE_NUMBER' => 'nullable',
+            'EMPLOYMENT_STATUS' => 'nullable',
+            'HOUSEHOLD_INCOME' => 'nullable',
+            'SPOUSE_FIRSTNAME' => 'nullable',
+            'SPOUSE_LASTNAME' => 'nullable',
+            'SPOUSE_EMAIL' => 'nullable',
+            'SPOUSE_PHONE_NO' => 'nullable',
+            'SPOUSE_EMPLOYMENT_STATUS' => 'nullable',
+        ]);
+        
+         $lists->update();
+
+
+       $add = ADDRESS::find($id);
         $add->STREET_1              = $request->STREET_1; 
         $add->CITY                  = $request->CITY; 
         $add->STATE                 = $request->STATE;
         $add->ZIP_CODE              = $request->ZIP_CODE;
-       $add->update();
-    
+       
+        $add->update();
         $full_name =  $lists->FIRST_NAME . " " .  $lists->LAST_NAME;
-       return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
+      
+       
+          
+        if(INVESTOR::findOrFail($id)->update($attributes)){
+            return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
+        }
+
     }
 
     public function delete($id)
