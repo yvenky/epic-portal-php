@@ -20,6 +20,7 @@ class INVESTOR extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        
     'FIRST_NAME',
     'LAST_NAME',
     'ADDRESS_ID',
@@ -42,7 +43,7 @@ class INVESTOR extends Model
     public function address()
     {
    
-        return $this->belongsTo(ADDRESS::class,'ADDRESS_ID', 'STREET_1','CITY','STATE','ZIP_CODE');
+        return $this->belongsTo(ADDRESS::class,'ADDRESS_ID');
     }
   
  

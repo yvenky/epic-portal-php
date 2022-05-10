@@ -24,7 +24,7 @@ class investorController extends Controller
         $req->validate([
             'FIRST_NAME'                => 'required',
             'LAST_NAME'                 => 'required',
-            'ADDRESS_ID'                => 'required',
+        
             'EMAIL_ADDRESS'             => 'required',
             'PHONE_NUMBER'              => 'required',
             'EMPLOYMENT_STATUS'         => 'required',
@@ -36,15 +36,13 @@ class investorController extends Controller
             'SPOUSE_EMPLOYMENT_STATUS'  => 'required',
 
         ]);
-
-
+        
         $data_new = DB::table('INVESTOR')
-        ->join('ADDRESS','ADDRESS.ID','INVESTOR.ADDRESS_ID')
-        ->where('id', $id)
-        ->create([
+        ->insert([
 
             'FIRST_NAME'                => $req-> FIRST_NAME,
             'LAST_NAME'                 => $req-> LAST_NAME,
+            'ADDRESS_ID'                => $req->ADDRESS_ID,
             'EMAIL_ADDRESS'             => $req-> EMAIL_ADDRESS,
             'PHONE_NUMBER'              => $req-> PHONE_NUMBER,
             'EMPLOYMENT_STATUS'         => $req-> EMPLOYMENT_STATUS,
@@ -55,17 +53,22 @@ class investorController extends Controller
             'SPOUSE_PHONE_NO'           => $req-> SPOUSE_PHONE_NO,
             'SPOUSE_EMPLOYMENT_STATUS'  => $req-> SPOUSE_EMPLOYMENT_STATUS,
 
+
+        
+        ]);
+        $add_new = DB::table('ADDRESS')
+        ->insert([
+
             'STREET_1'                  =>$req->STREET_1,
             'CITY'                      =>$req->CITY,
             'STATE'                     =>$req->STATE,
             'ZIP_CODE'                  =>$req->ZIP_CODE,
 
+
         
         ]);
-
-            return $data_new;
   
-      //return back()->with('success-message', 'New investor Added Successfully');
+      return back()->with('success-message', 'New investor Added Successfully');
 
      //return redirect('investor-submit-confirmation/'. $data_new->id )->with('success-message', 'New investor Added Successfully');
 
@@ -96,11 +99,9 @@ class investorController extends Controller
 
     public function update(Request $req, $id)
     {
-
        
         $lists = DB::table('INVESTOR')
-        ->join('ADDRESS','ADDRESS.ID','INVESTOR.ADDRESS_ID')
-        ->where('id', $id)
+        ->join('ADDRESS','ADDRESS.id' ,'INVESTOR.ADDRESS_ID')
         ->update([
 
             'FIRST_NAME'                => $req-> FIRST_NAME,
@@ -132,14 +133,13 @@ class investorController extends Controller
         
     }
 
-    public function delete($id)
+    public function delete(Request $req, $id)
     {
-        
+       
 
         $lists=DB::table('INVESTOR')->delete($id);
-      
-        $full_name =  $req->FIRST_NAME . " " .  $req->LAST_NAME;
-        return back()->with('success-message-delete', $full_name. 'Deleted Successfully');
+
+        return back()->with('success-message-delete', 'Deleted Successfully');
     }
 
     public function confirmation($id )
