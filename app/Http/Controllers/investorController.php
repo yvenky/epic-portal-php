@@ -111,9 +111,9 @@ class investorController extends Controller
        
         
 
-        //$full_name =  $lists->FIRST_NAME . " " .  $lists->LAST_NAME;
+        $full_name =  $req-> FIRST_NAME. " " .  $req-> LAST_NAME;
         
-        return redirect('investor-list')->with('success-message-edit',  'full_name. Updated Successfully');
+        return redirect('investor-list')->with('success-message-edit',  $full_name. 'Updated Successfully');
 
         
     }
@@ -124,7 +124,7 @@ class investorController extends Controller
 
         $lists=DB::table('INVESTOR')->delete($id);
       
-        $full_name =  $lists->FIRST_NAME . " " .  $lists->LAST_NAME;
+        $full_name =  $req->FIRST_NAME . " " .  $req->LAST_NAME;
         return back()->with('success-message-delete', $full_name. 'Deleted Successfully');
     }
 
