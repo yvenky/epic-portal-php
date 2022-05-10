@@ -38,34 +38,32 @@ class investorController extends Controller
         ]);
 
 
-        $data_new=array();
+        $data_new = DB::table('INVESTOR')
+        ->join('ADDRESS','ADDRESS.ID','INVESTOR.ADDRESS_ID')
+        ->where('id', $id)
+        ->create([
 
-        $data_new['FIRST_NAME']                 = $req->FIRST_NAME;
-        $data_new['LAST_NAME']                  = $req->LAST_NAME;
-        $data_new['EMAIL_ADDRESS']              = $req->EMAIL_ADDRESS;
-        $data_new['PHONE_NUMBER']               = $req->PHONE_NUMBER;
-        $data_new['EMPLOYMENT_STATUS ']         = $req->EMPLOYMENT_STATUS ;
-        $data_new['HOUSEHOLD_INCOME']           = $req->HOUSEHOLD_INCOME;
-        $data_new['SPOUSE_FIRSTNAME']           = $req->SPOUSE_FIRSTNAME;
-        $data_new['SPOUSE_LASTNAME']            = $req->SPOUSE_LASTNAME;
-        $data_new['SPOUSE_EMAIL']               = $req->SPOUSE_EMAIL;
-        $data_new['SPOUSE_PHONE_NO']            = $req->SPOUSE_PHONE_NO;
-        $data_new['SPOUSE_EMPLOYMENT_STATUS']   = $req->SPOUSE_EMPLOYMENT_STATUS;
+            'FIRST_NAME'                => $req-> FIRST_NAME,
+            'LAST_NAME'                 => $req-> LAST_NAME,
+            'EMAIL_ADDRESS'             => $req-> EMAIL_ADDRESS,
+            'PHONE_NUMBER'              => $req-> PHONE_NUMBER,
+            'EMPLOYMENT_STATUS'         => $req-> EMPLOYMENT_STATUS,
+            'HOUSEHOLD_INCOME'          => $req-> HOUSEHOLD_INCOME,
+            'SPOUSE_FIRSTNAME'          => $req-> SPOUSE_FIRSTNAME,
+            'SPOUSE_LASTNAME'           => $req-> SPOUSE_LASTNAME,
+            'SPOUSE_EMAIL'              => $req-> SPOUSE_EMAIL,
+            'SPOUSE_PHONE_NO'           => $req-> SPOUSE_PHONE_NO,
+            'SPOUSE_EMPLOYMENT_STATUS'  => $req-> SPOUSE_EMPLOYMENT_STATUS,
 
-        $insert=DB::table('INVESTOR')->create($data_new);
+            'STREET_1'                  =>$req->STREET_1,
+            'CITY'                      =>$req->CITY,
+            'STATE'                     =>$req->STATE,
+            'ZIP_CODE'                  =>$req->ZIP_CODE,
 
-        $add_new=array();
-
-        $add_new['STREET_1']                 = $req->STREET_1;
-        $add_new['CITY']                  = $req->CITY;
-        $add_new['STATE']              = $req->STATE;
-        $add_new['ZIP_CODE']               = $req->ZIP_CODE;
-
-        $input=DB::table('INVESTOR')->insert($add_new);
-
-        return $input;
         
-       // $data_new->address()->save($data_add);
+        ]);
+
+            return $data_new;
   
       //return back()->with('success-message', 'New investor Added Successfully');
 
@@ -101,6 +99,7 @@ class investorController extends Controller
 
        
         $lists = DB::table('INVESTOR')
+        ->join('ADDRESS','ADDRESS.ID','INVESTOR.ADDRESS_ID')
         ->where('id', $id)
         ->update([
 
@@ -116,10 +115,10 @@ class investorController extends Controller
             'SPOUSE_PHONE_NO'           => $req-> SPOUSE_PHONE_NO,
             'SPOUSE_EMPLOYMENT_STATUS'  => $req-> SPOUSE_EMPLOYMENT_STATUS,
 
-            'STREET_1'=>$req-> STREET_1,
-            'CITY'=>$req->CITY,
-            'STATE'=>$req->STATE,
-            'ZIP_CODE'=>$req->ZIP_CODE,
+            'STREET_1'                  =>$req->STREET_1,
+            'CITY'                      =>$req->CITY,
+            'STATE'                     =>$req->STATE,
+            'ZIP_CODE'                  =>$req->ZIP_CODE,
 
         
         ]);
