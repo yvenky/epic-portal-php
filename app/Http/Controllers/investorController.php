@@ -52,10 +52,18 @@ class investorController extends Controller
         $data_new['SPOUSE_PHONE_NO']            = $req->SPOUSE_PHONE_NO;
         $data_new['SPOUSE_EMPLOYMENT_STATUS']   = $req->SPOUSE_EMPLOYMENT_STATUS;
 
-        //$insert=DB::table('INVESTOR')->insert($data_new);
-       $input= INVESTOR::create($data_new);
+        $insert=DB::table('INVESTOR')->create($data_new);
 
-       return $input;
+        $add_new=array();
+
+        $add_new['STREET_1']                 = $req->STREET_1;
+        $add_new['CITY']                  = $req->CITY;
+        $add_new['STATE']              = $req->STATE;
+        $add_new['ZIP_CODE']               = $req->ZIP_CODE;
+
+        $input=DB::table('INVESTOR')->insert($add_new);
+
+        return $input;
         
        // $data_new->address()->save($data_add);
   
@@ -90,6 +98,8 @@ class investorController extends Controller
 
     public function update(Request $req, $id)
     {
+
+       
         $lists = DB::table('INVESTOR')
         ->where('id', $id)
         ->update([
@@ -105,6 +115,11 @@ class investorController extends Controller
             'SPOUSE_EMAIL'              => $req-> SPOUSE_EMAIL,
             'SPOUSE_PHONE_NO'           => $req-> SPOUSE_PHONE_NO,
             'SPOUSE_EMPLOYMENT_STATUS'  => $req-> SPOUSE_EMPLOYMENT_STATUS,
+
+            'STREET_1'=>$req-> STREET_1,
+            'CITY'=>$req->CITY,
+            'STATE'=>$req->STATE,
+            'ZIP_CODE'=>$req->ZIP_CODE,
 
         
         ]);

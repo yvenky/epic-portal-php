@@ -42,7 +42,7 @@ class INVESTOR extends Model
     public function address()
     {
    
-        return $this->belongsTo(ADDRESS::class,'ADDRESS_ID');
+        return $this->belongsTo(ADDRESS::class,'ADDRESS_ID', 'STREET_1','CITY','STATE','ZIP_CODE');
     }
   
  
