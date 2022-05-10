@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\INVESTOR;
 use App\Models\ADDRESS;
 use App\Models\city;
-use APP\DB;
+use Illuminate\Support\Facades\DB;
 
 
 class investorController extends Controller
@@ -19,7 +19,7 @@ class investorController extends Controller
         return view('backend.template.investor.investor-registration');
     }
 
-    public function create(Request $req)
+    public function store(Request $req)
     {
         $req->validate([
             'FIRST_NAME'                => 'required',
@@ -37,37 +37,30 @@ class investorController extends Controller
 
         ]);
 
-        $data_new  = new INVESTOR();
-        $data_new -> FIRST_NAME                  = $req-> FIRST_NAME; 
-        $data_new -> LAST_NAME                   = $req-> LAST_NAME; 
-        $data_new -> EMAIL_ADDRESS               = $req-> EMAIL_ADDRESS; 
-        $data_new -> PHONE_NUMBER                = $req-> PHONE_NUMBER; 
-        $data_new -> EMPLOYMENT_STATUS           = $req-> EMPLOYMENT_STATUS;
-        $data_new -> HOUSEHOLD_INCOME            = $req-> HOUSEHOLD_INCOME; 
-        $data_new -> SPOUSE_FIRSTNAME            = $req-> SPOUSE_FIRSTNAME; 
-        $data_new -> SPOUSE_LASTNAME             = $req-> SPOUSE_LASTNAME; 
-        $data_new -> SPOUSE_EMAIL                = $req-> SPOUSE_EMAIL; 
-        $data_new -> SPOUSE_PHONE_NO             = $req-> SPOUSE_PHONE_NO; 
-        $data_new -> SPOUSE_EMPLOYMENT_STATUS    = $req-> SPOUSE_EMPLOYMENT_STATUS; 
-        $data_new->save();
 
-        
-       
-        $data_add  = new ADDRESS();
+        $data_new=array();
 
-        $data_add -> STREET_1               = $req-> STREET_1; 
-        $data_add -> CITY                   = $req-> CITY; 
-        $data_add -> STATE                  = $req-> STATE;
-        $data_add -> ZIP_CODE               = $req-> ZIP_CODE; 
-      
+        $data_new['FIRST_NAME']                 = $req->FIRST_NAME;
+        $data_new['LAST_NAME']                  = $req->LAST_NAME;
+        $data_new['EMAIL_ADDRESS']              = $req->EMAIL_ADDRESS;
+        $data_new['PHONE_NUMBER']               = $req->PHONE_NUMBER;
+        $data_new['EMPLOYMENT_STATUS ']         = $req->EMPLOYMENT_STATUS ;
+        $data_new['HOUSEHOLD_INCOME']           = $req->HOUSEHOLD_INCOME;
+        $data_new['SPOUSE_FIRSTNAME']           = $req->SPOUSE_FIRSTNAME;
+        $data_new['SPOUSE_LASTNAME']            = $req->SPOUSE_LASTNAME;
+        $data_new['SPOUSE_EMAIL']               = $req->SPOUSE_EMAIL;
+        $data_new['SPOUSE_PHONE_NO']            = $req->SPOUSE_PHONE_NO;
+        $data_new['SPOUSE_EMPLOYMENT_STATUS']   = $req->SPOUSE_EMPLOYMENT_STATUS;
+
+        //$insert=DB::table('INVESTOR')->insert($data_new);
+       $input= INVESTOR::create($data_new);
+
+       return $input;
         
-        $data_new->address()->save($data_add);
-        //$data_add>save();
-    
-      //return ('investor-list')->with('success-message', 'New investor Added Successfully');
-      return back()->with('success-message', 'New investor Added Successfully');
+       // $data_new->address()->save($data_add);
   
-     //Toastr::success('New investor Added Successfully:)','success-message');
+      //return back()->with('success-message', 'New investor Added Successfully');
+
      //return redirect('investor-submit-confirmation/'. $data_new->id )->with('success-message', 'New investor Added Successfully');
 
      //return view('backend.template.investor.investor-submit-confirmation');
@@ -95,45 +88,44 @@ class investorController extends Controller
         return view('backend.template.investor.investor-edit' , ['lists' => $lists]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $req, $id)
     {
-        $lists = INVESTOR::find($id);
+        $lists = DB::table('INVESTOR')
+        ->where('id', $id)
+        ->update([
+
+            'FIRST_NAME'                => $req-> FIRST_NAME,
+            'LAST_NAME'                 => $req-> LAST_NAME,
+            'EMAIL_ADDRESS'             => $req-> EMAIL_ADDRESS,
+            'PHONE_NUMBER'              => $req-> PHONE_NUMBER,
+            'EMPLOYMENT_STATUS'         => $req-> EMPLOYMENT_STATUS,
+            'HOUSEHOLD_INCOME'          => $req-> HOUSEHOLD_INCOME,
+            'SPOUSE_FIRSTNAME'          => $req-> SPOUSE_FIRSTNAME,
+            'SPOUSE_LASTNAME'           => $req-> SPOUSE_LASTNAME,
+            'SPOUSE_EMAIL'              => $req-> SPOUSE_EMAIL,
+            'SPOUSE_PHONE_NO'           => $req-> SPOUSE_PHONE_NO,
+            'SPOUSE_EMPLOYMENT_STATUS'  => $req-> SPOUSE_EMPLOYMENT_STATUS,
+
         
-        $lists->FIRST_NAME                  = $request->FIRST_NAME; 
-        $lists->LAST_NAME                   = $request->LAST_NAME; 
-        $lists->EMAIL_ADDRESS               = $request->EMAIL_ADDRESS;
-        $lists->PHONE_NUMBER                = $request->PHONE_NUMBER; 
-        $lists->EMPLOYMENT_STATUS           = $request->EMPLOYMENT_STATUS; 
-        $lists->HOUSEHOLD_INCOME	        = $request->HOUSEHOLD_INCOME; 
-        $lists->SPOUSE_FIRSTNAME	        = $request->SPOUSE_FIRSTNAME; 
-        $lists->SPOUSE_LASTNAME	            = $request->SPOUSE_LASTNAME; 
-        $lists->SPOUSE_EMAIL	            = $request->SPOUSE_EMAIL; 
-        $lists->SPOUSE_PHONE_NO	            = $request->SPOUSE_PHONE_NO; 
-        $lists->SPOUSE_EMPLOYMENT_STATUS    = $request->SPOUSE_EMPLOYMENT_STATUS; 
-
-
-        $add = ADDRESS::find($id);
-        $add->STREET_1              = $request->STREET_1; 
-        $add->CITY                  = $request->CITY; 
-        $add->STATE                 = $request->STATE;
-        $add->ZIP_CODE              = $request->ZIP_CODE;
-  
-        $lists->address()->save($add);
-        $lists->push();
-
-        $full_name =  $lists->FIRST_NAME . " " .  $lists->LAST_NAME;
+        ]);
+       
         
-        return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
 
+        //$full_name =  $lists->FIRST_NAME . " " .  $lists->LAST_NAME;
+        
+        return redirect('investor-list')->with('success-message-edit',  'full_name. Updated Successfully');
+
+        
     }
 
     public function delete($id)
     {
-        $lists=INVESTOR::find($id);
-        $lists->delete();
+        
+
+        $lists=DB::table('INVESTOR')->delete($id);
       
         $full_name =  $lists->FIRST_NAME . " " .  $lists->LAST_NAME;
-        return back()->with('success-message-delete', $full_name.' Deleted Successfully');
+        return back()->with('success-message-delete', $full_name. 'Deleted Successfully');
     }
 
     public function confirmation($id )

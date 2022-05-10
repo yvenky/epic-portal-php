@@ -73,7 +73,7 @@ Route::controller(investorController::class)->group(function () {
 // investor CRUD Links
 
 Route::get('/investor-registration', [investorController::class, 'index']);
-Route::post('/investor-submit', [investorController::class, 'create']);	
+Route::post('/investor-submit', [investorController::class, 'store']);	
 Route::get('investor-submit-confirmation/{id}', [investorController::class, 'confirmation']);
 Route::get('investor-edit/{id}', [investorController::class, 'edit']);
 Route::put('investor-update/{id}', [investorController::class, 'update']);
