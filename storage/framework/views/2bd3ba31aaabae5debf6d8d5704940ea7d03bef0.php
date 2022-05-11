@@ -1,29 +1,31 @@
-@extends('backend.inc.master')
 
-@section('main-content')
+
+<?php $__env->startSection('main-content'); ?>
 <!--// Main Area Start //-->
 
 
 <section class="panel-wrapper panel-full-width mt-resp-top">
     <div class="form-wrapper">
-        @if(Session::has('success-message-edit')) 
+        <?php if(Session::has('success-message-edit')): ?> 
         <div class="alert alert-success" role="alert">
-            {{Session::get('success-message-edit')}} 
+            <?php echo e(Session::get('success-message-edit')); ?> 
           </div>
-         @endif 
-         @if(Session::has('success-message')) 
+         <?php endif; ?> 
+         <?php if(Session::has('success-message')): ?> 
          <div class="alert alert-success" role="alert">
-             {{Session::get('success-message')}}
+             <?php echo e(Session::get('success-message')); ?>
+
            </div>
-          @endif 
-          @if(Session::has('success-message-delete')) 
+          <?php endif; ?> 
+          <?php if(Session::has('success-message-delete')): ?> 
           <div class="alert alert-success" role="alert">
-              {{Session::get('success-message-delete')}}
+              <?php echo e(Session::get('success-message-delete')); ?>
+
             </div>
-           @endif 
+           <?php endif; ?> 
         <div class="form-heading d-flex justify-content-between align-items-center">
             <h6>Investor List</h6>
-            <a href="{{url('/investor-registration')}}" class="dark-grey-btn">
+            <a href="<?php echo e(url('/investor-registration')); ?>" class="dark-grey-btn">
                 Add Investor
             </a>  
         </div>
@@ -41,23 +43,23 @@
                         </tr>
                     </thead>
                     <tbody class="view-icon-table">
-                        @php($i=1)
-                      @foreach ($lists as $list)
+                        <?php ($i=1); ?>
+                      <?php $__currentLoopData = $lists; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $list): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{$i++}}</td>
-                            <td>{{$list->FIRST_NAME.' '.$list->LAST_NAME}}</td>
-                            <td>{{$list->EMAIL_ADDRESS}}</td>
-                            <td>{{$list->SPOUSE_FIRSTNAME.' '.$list->SPOUSE_LASTNAME}}</td>
-                            <td>{{$list->SPOUSE_EMAIL}}</td>
+                            <td><?php echo e($i++); ?></td>
+                            <td><?php echo e($list->FIRST_NAME.' '.$list->LAST_NAME); ?></td>
+                            <td><?php echo e($list->EMAIL_ADDRESS); ?></td>
+                            <td><?php echo e($list->SPOUSE_FIRSTNAME.' '.$list->SPOUSE_LASTNAME); ?></td>
+                            <td><?php echo e($list->SPOUSE_EMAIL); ?></td>
                             <td>
-                                <a href="{{url('investor-view/'.$list->ID)}}" class="table-view-btn">
+                                <a href="<?php echo e(url('investor-view/'.$list->ID)); ?>" class="table-view-btn">
                                     <i class="fa fa-eye"></i>
                                 </a>  
-                                <a href="{{url('investor-edit/'.$list->ID)}}" class="table-edit-btn"><i class="fa fa-edit"></i></a>
-                                <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-entity-partners-modal-{{$list->ID}}">
+                                <a href="<?php echo e(url('investor-edit/'.$list->ID)); ?>" class="table-edit-btn"><i class="fa fa-edit"></i></a>
+                                <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-entity-partners-modal-<?php echo e($list->ID); ?>">
                                     <i class="fa fa-trash"></i>
                                 </a>                                                                     
-                                <div class="modal fade" id="delete-entity-partners-modal-{{$list->ID}}" tabindex="-1" aria-labelledby="delete-entity-partners-modalLabel" aria-hidden="true">
+                                <div class="modal fade" id="delete-entity-partners-modal-<?php echo e($list->ID); ?>" tabindex="-1" aria-labelledby="delete-entity-partners-modalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                         <div class="modal-content ">
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i> </button>
@@ -66,19 +68,19 @@
                                                     <i class="fa fa-trash"></i>
                                                 </div>
                                                 <p>
-                                                    Are you sure want to delete  <br> {{$list->FIRST_NAME.' '.$list->LAST_NAME}} ? 
+                                                    Are you sure want to delete  <br> <?php echo e($list->FIRST_NAME.' '.$list->LAST_NAME); ?> ? 
                                                 </p>
                                             </div>
                                             <div class="modal-footer form-btn-flex-between">
                                                 <button type="button" class="form-cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                                                <a href="{{url('investor-delete/'.$list->ID)}}" ><button type="button" class="form-submit-btn">Yes</button></a>
+                                                <a href="<?php echo e(url('investor-delete/'.$list->ID)); ?>" ><button type="button" class="form-submit-btn">Yes</button></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </td>
                         </tr>
-                        @endforeach  
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
                     </tbody>
                 </table>
             </div>
@@ -87,4 +89,5 @@
 
 </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/investor/investor-list.blade.php ENDPATH**/ ?>

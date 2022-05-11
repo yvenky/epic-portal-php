@@ -115,16 +115,16 @@
           required: true,
         },
         // Step 3
-        partner_individual_street: {
+        STREET_1: {
           required: true,
         },
-        partner_individual_city: {
+        CITY: {
           required: true,
         },
-        partner_individual_state: {
+        STATE: {
           required: true,
         },
-        partner_individual_zip_code: {
+        ZIP_CODE: {
           required: true,
           minlength:5,
           maxlength:5,
@@ -168,16 +168,16 @@
           email: 		"Please enter a valid e-mail",
         },
         // Step 3
-        partner_individual_street: {
+        STREET_1: {
           required: "Street is required"
         },
-        partner_individual_city: {
+        CITY: {
           required: "City is required"
         },
-        partner_individual_state: {
+        STATE: {
           required: "State is required"
         },
-        partner_individual_zip_code:{
+        ZIP_CODE:{
           required: 	"Zip Code is requied",
           maxlength: 	"Zip code must be 5 digits",
           minlength: 	"Zip code must be 5 digits",
@@ -240,16 +240,16 @@
           required: true,
         },
         // Step 3
-        partner_individual_street: {
+        STREET_1: {
           required: true,
         },
-        partner_individual_city: {
+        CITY: {
           required: true,
         },
-        partner_individual_state: {
+        STATE: {
           required: true,
         },
-        partner_individual_zip_code: {
+        ZIP_CODE: {
           required: true,
           minlength:5,
           maxlength:5,
@@ -293,16 +293,16 @@
           email: 		"Please enter a valid e-mail",
         },
         // Step 3
-        partner_individual_street: {
+        STREET_1: {
           required: "Street is required"
         },
-        partner_individual_city: {
+        CITY: {
           required: "City is required"
         },
-        partner_individual_state: {
+        STATE: {
           required: "State is required"
         },
-        partner_individual_zip_code:{
+        ZIP_CODE:{
           required: 	"Zip Code is requied",
           maxlength: 	"Zip code must be 5 digits",
           minlength: 	"Zip code must be 5 digits",

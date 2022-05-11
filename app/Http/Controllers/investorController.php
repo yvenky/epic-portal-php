@@ -65,13 +65,14 @@ class investorController extends Controller
         
         ]);
 
-            //return $data_new;
-  
-      return back()->with('success-message', 'New investor Added Successfully');
+        $id= DB::table('INVESTOR')
+        ->insertGetId([
+            'ID' =>$req->ID,
+        ]);
 
-     //return redirect('investor-submit-confirmation/'. $data_new->id )->with('success-message', 'New investor Added Successfully');
 
-     //return view('backend.template.investor.investor-submit-confirmation');
+     return redirect('investor-submit-confirmation/'.$id )->with('success-message', 'New investor Added Successfully');
+
     
     }
 
@@ -149,7 +150,7 @@ class investorController extends Controller
         return back()->with('success-message-delete', $full_name.' Deleted Successfully');
     }
 
-    public function confirmation($id )
+    public function confirmation($id)
     {
         $lists=DB::table('INVESTOR')->where('id',$id);
           
