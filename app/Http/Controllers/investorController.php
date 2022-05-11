@@ -140,21 +140,18 @@ class investorController extends Controller
     {
        
 
-        $lists =DB::table('INVESTOR')
-            ->join('ADDRESS','ADDRESS.id' ,'INVESTOR.ADDRESS_ID')
-            ->where('INVESTOR.id', $id);
+      $get_address=DB::table('INVESTOR')->where('id',$id)->first();
+        DB::table('ADDRESS')->where('id',$get_address->ADDRESS_ID)->delete();
+        Db::table('INVESTOR')->where('id',$id)->delete();
 
-        DB::table('ADDRESS')
-        ->where('ADDRESS.id', $id)->delete();                           
-        $lists->delete();
+        $full_name =  $get_address-> FIRST_NAME. " " .  $get_address-> LAST_NAME;
 
-
-        return back()->with('success-message-delete', ' Deleted Successfully');
+        return back()->with('success-message-delete', $full_name.' Deleted Successfully');
     }
 
     public function confirmation($id )
     {
-        $lists=INVESTOR::find($id);
+        $lists=DB::table('INVESTOR')->where('id',$id);
           
         return view('backend.template.investor.investor-submit-confirmation' , ['lists' => $lists]);
         

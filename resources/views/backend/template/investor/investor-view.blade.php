@@ -15,11 +15,13 @@
         </div>
         <div class="form-flex-box-text-item">
             <span>Employment Status</span>
-            @if( $lists->EMPLOYMENT_STATUS ==  "SE" )
+            @if( $lists->EMPLOYMENT_STATUS ==  "S" )
                 <p>Self Employed</p>
             @elseif( $lists->EMPLOYMENT_STATUS ==  "W2" ) 
                 <p>W2</p>
-            @elseif( $lists->EMPLOYMENT_STATUS ==  "HM" )
+            @elseif( $lists->EMPLOYMENT_STATUS ==  "F" ) 
+                <p>F</p>
+            @elseif( $lists->EMPLOYMENT_STATUS ==  "H" )
                 <p>Home Maker</p>
             @endif
         </div>
@@ -59,13 +61,13 @@
         </div>
         <div class="form-flex-box-text-item">
             <span>Spouse Employment Status</span>
-            @if( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "SE" )
+            @if( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "S" )
                 <p>Self Employed</p>
             @elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "W2" ) 
                 <p>W2</p>
             @elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "F" ) 
                 <p>F</p>
-            @elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "HM" )
+            @elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "H" )
                 <p>Home Maker</p>
             @endif
         </div>
