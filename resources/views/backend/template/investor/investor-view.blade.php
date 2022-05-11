@@ -15,13 +15,13 @@
         </div>
         <div class="form-flex-box-text-item">
             <span>Employment Status</span>
-            @if( $lists->EMPLOYMENT_STATUS ==  "S" )
+            @if( $lists->EMPLOYMENT_STATUS ==  "SE" )
                 <p>Self Employed</p>
-            @elseif( $lists->EMPLOYMENT_STATUS ==  "W" ) 
+            @elseif( $lists->EMPLOYMENT_STATUS ==  "W2" ) 
                 <p>W2</p>
             @elseif( $lists->EMPLOYMENT_STATUS ==  "F" ) 
                 <p>F</p>
-            @elseif( $lists->EMPLOYMENT_STATUS ==  "H" )
+            @elseif( $lists->EMPLOYMENT_STATUS ==  "HM" )
                 <p>Home Maker</p>
             @endif
         </div>
