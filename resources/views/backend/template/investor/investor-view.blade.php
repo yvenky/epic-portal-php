@@ -17,7 +17,7 @@
             <span>Employment Status</span>
             @if( $lists->EMPLOYMENT_STATUS ==  "S" )
                 <p>Self Employed</p>
-            @elseif( $lists->EMPLOYMENT_STATUS ==  "W2" ) 
+            @elseif( $lists->EMPLOYMENT_STATUS ==  "W" ) 
                 <p>W2</p>
             @elseif( $lists->EMPLOYMENT_STATUS ==  "F" ) 
                 <p>F</p>
@@ -63,7 +63,7 @@
             <span>Spouse Employment Status</span>
             @if( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "S" )
                 <p>Self Employed</p>
-            @elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "W2" ) 
+            @elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "W" ) 
                 <p>W2</p>
             @elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "F" ) 
                 <p>F</p>

@@ -17,7 +17,7 @@
             <span>Employment Status</span>
             <?php if( $lists->EMPLOYMENT_STATUS ==  "S" ): ?>
                 <p>Self Employed</p>
-            <?php elseif( $lists->EMPLOYMENT_STATUS ==  "W2" ): ?> 
+            <?php elseif( $lists->EMPLOYMENT_STATUS ==  "W" ): ?> 
                 <p>W2</p>
             <?php elseif( $lists->EMPLOYMENT_STATUS ==  "F" ): ?> 
                 <p>F</p>
@@ -63,7 +63,7 @@
             <span>Spouse Employment Status</span>
             <?php if( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "S" ): ?>
                 <p>Self Employed</p>
-            <?php elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "W2" ): ?> 
+            <?php elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "W" ): ?> 
                 <p>W2</p>
             <?php elseif( $lists->SPOUSE_EMPLOYMENT_STATUS ==  "F" ): ?> 
                 <p>F</p>
