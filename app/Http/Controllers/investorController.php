@@ -21,6 +21,7 @@ class investorController extends Controller
 
     public function store(Request $req)
     {
+
         $req->validate([
             'FIRST_NAME'                => 'required',
             'LAST_NAME'                 => 'required',
@@ -36,13 +37,19 @@ class investorController extends Controller
             'SPOUSE_EMPLOYMENT_STATUS'  => 'required',
 
         ]);
-        
+        $insert_address=DB::table('ADDRESS')
+                        ->insertGetId([
+                            'STREET_1' =>$req->STREET_1,
+                            'CITY'     =>$req->CITY,
+                            'STATE'    =>$req->STATE,
+                            'ZIP_CODE'  =>$req->ZIP_CODE,
+                        ]);
         $data_new = DB::table('INVESTOR')
         ->insert([
 
             'FIRST_NAME'                => $req-> FIRST_NAME,
             'LAST_NAME'                 => $req-> LAST_NAME,
-            'ADDRESS_ID'                => $req->ADDRESS_ID,
+            'ADDRESS_ID'                =>$insert_address,
             'EMAIL_ADDRESS'             => $req-> EMAIL_ADDRESS,
             'PHONE_NUMBER'              => $req-> PHONE_NUMBER,
             'EMPLOYMENT_STATUS'         => $req-> EMPLOYMENT_STATUS,
@@ -53,20 +60,12 @@ class investorController extends Controller
             'SPOUSE_PHONE_NO'           => $req-> SPOUSE_PHONE_NO,
             'SPOUSE_EMPLOYMENT_STATUS'  => $req-> SPOUSE_EMPLOYMENT_STATUS,
 
+            
 
         
         ]);
-        $add_new = DB::table('ADDRESS')
-        ->insert([
 
-            'STREET_1'                  =>$req->STREET_1,
-            'CITY'                      =>$req->CITY,
-            'STATE'                     =>$req->STATE,
-            'ZIP_CODE'                  =>$req->ZIP_CODE,
-
-
-        
-        ]);
+            //return $data_new;
   
       return back()->with('success-message', 'New investor Added Successfully');
 
@@ -100,46 +99,57 @@ class investorController extends Controller
     public function update(Request $req, $id)
     {
        
-        $lists = DB::table('INVESTOR')
-        ->join('ADDRESS','ADDRESS.id' ,'INVESTOR.ADDRESS_ID')
-        ->update([
 
-            'FIRST_NAME'                => $req-> FIRST_NAME,
-            'LAST_NAME'                 => $req-> LAST_NAME,
-            'EMAIL_ADDRESS'             => $req-> EMAIL_ADDRESS,
-            'PHONE_NUMBER'              => $req-> PHONE_NUMBER,
-            'EMPLOYMENT_STATUS'         => $req-> EMPLOYMENT_STATUS,
-            'HOUSEHOLD_INCOME'          => $req-> HOUSEHOLD_INCOME,
-            'SPOUSE_FIRSTNAME'          => $req-> SPOUSE_FIRSTNAME,
-            'SPOUSE_LASTNAME'           => $req-> SPOUSE_LASTNAME,
-            'SPOUSE_EMAIL'              => $req-> SPOUSE_EMAIL,
-            'SPOUSE_PHONE_NO'           => $req-> SPOUSE_PHONE_NO,
-            'SPOUSE_EMPLOYMENT_STATUS'  => $req-> SPOUSE_EMPLOYMENT_STATUS,
 
-            'STREET_1'                  =>$req->STREET_1,
-            'CITY'                      =>$req->CITY,
-            'STATE'                     =>$req->STATE,
-            'ZIP_CODE'                  =>$req->ZIP_CODE,
+            $lists = DB::table('INVESTOR')
+            ->join('ADDRESS','ADDRESS.id' ,'INVESTOR.ADDRESS_ID')
+            ->where('INVESTOR.id', $id)
+            ->update([
+    
+                'FIRST_NAME'                => $req-> FIRST_NAME,
+                'LAST_NAME'                 => $req-> LAST_NAME,
+                'EMAIL_ADDRESS'             => $req-> EMAIL_ADDRESS,
+                'PHONE_NUMBER'              => $req-> PHONE_NUMBER,
+                'EMPLOYMENT_STATUS'         => $req-> EMPLOYMENT_STATUS,
+                'HOUSEHOLD_INCOME'          => $req-> HOUSEHOLD_INCOME,
+                'SPOUSE_FIRSTNAME'          => $req-> SPOUSE_FIRSTNAME,
+                'SPOUSE_LASTNAME'           => $req-> SPOUSE_LASTNAME,
+                'SPOUSE_EMAIL'              => $req-> SPOUSE_EMAIL,
+                'SPOUSE_PHONE_NO'           => $req-> SPOUSE_PHONE_NO,
+                'SPOUSE_EMPLOYMENT_STATUS'  => $req-> SPOUSE_EMPLOYMENT_STATUS,
+    
+                'STREET_1'                  =>$req->STREET_1,
+                'CITY'                      =>$req->CITY,
+                'STATE'                     =>$req->STATE,
+                'ZIP_CODE'                  =>$req->ZIP_CODE,
+    
+            
+            ]);
+
+
+
+            $full_name =  $req-> FIRST_NAME. " " .  $req-> LAST_NAME;
+        
+            return redirect('investor-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
 
         
-        ]);
-       
-        
-
-        $full_name =  $req-> FIRST_NAME. " " .  $req-> LAST_NAME;
-        
-        return redirect('investor-list')->with('success-message-edit',  $full_name. 'Updated Successfully');
-
         
     }
 
-    public function delete(Request $req, $id)
+    public function delete($id)
     {
        
 
-        $lists=DB::table('INVESTOR')->delete($id);
+        $lists =DB::table('INVESTOR')
+            ->join('ADDRESS','ADDRESS.id' ,'INVESTOR.ADDRESS_ID')
+            ->where('INVESTOR.id', $id);
 
-        return back()->with('success-message-delete', 'Deleted Successfully');
+        DB::table('ADDRESS')
+        ->where('ADDRESS.id', $id)->delete();                           
+        $lists->delete();
+
+
+        return back()->with('success-message-delete', ' Deleted Successfully');
     }
 
     public function confirmation($id )
