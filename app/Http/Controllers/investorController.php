@@ -67,7 +67,7 @@ class investorController extends Controller
 
         $id= DB::table('INVESTOR')
         ->insertGetId([
-            'ID' =>$req->ID,
+            'ID' =>$req->ID
         ]);
 
 
@@ -152,9 +152,13 @@ class investorController extends Controller
 
     public function confirmation($id)
     {
-        $lists=DB::table('INVESTOR')->where('id',$id);
+      
+        //$get_address=DB::table('INVESTOR')->where('id',$id)->first();
+        $lists= INVESTOR::find($id);
+      
+    
           
-        return view('backend.template.investor.investor-submit-confirmation' , ['lists' => $lists]);
+        return view('backend.template.investor.investor-submit-confirmation' , ['lists' => $lists, 'ID' => $id]);
         
     }
 
