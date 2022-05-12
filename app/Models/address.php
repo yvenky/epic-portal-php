@@ -25,9 +25,15 @@ class ADDRESS extends Model
     ];
 
     public function investor()
-{
+    {
     return $this->hasMany('App\INVESTOR');
-    //return $this->hasMany(INVESTOR::class);
-}
+   
+    }
+
+    public function entity()
+    {
+        return $this->hasMany('App\ENTITY');
+        
+    }
 
 }

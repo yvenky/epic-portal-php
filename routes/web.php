@@ -1,7 +1,7 @@
 <?php	
 
 use Illuminate\Support\Facades\Route;	
-use App\Http\Controllers\newentitycontroller;	
+use App\Http\Controllers\entityController;	
 use App\Http\Controllers\masterTemplate;	
 use App\Http\Controllers\investorController;	
 use App\Http\Controllers\PropertyController;	
@@ -25,17 +25,14 @@ Route::get('/', function () {
 
 
 // Entity routing	
-Route::get('/add-new-entry', [newentitycontroller ::class, 'index']);	
-Route::post('/entity-submit', [newentitycontroller ::class, 'create']);	
-Route::get('/entity-list', [newentitycontroller ::class, 'showEntityList']);	
-
-Route::get('entity-delete/{id}', [newentitycontroller ::class, 'delete']);	
-
-Route::get('entity-edit/{id}', [newentitycontroller ::class, 'edit']);	
-
-Route::put('entity-update/{id}', [newentitycontroller ::class, 'update']);	
-Route::get('entity-view/{id}', [newentitycontroller::class, 'show']);
-Route::get('entity-submit-confirmation/{id}', [newentitycontroller::class, 'confirmation']);
+Route::get('/add-new-entry', [entityController ::class, 'index']);	
+Route::post('/entity-submit', [entityController ::class, 'store']);	
+Route::get('/entity-list', [entityController ::class, 'showEntityList']);	
+Route::get('entity-delete/{id}', [entityController ::class, 'delete']);	
+Route::get('entity-edit/{id}', [entityController ::class, 'edit']);	
+Route::put('entity-update/{id}', [entityController ::class, 'update']);	
+Route::get('entity-view/{id}', [entityController::class, 'show']);
+Route::get('entity-submit-confirmation/{id}', [entityController::class, 'confirmation']);
 
 //New partner registration routing	
 
@@ -56,20 +53,6 @@ Route::get('property-list-delete/{id}', [PropertyController::class, 'delete']);
 
 
 
-/*
- *  Investor Routes
-
-Route::controller(investorController::class)->group(function () {
-    Route::get('/investor-registration','index');
-    Route::post('/investor-submit','create');
-    Route::get('/investor-list', 'showList');
-    Route::get('/investor-view/{id}', 'show');	
-    Route::get('investor-edit/{id}', 'edit');	
-    Route::put('investor-update/{id}','update');
-    Route::get('investor-delete/{id}', 'delete');
-    Route::get('investor-submit-confirmation/{id}','confirmation');
-});
-*/
 // investor CRUD Links
 
 Route::get('/investor-registration', [investorController::class, 'index']);

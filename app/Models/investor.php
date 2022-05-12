@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Models\ADDRESS;
+use App\Models\ENTITY;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -44,7 +45,16 @@ class INVESTOR extends Model
     {
    
         return $this->belongsTo(ADDRESS::class,'ADDRESS_ID');
+     
     }
-  
+
+    public function entity()
+    {
+   
+        return $this->hasMany('App\ENTITY');
+     
+    }
+    
+
  
 }

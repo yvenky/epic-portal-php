@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\INVESTOR;
 use App\Models\ADDRESS;
-use App\Models\city;
 use Illuminate\Support\Facades\DB;
 
 
@@ -24,8 +23,7 @@ class investorController extends Controller
 
         $req->validate([
             'FIRST_NAME'                => 'required',
-            'LAST_NAME'                 => 'required',
-        
+            'LAST_NAME'                 => 'required',   
             'EMAIL_ADDRESS'             => 'required',
             'PHONE_NUMBER'              => 'required',
             'EMPLOYMENT_STATUS'         => 'required',
@@ -65,13 +63,13 @@ class investorController extends Controller
         
         ]);
 
-        $id= DB::table('INVESTOR')
-        ->insertGetId([
-            'ID' =>$req->ID
-        ]);
+      //  $id= DB::table('INVESTOR')
+       // ->insertGetId([
+       //     'ID' =>$req->ID
+      //  ]);
 
 
-     return redirect('investor-submit-confirmation/'.$id )->with('success-message', 'New investor Added Successfully');
+     return redirect('investor-submit-confirmation/'. $data_new->ID )->with('success-message', 'New investor Added Successfully');
 
     
     }

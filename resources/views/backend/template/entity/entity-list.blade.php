@@ -20,8 +20,8 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Entity Name</th>
                             <th>EIN</th>
+                            <th>Entity Name</th>  
                             <th>Entity Docs</th>
                             <th></th>
                         </tr>
@@ -31,10 +31,10 @@
                       @foreach ($lists as $list)
                         <tr>
                             <td>{{$i++}}</td>
-                            <td>{{$list->add_partner_entity_name}}</td>
-                            <td>{{$list->add_partner_entity_ein}}</td>
+                            <td>{{$list->EIN}}</td>
+                            <td>{{$list->ENTITY_NAME}}</td>
                             <td>
-                                <a href="{{$list->add_partner_entity_docs}}" class="table-url-link">Entity Docs Link</a>
+                                <a href="{{$list->OPERATING_AGREEMENT}}" class="table-url-link">Entity Docs Link</a>
                             </td>    
                             <td>
                                 <a href="{{url('entity-view/'.$list->id)}}" class="table-view-btn">

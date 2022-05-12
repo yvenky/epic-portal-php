@@ -10,38 +10,38 @@
         </div>
         <div class="form-content">
 
-            @if ( $lists->add_partner_entity_name )
+            @if ( $lists->ENTITY_NAME )
                 <div class="form-flex-box-text-item">
                     <span>Entity Name</span>
-                    <p>{{$lists->add_partner_entity_name}}</p>
+                    <p>{{$lists->ENTITY_NAME}}</p>
                 </div>
             @endif
 
-            @if ( $lists->add_partner_managing_member_1 )
+            @if ( $lists->MANAGING_MEMBER_1 )
                 <div class="form-flex-box-text-item">
                     <span>Managing Member 1</span>
-                    <p>{{$lists->add_partner_managing_member_1}}</p>
+                    <p>{{$lists->MANAGING_MEMBER_1}}</p>
                 </div>
             @endif
 
-            @if ( $lists->add_partner_managing_member_2 )
+            @if ( $lists->MANAGING_MEMBER_2 )
             <div class="form-flex-box-text-item">
                 <span>Managing Member 2</span>
-                <p>{{$lists->add_partner_managing_member_2}}</p>
+                <p>{{$lists->MANAGING_MEMBER_2}}</p>
             </div>
             @endif
 
-            @if ( $lists->add_partner_entity_ein )
+            @if ( $lists->EIN )
             <div class="form-flex-box-text-item">
                 <span>EIN</span>
-                <p>{{$lists->add_partner_entity_ein}}</p>
+                <p>{{$lists->EIN}}</p>
             </div>
             @endif
 
-            @if ( $lists->add_partner_entity_docs )
+            @if ( $lists->OPERATING_AGREEMENT )
             <div class="form-flex-box-text-item">
                 <span>Entity Docs</span>
-                <p>{{$lists->add_partner_entity_docs}}</p>
+                <p>{{$lists->OPERATING_AGREEMENT}}</p>
             </div>
             @endif
         </div>
