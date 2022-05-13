@@ -6,7 +6,7 @@
     <div class="form-wrapper">
         <div class="form-heading details-view-edit-wrap">
             <h6>Entity Details</h6>
-            <a href="{{url('entity-edit/'.$lists->id)}}" title="Edit Entity"><i class="fa fa-edit"></i></a>
+            <a href="{{url('entity-edit/'.$lists->ID)}}" title="Edit Entity"><i class="fa fa-edit"></i></a>
         </div>
         <div class="form-content">
 
@@ -17,17 +17,17 @@
                 </div>
             @endif
 
-            @if ( $lists->MANAGING_MEMBER_1 )
+            @if ( $lists->investor_mm_one->FIRST_NAME.' '.$lists->investor_mm_one->LAST_NAME) 
                 <div class="form-flex-box-text-item">
                     <span>Managing Member 1</span>
-                    <p>{{$lists->MANAGING_MEMBER_1}}</p>
+                    <p>{{$lists->investor_mm_one->FIRST_NAME.' '.$lists->investor_mm_one->LAST_NAME}}</p>
                 </div>
             @endif
 
-            @if ( $lists->MANAGING_MEMBER_2 )
+            @if ( $lists->investor_mm_two->FIRST_NAME.' '.$lists->investor_mm_two->LAST_NAME )
             <div class="form-flex-box-text-item">
                 <span>Managing Member 2</span>
-                <p>{{$lists->MANAGING_MEMBER_2}}</p>
+                <p>{{$lists->investor_mm_two->FIRST_NAME.' '.$lists->investor_mm_two->LAST_NAME}}</p>
             </div>
             @endif
 
@@ -50,143 +50,143 @@
         </div>
         <div class="form-content">
             
-            @if ( $lists->add_partner_entity_address_street )
+            @if ( $lists->address->STREET_1 )
             <div class="form-flex-box-text-item">
                 <span>Street</span>
-                <p>{{$lists->add_partner_entity_address_street }}</p>
+                <p>{{$lists->address->STREET_1 }}</p>
             </div>
             @endif
 
-            @if ( $lists->add_partner_entity_address_city )
+            @if ( $lists->address->CITY )
             <div class="form-flex-box-text-item">
                 <span>City</span>
-                <p>{{$lists->add_partner_entity_address_city }}</p>
+                <p>{{$lists->address->CITY }}</p>
             </div>
             @endif
 
-            @if ( $lists->add_partner_entity_address_state )
+            @if ( $lists->address->STATE )
             <div class="form-flex-box-text-item">
                 <span>State</span>
-                @if( $lists->add_partner_entity_address_state ==  "AA" )
+                @if( $lists->address->STATE ==  "AA" )
                     <p>Armed Forces America</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "AE" ) 
+                @elseif( $lists->address->STATE ==  "AE" ) 
                     <p>Armed Forces</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "AK" )
+                @elseif( $lists->address->STATE ==  "AK" )
                     <p>Alaska</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "AL" )
+                @elseif( $lists->address->STATE ==  "AL" )
                     <p>Alabama</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "AP" )
+                @elseif( $lists->address->STATE ==  "AP" )
                     <p>Armed Forces Pacific</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "AR" )
+                @elseif( $lists->address->STATE ==  "AR" )
                     <p>Arkansas</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "AZ" )
+                @elseif( $lists->address->STATE ==  "AZ" )
                     <p>Arizona</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "CA" )
+                @elseif( $lists->address->STATE ==  "CA" )
                     <p>California</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "CO" )
+                @elseif( $lists->address->STATE ==  "CO" )
                     <p>Colorado</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "CT" )
+                @elseif( $lists->address->STATE ==  "CT" )
                     <p>Connecticut</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "DC" )
+                @elseif( $lists->address->STATE ==  "DC" )
                     <p>Washington DC</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "DE" )
+                @elseif( $lists->address->STATE ==  "DE" )
                     <p>Delaware</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "FL" )
+                @elseif( $lists->address->STATE ==  "FL" )
                     <p>Florida</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "GA" )
+                @elseif( $lists->address->STATE ==  "GA" )
                     <p>Georgia</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "GU" )
+                @elseif( $lists->address->STATE ==  "GU" )
                     <p>Guam</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "HI" )
+                @elseif( $lists->address->STATE ==  "HI" )
                     <p>Hawaii</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "IA" )
+                @elseif( $lists->address->STATE ==  "IA" )
                     <p>Iowa</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "ID" )
+                @elseif( $lists->address->STATE ==  "ID" )
                     <p>Idaho</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "IL" )
+                @elseif( $lists->address->STATE ==  "IL" )
                     <p>Illinois</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "IN" )
+                @elseif( $lists->address->STATE ==  "IN" )
                     <p>Indiana</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "KS" )
+                @elseif( $lists->address->STATE ==  "KS" )
                     <p>Kansas</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "KY" )
+                @elseif( $lists->address->STATE ==  "KY" )
                     <p>Kentucky</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "LA" )
+                @elseif( $lists->address->STATE ==  "LA" )
                     <p>Louisiana</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "MA" )
+                @elseif( $lists->address->STATE ==  "MA" )
                     <p>Massachusetts</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "MD" )
+                @elseif( $lists->address->STATE ==  "MD" )
                     <p>Maryland</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "ME" )
+                @elseif( $lists->address->STATE ==  "ME" )
                     <p>Maine</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "MI" )
+                @elseif( $lists->address->STATE ==  "MI" )
                     <p>Michigan</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "MN" )
+                @elseif( $lists->address->STATE ==  "MN" )
                     <p>Mississippi</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "MO" )
+                @elseif( $lists->address->STATE ==  "MO" )
                     <p>Missouri</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "MT" )
+                @elseif( $lists->address->STATE ==  "MT" )
                     <p>Montana</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "NC" )
+                @elseif( $lists->address->STATE ==  "NC" )
                     <p>North Carolina</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "ND" )
+                @elseif( $lists->address->STATE ==  "ND" )
                     <p>North Dakota</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "NE" )
+                @elseif( $lists->address->STATE ==  "NE" )
                     <p>Nebraska</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "NH" )
+                @elseif( $lists->address->STATE ==  "NH" )
                     <p>New Hampshire</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "NJ" )
+                @elseif( $lists->address->STATE ==  "NJ" )
                     <p>New Jersey</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "NM" )
+                @elseif( $lists->address->STATE ==  "NM" )
                     <p>New Mexico</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "NV" )
+                @elseif( $lists->address->STATE ==  "NV" )
                     <p>Nevada</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "NY" )
+                @elseif( $lists->address->STATE ==  "NY" )
                     <p>New York</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "OH" )
+                @elseif( $lists->address->STATE ==  "OH" )
                     <p>Ohio</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "OK" )
+                @elseif( $lists->address->STATE ==  "OK" )
                     <p>Oklahoma</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "OR" )
+                @elseif( $lists->address->STATE ==  "OR" )
                     <p>Oregon</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "PA" )
+                @elseif( $lists->address->STATE ==  "PA" )
                     <p>Pennsylvania</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "PR" )
+                @elseif( $lists->address->STATE ==  "PR" )
                     <p>Puerto Rico</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "RI" )
+                @elseif( $lists->address->STATE ==  "RI" )
                     <p>Rhode Island</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "RI" )
+                @elseif( $lists->address->STATE ==  "RI" )
                     <p>South Carolina</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "SD" )
+                @elseif( $lists->address->STATE ==  "SD" )
                     <p>South Dakota</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "TN" )
+                @elseif( $lists->address->STATE ==  "TN" )
                     <p>Tennessee</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "TX" )
+                @elseif( $lists->address->STATE ==  "TX" )
                     <p>Texas</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "UT" )
+                @elseif( $lists->address->STATE ==  "UT" )
                     <p>Utah</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "VA" )
+                @elseif( $lists->address->STATE ==  "VA" )
                     <p>Virginia</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "VI" )
+                @elseif( $lists->address->STATE ==  "VI" )
                     <p>Virgin Islands</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "VT" )
+                @elseif( $lists->address->STATE ==  "VT" )
                     <p>Vermont</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "WA" )
+                @elseif( $lists->address->STATE ==  "WA" )
                     <p>Washington</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "WI" )
+                @elseif( $lists->address->STATE ==  "WI" )
                     <p>Wisconsin</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "WV" )
+                @elseif( $lists->address->STATE ==  "WV" )
                     <p>West Virginia</p>
-                @elseif( $lists->add_partner_entity_address_state ==  "WY" )
+                @elseif( $lists->address->STATE ==  "WY" )
                     <p>Wyoming</p>
                 @endif
             </div>
             @endif
 
-            @if ( $lists->add_partner_entity_address_zipcode )
+            @if ( $lists->address->ZIP_CODE )
             <div class="form-flex-box-text-item">
                 <span>Zip Code</span>
-                <p>{{$lists->add_partner_entity_address_zipcode }}</p>
+                <p>{{$lists->address->ZIP_CODE }}</p>
             </div>
             @endif
 

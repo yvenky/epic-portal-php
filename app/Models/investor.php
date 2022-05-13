@@ -50,9 +50,8 @@ class INVESTOR extends Model
 
     public function entity()
     {
-   
         return $this->hasMany('App\ENTITY');
-     
+        
     }
     
 

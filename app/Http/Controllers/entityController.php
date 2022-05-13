@@ -44,6 +44,7 @@ class entityController extends Controller
             'ZIP_CODE'  =>$req->ZIP_CODE,
         ]);
 
+
         $data_new = DB::table('ENTITY')
         ->insert([
 
@@ -86,6 +87,8 @@ class entityController extends Controller
         $users = INVESTOR::all();
 
         return view('backend.template.entity.entity-edit' , ['lists' => $lists, 'users' => $users]);
+
+       // return view('backend.template.entity.entity-edit' , ['lists' => $lists ]);
     }
 
    
