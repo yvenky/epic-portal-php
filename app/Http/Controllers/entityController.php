@@ -88,13 +88,47 @@ class entityController extends Controller
 
         return view('backend.template.entity.entity-edit' , ['lists' => $lists, 'users' => $users]);
 
-       // return view('backend.template.entity.entity-edit' , ['lists' => $lists ]);
     }
 
    
-    public function update(Request $request, $id)
+    public function update(Request $req, $id)
     {
-        //
+       /* $first_name=DB::table('INVESTOR')
+                ->where('FIRST_NAME',$req-> FIRST_NAME)
+                ->where('INVESTOR.id', $id)
+                ->get();
+
+        $last_name=DB::table('INVESTOR')
+                ->where('LAST_NAME',$req-> LAST_NAME)
+                ->where('INVESTOR.id', $id)
+                ->get();
+
+        $full_name = $first_name. " " . $last_name;
+
+        dd($full_name);*/
+
+        $lists = DB::table('ENTITY')
+        ->join('ADDRESS','ADDRESS.id' ,'ENTITY.ADDRESS_ID')
+        ->join('INVESTOR','INVESTOR.id' ,'ENTITY.id')
+        ->where('ENTITY.id', $id)
+        ->update([
+
+            'EIN'                         => $req-> EIN,
+            'ENTITY_NAME'                 => $req-> ENTITY_NAME,
+            'MANAGING_MEMBER_1'           => $req-> $full_name,
+            'MANAGING_MEMBER_2'           => $req-> $full_name,
+            'OPERATING_AGREEMENT'         => $req-> OPERATING_AGREEMENT,
+
+            'STREET_1'                  =>$req->STREET_1,
+            'CITY'                      =>$req->CITY,
+            'STATE'                     =>$req->STATE,
+            'ZIP_CODE'                  =>$req->ZIP_CODE,
+
+        
+        ]);
+
+        $full_name =  $req-> FIRST_NAME. " " .  $req-> LAST_NAME;
+        return redirect('entity-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
     }
 
   
