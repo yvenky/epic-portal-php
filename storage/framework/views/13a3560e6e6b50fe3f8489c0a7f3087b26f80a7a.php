@@ -36,7 +36,7 @@
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-1_select">
                                     <option value="">Please Select</option>
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                        <option value="<?php echo e($user->FIRST_NAME.' '.$user->LAST_NAME); ?>"><?php echo e($user->FIRST_NAME." ".$user->LAST_NAME); ?></option>
+                                        <option value="<?php echo e($user->ID); ?>"><?php echo e($user->FIRST_NAME." ".$user->LAST_NAME); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </optgroup>
                             </select>
@@ -49,7 +49,7 @@
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-2_select">
                                     <option value="">Please Select</option>
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                        <option value="<?php echo e($user->FIRST_NAME.' '.$user->LAST_NAME); ?>"><?php echo e($user->FIRST_NAME." ".$user->LAST_NAME); ?></option>
+                                        <option value="<?php echo e($user->ID); ?>"><?php echo e($user->FIRST_NAME." ".$user->LAST_NAME); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </optgroup>
                             </select>

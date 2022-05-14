@@ -2,7 +2,6 @@
 
 <?php $__env->startSection('main-content'); ?>
 
-
 <section class="panel-wrapper panel-center">
    <div class="form-wrapper">
       <?php if(Session::has('success-message-edit')): ?> 
@@ -32,7 +31,7 @@
                             <select class="form-control select2 select-matcher-obj" name="MANAGING_MEMBER_1" data-select2-id="managing-member-1-select" tabindex="-1" aria-hidden="false">
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-1-select">
                                   <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                    <option value="<?php echo e($user->FIRST_NAME.' '.$user->LAST_NAME); ?>" <?php echo e($user->FIRST_NAME == $user->FIRST_NAME ? "selected": ""); ?>  ><?php echo e($user->FIRST_NAME." ".$user->LAST_NAME); ?></option>
+                                    <option value="<?php echo e($user->ID); ?>" <?php echo e($user->ID == $lists->MANAGING_MEMBER_1  ? "selected": ""); ?>  ><?php echo e($user->FIRST_NAME." ".$user->LAST_NAME); ?></option>
                                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>     
                                 </optgroup>
                             </select>
@@ -44,7 +43,7 @@
                             <select class="form-control select2 select-matcher-obj"  name="MANAGING_MEMBER_2" data-select2-id="managing-member-2-select" tabindex="-1" aria-hidden="false">
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-2-select">  
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                    <option value="<?php echo e($user->FIRST_NAME.' '.$user->LAST_NAME); ?>" <?php echo e($user->FIRST_NAME == $user->FIRST_NAME ? "selected": ""); ?>  ><?php echo e($user->FIRST_NAME." ".$user->LAST_NAME); ?></option>
+                                    <option value="<?php echo e($user->ID); ?>" <?php echo e($user->ID == $lists->MANAGING_MEMBER_2 ? "selected": ""); ?>  ><?php echo e($user->FIRST_NAME." ".$user->LAST_NAME); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </optgroup>
                             </select>

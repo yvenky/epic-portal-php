@@ -35,7 +35,7 @@
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-1_select">
                                     <option value="">Please Select</option>
                                     @foreach ( $users as $user ) 
-                                        <option value="{{$user->FIRST_NAME.' '.$user->LAST_NAME}}">{{$user->FIRST_NAME." ".$user->LAST_NAME}}</option>
+                                        <option value="{{$user->ID}}">{{$user->FIRST_NAME." ".$user->LAST_NAME}}</option>
                                     @endforeach
                                 </optgroup>
                             </select>
@@ -48,7 +48,7 @@
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-2_select">
                                     <option value="">Please Select</option>
                                     @foreach ( $users as $user ) 
-                                        <option value="{{$user->FIRST_NAME.' '.$user->LAST_NAME}}">{{$user->FIRST_NAME." ".$user->LAST_NAME}}</option>
+                                        <option value="{{$user->ID}}">{{$user->FIRST_NAME." ".$user->LAST_NAME}}</option>
                                     @endforeach
                                 </optgroup>
                             </select>

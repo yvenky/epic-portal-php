@@ -4,12 +4,23 @@
 <!--// Main Area Start //-->
 
 <section class="panel-wrapper panel-full-width mt-resp-top">
-    <?php if(Session::has('success-message-delete')): ?> 
+    <?php if(Session::has('success-message-edit')): ?> 
     <div class="alert alert-success" role="alert">
-        <?php echo e(Session::get('success-message-delete')); ?>
-
+        <?php echo e(Session::get('success-message-edit')); ?> 
       </div>
      <?php endif; ?> 
+     <?php if(Session::has('success-message')): ?> 
+     <div class="alert alert-success" role="alert">
+         <?php echo e(Session::get('success-message')); ?>
+
+       </div>
+      <?php endif; ?> 
+      <?php if(Session::has('success-message-delete')): ?> 
+      <div class="alert alert-success" role="alert">
+          <?php echo e(Session::get('success-message-delete')); ?>
+
+        </div>
+       <?php endif; ?> 
     <div class="form-wrapper p-0">
         <div class="form-heading d-flex justify-content-between align-items-center">
             <h6>Entity List</h6>
@@ -56,12 +67,12 @@
                                                         <i class="fa fa-trash"></i>
                                                     </div>
                                                     <p>
-                                                        Are you sure want to delete  <br>Entity <?php echo e($list->entity_name); ?>	? 	
+                                                        Are you sure want to delete  <br>Entity <?php echo e($list->ENTITY_NAME); ?>	? 	
                                                     </p>
                                                 </div>
                                                 <div class="modal-footer form-btn-flex-between">
                                                     <button type="button" class="form-cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                                                    <a href="<?php echo e(url('entity-delete/'.$list->id)); ?>"> <button type="button" class="form-submit-btn">Yes</button></a>
+                                                    <a href="<?php echo e(url('entity-delete/'.$list->ID)); ?>"> <button type="button" class="form-submit-btn">Yes</button></a>
                                                 </div>
                                             </div>
                                         </div>

@@ -45,24 +45,28 @@ class entityController extends Controller
         ]);
 
 
+
+
         $data_new = DB::table('ENTITY')
-        ->insert([
+        ->insertGetId([
 
             'EIN'                         => $req-> EIN,
             'ENTITY_NAME'                 => $req-> ENTITY_NAME,
-            'ADDRESS_ID'                  =>$insert_address,
+            'ADDRESS_ID'                  => $insert_address,
             'MANAGING_MEMBER_1'           => $req-> MANAGING_MEMBER_1,
             'MANAGING_MEMBER_2'           => $req-> MANAGING_MEMBER_2,
             'OPERATING_AGREEMENT'         => $req-> OPERATING_AGREEMENT,
         
         ]);
 
+
+
        // $id= DB::table('ENTITY')
        // ->insertGetId([
        //     'ID' =>$req->ID
       //  ]);
-            return $data_new;
-        //return redirect('entity-submit-confirmation/'. $data_new->ID )->with('success-message', $data->ENTITY_NAME .' Added Successfully');
+            //return $data_new;
+        return redirect('entity-submit-confirmation/'. $data_new )->with('success-message', $req-> ENTITY_NAME .' Added Successfully');
     }
 
   
@@ -93,51 +97,45 @@ class entityController extends Controller
    
     public function update(Request $req, $id)
     {
-       /* $first_name=DB::table('INVESTOR')
-                ->where('FIRST_NAME',$req-> FIRST_NAME)
-                ->where('INVESTOR.id', $id)
-                ->get();
-
-        $last_name=DB::table('INVESTOR')
-                ->where('LAST_NAME',$req-> LAST_NAME)
-                ->where('INVESTOR.id', $id)
-                ->get();
-
-        $full_name = $first_name. " " . $last_name;
-
-        dd($full_name);*/
-        $get_name=DB::table('INVESTOR')
-        ->insertGetId([
-            'FIRST_NAME'     =>$req-> MANAGING_MEMBER_1,
-            'FIRST_NAME'     =>$req-> MANAGING_MEMBER_2,
-        
-        ]);
 
         $lists = DB::table('ENTITY')
         ->join('ADDRESS','ADDRESS.id' ,'ENTITY.ADDRESS_ID')
-        ->join('INVESTOR','INVESTOR.id' ,'ENTITY.id')
         ->where('ENTITY.id', $id)
         ->update([
 
             'EIN'                         => $req-> EIN,
             'ENTITY_NAME'                 => $req-> ENTITY_NAME,
             'OPERATING_AGREEMENT'         => $req-> OPERATING_AGREEMENT,
-
+            'MANAGING_MEMBER_1'           => $req-> MANAGING_MEMBER_1,
+            'MANAGING_MEMBER_2'           => $req-> MANAGING_MEMBER_2,
             'STREET_1'                  =>$req->STREET_1,
             'CITY'                      =>$req->CITY,
             'STATE'                     =>$req->STATE,
-            'ZIP_CODE'                  =>$req->ZIP_CODE,
-
-        
+            'ZIP_CODE'                  =>$req->ZIP_CODE,        
         ]);
 
-        $full_name =  $req-> FIRST_NAME. " " .  $req-> LAST_NAME;
-        return redirect('entity-list')->with('success-message-edit',  $full_name. ' Updated Successfully');
+
+        return redirect('entity-list')->with('success-message-edit',  $req-> ENTITY_NAME . ' Updated Successfully');
     }
 
   
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        $get_address=DB::table('ENTITY')->where('id',$id)->first();
+        DB::table('ADDRESS')->where('id',$get_address->ADDRESS_ID)->delete();
+        Db::table('ENTITY')->where('id',$id)->delete();
+
+        $full_name =  $get_address-> ENTITY_NAME ;
+      
+        
+        return back()->with('success-message-delete', $full_name .' Deleted Successfully');
+    }
+
+    public function confirmation($id )
+    {
+            $lists=ENTITY::find($id);
+          
+            return view('backend.template.entity.entity-submit-confirmation' , ['lists' => $lists]);
+        
     }
 }

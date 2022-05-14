@@ -4,11 +4,21 @@
 <!--// Main Area Start //-->
 
 <section class="panel-wrapper panel-full-width mt-resp-top">
-    @if(Session::has('success-message-delete')) 
+    @if(Session::has('success-message-edit')) 
     <div class="alert alert-success" role="alert">
-        {{Session::get('success-message-delete')}}
+        {{Session::get('success-message-edit')}} 
       </div>
      @endif 
+     @if(Session::has('success-message')) 
+     <div class="alert alert-success" role="alert">
+         {{Session::get('success-message')}}
+       </div>
+      @endif 
+      @if(Session::has('success-message-delete')) 
+      <div class="alert alert-success" role="alert">
+          {{Session::get('success-message-delete')}}
+        </div>
+       @endif 
     <div class="form-wrapper p-0">
         <div class="form-heading d-flex justify-content-between align-items-center">
             <h6>Entity List</h6>
@@ -55,12 +65,12 @@
                                                         <i class="fa fa-trash"></i>
                                                     </div>
                                                     <p>
-                                                        Are you sure want to delete  <br>Entity {{$list->entity_name}}	? 	
+                                                        Are you sure want to delete  <br>Entity {{$list->ENTITY_NAME}}	? 	
                                                     </p>
                                                 </div>
                                                 <div class="modal-footer form-btn-flex-between">
                                                     <button type="button" class="form-cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                                                    <a href="{{url('entity-delete/'.$list->id)}}"> <button type="button" class="form-submit-btn">Yes</button></a>
+                                                    <a href="{{url('entity-delete/'.$list->ID)}}"> <button type="button" class="form-submit-btn">Yes</button></a>
                                                 </div>
                                             </div>
                                         </div>

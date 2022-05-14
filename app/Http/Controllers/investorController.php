@@ -42,12 +42,14 @@ class investorController extends Controller
                             'STATE'    =>$req->STATE,
                             'ZIP_CODE'  =>$req->ZIP_CODE,
                         ]);
+
+
         $data_new = DB::table('INVESTOR')
-        ->insert([
+        ->insertGetId([
 
             'FIRST_NAME'                => $req-> FIRST_NAME,
             'LAST_NAME'                 => $req-> LAST_NAME,
-            'ADDRESS_ID'                =>$insert_address,
+            'ADDRESS_ID'                => $insert_address,
             'EMAIL_ADDRESS'             => $req-> EMAIL_ADDRESS,
             'PHONE_NUMBER'              => $req-> PHONE_NUMBER,
             'EMPLOYMENT_STATUS'         => $req-> EMPLOYMENT_STATUS,
@@ -63,14 +65,8 @@ class investorController extends Controller
         
         ]);
 
-      //  $id= DB::table('INVESTOR')
-       // ->insertGetId([
-       //     'ID' =>$req->ID
-      //  ]);
 
-
-     return redirect('investor-submit-confirmation/'. $data_new->ID )->with('success-message', 'New investor Added Successfully');
-
+     return redirect('investor-submit-confirmation/'. $data_new )->with('success-message', 'New investor Added Successfully');
     
     }
 

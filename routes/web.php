@@ -23,7 +23,6 @@ Route::get('/', function () {
 });	
 
 
-
 // Entity routing	
 Route::get('/add-new-entry', [entityController ::class, 'index']);	
 Route::post('/entity-submit', [entityController ::class, 'store']);	
