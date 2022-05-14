@@ -31,7 +31,7 @@
                             <select class="form-control select2 select-matcher-obj" name="MANAGING_MEMBER_1" data-select2-id="managing-member-1-select" tabindex="-1" aria-hidden="false">
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-1-select">
                                   @foreach ( $users as $user ) 
-                                    <option value="{{$user->FIRST_NAME.' '.$user->LAST_NAME}}" {{$user->FIRST_NAME == $user->LAST_NAME ? "selected": "" }}  >{{$user->FIRST_NAME." ".$user->LAST_NAME}}</option>
+                                    <option value="{{$user->FIRST_NAME.' '.$user->LAST_NAME}}" {{$user->FIRST_NAME == $user->FIRST_NAME ? "selected": "" }}  >{{$user->FIRST_NAME." ".$user->LAST_NAME}}</option>
                                   @endforeach     
                                 </optgroup>
                             </select>
@@ -43,7 +43,7 @@
                             <select class="form-control select2 select-matcher-obj"  name="MANAGING_MEMBER_2" data-select2-id="managing-member-2-select" tabindex="-1" aria-hidden="false">
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-2-select">  
                                     @foreach ( $users as $user ) 
-                                    <option value="{{$user->FIRST_NAME.' '.$user->LAST_NAME}}" {{$user->FIRST_NAME == $user->LAST_NAME ? "selected": "" }}  >{{$user->FIRST_NAME." ".$user->LAST_NAME}}</option>
+                                    <option value="{{$user->FIRST_NAME.' '.$user->LAST_NAME}}" {{$user->FIRST_NAME == $user->FIRST_NAME ? "selected": "" }}  >{{$user->FIRST_NAME." ".$user->LAST_NAME}}</option>
                                     @endforeach
                                 </optgroup>
                             </select>
@@ -53,6 +53,8 @@
                         <div class="form-flex-item-box">
                             <label for="add_partner_entity_ein">EIN</label>
                             <input type="text" class="form-control" name="EIN" value="{{$lists->EIN}}" id="add_partner_entity_ein">
+
+
                         </div>
                     </div>
                     <div class="col-lg-6">

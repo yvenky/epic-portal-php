@@ -106,6 +106,12 @@ class entityController extends Controller
         $full_name = $first_name. " " . $last_name;
 
         dd($full_name);*/
+        $get_name=DB::table('INVESTOR')
+        ->insertGetId([
+            'FIRST_NAME'     =>$req-> MANAGING_MEMBER_1,
+            'FIRST_NAME'     =>$req-> MANAGING_MEMBER_2,
+        
+        ]);
 
         $lists = DB::table('ENTITY')
         ->join('ADDRESS','ADDRESS.id' ,'ENTITY.ADDRESS_ID')
@@ -115,8 +121,6 @@ class entityController extends Controller
 
             'EIN'                         => $req-> EIN,
             'ENTITY_NAME'                 => $req-> ENTITY_NAME,
-            'MANAGING_MEMBER_1'           => $req-> $full_name,
-            'MANAGING_MEMBER_2'           => $req-> $full_name,
             'OPERATING_AGREEMENT'         => $req-> OPERATING_AGREEMENT,
 
             'STREET_1'                  =>$req->STREET_1,
