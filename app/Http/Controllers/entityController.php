@@ -32,7 +32,6 @@ class entityController extends Controller
             'ENTITY_NAME'                   => 'required',
             'MANAGING_MEMBER_1'             => 'required',
             'MANAGING_MEMBER_2'             => 'required',
-            'OPERATING_AGREEMENT'           => 'required',
             
         ]);
 

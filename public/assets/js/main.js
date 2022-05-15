@@ -336,9 +336,12 @@
            regex : /^\d{2}\-?\d{7}$/,
            maxlength: 10
          },
-         add_partner_managing_member_1: {
+         add_partner_managing_member_1_select: {
            required: true,
          },
+         add_partner_managing_member_2_select: {
+          required: true,
+        },
          add_partner_entity_docs: {
            required:true,
          },

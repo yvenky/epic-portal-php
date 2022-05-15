@@ -51,7 +51,7 @@
                                     <i class="fa fa-eye"></i>
                                 </a>  
                                 <a href="{{url('entity-edit/'.$list->ID)}}" class="table-edit-btn"><i class="fa fa-edit"></i></a>
-                                <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-entity-modal-{{ $list->id }}">
+                                <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-entity-modal-{{ $list->ID }}">
                                     <i class="fa fa-trash"></i>
                                 </a>           
                                 
@@ -65,7 +65,7 @@
                                                         <i class="fa fa-trash"></i>
                                                     </div>
                                                     <p>
-                                                        Are you sure want to delete  <br>Entity {{$list->ENTITY_NAME}}	? 	
+                                                        Are you sure want to delete  <br> {{$list->ENTITY_NAME}} ? 	
                                                     </p>
                                                 </div>
                                                 <div class="modal-footer form-btn-flex-between">

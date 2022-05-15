@@ -53,7 +53,7 @@
                                     <i class="fa fa-eye"></i>
                                 </a>  
                                 <a href="<?php echo e(url('entity-edit/'.$list->ID)); ?>" class="table-edit-btn"><i class="fa fa-edit"></i></a>
-                                <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-entity-modal-<?php echo e($list->id); ?>">
+                                <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-entity-modal-<?php echo e($list->ID); ?>">
                                     <i class="fa fa-trash"></i>
                                 </a>           
                                 
@@ -67,7 +67,7 @@
                                                         <i class="fa fa-trash"></i>
                                                     </div>
                                                     <p>
-                                                        Are you sure want to delete  <br>Entity <?php echo e($list->ENTITY_NAME); ?>	? 	
+                                                        Are you sure want to delete  <br> <?php echo e($list->ENTITY_NAME); ?> ? 	
                                                     </p>
                                                 </div>
                                                 <div class="modal-footer form-btn-flex-between">

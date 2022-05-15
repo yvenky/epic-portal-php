@@ -43,7 +43,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box order-error-select">
-                            <label for="expense_date">Managing Member 2</label>
+                            <label for="add_partner_managing_member_2">Managing Member 2</label>
                             <select name="MANAGING_MEMBER_2" class="form-select select-matcher-obj select2" id="add_partner_managing_member_2_select"  data-select2-id="managing-member-2_select"  aria-label="Default select example">
                                 <optgroup label="Please Select Member" data-select2-id="managing-member-2_select">
                                     <option value="">Please Select</option>
