@@ -36,4 +36,10 @@ class ADDRESS extends Model
         
     }
 
+    public function property()
+    {
+        return $this->hasMany('App\PROPERTY');
+        
+    }
+
 }
