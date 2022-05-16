@@ -12,7 +12,7 @@
     <div class="form-wrapper">
         <div class="form-heading details-view-edit-wrap">
             <h6>Entity Details</h6>
-            <a href="{{url('entity-edit/'.$lists->id)}}" title="Edit Entity"><i class="fa fa-edit"></i></a>
+            <a href="{{url('entity-edit/'.$lists->ID)}}" title="Edit Entity"><i class="fa fa-edit"></i></a>
         </div>
         <div class="form-content">
 
