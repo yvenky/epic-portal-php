@@ -18,7 +18,7 @@
                 <div class="row mt-4">
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_address">Property Location </label>
+                            <label for="property_address">Property Address </label>
                             <input type="text" class="form-control" name="property_address" id="property_address">
                         </div>
                     </div>
@@ -41,11 +41,19 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form-flex-item-box">
-                            <label for="property_company">Company</label>
-                            <input type="text" class="form-control" name="property_company" id="property_company">
-                        </div>
+                        <div class="form-flex-item-box order-error-select">
+                            <label for="property_company">Entity Company</label>
+                                <select name="property_company" class="form-select select-matcher-obj select2" id="property_company_select"  data-select2-id="property_company_select"  aria-label="Default select example">
+                                <optgroup label="Please Select Member" data-select2-id="property_company_select">
+                                    <option value="">Please Select</option>
+                                    @foreach ( $users as $user ) 
+                                        <option value="{{$user->ID}}">{{$user->ENTITY_NAME}}</option>
+                                    @endforeach
+                                </optgroup>
+                            </select>
+                        </div>     
                     </div>
+
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_documents_url">Property Documents</label>

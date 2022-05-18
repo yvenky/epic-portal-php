@@ -42,11 +42,19 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form-flex-item-box">
+                        <div class="form-flex-item-box order-error-select">
                             <label for="property_company">Company</label>
-                            <input type="text" class="form-control" name="property_company" id="property_company">
-                        </div>
+                                <select name="property_company" class="form-select select-matcher-obj select2" id="property_company_select"  data-select2-id="property_company_select"  aria-label="Default select example">
+                                <optgroup label="Please Select Member" data-select2-id="property_company_select">
+                                    <option value="">Please Select</option>
+                                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                        <option value="<?php echo e($user->ID); ?>"><?php echo e($user->ENTITY_NAME); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </optgroup>
+                            </select>
+                        </div>     
                     </div>
+
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="property_documents_url">Property Documents</label>

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\entityController;
 use Illuminate\Http\Request;
 use App\Models\Property;
+use App\Models\ENTITY;
 use APP\DB;
 
 class PropertyController extends Controller
@@ -17,7 +19,11 @@ class PropertyController extends Controller
     public function index()
     {
         //
-        return view('backend.template.property.add-new-property');
+       // return view('backend.template.property.add-new-property');
+        $lists = PROPERTY::all();
+        $users=ENTITY::all();
+
+        return view('backend.template.property.add-new-property',  ['lists' => $lists, 'users' => $users]);
     }
 
     /**

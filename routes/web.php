@@ -5,6 +5,7 @@ use App\Http\Controllers\entityController;
 use App\Http\Controllers\masterTemplate;	
 use App\Http\Controllers\investorController;	
 use App\Http\Controllers\PropertyController;	
+use App\Http\Controllers\TestController;
 
 /*	
 |--------------------------------------------------------------------------	
@@ -21,7 +22,7 @@ use App\Http\Controllers\PropertyController;
 Route::get('/', function () {	
     return view('index');	
 });	
-
+Route::get('/test', [TestController ::class, 'index']);
 
 // Entity routing	
 Route::get('/add-new-entry', [entityController ::class, 'index']);	

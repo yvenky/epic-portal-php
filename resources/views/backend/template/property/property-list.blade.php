@@ -34,10 +34,16 @@
                         <tr>
                             <th>#</th>
                             <th>Property Address</th>
-                            <th># Of Acres</th>
-                            <th>Map Right URL</th>
-                            <th>Contract</th>
-                            <th></th>
+                            <th>Google Coordinates</th>
+                            <th>Entity Company</th>
+                            <th>Number Of Acres</th>
+                            <th>Map Right Url</th>
+                            <th>Property Documents</th>
+                            <th>Purchase Price</th>
+                            <th>Per Acre Cost</th>
+                            <th>Potential Per Acre</th>
+                            <th>Potential Market Value</th>
+                            
                         </tr>
                     </thead>
                     <tbody class="view-icon-table">
