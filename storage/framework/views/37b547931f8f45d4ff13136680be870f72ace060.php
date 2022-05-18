@@ -19,14 +19,20 @@
                 <div class="row mt-4">
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_address">Property Address </label>
+                            <label for="property_address">Property Location </label>
                             <input type="text" class="form-control" name="property_address" id="property_address">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_of_acres"># Of Acres</label>
-                            <input type="text" class="form-control" name="property_of_acres" id="property_of_acres">
+                            <label for="google_coordinates">Google Coordinates</label>
+                            <input type="text" class="form-control" name="google_coordinates" id="google_coordinates">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-flex-item-box">
+                            <label for="property_of_acres">Number Of Acres</label>
+                            <input type="number" class="form-control" name="property_of_acres" id="property_of_acres">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -37,40 +43,44 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_contract_url">Contract</label>
-                            <input type="text" class="form-control" name="property_contract_url" id="property_contract_url">
+                            <label for="property_company">Company</label>
+                            <input type="text" class="form-control" name="property_company" id="property_company">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_survey_url">Survey Url</label>
-                            <input type="text" class="form-control" name="property_survey_url" id="property_survey_url">
+                            <label for="property_documents_url">Property Documents</label>
+                            <input type="url" class="form-control" name="property_documents_url" id="property_documents_url">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_closing_documents">Closing Documents</label>
-                            <input type="text" class="form-control" name="property_closing_documents" id="property_closing_documents">
+                            <label for="purchase_price">Purchase Price</label>
+                            <input type="number" class="form-control" name="purchase_price" id="purchase_price">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_appraisal">Appraisal</label>
-                            <input type="text" class="form-control" name="property_appraisal" id="property_appraisal">
+                            <label for="per_acre_cost">Per Acre Cost</label>
+                            <input type="number" class="form-control" name="per_acre_cost" id="per_acre_cost">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_phase_env_inspection">Phase Env Inspection</label>
-                            <input type="text" class="form-control" name="property_phase_env_inspection" id="property_phase_env_inspection">
+                            <label for="potential_per_acre">Potential Per Acre</label>
+                            <input type="number" class="form-control" name="potential_per_acre" id="per_acre_cost">
                         </div>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_attorney_feedback">Attorney Feedback</label>
-                            <input type="text" class="form-control" name="property_attorney_feedback" id="property_attorney_feedback">
+                            <label for="potential_market_value">Potential Market Value</label>
+                            <input type="number" class="form-control" name="potential_market_value" id="potential_market_value">
                         </div>
                     </div>
+
+                   
+                    
+        
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
