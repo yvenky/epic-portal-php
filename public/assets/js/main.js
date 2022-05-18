@@ -328,33 +328,30 @@
        errorElement: "p",
        errorClass: "error-text",
        rules: {
-        add_partner_entity_name: {
+        ENTITY_NAME: {
            required: true,
          },
-         add_partner_entity_ein: { 
+         EIN: { 
            required: true, 
            regex : /^\d{2}\-?\d{7}$/,
            maxlength: 10
          },
-         add_partner_managing_member_1_select: {
+         MANAGING_MEMBER_1: {
            required: true,
          },
-         add_partner_managing_member_2_select: {
+         MANAGING_MEMBER_2: {
           required: true,
         },
-         add_partner_entity_docs: {
-           required:true,
-         },
-         add_partner_entity_address_street: {
+         STREET_1: {
            required: true,
          },
-         add_partner_entity_address_city: {
+         CITY: {
            required: true,
          },
-         add_partner_entity_address_state: {
+         STATE: {
            required: true,
          },
-         add_partner_entity_address_zipcode: {
+         ZIP_CODE: {
            required: true,
            minlength:5,
            maxlength:5,
@@ -362,29 +359,29 @@
          }
        },
        messages: {
-        add_partner_entity_name: {
+        ENTITY_NAME: {
            required: "Entity Name is required"
          },
-         add_partner_managing_member_1: {
+        MANAGING_MEMBER_1: {
            required: "Please Select Member"
          },
-         add_partner_entity_ein: { 
+         MANAGING_MEMBER_2: {
+          required: "Please Select Member"
+        },
+         EIN: { 
            required: "EIN is required",
            regex : "Please enter valid EIN. ( For Example XX-XXXXXXX )",
          },
-         add_partner_entity_docs: {
-          required: "Entity Docs is required",
-         },
-         add_partner_entity_address_street: {
+         STREET_1: {
            required: "Street is required"
          },
-         add_partner_entity_address_city: {
+         CITY: {
            required: "City is required"
          },
-         add_partner_entity_address_state: {
+         STATE: {
            required: "Please Select State"
          },
-         add_partner_entity_address_zipcode:{
+         ZIP_CODE:{
            required: 	"Zip Code is requied",
            maxlength: 	"Zip code must be 5 digits",
            minlength: 	"Zip code must be 5 digits",
@@ -398,20 +395,68 @@
         errorElement: "p",
         errorClass: "error-text",
         rules: {
-          property_address: {
+          PROPERTY_ADDRESS: {
             required: true,
           },
-          property_map_right_url: {
+          GOOGLE_COORDINATES: {
             required:true,
           },
+          ENTITY_COMPANY: {
+            required: true,
+          },
+          NO_OF_ACRES: {
+            required: true,
+          },
+          MAP_URL: {
+            required: true,
+          },
+          PROPERTY_DOCUMENTS: {
+            required: true,
+          },
+          PURCHASE_PRICE: {
+            required: true,
+          },
+          COST_PER_ACRE: {
+            required: true,
+          },
+          POTENTIAL_PER_ACRE: {
+            required: true,
+          },
+          POTENTIAL_MARKET_VALUE: {
+            required: true,
+          }
         },
         messages: {
-          property_address: {
+          PROPERTY_ADDRESS: {
             required: "Property Address is required"
           },
-          property_map_right_url: { 
+          GOOGLE_COORDINATES: {
+            required: "Property Google Coordinates is required"
+          },
+          ENTITY_COMPANY: {
+            required: "Please Select Entity Company"
+          },
+          NO_OF_ACRES: {
+            required: "Property Of Acres is required"
+          },
+          MAP_URL: {
             required: "Property Map Right Url required",
           },
+          PROPERTY_DOCUMENTS: {
+            required: "Property Documents is required"
+          },
+          PURCHASE_PRICE: {
+            required: "Property Purchase Price is required"
+          },
+          COST_PER_ACRE: {
+            required: "Property Per Acre Cost is required"
+          },
+          POTENTIAL_PER_ACRE: {
+            required: "Property Per Acre is required"
+          },
+          POTENTIAL_MARKET_VALUE: {
+            required: "Property Market Value is required"
+          }
         }
       });
     }

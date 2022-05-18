@@ -19,32 +19,20 @@
                 <div class="row mt-4">
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_address">Property Location </label>
-                            <input type="text" class="form-control" name="property_address" id="property_address">
+                            <label for="property_address">Property Address </label>
+                            <input type="text" class="form-control" name="PROPERTY_ADDRESS" id="PROPERTY_ADDRESS">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="google_coordinates">Google Coordinates</label>
-                            <input type="text" class="form-control" name="google_coordinates" id="google_coordinates">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-flex-item-box">
-                            <label for="property_of_acres">Number Of Acres</label>
-                            <input type="number" class="form-control" name="property_of_acres" id="property_of_acres">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-flex-item-box">
-                            <label for="property_map_right_url">Map Right Url</label>
-                            <input type="text" class="form-control" name="property_map_right_url" id="property_map_right_url">
+                            <input type="text" class="form-control" name="GOOGLE_COORDINATES" id="GOOGLE_COORDINATES">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box order-error-select">
-                            <label for="property_company">Company</label>
-                                <select name="property_company" class="form-select select-matcher-obj select2" id="property_company_select"  data-select2-id="property_company_select"  aria-label="Default select example">
+                            <label for="property_company">Entity Company</label>
+                                <select name="ENTITY_COMPANY" class="form-select select-matcher-obj select2" id="property_company_select"  data-select2-id="property_company_select"  aria-label="Default select example">
                                 <optgroup label="Please Select Member" data-select2-id="property_company_select">
                                     <option value="">Please Select</option>
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
@@ -54,35 +42,48 @@
                             </select>
                         </div>     
                     </div>
+                    <div class="col-lg-6">
+                        <div class="form-flex-item-box">
+                            <label for="property_of_acres">Number Of Acres</label>
+                            <input type="number" class="form-control" name="NO_OF_ACRES" id="NO_OF_ACRES">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-flex-item-box">
+                            <label for="property_map_right_url">Map Right Url</label>
+                            <input type="text" class="form-control" name="MAP_URL" id="MAP_URL">
+                        </div>
+                    </div>
+                  
 
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_documents_url">Property Documents</label>
-                            <input type="url" class="form-control" name="property_documents_url" id="property_documents_url">
+                            <label for="property_documents">Property Documents</label>
+                            <input type="url" class="form-control" name="PROPERTY_DOCUMENTS" id="PROPERTY_DOCUMENTS">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="purchase_price">Purchase Price</label>
-                            <input type="number" class="form-control" name="purchase_price" id="purchase_price">
+                            <input type="number" class="form-control" name="PURCHASE_PRICE" id="PURCHASE_PRICE">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="per_acre_cost">Per Acre Cost</label>
-                            <input type="number" class="form-control" name="per_acre_cost" id="per_acre_cost">
+                            <input type="number" class="form-control" name="COST_PER_ACRE" id="COST_PER_ACRE">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="potential_per_acre">Potential Per Acre</label>
-                            <input type="number" class="form-control" name="potential_per_acre" id="per_acre_cost">
+                            <input type="number" class="form-control" name="POTENTIAL_PER_ACRE" id="POTENTIAL_PER_ACRE">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="potential_market_value">Potential Market Value</label>
-                            <input type="number" class="form-control" name="potential_market_value" id="potential_market_value">
+                            <input type="number" class="form-control" name="POTENTIAL_MARKET_VALUE" id="POTENTIAL_MARKET_VALUE">
                         </div>
                     </div>
 

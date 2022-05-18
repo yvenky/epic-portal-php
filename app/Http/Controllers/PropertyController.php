@@ -35,25 +35,37 @@ class PropertyController extends Controller
     {
         
         $req->validate([
-            'property_address'                   => 'required',       
-            'property_map_right_url'             => 'required',       
+
+        'PROPERTY_ADDRESS'        => 'required',    
+        'GOOGLE_COORDINATES'      => 'required',      
+        'ENTITY_COMPANY'          => 'required',    
+        'NO_OF_ACRES'             => 'required',       
+        'MAP_URL'                 => 'required',  
+        'PROPERTY_DOCUMENTS'      => 'required', 
+        'PURCHASE_PRICE'          => 'required',          
+        'COST_PER_ACRE'           => 'required', 
+        'POTENTIAL_PER_ACRE'      => 'required', 
+        'POTENTIAL_MARKET_VALUE'  => 'required',      
         ]);
+
 
         $data  = new Property();
 
-        $data -> property_address                = $req-> property_address; 
-        $data -> property_of_acres               = $req-> property_of_acres; 
-        $data -> property_map_right_url          = $req-> property_map_right_url; 
-        $data -> property_contract_url           = $req-> property_contract_url; 
-        $data -> property_survey_url             = $req-> property_survey_url; 
-        $data -> property_closing_documents      = $req-> property_closing_documents; 
-        $data -> property_appraisal              = $req-> property_appraisal; 
-        $data -> property_phase_env_inspection   = $req-> property_phase_env_inspection; 
-        $data -> property_attorney_feedback      = $req-> property_attorney_feedback; 
+        $data -> PROPERTY_ADDRESS               = $req-> PROPERTY_ADDRESS; 
+        $data -> GOOGLE_COORDINATES             = $req-> GOOGLE_COORDINATES; 
+        $data -> ENTITY_COMPANY                 = $req-> ENTITY_COMPANY; 
+        $data -> NO_OF_ACRES                    = $req-> NO_OF_ACRES ; 
+        $data -> MAP_URL                        = $req-> MAP_URL; 
+        $data -> PROPERTY_DOCUMENTS             = $req-> PROPERTY_DOCUMENTS; 
+        $data -> PURCHASE_PRICE                 = $req-> PURCHASE_PRICE; 
+        $data -> COST_PER_ACRE                  = $req-> COST_PER_ACRE; 
+        $data -> POTENTIAL_PER_ACRE             = $req-> POTENTIAL_PER_ACRE; 
+        $data -> POTENTIAL_MARKET_VALUE         = $req-> POTENTIAL_MARKET_VALUE; 
         
         $data ->save();
 
-        return redirect('property-submit-confirmation/'. $data->id )->with('success-message', 'New Property Added Successfully');
+        //return redirect('property-submit-confirmation/'. $data->id )->with('success-message', 'New Property Added Successfully');
+        return redirect('property-list' )->with('success-message', 'New Property Added Successfully');
         
     }
 

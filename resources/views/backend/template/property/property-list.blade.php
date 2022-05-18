@@ -2,8 +2,6 @@
 
 @section('main-content')
 <!--// Main Area Start //-->
-
-
 <section class="panel-wrapper panel-full-width mt-resp-top">
     <div class="form-wrapper">
         @if(Session::has('success-message-edit')) 
@@ -51,10 +49,16 @@
                     @foreach ($lists as $list)
                         <tr>
                             <td>{{$i++}}</td>
-                            <td>{{$list->property_address}}</td>
-                            <td>{{$list->property_of_acres}}</td>
-                            <td><a href="{{$list->property_map_right_url}}" class="text-link-dark">Map Right Link</a></td>
-                            <td><a href="{{$list->property_contract_url}}"  class="text-link-dark">Contract Link</a></td>
+                            <td>{{$list->PROPERTY_ADDRESS}}</td>
+                            <td>{{$list->GOOGLE_COORDINATES}}</td>
+                            <td>{{$list->entity_id->ENTITY_NAME}}</td>
+                            <td>{{$list->NO_OF_ACRES}}</td>
+                            <td><a href="{{$list->MAP_URL}}" class="text-link-dark">Map Right Link</a></td>
+                            <td><a href="{{$list->PROPERTY_DOCUMENTS}}"  class="text-link-dark">Property Documents Link</a></td>
+                            <td>{{$list->PURCHASE_PRICE}}</td>
+                            <td>{{$list->COST_PER_ACRE}}</td>
+                            <td>{{$list->POTENTIAL_PER_ACRE}}</td>
+                            <td>{{$list->POTENTIAL_MARKET_VALUE}}</td>
                             <td>
                                 <a href="{{url('property-view/'.$list->id)}}" class="table-view-btn">
                                     <i class="fa fa-eye"></i>
@@ -72,7 +76,7 @@
                                                     <i class="fa fa-trash"></i>
                                                 </div>
                                                 <p>
-                                                    Are you sure want to delete  <br> {{$list->property_address}} ? 
+                                                    Are you sure want to delete  <br> {{$list->PROPERTY_ADDRESS}} ? 
                                                 </p>
                                             </div>
                                             <div class="modal-footer form-btn-flex-between">

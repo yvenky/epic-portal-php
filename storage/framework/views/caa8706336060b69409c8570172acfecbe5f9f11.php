@@ -2,8 +2,6 @@
 
 <?php $__env->startSection('main-content'); ?>
 <!--// Main Area Start //-->
-
-
 <section class="panel-wrapper panel-full-width mt-resp-top">
     <div class="form-wrapper">
         <?php if(Session::has('success-message-edit')): ?> 
@@ -53,10 +51,16 @@
                     <?php $__currentLoopData = $lists; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $list): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td><?php echo e($i++); ?></td>
-                            <td><?php echo e($list->property_address); ?></td>
-                            <td><?php echo e($list->property_of_acres); ?></td>
-                            <td><a href="<?php echo e($list->property_map_right_url); ?>" class="text-link-dark">Map Right Link</a></td>
-                            <td><a href="<?php echo e($list->property_contract_url); ?>"  class="text-link-dark">Contract Link</a></td>
+                            <td><?php echo e($list->PROPERTY_ADDRESS); ?></td>
+                            <td><?php echo e($list->GOOGLE_COORDINATES); ?></td>
+                            <td><?php echo e($list->entity_id->ENTITY_NAME); ?></td>
+                            <td><?php echo e($list->NO_OF_ACRES); ?></td>
+                            <td><a href="<?php echo e($list->MAP_URL); ?>" class="text-link-dark">Map Right Link</a></td>
+                            <td><a href="<?php echo e($list->PROPERTY_DOCUMENTS); ?>"  class="text-link-dark">Property Documents Link</a></td>
+                            <td><?php echo e($list->PURCHASE_PRICE); ?></td>
+                            <td><?php echo e($list->COST_PER_ACRE); ?></td>
+                            <td><?php echo e($list->POTENTIAL_PER_ACRE); ?></td>
+                            <td><?php echo e($list->POTENTIAL_MARKET_VALUE); ?></td>
                             <td>
                                 <a href="<?php echo e(url('property-view/'.$list->id)); ?>" class="table-view-btn">
                                     <i class="fa fa-eye"></i>
@@ -74,7 +78,7 @@
                                                     <i class="fa fa-trash"></i>
                                                 </div>
                                                 <p>
-                                                    Are you sure want to delete  <br> <?php echo e($list->property_address); ?> ? 
+                                                    Are you sure want to delete  <br> <?php echo e($list->PROPERTY_ADDRESS); ?> ? 
                                                 </p>
                                             </div>
                                             <div class="modal-footer form-btn-flex-between">
