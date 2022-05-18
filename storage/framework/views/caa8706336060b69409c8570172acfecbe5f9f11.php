@@ -43,6 +43,7 @@
                             <th>Per Acre Cost</th>
                             <th>Potential Per Acre</th>
                             <th>Potential Market Value</th>
+                            <th></th>
                             
                         </tr>
                     </thead>
