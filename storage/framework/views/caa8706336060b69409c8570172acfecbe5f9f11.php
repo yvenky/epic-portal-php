@@ -63,14 +63,14 @@
                             <td><?php echo e($list->POTENTIAL_PER_ACRE); ?></td>
                             <td><?php echo e($list->POTENTIAL_MARKET_VALUE); ?></td>
                             <td>
-                                <a href="<?php echo e(url('property-view/'.$list->id)); ?>" class="table-view-btn">
+                                <a href="<?php echo e(url('property-view/'.$list->ID)); ?>" class="table-view-btn">
                                     <i class="fa fa-eye"></i>
                                 </a>                                 
-                                <a href="<?php echo e(url('property-list-edit/'.$list->id)); ?>" class="table-edit-btn"><i class="fa fa-edit"></i></a>
-                                <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-property-modal-<?php echo e($list->id); ?>">
+                                <a href="<?php echo e(url('property-list-edit/'.$list->ID)); ?>" class="table-edit-btn"><i class="fa fa-edit"></i></a>
+                                <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-property-modal-<?php echo e($list->ID); ?>">
                                     <i class="fa fa-trash"></i>
                                 </a>                    
-                                <div class="modal fade" id="delete-property-modal-<?php echo e($list->id); ?>" tabindex="-1" aria-labelledby="delete-property-modalLabel" aria-hidden="true">
+                                <div class="modal fade" id="delete-property-modal-<?php echo e($list->ID); ?>" tabindex="-1" aria-labelledby="delete-property-modalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                         <div class="modal-content ">
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i> </button>
@@ -84,7 +84,7 @@
                                             </div>
                                             <div class="modal-footer form-btn-flex-between">
                                                 <button type="button" class="form-cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                                                <a href="<?php echo e(url('property-list-delete/'.$list->id)); ?>" ><button type="button" class="form-submit-btn">Yes</button></a>
+                                                <a href="<?php echo e(url('property-list-delete/'.$list->ID)); ?>" ><button type="button" class="form-submit-btn">Yes</button></a>
                                             </div>
                                         </div>
                                     </div>

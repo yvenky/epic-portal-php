@@ -122,7 +122,7 @@ class entityController extends Controller
     {
         $get_address=DB::table('ENTITY')->where('id',$id)->first();
         DB::table('ADDRESS')->where('id',$get_address->ADDRESS_ID)->delete();
-        Db::table('ENTITY')->where('id',$id)->delete();
+        DB::table('ENTITY')->where('id',$id)->delete();
 
         $full_name =  $get_address-> ENTITY_NAME ;
       

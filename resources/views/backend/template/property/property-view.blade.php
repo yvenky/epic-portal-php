@@ -5,72 +5,84 @@
     <div class="form-wrapper">
         <div class="form-heading details-view-edit-wrap">
             <h6>Property Details</h6>
-            <a href="{{url('property-list-edit/'.$lists->id)}}" title="Edit Property"><i class="fa fa-edit"></i></a>
+            <a href="{{url('property-list-edit/'.$lists->ID)}}" title="Edit Property"><i class="fa fa-edit"></i></a>
         </div>
         <div class="form-content">
            
-        @if ( $lists->property_address )
+        @if ( $lists->PROPERTY_ADDRESS )
                 <div class="form-flex-box-text-item">
                     <span>Property Address</span>
-                    <p>{{$lists->property_address}}</p>
+                    <p>{{$lists->PROPERTY_ADDRESS}}</p>
                 </div>
             @endif
 
-            @if ( $lists->property_of_acres )
+            @if ( $lists->GOOGLE_COORDINATES )
                 <div class="form-flex-box-text-item">
-                    <span># Of Acres</span>
-                    <p>{{$lists->property_of_acres}}</p>
+                    <span>Google Coordinates</span>
+                    <p>{{$lists->GOOGLE_COORDINATES}}</p>
                 </div>
             @endif
 
-            @if ( $lists->property_map_right_url )
+            @if ( $lists->ENTITY_COMPANY)
+                <div class="form-flex-box-text-item">
+                    <span>Company</span>
+                    <p>{{$lists->entity_id->ENTITY_NAME}}</p>
+                </div>
+            @endif
+
+            @if ( $lists->NO_OF_ACRES)
+                <div class="form-flex-box-text-item">
+                    <span>Number Of Acres</span>
+                    <p>{{$lists->NO_OF_ACRES}}</p>
+                </div>
+            @endif
+
+            @if ( $lists->MAP_URL )
             <div class="form-flex-box-text-item">
                 <span>Map Right Url</span>
-                <p><a href="https://{{$lists->property_map_right_url}}" target="_blank">Map Right Url</a></p>
+                <p><a href="{{$lists->MAP_URL}}" target="_blank" class="text-link-dark">Map Right Url</a></p>
             </div>
             @endif
 
-            @if ( $lists->property_contract_url )
+            @if ( $lists->PROPERTY_DOCUMENTS )
+                <div class="form-flex-box-text-item">
+                    <span>Property Documents</span>
+                    <p><a href="{{$lists->PROPERTY_DOCUMENTS}}" target="_blank" class="text-link-dark">Property Documents</a></p>
+                </div>
+            @endif
+
+            
+
+            @if ( $lists->PURCHASE_PRICE)
             <div class="form-flex-box-text-item">
-                <span>Contract</span>
-                <p><a href="https://{{$lists->property_contract_url}}" target="_blank">Contract</a></p>
+                <span>Purchase Price</span>
+                <p>{{$lists->PURCHASE_PRICE}}</p>
             </div>
             @endif
 
-            @if ( $lists->property_survey_url )
+            
+            @if ( $lists->COST_PER_ACRE )
             <div class="form-flex-box-text-item">
-                <span>Survey Url</span>
-                <p><a href="https://{{$lists->property_survey_url}}" target="_blank">Survey Url</a></p>
+                <span>Per Acre Cost</span>
+                <p>{{$lists->COST_PER_ACRE}}</p>
             </div>
             @endif
 
-            @if ( $lists->property_closing_documents )
+            @if ( $lists->POTENTIAL_PER_ACRE )
             <div class="form-flex-box-text-item">
-                <span>Closing Documents</span>
-                <p><a href="https://{{$lists->property_closing_documents}}" target="_blank">Closing Documents</a></p>
+                <span>Potential Per Acre</span>
+                <p>{{$lists->POTENTIAL_PER_ACRE}}</p>
             </div>
             @endif
 
-            @if ( $lists->property_appraisal )
+            @if ( $lists->POTENTIAL_MARKET_VALUE )
             <div class="form-flex-box-text-item">
-                <span>Appraisal</span>
-                <p><a href="https://{{$lists->property_appraisal}}" target="_blank">Appraisal</a></p>
+                <span>Potential Market Value</span>
+                <p>{{$lists->POTENTIAL_MARKET_VALUE}}</p>
             </div>
             @endif
 
-            @if ( $lists->property_phase_env_inspection )
-            <div class="form-flex-box-text-item">
-                <span>Phase Env Inspection</span>
-                <p><a href="https://{{$lists->property_phase_env_inspection}}" target="_blank">Phase Env Inspection</a></p>
-            </div>
-            @endif
-
-            @if ( $lists->property_attorney_feedback )
-            <div class="form-flex-box-text-item">
-                <span>Attorney Feedback</span>
-                <p><a href="https://{{$lists->property_attorney_feedback}}" target="_blank">Attorney Feedback</a></p>
-            </div>
-            @endif
+            
         </div>
         <div class="form-content">
             <div class="form-btn-flex-between pt-2">
