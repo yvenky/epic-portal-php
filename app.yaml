@@ -18,6 +18,7 @@ runtime_config:
 
 skip_files:
  - .env #we want to skip this to make sure we don’t mess stuff up on the server
+ - .gcloudignore 
 
 env_variables:
  # Put production environment variables here.

@@ -54,8 +54,8 @@
                             <td>{{$list->GOOGLE_COORDINATES}}</td>
                             <td>{{$list->entity_id->ENTITY_NAME}}</td>
                             <td>{{$list->NO_OF_ACRES}}</td>
-                            <td><a href="{{$list->MAP_URL}}" class="text-link-dark">Map Right Link</a></td>
-                            <td><a href="{{$list->PROPERTY_DOCUMENTS}}"  class="text-link-dark">Property Documents Link</a></td>
+                            <td><a href="{{$list->MAP_URL}}" class="text-link-dark">URL</a></td>
+                            <td><a href="{{$list->PROPERTY_DOCUMENTS}}"  class="text-link-dark">URL</a></td>
                             <td>{{$list->PURCHASE_PRICE}}</td>
                             <td>{{$list->COST_PER_ACRE}}</td>
                             <td>{{$list->POTENTIAL_PER_ACRE}}</td>

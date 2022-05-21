@@ -6,6 +6,7 @@ use App\Http\Controllers\masterTemplate;
 use App\Http\Controllers\investorController;	
 use App\Http\Controllers\PropertyController;	
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\EntityShareholdingController;
 
 /*	
 |--------------------------------------------------------------------------	
@@ -63,3 +64,8 @@ Route::put('investor-update/{id}', [investorController::class, 'update']);
 Route::get('/investor-view/{id}', [investorController::class, 'show']);
 Route::get('/investor-list', [investorController::class, 'showList']);
 Route::get('investor-delete/{id}', [investorController::class, 'delete']);	
+
+
+// Entity Shareholding
+
+Route::get('/entity-shareholding', [EntityShareholdingController ::class, 'index']);

@@ -56,8 +56,8 @@
                             <td><?php echo e($list->GOOGLE_COORDINATES); ?></td>
                             <td><?php echo e($list->entity_id->ENTITY_NAME); ?></td>
                             <td><?php echo e($list->NO_OF_ACRES); ?></td>
-                            <td><a href="<?php echo e($list->MAP_URL); ?>" class="text-link-dark">Map Right Link</a></td>
-                            <td><a href="<?php echo e($list->PROPERTY_DOCUMENTS); ?>"  class="text-link-dark">Property Documents Link</a></td>
+                            <td><a href="<?php echo e($list->MAP_URL); ?>" class="text-link-dark">URL</a></td>
+                            <td><a href="<?php echo e($list->PROPERTY_DOCUMENTS); ?>"  class="text-link-dark">URL</a></td>
                             <td><?php echo e($list->PURCHASE_PRICE); ?></td>
                             <td><?php echo e($list->COST_PER_ACRE); ?></td>
                             <td><?php echo e($list->POTENTIAL_PER_ACRE); ?></td>

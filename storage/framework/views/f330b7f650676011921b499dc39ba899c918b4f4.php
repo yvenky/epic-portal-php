@@ -52,35 +52,29 @@
             <div class="sidebar-menu-container">
                 <nav>
                     <ul>
-                        <li class="menu-item-dashboard <?php echo e((request()->is('new-partner-registration')) ? 'active' : ''); ?>">
-                            <a href="<?php echo e(url('investor-registration')); ?>">Add Investor</a>
-                            <span><a href="<?php echo e(url('investor-registration')); ?>"><i  class="fas fa-user-plus"></i></a></span>
-                            <div class="tooltip-sidebar-link"><p>Add Investor</p></div>
-                        </li>
+                      
                         <li class="menu-item-dashboard <?php echo e((request()->is('investor-list')) ? 'active' : ''); ?>">
                             <a href="<?php echo e(url('investor-list')); ?>">View Investor List</a>
                             <span><a href="<?php echo e(url('investor-list')); ?>"><i class="fas fa-sort-amount-up"></i></a></span>
                             <div class="tooltip-sidebar-link"><p>View Investor List</p></div>
                         </li>
-                        <li class="menu-item-dashboard <?php echo e((request()->is('add-new-property')) ? 'active' : ''); ?>">
-                            <a href="<?php echo e(url( 'add-new-property' )); ?>">Add Property</a>
-                            <span><a href="<?php echo e(url( 'add-new-property' )); ?>"><i class="fas fa-hand-holding-usd"></i></a></span>
-                            <div class="tooltip-sidebar-link"><p>Add Property</p></div>
-                        </li>
+                  
                         <li class="menu-item-dashboard <?php echo e((request()->is('property-list')) ? 'active' : ''); ?>">
                             <a href="<?php echo e(url( 'property-list' )); ?>">View Property List</a>
                             <span><a href="<?php echo e(url( 'property-list' )); ?>"><i  class="far fa-bookmark"></i></a></span>
                             <div class="tooltip-sidebar-link"><p>View Property List</p></div>
                         </li>
-                        <li class="menu-item-dashboard <?php echo e((request()->is('add-new-entry')) ? 'active' : ''); ?>">
-                            <a href="<?php echo e(url('add-new-entry')); ?>">Add Entity</a>
-                            <span><a href="<?php echo e(url('add-new-entry')); ?>"><i class="fas fa-landmark"></i></a></span>
-                            <div class="tooltip-sidebar-link"><p>Add Entity</p></div>
-                        </li>
+                   
                         <li class="menu-item-dashboard <?php echo e((request()->is('entity-list')) ? 'active' : ''); ?>">
                             <a href="<?php echo e(url('entity-list')); ?>">View Entity List</a>
                             <span><a href="<?php echo e(url('entity-list')); ?>"><i class="fa fa-receipt"></i></a></span>
                             <div class="tooltip-sidebar-link"><p>View Entity List</p></div>
+                        </li>
+
+                        <li class="menu-item-dashboard <?php echo e((request()->is('/entity-shareholding')) ? 'active' : ''); ?>">
+                            <a href="<?php echo e(url('/entity-shareholding')); ?>">Entity Shareholding</a>
+                            <span><a href="<?php echo e(url('/entity-shareholding')); ?>"><i class="fa fa-users"></i></a></span>
+                            <div class="tooltip-sidebar-link"><p>Entity Shareholding</p></div>
                         </li>
                     </ul>
                 </nav>
