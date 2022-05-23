@@ -4,9 +4,58 @@
         
         <!--// Main Area Start //-->
         <main class="main-area" role="main">
-            <h5>Add partners to Entity</h5>
+            <h5>Add partners to Entity</h5><br>
         </main>
         <!--// Main Area End //-->
+        <section class="panel-wrapper panel-full-width mt-resp-top">
+                
+            <div class="col-lg-6">
+                <div class="form-flex-item-box order-error-select">
+                    <label for="entity_select-list">Select Entity</label>
+                        <select name="entity_select-list" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
+                        <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
+                            <option value="">Please Select</option>
+                            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                <option value="<?php echo e($user->ID); ?>"><?php echo e($user->ENTITY_NAME); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </optgroup>
+                    </select>
+                </div>     
+            </div>
+
+            <div class="col-lg-6">
+                <div class="form-flex-item-box order-error-select">
+                    <label for="property_select_list">Select Property</label>
+                        <select name="property_select-list[]" class="form-select select-matcher-obj select2" id="property_select-list"  data-select2-id="property_select-list_select"  aria-label="Default select example" multiple="multiple">
+                        <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
+                            <option value="">Please Select</option>
+                            <?php $__currentLoopData = $lists; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $list): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                <option value="<?php echo e($list->ID); ?>"><?php echo e($list->PROPERTY_ADDRESS); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </optgroup>
+                    </select>
+                </div>     
+            </div>
+   
+            
+            <div class="col-lg-6">
+                <div class="form-flex-item-box">
+                    <label for="total_value_value">Total Value</label>
+              
+                    <input type="text" class="form-control" name="total_value_value" id="total_value_value" value="<?php echo e($list->PURCHASE_PRICE); ?>" readonly>
+               
+                              
+                </div>
+            </div>
+        <br>
+
+            <div class="form-heading d-flex justify-content-between align-items-center">
+                <a href="#" class="dark-grey-btn">
+                    Add Partner
+                </a>  
+            </div>
+
+        </section>
 
 
         <section class="panel-wrapper panel-full-width mt-resp-top">
@@ -30,9 +79,7 @@
                    <?php endif; ?> 
                 <div class="form-heading d-flex justify-content-between align-items-center">
                     <h6>Entity Shareholding Partner List</h6>
-                    <a href="#" class="dark-grey-btn">
-                        Add Partner
-                    </a>  
+                 
                 </div>
                 <div class="container-fluid table-container-wrap">
                     <div class="table-responsive">

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ENTITY;
+use App\Models\PROPERTY;
 
 class EntityShareholdingController extends Controller
 {
@@ -13,7 +15,11 @@ class EntityShareholdingController extends Controller
      */
     public function index()
     {
-        return view('backend.template.entity-shareholding.entityshareholding-index');
+
+        $users=ENTITY::all();
+        $lists = PROPERTY::all();
+    
+        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'lists' => $lists,'users' => $users]);
     }
 
     /**
