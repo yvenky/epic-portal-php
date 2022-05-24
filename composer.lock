@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78114e4a9ed5b8b879d758a501cb5e29",
+    "content-hash": "344e464fba388c377e3deff4a3f631af",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1491,16 +1491,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.83.13",
+            "version": "v8.83.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1eed68ec70c98d1a7a6f0fcedbea10cb6dd69a20"
+                "reference": "141cf126f1746c7264f59aa78c923a84eaab501e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1eed68ec70c98d1a7a6f0fcedbea10cb6dd69a20",
-                "reference": "1eed68ec70c98d1a7a6f0fcedbea10cb6dd69a20",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/141cf126f1746c7264f59aa78c923a84eaab501e",
+                "reference": "141cf126f1746c7264f59aa78c923a84eaab501e",
                 "shasum": ""
             },
             "require": {
@@ -1660,7 +1660,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-05-17T14:08:01+00:00"
+            "time": "2022-05-24T14:04:02+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -6109,149 +6109,6 @@
             "time": "2022-03-03T08:28:38+00:00"
         },
         {
-            "name": "facade/flare-client-php",
-            "version": "1.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facade/flare-client-php.git",
-                "reference": "b2adf1512755637d0cef4f7d1b54301325ac78ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/b2adf1512755637d0cef4f7d1b54301325ac78ed",
-                "reference": "b2adf1512755637d0cef4f7d1b54301325ac78ed",
-                "shasum": ""
-            },
-            "require": {
-                "facade/ignition-contracts": "~1.0",
-                "illuminate/pipeline": "^5.5|^6.0|^7.0|^8.0",
-                "php": "^7.1|^8.0",
-                "symfony/http-foundation": "^3.3|^4.1|^5.0",
-                "symfony/mime": "^3.4|^4.0|^5.1",
-                "symfony/var-dumper": "^3.4|^4.0|^5.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.14",
-                "phpunit/phpunit": "^7.5.16",
-                "spatie/phpunit-snapshot-assertions": "^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Facade\\FlareClient\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Send PHP errors to Flare",
-            "homepage": "https://github.com/facade/flare-client-php",
-            "keywords": [
-                "exception",
-                "facade",
-                "flare",
-                "reporting"
-            ],
-            "support": {
-                "issues": "https://github.com/facade/flare-client-php/issues",
-                "source": "https://github.com/facade/flare-client-php/tree/1.9.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-09-13T12:16:46+00:00"
-        },
-        {
-            "name": "facade/ignition",
-            "version": "2.17.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facade/ignition.git",
-                "reference": "1d71996f83c9a5a7807331b8986ac890352b7a0c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/1d71996f83c9a5a7807331b8986ac890352b7a0c",
-                "reference": "1d71996f83c9a5a7807331b8986ac890352b7a0c",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "facade/flare-client-php": "^1.9.1",
-                "facade/ignition-contracts": "^1.0.2",
-                "illuminate/support": "^7.0|^8.0",
-                "monolog/monolog": "^2.0",
-                "php": "^7.2.5|^8.0",
-                "symfony/console": "^5.0",
-                "symfony/var-dumper": "^5.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.14",
-                "livewire/livewire": "^2.4",
-                "mockery/mockery": "^1.3",
-                "orchestra/testbench": "^5.0|^6.0",
-                "psalm/plugin-laravel": "^1.2"
-            },
-            "suggest": {
-                "laravel/telescope": "^3.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Facade\\Ignition\\IgnitionServiceProvider"
-                    ],
-                    "aliases": {
-                        "Flare": "Facade\\Ignition\\Facades\\Flare"
-                    }
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Facade\\Ignition\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A beautiful error page for Laravel applications.",
-            "homepage": "https://github.com/facade/ignition",
-            "keywords": [
-                "error",
-                "flare",
-                "laravel",
-                "page"
-            ],
-            "support": {
-                "docs": "https://flareapp.io/docs/ignition-for-laravel/introduction",
-                "forum": "https://twitter.com/flareappio",
-                "issues": "https://github.com/facade/ignition/issues",
-                "source": "https://github.com/facade/ignition"
-            },
-            "time": "2022-02-23T18:31:24+00:00"
-        },
-        {
             "name": "facade/ignition-contracts",
             "version": "1.0.2",
             "source": {
@@ -6495,16 +6352,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.14.6",
+            "version": "v1.14.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "f00f3a8f83e71436d473cda7700ae7b4b68d26cc"
+                "reference": "c049316f9bcb02598607307f18b514b66202b639"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/f00f3a8f83e71436d473cda7700ae7b4b68d26cc",
-                "reference": "f00f3a8f83e71436d473cda7700ae7b4b68d26cc",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/c049316f9bcb02598607307f18b514b66202b639",
+                "reference": "c049316f9bcb02598607307f18b514b66202b639",
                 "shasum": ""
             },
             "require": {
@@ -6551,7 +6408,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-05-18T15:56:59+00:00"
+            "time": "2022-05-21T17:14:14+00:00"
         },
         {
             "name": "mockery/mockery",
