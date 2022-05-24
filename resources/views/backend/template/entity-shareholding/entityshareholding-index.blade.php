@@ -30,7 +30,7 @@
                         <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                             <option value="">Please Select</option>
                             @foreach ( $lists as $list ) 
-                                <option value="{{$list->ID}}">{{$list->PROPERTY_ADDRESS}}</option>
+                                <option value="{{$list->PURCHASE_PRICE}}">{{$list->PROPERTY_ADDRESS}}</option>
                             @endforeach
                         </optgroup>
                     </select>
@@ -40,11 +40,8 @@
             
             <div class="col-lg-6">
                 <div class="form-flex-item-box">
-                    <label for="total_value_value">Total Value</label>
-              
-                    <input type="text" class="form-control" name="total_value_value" id="total_value_value" value="{{$list->PURCHASE_PRICE}}" readonly>
-               
-                              
+                    <label for="total_value_value">Total Value</label>            
+                    <input type="text" class="form-control" name="total_value_value" id="total_value_value" readonly>                
                 </div>
             </div>
         <br>

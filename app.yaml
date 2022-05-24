@@ -1,24 +1,21 @@
     
-runtime: php
-api_version: '1.0'
-env: flex
+runtime: php74
+env: standard
 instance_class: F1
-threadsafe: true
+#threadsafe: true
 
-automatic_scaling:
-  min_idle_instances: 0
-  max_idle_instances: 0
-  min_pending_latency: automatic
-  max_pending_latency: automatic
+#automatic_scaling:
+  #min_idle_instances: 0
+  #max_idle_instances: 0
+  #min_pending_latency: automatic
+  #max_pending_latency: automatic
   
 
 runtime_config:
     
     document_root: public #folder where index.php is
 
-skip_files:
- - .env #we want to skip this to make sure we don’t mess stuff up on the server
- - .gcloudignore 
+
 
 env_variables:
  # Put production environment variables here.

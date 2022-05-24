@@ -73,6 +73,8 @@
     jQuery(".select-dropdown-obj").select2();
   }
 
+  
+
    // Validate
    var val	=	{
        // Specify validation rules
@@ -542,3 +544,17 @@
 
 })(window.jQuery);
 
+$( '#property_select-list' ).on( 'change', function() {
+
+  var sum = $(this).val()
+      .map( function( value ) {
+          return value.replace( /.+?-(\d+)$/, function( match, num ) { return num; });
+      })
+      .reduce( function(a, b) { 
+          return parseInt(a) + parseInt(b);
+
+          //return $( 'input[name=total_value_value]' ).val( sum );
+      });
+
+      $( 'input[name=total_value_value]' ).val( sum );
+})
