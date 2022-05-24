@@ -2,14 +2,7 @@
 runtime: php74
 env: standard
 instance_class: F1
-#threadsafe: true
 
-#automatic_scaling:
-  #min_idle_instances: 0
-  #max_idle_instances: 0
-  #min_pending_latency: automatic
-  #max_pending_latency: automatic
-  
 runtime_config:
     
     document_root: public #folder where index.php is
@@ -18,6 +11,7 @@ handlers:
 - url: /(.*\.(gif|png|jpg|css|js))$
   static_files: public/\1
   upload: public/.*\.(gif|png|jpg|css|js)$
+
 
 - url: /.*
   secure: always
