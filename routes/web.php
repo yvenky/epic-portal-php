@@ -7,6 +7,7 @@ use App\Http\Controllers\investorController;
 use App\Http\Controllers\PropertyController;	
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\EntityShareholdingController;
+use App\Http\Controllers\EntityNewpartnerAdd;
 
 /*	
 |--------------------------------------------------------------------------	
@@ -69,3 +70,8 @@ Route::get('investor-delete/{id}', [investorController::class, 'delete']);
 // Entity Shareholding
 
 Route::get('/entity-shareholding', [EntityShareholdingController ::class, 'index']);
+
+
+// Entity New Partner ADD
+
+Route::get('/entity-newpartner-add', [EntityNewpartnerAdd ::class, 'index']);

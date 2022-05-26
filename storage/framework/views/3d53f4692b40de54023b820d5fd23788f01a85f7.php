@@ -1,6 +1,6 @@
-@extends('backend.inc.master')
 
-@section('main-content')
+
+<?php $__env->startSection('main-content'); ?>
         
         <!--// Main Area Start //-->
         <main class="main-area" role="main">
@@ -15,9 +15,9 @@
                         <select name="entity_select-list" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
                         <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
                             <option value="">Please Select</option>
-                            @foreach ( $users as $user ) 
-                                <option value="{{$user->ID}}">{{$user->ENTITY_NAME}}</option>
-                            @endforeach
+                            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                <option value="<?php echo e($user->ID); ?>"><?php echo e($user->ENTITY_NAME); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </optgroup>
                     </select>
                 </div>     
@@ -29,9 +29,9 @@
                         <select name="property_select-list[]" class="form-select select-matcher-obj select2" id="property_select-list"  data-select2-id="property_select-list_select"  aria-label="Default select example" multiple="multiple">
                         <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                             <option value="">Please Select</option>
-                            @foreach ( $lists as $list ) 
-                                <option value="{{$list->PURCHASE_PRICE}}">{{$list->PROPERTY_ADDRESS}}</option>
-                            @endforeach
+                            <?php $__currentLoopData = $lists; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $list): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                <option value="<?php echo e($list->PURCHASE_PRICE); ?>"><?php echo e($list->PROPERTY_ADDRESS); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </optgroup>
                     </select>
                 </div>     
@@ -57,26 +57,28 @@
 
         <section class="panel-wrapper panel-full-width mt-resp-top">
             <div class="form-wrapper">
-                @if(Session::has('success-message-edit')) 
+                <?php if(Session::has('success-message-edit')): ?> 
                 <div class="alert alert-success" role="alert">
-                    {{Session::get('success-message-edit')}} 
+                    <?php echo e(Session::get('success-message-edit')); ?> 
                   </div>
-                 @endif 
-                 @if(Session::has('success-message')) 
+                 <?php endif; ?> 
+                 <?php if(Session::has('success-message')): ?> 
                  <div class="alert alert-success" role="alert">
-                     {{Session::get('success-message')}}
+                     <?php echo e(Session::get('success-message')); ?>
+
                    </div>
-                  @endif 
-                  @if(Session::has('success-message-delete')) 
+                  <?php endif; ?> 
+                  <?php if(Session::has('success-message-delete')): ?> 
                   <div class="alert alert-success" role="alert">
-                      {{Session::get('success-message-delete')}}
+                      <?php echo e(Session::get('success-message-delete')); ?>
+
                     </div>
-                   @endif 
+                   <?php endif; ?> 
                 <div class="form-heading d-flex justify-content-between align-items-center">
                     <h6>Entity Shareholding Partner</h6>
-                    <a href="{{url('/entity-newpartner-add')}}" class="dark-grey-btn">
+                    <a href="<?php echo e(url('/entity-newpartner-add')); ?>" class="dark-grey-btn">
                         Add Entity Partner
-                    </a>
+                    </a>  
                 </div>
                 <div class="container-fluid table-container-wrap">
                     <div class="table-responsive">
@@ -145,4 +147,5 @@
         </section>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/entity-shareholding/entityshareholding-index.blade.php ENDPATH**/ ?>
