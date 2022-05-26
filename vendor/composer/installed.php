@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '3b542baae5b8b94445f7480b58c1333693cbbc8c',
+        'reference' => '07b5db03be482b6c2c118703702b745e57b7046e',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -185,12 +185,12 @@
             'dev_requirement' => false,
         ),
         'google/protobuf' => array(
-            'pretty_version' => 'v3.20.1',
-            'version' => '3.20.1.0',
+            'pretty_version' => 'v3.21.0',
+            'version' => '3.21.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../google/protobuf',
             'aliases' => array(),
-            'reference' => '5537a424882b2cbce891330d3e4bdfe363694975',
+            'reference' => 'ac95b8a39e506bfe425ae5dd50a2d793c3012791',
             'dev_requirement' => false,
         ),
         'graham-campbell/result-type' => array(
@@ -454,7 +454,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '3b542baae5b8b94445f7480b58c1333693cbbc8c',
+            'reference' => '07b5db03be482b6c2c118703702b745e57b7046e',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

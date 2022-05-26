@@ -12,7 +12,29 @@ handlers:
   static_files: public/\1
   upload: public/.*\.(gif|png|jpg|css|js)$
 
+- url: /(.*\.woff)
+  static_files: public/\1
+  upload: public/(.*\.woff)
 
+- url: /(.*\.svg)
+  static_files: public/\1
+  upload: public/(.*\.svg)
+
+- url: /(.*\.eot)
+  static_files: public/\1
+  upload: public/(.*\.eot)
+
+- url: /(.*\.ttf)
+  static_files: public/\1
+  upload: public/(.*\.ttf)
+
+- url: /(.*\.otf)
+  static_files: public/\1
+  upload: public/(.*\.otf)
+
+- url: /(.*\.woff2)
+  static_files: public/\1
+  upload: public/(.*\.woff2)
 
 - url: /.*
   secure: always
