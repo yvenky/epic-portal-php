@@ -78,7 +78,7 @@
                     <h6>Entity Shareholding Partner</h6>
                     <a href="<?php echo e(url('/entity-newpartner-add')); ?>" class="dark-grey-btn">
                         Add Entity Partner
-                    </a>  
+                    </a>
                 </div>
                 <div class="container-fluid table-container-wrap">
                     <div class="table-responsive">
