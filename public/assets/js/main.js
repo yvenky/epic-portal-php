@@ -556,5 +556,5 @@ $( '#property_select-list' ).on( 'change', function() {
           //return $( 'input[name=total_value_value]' ).val( sum );
       });
 
-      $( 'input[name=total_value_value]' ).val( sum );
+      $( 'input[name=TOTAL_PROPERTIES_VALUE]' ).val( sum );
 })

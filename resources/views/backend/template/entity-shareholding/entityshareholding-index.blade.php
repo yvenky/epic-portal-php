@@ -9,47 +9,58 @@
         <!--// Main Area End //-->
         <section class="panel-wrapper panel-full-width mt-resp-top">
                 
-            <div class="col-lg-6">
-                <div class="form-flex-item-box order-error-select">
-                    <label for="entity_select-list">Select Entity</label>
-                        <select name="entity_select-list" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
-                        <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
-                            <option value="">Please Select</option>
-                            @foreach ( $users as $user ) 
-                                <option value="{{$user->ID}}">{{$user->ENTITY_NAME}}</option>
-                            @endforeach
-                        </optgroup>
-                    </select>
-                </div>     
-            </div>
 
-            <div class="col-lg-6">
-                <div class="form-flex-item-box order-error-select">
-                    <label for="property_select_list">Select Property</label>
-                        <select name="property_select-list[]" class="form-select select-matcher-obj select2" id="property_select-list"  data-select2-id="property_select-list_select"  aria-label="Default select example" multiple="multiple">
-                        <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
-                            <option value="">Please Select</option>
-                            @foreach ( $lists as $list ) 
-                                <option value="{{$list->PURCHASE_PRICE}}">{{$list->PROPERTY_ADDRESS}}</option>
-                            @endforeach
-                        </optgroup>
-                    </select>
-                </div>     
-            </div>
-   
+            <div class="form-content">
+                <form action="{{url('entity_properties-submit')}}" method="POST" id="add-new-property-form">
+                    @csrf
+                           
+                        <div class="col-lg-6">
+                            <div class="form-flex-item-box order-error-select">
+                                <label for="entity_select-list">Select Entity</label>
+                                    <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
+                                    <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
+                                        <option value="">Please Select</option>
+                                        @foreach ( $users as $user ) 
+                                            <option value="{{$user->ID}}">{{$user->ENTITY_NAME}}</option>
+                                        @endforeach
+                                    </optgroup>
+                                </select>
+                            </div>     
+                        </div>
             
-            <div class="col-lg-6">
-                <div class="form-flex-item-box">
-                    <label for="total_value_value">Total Value</label>            
-                    <input type="text" class="form-control" name="total_value_value" id="total_value_value" readonly>                
-                </div>
-            </div>
-        <br>
-
-            <div class="form-heading d-flex justify-content-between align-items-center">
-                <a href="#" class="dark-grey-btn">
-                    Add Partner
-                </a>  
+                        <div class="col-lg-6">
+                            <div class="form-flex-item-box order-error-select">
+                                <label for="PROPERTY_SELECT">Select Property</label>
+                                    <select name="PROPERTY_SELECT[]" class="form-select select-matcher-obj select2" id="property_select-list"  data-select2-id="property_select-list_select"  aria-label="Default select example" multiple="multiple">
+                                    <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
+                                        <option value="">Please Select</option>
+                                        @foreach ( $lists as $list ) 
+                                            <option value="{{$list->PURCHASE_PRICE}}">{{$list->PROPERTY_ADDRESS}}</option>
+                                        @endforeach
+                                    </optgroup>
+                                </select>
+                            </div>     
+                        </div>
+               
+                        
+                        <div class="col-lg-6">
+                            <div class="form-flex-item-box">
+                                <label for="total_value">Total Value</label>            
+                                <input type="text" class="form-control" name="TOTAL_PROPERTIES_VALUE" id="TOTAL_PROPERTIES_VALUE" readonly>                
+                            </div>
+                        </div>
+                       
+                        <br>
+                        
+                    <div class="row ">
+                        <div class="col-lg-12">
+                        <div class="form-btn-flex-between">
+                            <button type="submit" class="form-submit-btn ">Add Partner</button>
+                        </div>
+                        </div>
+                    </div>
+                </form>
+    
             </div>
 
         </section>
