@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\ENTITY_PROPERTIES;
+
 
 class EntityPropertiesController extends Controller
 {
@@ -26,26 +28,27 @@ class EntityPropertiesController extends Controller
     {
        
 
-        $req->validate([
 
-            'ENTITY_SELECT'                     => 'required',    
-            'PROPERTY_SELECT'                   => 'required',      
-            'TOTAL_PROPERTIES_VALUE'            => 'required',       
+        $req->validate([
+                'ENTITY_SELECT'                     => 'required',  
+                'PROPERTY_SELECT'                     => 'required',        
+                'TOTAL_PROPERTIES_VALUE'            => 'required',
             ]);
 
-            $propert_select = $req->PROPERTY_SELECT;
-            $property_array = implode(',', $propert_select );
+
+            //$data['PROPERTY_SELECT' ]=implode(",", $req->PROPERTY_SELECT);
+
+            //$data=json_encode($req->PROPERTY_SELECT);
 
             $data_new = DB::table('ENTITY_PROPERTIES')
             ->insert([
-    
-                'ENTITY_SELECT'                             => $req-> ENTITY_SELECT,
-                'PROPERTY_SELECT'                           => $property_array,
-                'TOTAL_PROPERTIES_VALUE'                    => $req-> TOTAL_PROPERTIES_VALUE,
-        
-            ]); 
 
-            return $data_new ;
+            'ENTITY_SELECT'                   => $req-> ENTITY_SELECT,
+            'PROPERTY_SELECT'                  => $data['PROPERTY_SELECT' ]=implode(",", $req->PROPERTY_SELECT),
+            'TOTAL_PROPERTIES_VALUE'          => $req->TOTAL_PROPERTIES_VALUE,
+                    ]);
+
+            return  dd( $data_new );
     
             return redirect('/entity-newpartner-add')->with('success-message', 'New Property Added Successfully');
     }

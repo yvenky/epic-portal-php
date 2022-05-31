@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Models\ENTITY;
+use App\Models\ENTITY_PROPERTIES;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
