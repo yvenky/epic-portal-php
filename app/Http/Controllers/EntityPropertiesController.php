@@ -29,26 +29,16 @@ class EntityPropertiesController extends Controller
        
 
 
-        $req->validate([
+        $data = $req->validate([
                 'ENTITY_SELECT'                     => 'required',  
                 'PROPERTY_SELECT'                     => 'required',        
                 'TOTAL_PROPERTIES_VALUE'            => 'required',
             ]);
 
+            $data['PROPERTY_SELECT' ]=implode(",", $req->PROPERTY_SELECT);
+            $post = ENTITY_PROPERTIES::create($data);
 
-            //$data['PROPERTY_SELECT' ]=implode(",", $req->PROPERTY_SELECT);
-
-            //$data=json_encode($req->PROPERTY_SELECT);
-
-            $data_new = DB::table('ENTITY_PROPERTIES')
-            ->insert([
-
-            'ENTITY_SELECT'                   => $req-> ENTITY_SELECT,
-            'PROPERTY_SELECT'                  => $data['PROPERTY_SELECT' ]=implode(",", $req->PROPERTY_SELECT),
-            'TOTAL_PROPERTIES_VALUE'          => $req->TOTAL_PROPERTIES_VALUE,
-                    ]);
-
-            return  dd( $data_new );
+            dd($post);
     
             return redirect('/entity-newpartner-add')->with('success-message', 'New Property Added Successfully');
     }

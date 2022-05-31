@@ -27,7 +27,9 @@
                                 </select>
                             </div>     
                         </div>
-            
+                        
+                     
+
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="PROPERTY_SELECT">Select Property</label>
@@ -35,7 +37,7 @@
                                     <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                                         <option value="">Please Select</option>
                                         @foreach ( $lists as $list ) 
-                                            <option value="{{$list->ID}}">{{$list->PROPERTY_ADDRESS}}</option>
+                                            <option value="{{$list->ID}}" data-price="{{$list->PURCHASE_PRICE}}">{{$list->PROPERTY_ADDRESS}}</option>
                                         @endforeach
                                     </optgroup>
                                 </select>
