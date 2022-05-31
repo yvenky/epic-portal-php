@@ -39,5 +39,5 @@ class ENTITY extends Model
         return $this->belongsTo(INVESTOR::class,'MANAGING_MEMBER_2');
         
     }
- 
+
 }

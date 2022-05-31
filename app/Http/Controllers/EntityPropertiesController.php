@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class EntityPropertiesController extends Controller
 {
@@ -32,16 +33,19 @@ class EntityPropertiesController extends Controller
             'TOTAL_PROPERTIES_VALUE'            => 'required',       
             ]);
 
+            $propert_select = $req->PROPERTY_SELECT;
+            $property_array = implode(',', $propert_select );
+
             $data_new = DB::table('ENTITY_PROPERTIES')
             ->insert([
     
                 'ENTITY_SELECT'                             => $req-> ENTITY_SELECT,
-                'PROPERTY_SELECT'                           => json_encode($req->PROPERTY_SELECT),
+                'PROPERTY_SELECT'                           => $property_array,
                 'TOTAL_PROPERTIES_VALUE'                    => $req-> TOTAL_PROPERTIES_VALUE,
         
             ]); 
-           
-            
+
+            return $data_new ;
     
             return redirect('/entity-newpartner-add')->with('success-message', 'New Property Added Successfully');
     }

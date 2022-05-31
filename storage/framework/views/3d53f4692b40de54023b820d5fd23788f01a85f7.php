@@ -35,7 +35,7 @@
                                     <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                                         <option value="">Please Select</option>
                                         <?php $__currentLoopData = $lists; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $list): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                            <option value="<?php echo e($list->PURCHASE_PRICE); ?>"><?php echo e($list->PROPERTY_ADDRESS); ?></option>
+                                            <option value="<?php echo e($list->ID); ?>"><?php echo e($list->PROPERTY_ADDRESS); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </optgroup>
                                 </select>
@@ -52,9 +52,9 @@
                        
                         <br>
                         
-                    <div class="row ">
-                        <div class="col-lg-12">
-                        <div class="form-btn-flex-between">
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="form-btn-flex-between float-end ">
                             <button type="submit" class="form-submit-btn ">Add Partner</button>
                         </div>
                         </div>

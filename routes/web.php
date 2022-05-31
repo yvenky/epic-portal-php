@@ -79,4 +79,4 @@ Route::get('/entity-newpartner-add', [EntityNewpartnerAdd ::class, 'index']);
 
 // Entity New Partner properties value
 
-Route::post('/entity_properties-submit', [PropertyController::class, 'store']);	
+Route::post('entity_properties-submit', [EntityPropertiesController::class, 'store']);	

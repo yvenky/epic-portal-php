@@ -33,4 +33,5 @@ class PROPERTY extends Model
         return $this->belongsTo(ENTITY::class,'ENTITY_COMPANY');
         
     }
+
 }

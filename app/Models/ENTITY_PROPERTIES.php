@@ -17,7 +17,6 @@ class ENTITY_PROPERTIES extends Model
      * @var array<int, string>
      */
     protected $table = 'ENTITY_PROPERTIES';
-    public $timestamps = false;
     protected $fillable = [
         'ENTITY_SELECT',
         'PROPERTY_SELECT',

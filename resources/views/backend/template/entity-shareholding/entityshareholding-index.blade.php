@@ -35,7 +35,7 @@
                                     <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                                         <option value="">Please Select</option>
                                         @foreach ( $lists as $list ) 
-                                            <option value="{{$list->PURCHASE_PRICE}}">{{$list->PROPERTY_ADDRESS}}</option>
+                                            <option value="{{$list->ID}}">{{$list->PROPERTY_ADDRESS}}</option>
                                         @endforeach
                                     </optgroup>
                                 </select>
@@ -52,9 +52,9 @@
                        
                         <br>
                         
-                    <div class="row ">
-                        <div class="col-lg-12">
-                        <div class="form-btn-flex-between">
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="form-btn-flex-between float-end ">
                             <button type="submit" class="form-submit-btn ">Add Partner</button>
                         </div>
                         </div>
