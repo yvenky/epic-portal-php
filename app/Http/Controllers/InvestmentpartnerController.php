@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\INVESTOR;
 
-class EntityNewpartnerAdd extends Controller
+class InvestmentpartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,10 @@ class EntityNewpartnerAdd extends Controller
      */
     public function index()
     {
-        return view('backend.template.entity-shareholding.entity-newpartner-add');
+        $users = INVESTOR::all();
+
+        
+        return view('backend.template.entity-shareholding.entity-newpartner-add',['users' => $users]);
     }
 
     /**

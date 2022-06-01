@@ -45,7 +45,7 @@ class EntityPropertiesController extends Controller
     $data->save();
 
     
-            return redirect('/entity-newpartner-add')->with('success-message', 'New Property Added Successfully');
+            return redirect('/entity-newpartner-add');
     }
 
     /**

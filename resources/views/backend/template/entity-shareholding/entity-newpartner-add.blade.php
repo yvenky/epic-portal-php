@@ -14,62 +14,77 @@
         </div>
         <form action="{{url('entity-newpartner-add-submit')}}" method="POST" id="entity-newpartner-add-form">
             @csrf
+
+            <div class="col-lg-6">
+                <div class="form-flex-item-box order-error-select">
+                    <label for="entity_select-list">Select Partner</label>
+                        <select name="SELECT_PARTNER" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
+                        <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
+                            <option value="">Please Select</option>
+                            @foreach ( $users as $user ) 
+                                <option value="{{$user->ID}}">{{$user->FIRST_NAME}}</option>
+                            @endforeach
+                        </optgroup>
+                    </select>
+                </div>     
+            </div>
+
             <div class="form-content pb-0">
                 <div class="row mt-4">
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="add_partner_entity_name">First Name</label>
-                            <input type="text" class="form-control" name="ENTITY_NAME" id="add_partner_entity_name">
+                            <label for="First Name">First Name</label>
+                            <input type="text" class="form-control" name="FIRST_NAME" id="FIRST_NAME">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="add_partner_entity_ein">Last Name</label>
-                            <input type="text" class="form-control" name="EIN" id="add_partner_entity_ein">
+                            <label for="Last Name">Last Name</label>
+                            <input type="text" class="form-control" name="LASTT_NAME" id="LASTT_NAME">
                         </div>
                     </div>
        
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="add_partner_entity_docs">Total Share</label>
-                            <input type="text" class="form-control" name="OPERATING_AGREEMENT" id="add_partner_entity_docs">
+                            <label for="Total Share">Total Share</label>
+                            <input type="text" class="form-control" name="TOTAL_SHARE" id="TOTAL_SHARE">
                         </div>
                     </div>
                 
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="google_coordinates">Cash</label>
-                            <input type="text" class="form-control" name="GOOGLE_COORDINATES" id="GOOGLE_COORDINATES">
+                            <label for="Cash">Cash</label>
+                            <input type="text" class="form-control" name="CASH" id="CASH">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_of_acres">Loan</label>
-                            <input type="number" class="form-control" name="NO_OF_ACRES" id="NO_OF_ACRES">
+                            <label for="Loan">Loan</label>
+                            <input type="number" class="form-control" name="LOAN" id="LOAN">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_map_right_url">Shareholding</label>
-                            <input type="text" class="form-control" name="MAP_URL" id="MAP_URL">
+                            <label for="Shareholding">Shareholding</label>
+                            <input type="text" class="form-control" name="SHAREHOLDING" id="SHAREHOLDING">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="property_documents">Finder Fees</label>
-                            <input type="url" class="form-control" name="PROPERTY_DOCUMENTS" id="PROPERTY_DOCUMENTS">
+                            <label for="Finder Fees">Finder Fees</label>
+                            <input type="url" class="form-control" name="FINDER_FEES" id="FINDER_FEES">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="purchase_price">Closing Fees</label>
-                            <input type="number" class="form-control" name="PURCHASE_PRICE" id="PURCHASE_PRICE">
+                            <label for="Closing Fees">Closing Fees</label>
+                            <input type="number" class="form-control" name="CLOSING_FEES" id="CLOSING_FEES">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
-                            <label for="per_acre_cost">Total Cash</label>
-                            <input type="number" class="form-control" name="COST_PER_ACRE" id="COST_PER_ACRE">
+                            <label for="Total Cash">Total Cash</label>
+                            <input type="number" class="form-control" name="TOTAL_CASH" id="TOTAL_CASH">
                         </div>
                     </div>
                </div>
