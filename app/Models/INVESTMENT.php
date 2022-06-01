@@ -9,14 +9,22 @@ class INVESTMENT extends Model
 {
     use HasFactory;
 
+    protected $table = 'INVESTMENT';
+    public $timestamps = false;
+
     protected $fillable = [
-        'INVESTOR_ID',
+        
+        'FIRST_NAME',
+        'LAST_NAME',
         'CASH',
         'LOAN',
         'SHAREHOLDING',
         'TOTAL_SHARE',
         'FINDER_FEES',
-        
+        'CLOSING_FEES',
+        'TOTAL_CASH',
+        'ENTITY_PROPERTIES',
+        'INVESTOR_ID',
 
     ];
 }
