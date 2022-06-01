@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\INVESTOR;
+use App\Models\INVESTMENT;
 
 class InvestmentpartnerController extends Controller
 {
@@ -24,6 +25,9 @@ class InvestmentpartnerController extends Controller
     {
         $request->validate([
 
+            'INVESTOR_ID'               => 'required',
+            'FIRST_NAME'                =>'required',
+            'LAST_NAME'                 =>'required',
             'CASH'                      => 'required',
             'LOAN'                      => 'required',
             'SHAREHOLDING'              => 'required',
@@ -31,28 +35,29 @@ class InvestmentpartnerController extends Controller
             'FINDER_FEES'               => 'required',
             'CLOSING_FEES'              => 'required',
             'TOTAL_CASH'                => 'required',
-            'ENTITY_PROPERTIES'         => 'required',
-            'CLOSING_FEES'              => 'required',
-            'INVESTOR_ID'               => 'required',
+            
            
         ]);
       
         $data = new INVESTMENT();
  
-        $data-> add_partner_entity_name             = $request-> add_partner_entity_name; 
-        $data-> add_partner_entity_ein              = $request-> add_partner_entity_ein;  
-        $data-> add_partner_entity_docs             = $request-> add_partner_entity_docs;
-        $data-> add_partner_managing_member_1       = $request-> add_partner_managing_member_1; 
-        $data-> add_partner_managing_member_2       = $request-> add_partner_managing_member_2; 
-        $data-> add_partner_entity_address_street   = $request-> add_partner_entity_address_street ; 
-        $data-> add_partner_entity_address_city     = $request-> add_partner_entity_address_city; 
-        $data-> add_partner_entity_address_state    = $request-> add_partner_entity_address_state; 
-        $data-> add_partner_entity_address_zipcode  = $request-> add_partner_entity_address_zipcode;
+        $data-> INVESTOR_ID                         = $request-> INVESTOR_ID;
+        $data-> FIRST_NAME                          = $request-> FIRST_NAME; 
+        $data-> LAST_NAME                           = $request-> LAST_NAME;  
+        $data-> CASH                                = $request-> CASH;
+        $data-> LOAN                                = $request-> LOAN; 
+        $data-> SHAREHOLDING                        = $request-> SHAREHOLDING; 
+        $data-> TOTAL_SHARE                         = $request-> TOTAL_SHARE ; 
+        $data-> FINDER_FEES                        = $request-> FINDER_FEES; 
+        $data-> CLOSING_FEES                        = $request-> CLOSING_FEES;
+        $data-> TOTAL_CASH                        = $request-> TOTAL_CASH;
+    
+        
         
         $data->save();
      
 
-        return redirect('entity-submit-confirmation/'. $data->id )->with('success-message', $data->add_partner_entity_name .' Added Successfully');
+       return redirect()->back()->with('success-message',' Added Successfully');
     }
 
     /**

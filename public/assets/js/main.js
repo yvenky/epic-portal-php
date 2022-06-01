@@ -558,6 +558,7 @@
 
       $( 'input[name=TOTAL_PROPERTIES_VALUE]' ).val( sum );
 })*/
+//sum properties value
 
 let total = 0;
 let code = [];
@@ -572,6 +573,7 @@ $('#property_select-list').on('change', function() {
   $('#PROPERTY_SELECT').val(code.join(", "));
 });
 
+//get investor first name last name
 
 $( '#investor_select-list' ).on( 'change', function() {
 
@@ -589,4 +591,21 @@ $( '#investor_select-list' ).on( 'change', function() {
   })
 
   $( 'input[name=LAST_NAME]' ).val( lname);
+});
+
+//total cash sum
+
+$(document).ready(function () {
+       
+  $("#entity-newpartner-add-form").on('input', '.txtCal', function () {
+     var calculated_total_sum = 0;
+   
+     $("#entity-newpartner-add-form .txtCal").each(function () {
+         var get_textbox_value = $(this).val();
+         if ($.isNumeric(get_textbox_value)) {
+            calculated_total_sum += parseFloat(get_textbox_value);
+            }                  
+          });
+            $("#TOTAL_CASH").html(calculated_total_sum);
+     });
 });
