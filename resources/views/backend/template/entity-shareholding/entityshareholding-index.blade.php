@@ -37,7 +37,7 @@
                                     <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                                         <option value="">Please Select</option>
                                         @foreach ( $lists as $list ) 
-                                            <option value="{{$list->ID}}" data-price="{{$list->PURCHASE_PRICE}}">{{$list->PROPERTY_ADDRESS}}</option>
+                                            <option value="{{$list->ID}}"  data-price="{{$list->PURCHASE_PRICE}}">{{$list->PROPERTY_ADDRESS}}</option>
                                         @endforeach
                                     </optgroup>
                                 </select>
@@ -51,7 +51,7 @@
                                 <input type="text" class="form-control" name="TOTAL_PROPERTIES_VALUE" id="TOTAL_PROPERTIES_VALUE" readonly>                
                             </div>
                         </div>
-                       
+
                         <br>
                         
                     <div class="row">

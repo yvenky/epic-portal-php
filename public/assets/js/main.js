@@ -544,7 +544,7 @@
 
 })(window.jQuery);
 
-$( '#property_select-list' ).on( 'change', function() {
+/*$( '#property_select-list' ).on( 'change', function() {
 
   var sum = $(this).val()
       .map( function( value ) {
@@ -557,4 +557,17 @@ $( '#property_select-list' ).on( 'change', function() {
       });
 
       $( 'input[name=TOTAL_PROPERTIES_VALUE]' ).val( sum );
-})
+})*/
+
+let total = 0;
+let code = [];
+$('#property_select-list').on('change', function() {
+  total = 0;
+  code = [];
+  $(this).find('option:selected').each(function() {
+    total += +$(this).data('price');
+    code.push($(this).val());
+  })
+  $('#TOTAL_PROPERTIES_VALUE').val(total);
+  $('#PROPERTY_SELECT').val(code.join(", "));
+});
