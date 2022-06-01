@@ -15,22 +15,23 @@
         <form action="{{url('entity-newpartner-add-submit')}}" method="POST" id="entity-newpartner-add-form">
             @csrf
 
-            <div class="col-lg-6">
-                <div class="form-flex-item-box order-error-select">
-                    <label for="entity_select-list">Select Partner</label>
-                        <select name="SELECT_PARTNER" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
-                        <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
-                            <option value="">Please Select</option>
-                            @foreach ( $users as $user ) 
-                                <option value="{{$user->ID}}">{{$user->FIRST_NAME}}</option>
-                            @endforeach
-                        </optgroup>
-                    </select>
-                </div>     
-            </div>
-
             <div class="form-content pb-0">
                 <div class="row mt-4">
+
+                    <div class="col-lg-12">
+                        <div class="form-flex-item-box order-error-select">
+                            <label for="entity_select-list">Select Partner</label>
+                                <select name="SELECT_PARTNER" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
+                                <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
+                                    <option value="">Please Select</option>
+                                    @foreach ( $users as $user ) 
+                                        <option value="{{$user->ID}}">{{$user->FIRST_NAME}}</option>
+                                    @endforeach
+                                </optgroup>
+                            </select>
+                        </div>     
+                    </div>
+
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="First Name">First Name</label>
