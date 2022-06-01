@@ -571,3 +571,22 @@ $('#property_select-list').on('change', function() {
   $('#TOTAL_PROPERTIES_VALUE').val(total);
   $('#PROPERTY_SELECT').val(code.join(", "));
 });
+
+
+$( '#investor_select-list' ).on( 'change', function() {
+
+  $(this).find('option:selected').each(function() {
+    fname = $(this).data('first');
+  })
+
+  $( 'input[name=FIRST_NAME]' ).val( fname);
+});
+
+$( '#investor_select-list' ).on( 'change', function() {
+
+  $(this).find('option:selected').each(function() {
+    lname = $(this).data('last');
+  })
+
+  $( 'input[name=LAST_NAME]' ).val( lname);
+});

@@ -22,11 +22,11 @@
                     <div class="col-lg-12">
                         <div class="form-flex-item-box order-error-select">
                             <label for="entity_select-list">Select Partner</label>
-                                <select name="SELECT_PARTNER" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
-                                <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
-                                    <option value="">Please Select</option>
+                                <select name="INVESTOR_ID" class="form-select select-matcher-obj select2" id="investor_select-list"  data-select2-id="investor_select_list_select"  aria-label="Default select example">
+                                <optgroup label="Please Select Investor" data-select2-id="investor_select-list_select">
+                                    <option value="">Please Select Investor</option>
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                        <option value="<?php echo e($user->ID); ?>"><?php echo e($user->FIRST_NAME); ?></option>
+                                        <option value="<?php echo e($user->ID); ?>" data-first="<?php echo e($user->FIRST_NAME); ?>" data-Last="<?php echo e($user->LAST_NAME); ?>"><?php echo e($user->FIRST_NAME.' '.$user->LAST_NAME); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </optgroup>
                             </select>
@@ -36,13 +36,13 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="First Name">First Name</label>
-                            <input type="text" class="form-control" name="FIRST_NAME" id="FIRST_NAME">
+                            <input type="text" class="form-control" name="FIRST_NAME" value="<?php echo e($user->FIRST_NAME); ?>" id="FIRST_NAME" readonly>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Last Name">Last Name</label>
-                            <input type="text" class="form-control" name="LASTT_NAME" id="LASTT_NAME">
+                            <input type="text" class="form-control" name="LAST_NAME" value="<?php echo e($user->LAST_NAME); ?>" id="LASTT_NAME" readonly>
                         </div>
                     </div>
        
