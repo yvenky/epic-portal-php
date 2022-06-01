@@ -44,7 +44,6 @@ class EntityPropertiesController extends Controller
     $data->TOTAL_PROPERTIES_VALUE            = $req->TOTAL_PROPERTIES_VALUE;
     $data->save();
 
-    dd($data);
     
             return redirect('/entity-newpartner-add')->with('success-message', 'New Property Added Successfully');
     }

@@ -89,9 +89,6 @@
                    <?php endif; ?> 
                 <div class="form-heading d-flex justify-content-between align-items-center">
                     <h6>Entity Shareholding Partner</h6>
-                    <a href="<?php echo e(url('/entity-newpartner-add')); ?>" class="dark-grey-btn">
-                        Add Entity Partner
-                    </a>
                 </div>
                 <div class="container-fluid table-container-wrap">
                     <div class="table-responsive">
