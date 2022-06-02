@@ -124,10 +124,10 @@
                                             <i class="fa fa-eye"></i>
                                         </a>  
                                         <a href="#" class="table-edit-btn"><i class="fa fa-edit"></i></a>
-                                        <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-entity-partners-modal-id">
+                                        <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-entity-partners-modal-{{$file->ID}}">
                                             <i class="fa fa-trash"></i>
                                         </a>                                                                     
-                                        <div class="modal fade" id="delete-entity-partners-modal-id" tabindex="-1" aria-labelledby="delete-entity-partners-modalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="delete-entity-partners-modal-{{$file->ID}}" tabindex="-1" aria-labelledby="delete-entity-partners-modalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                 <div class="modal-content ">
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i> </button>
@@ -136,12 +136,12 @@
                                                             <i class="fa fa-trash"></i>
                                                         </div>
                                                         <p>
-                                                            Are you sure want to delete  <br>  ? 
+                                                            Are you sure want to delete  <br>  {{$file->FIRST_NAME.' '.$file->LAST_NAME}} Entity Partner ?
                                                         </p>
                                                     </div>
                                                     <div class="modal-footer form-btn-flex-between">
                                                         <button type="button" class="form-cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                                                        <a href="#" ><button type="button" class="form-submit-btn">Yes</button></a>
+                                                        <a href="{{url('entity-shareholding/'.$file->ID)}}"  ><button type="button" class="form-submit-btn">Yes</button></a>
                                                     </div>
                                                 </div>
                                             </div>

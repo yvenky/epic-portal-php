@@ -603,3 +603,7 @@ $(document).on("change", ".getvalue", function() {
   });
   $("#TOTAL_CASH").val(sum);
 });
+
+
+document.getElementById("FIRST_NAME").defaultValue = " ";
+document.getElementById("LAST_NAME").defaultValue = " ";

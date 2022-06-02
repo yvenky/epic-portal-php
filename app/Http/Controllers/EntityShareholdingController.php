@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\ENTITY;
 use App\Models\PROPERTY;
 use App\Models\INVESTMENT;
+use App\Models\ENTITY_PROPERTIES;
+use DB;
 
 class EntityShareholdingController extends Controller
 {
@@ -20,8 +22,9 @@ class EntityShareholdingController extends Controller
         $users=ENTITY::all();
         $lists = PROPERTY::all();
         $files= INVESTMENT::all();
+        $shares= ENTITY_PROPERTIES::all();
     
-        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'lists' => $lists,'users' => $users,'files' => $files]);
+        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'lists' => $lists,'users' => $users,'files' => $files, 'shares' => $shares]);
     }
 
     /**
@@ -56,12 +59,6 @@ class EntityShareholdingController extends Controller
         //
     }
 
-    public function showList()
-    {
-        $lists= INVESTMENT::all();
-
-        return view('backend.template.entity-shareholding.entityshareholding-index' , ['lists' => $lists]);
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -92,8 +89,10 @@ class EntityShareholdingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        $lists=DB::table('INVESTMENT')->where('ID',$id)->delete();
+
+        return back()->with('success-message-delete',' Deleted Successfully');
     }
 }

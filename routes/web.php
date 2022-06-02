@@ -71,6 +71,7 @@ Route::get('investor-delete/{id}', [investorController::class, 'delete']);
 // Entity Shareholding
 
 Route::get('/entity-shareholding', [EntityShareholdingController ::class, 'index']);
+Route::get('entity-shareholding/{id}', [EntityShareholdingController::class, 'delete']);
 
 
 // Entity New Partner ADD
