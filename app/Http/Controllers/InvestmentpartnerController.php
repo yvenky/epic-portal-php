@@ -57,7 +57,7 @@ class InvestmentpartnerController extends Controller
         $data->save();
      
 
-       return redirect()->back()->with('success-message',' Added Successfully');
+       return redirect('/entity-shareholding')->with('success-message',' Investment Partner Added Successfully');
     }
 
     /**
@@ -71,6 +71,7 @@ class InvestmentpartnerController extends Controller
         //
     }
 
+   
     /**
      * Show the form for editing the specified resource.
      *

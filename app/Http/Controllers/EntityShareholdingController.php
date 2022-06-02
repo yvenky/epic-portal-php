@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ENTITY;
 use App\Models\PROPERTY;
+use App\Models\INVESTMENT;
 
 class EntityShareholdingController extends Controller
 {
@@ -18,8 +19,9 @@ class EntityShareholdingController extends Controller
 
         $users=ENTITY::all();
         $lists = PROPERTY::all();
+        $files= INVESTMENT::all();
     
-        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'lists' => $lists,'users' => $users]);
+        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'lists' => $lists,'users' => $users,'files' => $files]);
     }
 
     /**
@@ -52,6 +54,13 @@ class EntityShareholdingController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function showList()
+    {
+        $lists= INVESTMENT::all();
+
+        return view('backend.template.entity-shareholding.entityshareholding-index' , ['lists' => $lists]);
     }
 
     /**
