@@ -35,13 +35,13 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="First Name">First Name</label>
-                            <input type="text" class="form-control" name="FIRST_NAME" placeholder="First name" defaultValue ="placeholder" value="{{$user->FIRST_NAME}}" id="FIRST_NAME" readonly>
+                            <input type="text" class="form-control fname" name="FIRST_NAME"  value="{{$user->FIRST_NAME}}" id="FIRST_NAME" readonly>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Last Name">Last Name</label>
-                            <input type="text" class="form-control" placeholder="First name" name="LAST_NAME" value="{{$user->LAST_NAME}}" id="LAST_NAME" readonly>
+                            <input type="text" class="form-control lname"  name="LAST_NAME" value="{{$user->LAST_NAME}}" id="LAST_NAME" readonly>
                         </div>
                     </div>
        
