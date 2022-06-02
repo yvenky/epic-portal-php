@@ -80,7 +80,7 @@ Route::put('entity-shareholding-update/{id}', [EntityShareholdingController::cla
 
 Route::get('/entity-newpartner-add', [InvestmentpartnerController ::class, 'index']);
 Route::post('/entity-newpartner-add-submit', [InvestmentpartnerController ::class, 'store']);
-Route::put('entity-newpartner-add-update/{id}', [EntityShareholdingController::class, 'update']);
+
 
 
 // Entity New Partner properties value

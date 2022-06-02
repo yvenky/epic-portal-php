@@ -605,5 +605,18 @@ $(document).on("change", ".getvalue", function() {
 });
 
 
-document.getElementById("FIRST_NAME").defaultValue = " ";
-document.getElementById("LAST_NAME").defaultValue = " ";
+
+function validateForm() {
+  var fname = document.getElementById('FIRST_NAME'),
+      lname = document.getElementById('LAST_NAME');
+
+  if (fname.value.length === 0) {
+      fname.value = fname.placeholder;
+  }
+
+  if (lname.value.length === 0) {
+      lname.value = lname.placeholder;
+  }
+
+  return true;
+};

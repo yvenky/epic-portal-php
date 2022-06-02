@@ -125,7 +125,7 @@
                                         <a href="#" class="table-view-btn">
                                             <i class="fa fa-eye"></i>
                                         </a>  
-                                        <a href="<?php echo e(url('entity-shareholding-edit/'.$list->ID)); ?>" class="table-edit-btn"><i class="fa fa-edit"></i></a>
+                                        <a href="<?php echo e(url('entity-shareholding-edit/'.$file->ID)); ?>" class="table-edit-btn"><i class="fa fa-edit"></i></a>
                                         <a href="#" class="table-delete-btn" data-bs-toggle="modal" data-bs-target="#delete-entity-partners-modal-<?php echo e($file->ID); ?>">
                                             <i class="fa fa-trash"></i>
                                         </a>                                                                     

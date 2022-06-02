@@ -90,39 +90,6 @@ class InvestmentpartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $req, $id)
-    {
-       
-        $users = INVESTOR::find($id);
-
-            $lists = DB::table('INVESTMENT')
-            ->where('INVESTMENT.id', $id)
-            ->update([
-    
-                'FIRST_NAME'                => $req-> FIRST_NAME,
-                'LAST_NAME'                 => $req-> LAST_NAME,
-                'CASH'                      => $req-> CASH,
-                'LOAN'                      => $req-> LOAN,
-                'SHAREHOLDING'              => $req-> SHAREHOLDING,
-                'TOTAL_SHARE'               => $req-> TOTAL_SHARE,
-                'FINDER_FEES'               => $req-> FINDER_FEES,
-                'CLOSING_FEES'              => $req-> CLOSING_FEES,
-                'SPOUSE_EMAIL'              => $req-> SPOUSE_EMAIL,
-                'TOTAL_CASH'                => $req-> TOTAL_CASH,
-                'INVESTOR_ID'               => $req-> INVESTOR_ID,
-    
-            
-            ]);
-
-
-
-            $full_name =  $req-> FIRST_NAME. " " .  $req-> LAST_NAME;
-        
-            return redirect('entity-shareholding')->with('success-message-edit',  $full_name. ' Updated Successfully');
-
-        
-        
-    }
 
     /**
      * Remove the specified resource from storage.

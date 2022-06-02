@@ -26,7 +26,7 @@
                                 <optgroup label="Please Select Investor" data-select2-id="investor_select-list_select">
                                     <option value="">Please Select Investor</option>
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                        <option value="<?php echo e($user->ID); ?>" data-first="<?php echo e($user->FIRST_NAME); ?>" data-Last="<?php echo e($user->LAST_NAME); ?>"><?php echo e($user->FIRST_NAME.' '.$user->LAST_NAME); ?></option>
+                                        <option value="<?php echo e($user->ID); ?>" data-first="<?php echo e($user->FIRST_NAME); ?>" data-Last="<?php echo e($user->LAST_NAME); ?>" <?php echo e($user->FIRST_NAME.' '.$user->LAST_NAME == $lists->FIRST_NAME.' '.$lists->LAST_NAME ? "selected": ""); ?> ><?php echo e($user->FIRST_NAME.' '.$user->LAST_NAME); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </optgroup>
                             </select>
@@ -36,13 +36,13 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="First Name">First Name</label>
-                            <input type="text" class="form-control" name="FIRST_NAME"  value="<?php echo e($user->FIRST_NAME); ?>" id="FIRST_NAME" readonly>
+                            <input type="text" class="form-control" name="FIRST_NAME"  value="<?php echo e($lists->FIRST_NAME); ?>" id="FIRST_NAME" readonly>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Last Name">Last Name</label>
-                            <input type="text" class="form-control" name="LAST_NAME" value="<?php echo e($user->LAST_NAME); ?>" id="LAST_NAME" readonly>
+                            <input type="text" class="form-control" name="LAST_NAME" value="<?php echo e($lists->LAST_NAME); ?>" id="LAST_NAME" readonly>
                         </div>
                     </div>
        
