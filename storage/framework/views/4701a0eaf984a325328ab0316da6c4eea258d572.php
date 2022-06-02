@@ -42,21 +42,21 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Last Name">Last Name</label>
-                            <input type="text" class="form-control" name="LAST_NAME" value="<?php echo e($user->LAST_NAME); ?>" id="LASTT_NAME" readonly>
+                            <input type="text" class="form-control" name="LAST_NAME" value="<?php echo e($user->LAST_NAME); ?>" id="LAST_NAME" readonly>
                         </div>
                     </div>
        
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Total Share">Total Share</label>
-                            <input type="text" class="form-control" name="TOTAL_SHARE" id="TOTAL_SHARE">
+                            <input type="text" class="form-control " name="TOTAL_SHARE" id="TOTAL_SHARE">
                         </div>
                     </div>
                 
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Cash">Cash</label>
-                            <input type="text" class="form-control" name="CASH" id="CASH">
+                            <input type="text" class="form-control getvalue" value="" name="CASH" id="CASH">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -74,19 +74,19 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Finder Fees">Finder Fees</label>
-                            <input type="text" class="form-control"  name="FINDER_FEES" id="FINDER_FEES">
+                            <input type="text" class="form-control getvalue" value=""  name="FINDER_FEES" id="FINDER_FEES">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Closing Fees">Closing Fees</label>
-                            <input type="text" class="form-control"  name="CLOSING_FEES" id="CLOSING_FEES">
+                            <input type="text" class="form-control getvalue" value=""  name="CLOSING_FEES" id="CLOSING_FEES">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Total Cash">Total Cash</label>
-                            <input type="text" class="form-control" name="TOTAL_CASH" id="TOTAL_CASH" >
+                            <input type="text" class="form-control" name="TOTAL_CASH" id="TOTAL_CASH" readonly >
                         </div>
                     </div>
                </div>

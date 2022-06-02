@@ -595,3 +595,11 @@ $( '#investor_select-list' ).on( 'change', function() {
 
 //total cash sum
 
+
+$(document).on("change", ".getvalue", function() {
+  var sum = 0;
+  $(".getvalue").each(function(){
+      sum += +$(this).val();
+  });
+  $("#TOTAL_CASH").val(sum);
+});
