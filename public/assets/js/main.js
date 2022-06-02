@@ -595,17 +595,3 @@ $( '#investor_select-list' ).on( 'change', function() {
 
 //total cash sum
 
-$(document).ready(function () {
-       
-  $("#entity-newpartner-add-form").on('input', '.txtCal', function () {
-     var calculated_total_sum = 0;
-   
-     $("#entity-newpartner-add-form .txtCal").each(function () {
-         var get_textbox_value = $(this).val();
-         if ($.isNumeric(get_textbox_value)) {
-            calculated_total_sum += parseFloat(get_textbox_value);
-            }                  
-          });
-            $("#TOTAL_CASH").html(calculated_total_sum);
-     });
-});

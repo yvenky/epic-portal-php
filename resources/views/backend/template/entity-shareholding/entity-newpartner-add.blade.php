@@ -55,7 +55,7 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Cash">Cash</label>
-                            <input type="text" class="form-control txtCal" name="CASH" id="CASH">
+                            <input type="text" class="form-control" name="CASH" id="CASH">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -67,25 +67,25 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Shareholding">Shareholding</label>
-                            <input type="text" class="form-control" name="SHAREHOLDING" id="SHAREHOLDING">
+                            <input type="text" class="form-control"  name="SHAREHOLDING" id="SHAREHOLDING">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Finder Fees">Finder Fees</label>
-                            <input type="text" class="form-control txtCal" name="FINDER_FEES" id="FINDER_FEES">
+                            <input type="text" class="form-control"  name="FINDER_FEES" id="FINDER_FEES">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Closing Fees">Closing Fees</label>
-                            <input type="text" class="form-control txtCal" name="CLOSING_FEES" id="CLOSING_FEES">
+                            <input type="text" class="form-control"  name="CLOSING_FEES" id="CLOSING_FEES">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Total Cash">Total Cash</label>
-                            <input type="text" class="form-control" name="TOTAL_CASH" id="TOTAL_CASH" readonly>
+                            <input type="text" class="form-control" name="TOTAL_CASH" id="TOTAL_CASH" >
                         </div>
                     </div>
                </div>
