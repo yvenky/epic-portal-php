@@ -72,12 +72,15 @@ Route::get('investor-delete/{id}', [investorController::class, 'delete']);
 
 Route::get('/entity-shareholding', [EntityShareholdingController ::class, 'index']);
 Route::get('entity-shareholding/{id}', [EntityShareholdingController::class, 'delete']);
+Route::get('entity-shareholding-edit/{id}', [EntityShareholdingController::class, 'edit']);
+Route::put('entity-shareholding-update/{id}', [EntityShareholdingController::class, 'update']);
 
 
 // Entity New Partner ADD
 
 Route::get('/entity-newpartner-add', [InvestmentpartnerController ::class, 'index']);
 Route::post('/entity-newpartner-add-submit', [InvestmentpartnerController ::class, 'store']);
+Route::put('entity-newpartner-add-update/{id}', [EntityShareholdingController::class, 'update']);
 
 
 // Entity New Partner properties value

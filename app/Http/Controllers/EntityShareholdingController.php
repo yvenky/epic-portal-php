@@ -7,6 +7,7 @@ use App\Models\ENTITY;
 use App\Models\PROPERTY;
 use App\Models\INVESTMENT;
 use App\Models\ENTITY_PROPERTIES;
+use App\Models\INVESTOR;
 use DB;
 
 class EntityShareholdingController extends Controller
@@ -68,7 +69,10 @@ class EntityShareholdingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $lists=INVESTMENT::find($id);
+        $users = INVESTOR::all();
+
+        return view('backend.template.entity-shareholding.entity-shareholding-edit' , ['lists' => $lists, 'users' => $users]);
     }
 
     /**
@@ -78,10 +82,7 @@ class EntityShareholdingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.
