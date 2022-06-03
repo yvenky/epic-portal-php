@@ -117,7 +117,7 @@
                                     <td><?php echo e($i++); ?></td>
                                     <td><?php echo e($file->FIRST_NAME.' '.$file->LAST_NAME); ?></td>
                                     <td><?php echo e($file->TOTAL_SHARE); ?></td>
-                                    <td><?php echo e($file->SHAREHOLDING); ?></td>
+                                    <td><?php echo e(number_format($file->SHAREHOLDING, 4)); ?>%</td> 
                                     <td><?php echo e($file->CASH); ?></td>
                                     <td><?php echo e($file->LOAN); ?></td>
                                     <td><?php echo e($file->FINDER_FEES); ?></td>

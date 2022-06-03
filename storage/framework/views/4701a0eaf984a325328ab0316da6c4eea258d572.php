@@ -105,7 +105,7 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Shareholding">Shareholding</label>
-                            <input type="text" class="form-control"  name="SHAREHOLDING" id="SHAREHOLDING">
+                            <input type="number" step="any" class="form-control"  name="SHAREHOLDING" id="SHAREHOLDING" readonly>
                         </div>
                     </div>
                     <div class="col-lg-6">

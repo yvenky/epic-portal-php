@@ -607,3 +607,24 @@ $(document).on("change", ".getvalue", function() {
 
 document.querySelector('.fname').defaultValue = " ";
 document.querySelector('.lname').defaultValue = " ";
+
+
+
+$( '#entity-newpartner-add-form' ).on( 'change', function() {
+
+  var a=parseInt($("#TOTAL_SHARE").val());
+  var b=parseInt($("#TOTAL_PROPERTIES_VALUE").val());
+  var cal=(a/b*100).toFixed(4);
+
+      $( 'input[name=SHAREHOLDING]' ).val( cal );
+})
+
+
+$( '#entity-newpartner-update-form' ).on( 'change', function() {
+
+  var a=parseInt($(".tsval").val());
+  var b=parseInt($(".tpval").val());
+  var cal=(a/b*100).toFixed(4);
+
+      $( 'input[name=SHAREHOLDING]' ).val( cal );
+})

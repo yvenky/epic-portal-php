@@ -14,6 +14,10 @@ class INVESTMENT extends Model
     protected $table = 'INVESTMENT';
     public $timestamps = false;
 
+    protected $casts = [
+   
+        'SHAREHOLDING' => 'float',
+    ];
     protected $fillable = [
         
         'FIRST_NAME',

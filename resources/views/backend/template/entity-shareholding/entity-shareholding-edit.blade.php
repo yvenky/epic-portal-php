@@ -12,7 +12,7 @@
         <div class="form-heading">
             <h6>Entity New Partner Edit</h6>
         </div>
-        <form action="{{url('entity-shareholding-update/'.$lists->ID)}}" method="POST" id="entity-newpartner-add-form">
+        <form action="{{url('entity-shareholding-update/'.$lists->ID)}}" method="POST" id="entity-newpartner-update-form">
             @csrf
             @method('PUT')
             <div class="form-content pb-0">
@@ -51,7 +51,7 @@
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box">
                                     <label for="total_value">Total Value</label>   
-                                    <input type="text" class="form-control" name="TOTAL_PROPERTIES_VALUE" value="{{ optional($lists->entityProperties)->TOTAL_PROPERTIES_VALUE}}"  id="TOTAL_PROPERTIES_VALUE" readonly> 
+                                    <input type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE" value="{{ optional($lists->entityProperties)->TOTAL_PROPERTIES_VALUE}}"  id="TOTAL_PROPERTIES_VALUE" readonly> 
                                 </div>
                             </div>
 
@@ -85,7 +85,7 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Total Share">Total Share</label>
-                            <input type="text" class="form-control " value="{{$lists->TOTAL_SHARE}}" name="TOTAL_SHARE" id="TOTAL_SHARE">
+                            <input type="text" class="form-control tsval" value="{{$lists->TOTAL_SHARE}}" name="TOTAL_SHARE" id="TOTAL_SHARE">
                         </div>
                     </div>
                 
@@ -104,7 +104,7 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Shareholding">Shareholding</label>
-                            <input type="text" class="form-control" value="{{$lists->SHAREHOLDING}}"  name="SHAREHOLDING" id="SHAREHOLDING">
+                            <input type="text" class="form-control" value="{{$lists->SHAREHOLDING}}" step="any" name="SHAREHOLDING" id="SHAREHOLDING" readonly>
                         </div>
                     </div>
                     <div class="col-lg-6">

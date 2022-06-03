@@ -115,7 +115,7 @@
                                     <td>{{$i++}}</td>
                                     <td>{{$file->FIRST_NAME.' '.$file->LAST_NAME}}</td>
                                     <td>{{$file->TOTAL_SHARE}}</td>
-                                    <td>{{$file->SHAREHOLDING}}</td>
+                                    <td>{{ number_format($file->SHAREHOLDING, 4)}}%</td> 
                                     <td>{{$file->CASH}}</td>
                                     <td>{{$file->LOAN}}</td>
                                     <td>{{$file->FINDER_FEES}}</td>
