@@ -71,8 +71,12 @@ class EntityShareholdingController extends Controller
     {
         $lists=INVESTMENT::find($id);
         $users = INVESTOR::all();
+        $shares = ENTITY_PROPERTIES::all();
+        $entitys=ENTITY::all();
+        $propertys = PROPERTY::all();
 
-        return view('backend.template.entity-shareholding.entity-shareholding-edit' , ['lists' => $lists, 'users' => $users]);
+
+        return view('backend.template.entity-shareholding.entity-shareholding-edit' , ['lists' => $lists, 'users' => $users,'shares' => $shares, 'entitys' => $entitys,'propertys' => $propertys]);
     }
 
     /**
@@ -98,7 +102,8 @@ class EntityShareholdingController extends Controller
                 'FINDER_FEES'               => $req-> FINDER_FEES,
                 'CLOSING_FEES'              => $req-> CLOSING_FEES,
                 'TOTAL_CASH'                => $req-> TOTAL_CASH,
-                'INVESTOR_ID'               => $req-> INVESTOR_ID,
+                'INVESTOR_ID'               => $req-> INVESTOR_ID,       
+                'ENTITY_PROPERTIES_ID'      => $req-> ENTITY_PROPERTIES_ID,
     
             
             ]);

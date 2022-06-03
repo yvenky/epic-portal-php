@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\INVESTOR;
 use App\Models\INVESTMENT;
+use App\Models\ENTITY;
+use App\Models\PROPERTY;
+use App\Models\ENTITY_PROPERTIES;
+use DB;
 
 class InvestmentpartnerController extends Controller
 {
@@ -16,9 +20,11 @@ class InvestmentpartnerController extends Controller
     public function index()
     {
         $users = INVESTOR::all();
+        $entitys=ENTITY::all();
+        $propertys = PROPERTY::all();
 
         
-        return view('backend.template.entity-shareholding.entity-newpartner-add',['users' => $users]);
+        return view('backend.template.entity-shareholding.entity-newpartner-add',['users' => $users, 'entitys' => $entitys, 'propertys' => $propertys,]);
     }
 
     public function store(Request $request)
@@ -38,22 +44,32 @@ class InvestmentpartnerController extends Controller
             
            
         ]);
+
+        
+      $getarrayReq = $request->PROPERTY_SELECT;
+      $getid = implode(',', $getarrayReq);
+
+        $insert_entity_properties=DB::table('ENTITY_PROPERTIES')
+        ->insertGetId([
+            'ENTITY_SELECT'              =>$request->ENTITY_SELECT,
+            'PROPERTY_SELECT'            =>$getid,
+            'TOTAL_PROPERTIES_VALUE'     =>$request->TOTAL_PROPERTIES_VALUE ,
+        ]);
       
         $data = new INVESTMENT();
  
         $data-> INVESTOR_ID                         = $request-> INVESTOR_ID;
+        $data-> ENTITY_PROPERTIES_ID                = $insert_entity_properties;
         $data-> FIRST_NAME                          = $request-> FIRST_NAME; 
         $data-> LAST_NAME                           = $request-> LAST_NAME;  
         $data-> CASH                                = $request-> CASH;
         $data-> LOAN                                = $request-> LOAN; 
         $data-> SHAREHOLDING                        = $request-> SHAREHOLDING; 
         $data-> TOTAL_SHARE                         = $request-> TOTAL_SHARE ; 
-        $data-> FINDER_FEES                        = $request-> FINDER_FEES; 
+        $data-> FINDER_FEES                         = $request-> FINDER_FEES; 
         $data-> CLOSING_FEES                        = $request-> CLOSING_FEES;
-        $data-> TOTAL_CASH                        = $request-> TOTAL_CASH;
-    
-        
-        
+        $data-> TOTAL_CASH                          = $request-> TOTAL_CASH;
+  
         $data->save();
      
 

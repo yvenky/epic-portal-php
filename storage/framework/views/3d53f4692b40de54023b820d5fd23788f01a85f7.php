@@ -6,7 +6,7 @@
         <main class="main-area" role="main">
             <h5>Add partners to Entity</h5><br>
         </main>
-        <!--// Main Area End //-->
+        <!--// Main Area End 
         <section class="panel-wrapper panel-full-width mt-resp-top">
                 
 
@@ -65,7 +65,7 @@
     
             </div>
 
-        </section>
+        </section>  //-->
 
 
         <section class="panel-wrapper panel-full-width mt-resp-top">
@@ -89,6 +89,9 @@
                    <?php endif; ?> 
                 <div class="form-heading d-flex justify-content-between align-items-center">
                     <h6>Entity Shareholding Partner</h6>
+                    <a href="<?php echo e(url('/entity-newpartner-add')); ?>" class="dark-grey-btn">
+                        Add New Partner
+                    </a>  
                 </div>
                 <div class="container-fluid table-container-wrap">
                     <div class="table-responsive">
