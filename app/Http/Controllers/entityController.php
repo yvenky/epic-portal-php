@@ -110,7 +110,7 @@ class entityController extends Controller
             'STREET_1'                  =>$req->STREET_1,
             'CITY'                      =>$req->CITY,
             'STATE'                     =>$req->STATE,
-            'ZIP_CODE'                  =>$req->ZIP_CODE,        
+            'ZIP_CODE'                  =>$req->ZIP_CODE,       
         ]);
 
 

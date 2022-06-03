@@ -3,6 +3,7 @@
 namespace App\Models;
 use App\Models\ENTITY;
 use App\Models\PROPERTY;
+use App\Models\INVESTMENT;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,15 +25,11 @@ class ENTITY_PROPERTIES extends Model
         'TOTAL_PROPERTIES_VALUE',
     ];
 
-    public function entity_select()
+  
+    public function investmentGet()
     {
-   
-        return $this->belongsTo(ENTITY::class,'ENTITY_SELECT');
+        return $this->hasMany('App\INVESTMENT');
+        
     }
 
-    public function properties_select()
-    {
-   
-        return $this->belongsTo(PROPERTY::class,'PROPERTY_SELECT');
-    }
 }

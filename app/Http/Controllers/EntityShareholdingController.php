@@ -35,7 +35,12 @@ class EntityShareholdingController extends Controller
      */
     public function create()
     {
-        //
+        $users = INVESTOR::all();
+        $entitys=ENTITY::all();
+        $propertys = PROPERTY::all();
+
+        
+        return view('backend.template.entity-shareholding.entity-newpartner-add',['users' => $users, 'entitys' => $entitys, 'propertys' => $propertys,]);
     }
 
     /**
@@ -44,11 +49,54 @@ class EntityShareholdingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
 
+            'INVESTOR_ID'               => 'required',
+            'FIRST_NAME'                =>'required',
+            'LAST_NAME'                 =>'required',
+            'CASH'                      => 'required',
+            'LOAN'                      => 'required',
+            'SHAREHOLDING'              => 'required',
+            'TOTAL_SHARE'               => 'required',
+            'FINDER_FEES'               => 'required',
+            'CLOSING_FEES'              => 'required',
+            'TOTAL_CASH'                => 'required',
+            
+           
+        ]);
+
+        
+      $getarrayReq = $request->PROPERTY_SELECT;
+      $getid = implode(',', $getarrayReq);
+
+        $insert_entity_properties=DB::table('ENTITY_PROPERTIES')
+        ->insertGetId([
+            'ENTITY_SELECT'              =>$request->ENTITY_SELECT,
+            'PROPERTY_SELECT'            =>$getid,
+            'TOTAL_PROPERTIES_VALUE'     =>$request->TOTAL_PROPERTIES_VALUE ,
+        ]);
+      
+        $data = new INVESTMENT();
+ 
+        $data-> INVESTOR_ID                         = $request-> INVESTOR_ID;
+        $data-> ENTITY_PROPERTIES_ID                = $insert_entity_properties;
+        $data-> FIRST_NAME                          = $request-> FIRST_NAME; 
+        $data-> LAST_NAME                           = $request-> LAST_NAME;  
+        $data-> CASH                                = $request-> CASH;
+        $data-> LOAN                                = $request-> LOAN; 
+        $data-> SHAREHOLDING                        = $request-> SHAREHOLDING; 
+        $data-> TOTAL_SHARE                         = $request-> TOTAL_SHARE ; 
+        $data-> FINDER_FEES                         = $request-> FINDER_FEES; 
+        $data-> CLOSING_FEES                        = $request-> CLOSING_FEES;
+        $data-> TOTAL_CASH                          = $request-> TOTAL_CASH;
+  
+        $data->save();
+     
+
+       return redirect('/entity-shareholding')->with('success-message',' Investment Partner Added Successfully');
+    }
     /**
      * Display the specified resource.
      *
@@ -88,8 +136,12 @@ class EntityShareholdingController extends Controller
      */
     public function update(Request $req, $id)
     {
+
+        $getarrayReq = $req->PROPERTY_SELECT;
+        $getid = implode(',',$getarrayReq);
        
             $lists = DB::table('INVESTMENT')
+            ->join('ENTITY_PROPERTIES','ENTITY_PROPERTIES.id' ,'INVESTMENT.ENTITY_PROPERTIES_ID')
             ->where('INVESTMENT.id', $id)
             ->update([
     
@@ -103,7 +155,9 @@ class EntityShareholdingController extends Controller
                 'CLOSING_FEES'              => $req-> CLOSING_FEES,
                 'TOTAL_CASH'                => $req-> TOTAL_CASH,
                 'INVESTOR_ID'               => $req-> INVESTOR_ID,       
-                'ENTITY_PROPERTIES_ID'      => $req-> ENTITY_PROPERTIES_ID,
+                'ENTITY_SELECT'             => $req->ENTITY_SELECT,
+                'PROPERTY_SELECT'           => $getid,
+                'TOTAL_PROPERTIES_VALUE'    => $req->TOTAL_PROPERTIES_VALUE,  
     
             
             ]);
@@ -124,8 +178,11 @@ class EntityShareholdingController extends Controller
      */
     public function delete($id)
     {
-        $lists=DB::table('INVESTMENT')->where('ID',$id)->delete();
+        $get_id=DB::table('INVESTMENT')->where('id',$id)->first();
+        DB::table('ENTITY_PROPERTIES')->where('id',$get_id->ENTITY_PROPERTIES_ID)->delete();
+        DB::table('INVESTMENT')->where('ID',$id)->delete();
 
-        return back()->with('success-message-delete',' Deleted Successfully');
+        return back()->with('success-message-delete',' Deleted Successfully'); 
     }
+
 }

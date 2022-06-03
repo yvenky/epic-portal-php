@@ -26,7 +26,7 @@
                                         <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
                                             <option value="">Please Select</option>
                                             @foreach ( $entitys as $entity ) 
-                                                <option value="{{$entity->ID}}" {{$entity->ENTITY_NAME == $lists->ENTITY_NAME ? "selected": "" }}>{{$entity->ENTITY_NAME}}</option>
+                                                <option value="{{$entity->ID}}" {{$entity->ID == optional($lists->entityProperties)->ENTITY_SELECT ? "selected": "" }}>{{$entity->ENTITY_NAME}}</option>
                                             @endforeach
                                         </optgroup>
                                     </select>
@@ -40,7 +40,7 @@
                                         <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                                             <option value="">Please Select</option>
                                             @foreach ( $propertys as $property ) 
-                                                <option value="{{$property->ID}}"  data-price="{{$property->PURCHASE_PRICE}}" >{{$property->PROPERTY_ADDRESS}}</option>
+                                                <option value="{{$property->ID}}"  data-price="{{$property->PURCHASE_PRICE}}" {{$property->ID == optional($lists->entityProperties)->PROPERTY_SELECT ? "selected": "" }} >{{$property->PROPERTY_ADDRESS}}</option>
                                             @endforeach
                                         </optgroup>
                                     </select>
@@ -50,8 +50,8 @@
                             
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box">
-                                    <label for="total_value">Total Value</label>            
-                                    <input type="text" class="form-control" name="TOTAL_PROPERTIES_VALUE" id="TOTAL_PROPERTIES_VALUE" readonly>                
+                                    <label for="total_value">Total Value</label>   
+                                    <input type="text" class="form-control" name="TOTAL_PROPERTIES_VALUE" value="{{ optional($lists->entityProperties)->TOTAL_PROPERTIES_VALUE}}"  id="TOTAL_PROPERTIES_VALUE" readonly> 
                                 </div>
                             </div>
 

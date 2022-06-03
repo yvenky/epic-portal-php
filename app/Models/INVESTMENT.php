@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\INVESTOR;
+use App\Models\ENTITY_PROPERTIES;
 
 class INVESTMENT extends Model
 {
@@ -30,15 +31,15 @@ class INVESTMENT extends Model
     ];
 
 
-    public function INVESTOR_select()
+    public function investor_select()
     {
    
         return $this->belongsTo(INVESTOR::class,'INVESTOR_ID');
     }
 
-    public function entity_properties()
+    public function entityProperties()
     {
    
-        return $this->belongsTo(ENTITY_PROPERTIES::class,'ENTITY_PROPERTIES');
+        return $this->belongsTo(ENTITY_PROPERTIES::class,'ENTITY_PROPERTIES_ID');
     }
 }

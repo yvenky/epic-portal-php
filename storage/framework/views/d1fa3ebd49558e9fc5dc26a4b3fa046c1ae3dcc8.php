@@ -27,7 +27,7 @@
                                         <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
                                             <option value="">Please Select</option>
                                             <?php $__currentLoopData = $entitys; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $entity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                                <option value="<?php echo e($entity->ID); ?>" <?php echo e($entity->ENTITY_NAME == $lists->ENTITY_NAME ? "selected": ""); ?>><?php echo e($entity->ENTITY_NAME); ?></option>
+                                                <option value="<?php echo e($entity->ID); ?>" <?php echo e($entity->ID == optional($lists->entityProperties)->ENTITY_SELECT ? "selected": ""); ?>><?php echo e($entity->ENTITY_NAME); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </optgroup>
                                     </select>
@@ -41,7 +41,7 @@
                                         <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                                             <option value="">Please Select</option>
                                             <?php $__currentLoopData = $propertys; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $property): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                                <option value="<?php echo e($property->ID); ?>"  data-price="<?php echo e($property->PURCHASE_PRICE); ?>" ><?php echo e($property->PROPERTY_ADDRESS); ?></option>
+                                                <option value="<?php echo e($property->ID); ?>"  data-price="<?php echo e($property->PURCHASE_PRICE); ?>" <?php echo e($property->ID == optional($lists->entityProperties)->PROPERTY_SELECT ? "selected": ""); ?> ><?php echo e($property->PROPERTY_ADDRESS); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </optgroup>
                                     </select>
@@ -51,8 +51,8 @@
                             
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box">
-                                    <label for="total_value">Total Value</label>            
-                                    <input type="text" class="form-control" name="TOTAL_PROPERTIES_VALUE" id="TOTAL_PROPERTIES_VALUE" readonly>                
+                                    <label for="total_value">Total Value</label>   
+                                    <input type="text" class="form-control" name="TOTAL_PROPERTIES_VALUE" value="<?php echo e(optional($lists->entityProperties)->TOTAL_PROPERTIES_VALUE); ?>"  id="TOTAL_PROPERTIES_VALUE" readonly> 
                                 </div>
                             </div>
 
