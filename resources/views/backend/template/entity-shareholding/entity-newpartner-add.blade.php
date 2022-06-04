@@ -15,10 +15,45 @@
         <form action="{{url('entity-newpartner-add-submit')}}" method="POST" id="entity-newpartner-add-form">
             @csrf
             <!-- start--->
-    <div class="form-content pb-0">
-        <div class="row mt-4">
-        <!-- add partner-->
-          <div class="col-lg-12">
+           <div class="form-content pb-0">
+                <div class="row mt-4">
+                 <!-- from entity properties-->
+                 <div class="col-lg-12">
+                    <div class="form-flex-item-box order-error-select">
+                        <label for="entity_select-list">Select Entity</label>
+                            <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
+                            <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
+                                <option value="">Please Select</option>
+                                @foreach ( $entitys as $entity ) 
+                                    <option value="{{$entity->ID}}" >{{$entity->ENTITY_NAME}}</option>
+                                @endforeach
+                            </optgroup>
+                        </select>
+                    </div>     
+                </div>
+                   
+
+                <div class="col-lg-12">
+                    <div class="form-flex-item-box order-error-select">
+                        <label for="PROPERTY_SELECT">Select Property</label>
+                            <select name="PROPERTY_SELECT" class="form-select select-matcher-obj select2" id="property_select-list"  data-select2-id="property_select-list_select"  aria-label="Default select example" >
+                            <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
+                                <option value="">Please Select</option>
+                                @foreach ( $propertys as $property ) 
+                                    <option value="{{$property->ID}}"  data-price="{{$property->PURCHASE_PRICE}}" >{{$property->PROPERTY_ADDRESS}}</option>
+                                @endforeach
+                            </optgroup>
+                        </select>
+                    </div>     
+                </div>
+                <div class="col-lg-12">
+                                <div class="form-flex-item-box">
+                                    <label for="total_value">Total Value</label>   
+                                    <input type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE" value=""  id="TOTAL_PROPERTIES_VALUE" readonly> 
+                                </div>
+                </div>
+                    <!-- Add partner-->
+                    <div class="col-lg-12">
                         <div class="form-flex-item-box order-error-select">
                             <label for="entity_select-list">Select Partner</label>
                                 <select name="INVESTOR_ID" class="form-select select-matcher-obj select2" id="investor_select-list"  data-select2-id="investor_select_list_select"  aria-label="Default select example">

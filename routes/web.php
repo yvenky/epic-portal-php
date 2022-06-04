@@ -7,7 +7,7 @@ use App\Http\Controllers\investorController;
 use App\Http\Controllers\PropertyController;	
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\EntityShareholdingController;
-use App\Http\Controllers\InvestmentpartnerController;  
+use App\Http\Controllers\InvestmentController;  
 use App\Http\Controllers\EntityPropertiesController;
 
 /*	
@@ -71,16 +71,16 @@ Route::get('investor-delete/{id}', [investorController::class, 'delete']);
 // Entity Shareholding
 
 Route::get('/entity-shareholding', [EntityShareholdingController ::class, 'index']);
-Route::get('/entity-newpartner-add', [EntityShareholdingController ::class, 'create']);
-Route::post('/entity-newpartner-add-submit', [EntityShareholdingController ::class, 'store']);
 Route::get('entity-shareholding/{id}', [EntityShareholdingController::class, 'delete']);
 Route::get('entity-shareholding-edit/{id}', [EntityShareholdingController::class, 'edit']);
 Route::put('entity-shareholding-update/{id}', [EntityShareholdingController::class, 'update']);
 
-
+// investment
+Route::get('/entity-newpartner-add', [InvestmentController ::class, 'index']);
+Route::get('/entity-newpartner-add-submit', [InvestmentController ::class, 'store']);
 
 
 
 // Entity New Partner properties value
 
-//Route::post('entity_properties-submit', [EntityPropertiesController::class, 'store']);
+Route::post('entity_properties-submit', [EntityPropertiesController::class, 'store']);

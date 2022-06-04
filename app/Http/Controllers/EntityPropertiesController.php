@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\ENTITY_PROPERTIES;
+use App\Models\ENTITY;
 
 
 class EntityPropertiesController extends Controller
@@ -35,12 +36,12 @@ class EntityPropertiesController extends Controller
                 'TOTAL_PROPERTIES_VALUE'            => 'required',
             ]);
 
-      $getarrayReq = $req->PROPERTY_SELECT;
-      $getid = implode(',', $getarrayReq);
+      //$getarrayReq = $req->PROPERTY_SELECT;
+      //$getid = implode(',', $getarrayReq);
  
     $data = new ENTITY_PROPERTIES();
     $data->ENTITY_SELECT                     = $req->ENTITY_SELECT;
-    $data->PROPERTY_SELECT                   = $getid;
+    $data->PROPERTY_SELECT                   = $req->PROPERTY_SELECT;
     $data->TOTAL_PROPERTIES_VALUE            = $req->TOTAL_PROPERTIES_VALUE;
     $data->save();
 
