@@ -6,10 +6,7 @@
         <main class="main-area" role="main">
             <h5>Add partners to Entity</h5><br>
         </main>
-        <!--// Main Area End 
         <section class="panel-wrapper panel-full-width mt-resp-top">
-                
-
             <div class="form-content">
                 <form action="<?php echo e(url('entity_properties-submit')); ?>" method="POST" id="add-new-property-form">
                     <?php echo csrf_field(); ?>
@@ -65,7 +62,7 @@
     
             </div>
 
-        </section>  //-->
+        </section> 
 
 
         <section class="panel-wrapper panel-full-width mt-resp-top">
@@ -155,13 +152,25 @@
                                 </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th class="table-text-right">Total:</th>
+                                    <th>$2,100,000.00</th>
+                                    <th>$705,000.00</th>
+                                    <th>$1,395,000.00</th>
+                                    <th>$42,000.00</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
                         </table>
                       <!--  tota tble-->
                     </div>   
               </div>
            </div>
         </section>
-
-
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/entity-shareholding/entityshareholding-index.blade.php ENDPATH**/ ?>

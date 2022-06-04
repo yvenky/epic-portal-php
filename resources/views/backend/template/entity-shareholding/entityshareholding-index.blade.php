@@ -6,10 +6,7 @@
         <main class="main-area" role="main">
             <h5>Add partners to Entity</h5><br>
         </main>
-        <!--// Main Area End 
         <section class="panel-wrapper panel-full-width mt-resp-top">
-                
-
             <div class="form-content">
                 <form action="{{url('entity_properties-submit')}}" method="POST" id="add-new-property-form">
                     @csrf
@@ -65,7 +62,7 @@
     
             </div>
 
-        </section>  //-->
+        </section> 
 
 
         <section class="panel-wrapper panel-full-width mt-resp-top">
@@ -153,12 +150,24 @@
                                 </tr>
                                 @endforeach
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th class="table-text-right">Total:</th>
+                                    <th>$2,100,000.00</th>
+                                    <th>$705,000.00</th>
+                                    <th>$1,395,000.00</th>
+                                    <th>$42,000.00</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
                         </table>
                       <!--  tota tble-->
                     </div>   
               </div>
            </div>
         </section>
-
-
 @endsection
