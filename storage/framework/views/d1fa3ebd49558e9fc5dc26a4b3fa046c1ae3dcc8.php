@@ -105,7 +105,7 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Shareholding">Shareholding</label>
-                            <input type="text" class="form-control" value="<?php echo e($lists->SHAREHOLDING); ?>" step="any" name="SHAREHOLDING" id="SHAREHOLDING" readonly>
+                            <input type="text" class="form-control" value="<?php echo e($lists->SHAREHOLDING); ?>" step="any" name="SHAREHOLDING" id="SHAREHOLDING" >
                         </div>
                     </div>
                     <div class="col-lg-6">

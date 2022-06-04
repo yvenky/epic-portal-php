@@ -151,13 +151,13 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @endforeach   
+                                @endforeach
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </div>
-        
+                      <!--  tota tble-->
+                    </div>   
+              </div>
+           </div>
         </section>
 
 
