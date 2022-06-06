@@ -20,14 +20,14 @@ class InvestmentController extends Controller
      */
     public function index()
     {
-        $users = INVESTOR::all();
-        $entitys=ENTITY::all();
-        $entity_propertys = ENTITY_PROPERTIES::all();
+        $users =  INVESTOR::all();
+        $entitys= ENTITY::all();
+        $values = ENTITY_PROPERTIES::all();
         $propertys = PROPERTY::all();
        
 
         
-        return view('backend.template.entity-shareholding.entity-newpartner-add',['users' => $users, 'entitys' => $entitys, 'propertys' => $propertys, 'entity_propertys'=>$entity_propertys,]);
+        return view('backend.template.entity-shareholding.entity-newpartner-add',['users' => $users, 'entitys' => $entitys, 'propertys' => $propertys , 'values' =>$values ]);
     }
 
     /**
@@ -68,11 +68,11 @@ class InvestmentController extends Controller
      // $getarrayReq = $request->PROPERTY_SELECT;
         // $getid = implode(',', $getarrayReq);
 
-        //     $insert_entity_properties=DB::table('ENTITY_PROPERTIES')
-        //     ->insertGetId([
+        //    $insert_entity_properties=DB::table('ENTITY_PROPERTIES')
+        //    ->insertGetId([
         //         'ENTITY_SELECT'              =>$request->ENTITY_SELECT,
-        //         'PROPERTY_SELECT'            =>$getid,
-        //         'TOTAL_PROPERTIES_VALUE'     =>$request->TOTAL_PROPERTIES_VALUE ,
+        //         'PROPERTY_SELECT'            =>$request->PROPERTY_SELECT,
+        //        'TOTAL_PROPERTIES_VALUE'     =>$request->TOTAL_PROPERTIES_VALUE ,
         //     ]);
       
         $data = new INVESTMENT();
@@ -93,7 +93,6 @@ class InvestmentController extends Controller
 
        return redirect('/entity-shareholding')->with('success-message',' Investment Partner Added Successfully');
     }
-
     /**
      * Display the specified resource.
      *

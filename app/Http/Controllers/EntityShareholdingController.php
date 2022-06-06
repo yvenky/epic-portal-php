@@ -10,7 +10,7 @@ use App\Models\ENTITY_PROPERTIES;
 use App\Models\INVESTOR;
 use DB;
 
-class EntityShareholdingController extends Controller
+class  EntityShareholdingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,9 +23,9 @@ class EntityShareholdingController extends Controller
         $users=ENTITY::all();
         $lists = PROPERTY::all();
         $files= INVESTMENT::all();
-        $shares= ENTITY_PROPERTIES::all();
+        $values = ENTITY_PROPERTIES::all();
     
-        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'lists' => $lists,'users' => $users,'files' => $files, 'shares' => $shares]);
+        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'lists' => $lists,'users' => $users,'files' => $files, 'values' => $values]);
     }
 
     /**
@@ -37,6 +37,9 @@ class EntityShareholdingController extends Controller
     {
         
     }
+
+   
+
 
     /**
      * Store a newly created resource in storage.

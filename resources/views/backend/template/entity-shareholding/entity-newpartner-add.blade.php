@@ -49,7 +49,7 @@
                 <div class="col-lg-12">
                                 <div class="form-flex-item-box">
                                     <label for="total_value">Total Value</label>   
-                                    <input type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE" value=""  id="TOTAL_PROPERTIES_VALUE" readonly> 
+                                    <input type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE"   id="TOTAL_PROPERTIES_VALUE" readonly> 
                                 </div>
                 </div>
                     <!-- Add partner-->

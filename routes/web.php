@@ -77,10 +77,9 @@ Route::put('entity-shareholding-update/{id}', [EntityShareholdingController::cla
 
 // investment
 Route::get('/entity-newpartner-add', [InvestmentController ::class, 'index']);
-Route::get('/entity-newpartner-add-submit', [InvestmentController ::class, 'store']);
+Route::post('/entity-newpartner-add-submit', [InvestmentController ::class, 'store']);
 
 
 
 // Entity New Partner properties value
-
 Route::post('entity_properties-submit', [EntityPropertiesController::class, 'store']);
