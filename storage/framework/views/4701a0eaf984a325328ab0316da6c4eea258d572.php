@@ -49,8 +49,12 @@
                 </div>
                 <div class="col-lg-12">
                                 <div class="form-flex-item-box">
-                                    <label for="total_value">Total Value</label>   
-                                    <input type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE"   id="TOTAL_PROPERTIES_VALUE" readonly> 
+                                    <label for="total_value">Total Value</label> 
+                                    <?php $__currentLoopData = $values; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                    <?php if($value->ENTITY_SELECT): ?>  
+                                    <input type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE"  value="<?php echo e($value->TOTAL_PROPERTIES_VALUE); ?>" id="TOTAL_PROPERTIES_VALUE" readonly> 
+                                    <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
                 </div>
                     <!-- Add partner-->

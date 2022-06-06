@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Http\Request;
 use DB;
@@ -27,35 +28,34 @@ class EntityPropertiesController extends Controller
      */
     public function store(Request $req )
     {
-       
-
 
         $req->validate([
                 'ENTITY_SELECT'                     => 'required',  
-                'PROPERTY_SELECT'                     => 'required',        
+                'PROPERTY_SELECT'                   => 'required',        
                 'TOTAL_PROPERTIES_VALUE'            => 'required',
             ]);
 
-    //   $getarrayReq = $req->PROPERTY_SELECT;
-    //   $getid = implode(',', $getarrayReq);
+      //$getarrayReq = $req->PROPERTY_SELECT;
+      //$getid = implode(',', $getarrayReq);
 
       
         //     $passvalues=DB::table('ENTITY_PROPERTIES')
         //    ->insert([
         //        'ENTITY_SELECT'              =>$req->ENTITY_SELECT,
-        //        'PROPERTY_SELECT'            =>$request->PROPERTY_SELECT,
-        //        'TOTAL_PROPERTIES_VALUE'     =>$request->TOTAL_PROPERTIES_VALUE ,
+        //        'PROPERTY_SELECT'            =>$req->PROPERTY_SELECT,
+        //        'TOTAL_PROPERTIES_VALUE'     =>$req->TOTAL_PROPERTIES_VALUE,
         //     ]);
 
- 
-    $passvalues = new ENTITY_PROPERTIES();
-    $passvalues->ENTITY_SELECT                     = $req->ENTITY_SELECT;
-    $passvalues->PROPERTY_SELECT                   = $req->PROPERTY_SELECT;
-    $passvalues->TOTAL_PROPERTIES_VALUE            = $req->TOTAL_PROPERTIES_VALUE;
-    $passvalues->save();
+            $passvalues = new ENTITY_PROPERTIES();
+            $passvalues->ENTITY_SELECT                     = $req->ENTITY_SELECT;
+            $passvalues->PROPERTY_SELECT                   = $req->PROPERTY_SELECT;
+            $passvalues->TOTAL_PROPERTIES_VALUE            = $req->TOTAL_PROPERTIES_VALUE;
+
+            $passvalues->save();
 
     
-        return redirect('/entity-newpartner-add');
+            return redirect('/entity-newpartner-add');
+            //return Redirect::to('/entity-newpartner-add')->withInput($passvalues);
           
     }
 

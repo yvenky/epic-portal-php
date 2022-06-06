@@ -26,8 +26,7 @@ class InvestmentController extends Controller
         $propertys = PROPERTY::all();
        
 
-        
-        return view('backend.template.entity-shareholding.entity-newpartner-add',['users' => $users, 'entitys' => $entitys, 'propertys' => $propertys , 'values' =>$values ]);
+        return view('backend.template.entity-shareholding.entity-newpartner-add',['users' => $users, 'entitys' => $entitys, 'propertys' => $propertys , 'values'=>$values ]);
     }
 
     /**

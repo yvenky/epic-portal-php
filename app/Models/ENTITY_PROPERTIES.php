@@ -31,5 +31,10 @@ class ENTITY_PROPERTIES extends Model
         return $this->hasMany('App\INVESTMENT');
         
     }
+    public function entityGet()
+    {
+        return $this->hasMany('App\ENTITY');
+        
+    }
 
 }
