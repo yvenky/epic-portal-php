@@ -83,3 +83,4 @@ Route::post('/entity-newpartner-add-submit', [InvestmentController ::class, 'sto
 
 // Entity New Partner properties value
 Route::post('entity_properties-submit', [EntityPropertiesController::class, 'store']);
+Route::get('entity_properties-submit', [EntityPropertiesController::class, 'edit']);

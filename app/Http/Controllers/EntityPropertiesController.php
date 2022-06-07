@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\ENTITY_PROPERTIES;
 use App\Models\ENTITY;
+use App\Models\PROPERTY;
 
 
 class EntityPropertiesController extends Controller
@@ -78,7 +79,7 @@ class EntityPropertiesController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**

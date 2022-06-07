@@ -8,7 +8,7 @@
         </main>
         <section class="panel-wrapper panel-full-width mt-resp-top">
             <div class="form-content">
-                <form action="<?php echo e(url('entity_properties-submit')); ?>" method="Post" id="add-new-property-form">
+                <form action="<?php echo e(url('entity_properties-submit')); ?>" method="POST" id="add-new-property-form">
                     <?php echo csrf_field(); ?>
                            
                         <div class="col-lg-6">

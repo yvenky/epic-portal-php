@@ -41,10 +41,4 @@ class ENTITY extends Model
         
     }
 
-    public function entity_property_get()
-    {
-        return $this->belongsTo(ENTITY_PROPERTIES::class,'ID');
-        
-    }
-
 }

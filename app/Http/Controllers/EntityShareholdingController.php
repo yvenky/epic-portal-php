@@ -25,7 +25,7 @@ class  EntityShareholdingController extends Controller
         $files= INVESTMENT::all();
         $values = ENTITY_PROPERTIES::all();
     
-        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'lists' => $lists,'users' => $users,'files' => $files, 'values' => $values]);
+        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'users' => $users,'lists' => $lists,'files' => $files, 'values' => $values]);
     }
 
     /**
