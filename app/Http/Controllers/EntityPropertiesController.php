@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Redirect;
+namespace App\models;
+namespace \App\models\Controller;
 
 use Illuminate\Http\Request;
 use DB;
