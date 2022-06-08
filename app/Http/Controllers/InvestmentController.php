@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-namespace App\models;
-
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PROPERTY;
 use App\Models\INVESTMENT;
