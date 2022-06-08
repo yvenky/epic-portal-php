@@ -37,4 +37,10 @@ class ENTITY_PROPERTIES extends Model
         
     }
 
+    public function propertyGet()
+    {
+        return $this->hasMany('App\PROPERTY');
+        
+    }
+
 }

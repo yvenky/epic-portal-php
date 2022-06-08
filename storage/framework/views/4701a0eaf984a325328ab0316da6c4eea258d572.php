@@ -37,7 +37,7 @@
                 <div class="col-lg-12">
                     <div class="form-flex-item-box order-error-select">
                         <label for="PROPERTY_SELECT">Select Property</label>
-                            <select name="PROPERTY_SELECT" class="form-select select-matcher-obj select2" id="property_select-list"  data-select2-id="property_select-list_select"  aria-label="Default select example" >
+                            <select name="PROPERTY_SELECT[]" class="form-select select-matcher-obj select2" id="property_select-list"  data-select2-id="property_select-list_select"  aria-label="Default select example" multiple="multiple" >
                             <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                                 <option value="">Please Select</option>
                                 <?php $__currentLoopData = $propertys; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $property): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 

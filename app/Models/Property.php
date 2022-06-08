@@ -35,4 +35,5 @@ class PROPERTY extends Model
         
     }
 
+
 }

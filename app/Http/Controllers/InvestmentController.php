@@ -18,15 +18,19 @@ class InvestmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() 
     {
+        $getvalues = ENTITY_PROPERTIES::all();
         $users =  INVESTOR::all();
         $entitys= ENTITY::all();
-        $values = ENTITY_PROPERTIES::all();
         $propertys = PROPERTY::all();
-       
+        $files= INVESTMENT::all();
 
-        return view('backend.template.entity-shareholding.entity-newpartner-add',['users' => $users, 'entitys' => $entitys, 'propertys' => $propertys , 'values'=>$values ]);
+        
+
+    
+    return view('backend.template.entity-shareholding.entity-newpartner-add',  [ 'users' => $users,'propertys' => $propertys,'entitys' => $entitys,'files' => $files ,'getvalues'=>$getvalues]);
+       
     }
 
     /**

@@ -36,28 +36,28 @@ class EntityPropertiesController extends Controller
                 'TOTAL_PROPERTIES_VALUE'            => 'required',
             ]);
 
-      //$getarrayReq = $req->PROPERTY_SELECT;
-      //$getid = implode(',', $getarrayReq);
+      $getarrayReq = $req->PROPERTY_SELECT;
+      $getid = implode(',', $getarrayReq);
 
       
-        //     $passvalues=DB::table('ENTITY_PROPERTIES')
-        //    ->insert([
-        //        'ENTITY_SELECT'              =>$req->ENTITY_SELECT,
-        //        'PROPERTY_SELECT'            =>$req->PROPERTY_SELECT,
-        //        'TOTAL_PROPERTIES_VALUE'     =>$req->TOTAL_PROPERTIES_VALUE,
-        //     ]);
+            $passvalues=DB::table('ENTITY_PROPERTIES')
+           ->insertGetId([
+               'ENTITY_SELECT'              =>$req->ENTITY_SELECT,
+               'PROPERTY_SELECT'            =>$getid,
+               'TOTAL_PROPERTIES_VALUE'     =>$req->TOTAL_PROPERTIES_VALUE,
+            ]);
 
-            $passvalues = new ENTITY_PROPERTIES();
-            $passvalues->ENTITY_SELECT                     = $req->ENTITY_SELECT;
-            $passvalues->PROPERTY_SELECT                   = $req->PROPERTY_SELECT;
-            $passvalues->TOTAL_PROPERTIES_VALUE            = $req->TOTAL_PROPERTIES_VALUE;
 
-            $passvalues->save();
+        return redirect('/entity-newpartner-add');
+          
+    }
 
     
-            return redirect('/entity-newpartner-add');
-            //return Redirect::to('/entity-newpartner-add')->withInput($passvalues);
-          
+    public function create()
+    {
+
+       
+        
     }
 
     /**

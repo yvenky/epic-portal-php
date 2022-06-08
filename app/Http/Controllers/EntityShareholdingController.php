@@ -19,13 +19,11 @@ class  EntityShareholdingController extends Controller
      */
     public function index()
     {
-
-        $users=ENTITY::all();
-        $lists = PROPERTY::all();
+        $users= ENTITY::all();
+        $lists= PROPERTY::all();
         $files= INVESTMENT::all();
-        $values = ENTITY_PROPERTIES::all();
     
-        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'users' => $users,'lists' => $lists,'files' => $files, 'values' => $values]);
+        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'users' => $users,'lists' => $lists,'files' => $files]);
     }
 
     /**
