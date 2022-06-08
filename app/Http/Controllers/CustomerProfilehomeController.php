@@ -1,15 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\ENTITY_PROPERTIES;
 use App\Models\ENTITY;
 use App\Models\PROPERTY;
-use DB;
+use App\Models\INVESTMENT;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-
-class EntityPropertiesController extends Controller
+class CustomerProfilehomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +17,10 @@ class EntityPropertiesController extends Controller
      */
     public function index()
     {
-        //
+        $users= ENTITY::all();
+        $lists= PROPERTY::all();
+        $files= INVESTMENT::all();
+        return view('backend.template.customer-profile.customer-profile-index',  [ 'users' => $users,'lists' => $lists,'files' => $files]);
     }
 
     /**
@@ -26,37 +28,20 @@ class EntityPropertiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $req )
-    {
-
-        $req->validate([
-                'ENTITY_SELECT'                     => 'required',  
-                'PROPERTY_SELECT'                   => 'required',        
-                'TOTAL_PROPERTIES_VALUE'            => 'required',
-            ]);
-
-      $getarrayReq = $req->PROPERTY_SELECT;
-      $getid = implode(',', $getarrayReq);
-
-      
-            $passvalues=DB::table('ENTITY_PROPERTIES')
-           ->insertGetId([
-               'ENTITY_SELECT'              =>$req->ENTITY_SELECT,
-               'PROPERTY_SELECT'            =>$getid,
-               'TOTAL_PROPERTIES_VALUE'     =>$req->TOTAL_PROPERTIES_VALUE,
-            ]);
-
-
-        return redirect('/entity-newpartner-add');
-          
-    }
-
-    
     public function create()
     {
+        //
+    }
 
-       
-        
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
     }
 
     /**
@@ -78,7 +63,7 @@ class EntityPropertiesController extends Controller
      */
     public function edit($id)
     {
-       
+        //
     }
 
     /**

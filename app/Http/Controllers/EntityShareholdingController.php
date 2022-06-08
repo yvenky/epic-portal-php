@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\ENTITY;
 use App\Models\PROPERTY;
 use App\Models\INVESTMENT;
 use App\Models\ENTITY_PROPERTIES;
 use App\Models\INVESTOR;
 use DB;
+use Illuminate\Http\Request;
 
 class  EntityShareholdingController extends Controller
 {

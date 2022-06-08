@@ -9,6 +9,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\EntityShareholdingController;
 use App\Http\Controllers\InvestmentController;  
 use App\Http\Controllers\EntityPropertiesController;
+use App\Http\Controllers\CustomerProfilehomeController;
 
 /*	
 |--------------------------------------------------------------------------	
@@ -83,3 +84,7 @@ Route::post('/entity-newpartner-add-submit', [InvestmentController ::class, 'sto
 
 // Entity New Partner properties value
 Route::post('entity_properties-submit', [EntityPropertiesController::class, 'store']);
+
+// Customer Profile Home
+
+Route::get('/customer-profile-index', [CustomerProfilehomeController ::class, 'index']);

@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\entityController;
 use Illuminate\Http\Request;
 use App\Models\PROPERTY;

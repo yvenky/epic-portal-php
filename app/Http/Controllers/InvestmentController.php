@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models;
 use App\Models\PROPERTY;
 use App\Models\INVESTMENT;
 use App\Models\ENTITY_PROPERTIES;
 use App\Models\INVESTOR;
 use App\Models\ENTITY;
 use DB;
+use Illuminate\Http\Request;
 
 class InvestmentController extends Controller
 {
@@ -52,6 +54,7 @@ class InvestmentController extends Controller
         $request->validate([
 
             'INVESTOR_ID'               => 'required',
+            'ENTITY_PROPERTIES_ID'         => 'required',
             'FIRST_NAME'                =>'required',
             'LAST_NAME'                 =>'required',
             'CASH'                      => 'required',
@@ -66,19 +69,20 @@ class InvestmentController extends Controller
         ]);
 
         
-     // $getarrayReq = $request->PROPERTY_SELECT;
-        // $getid = implode(',', $getarrayReq);
+     $getarrayReq = $request->PROPERTY_SELECT;
+        $getid = implode(',', $getarrayReq);
 
-        //    $insert_entity_properties=DB::table('ENTITY_PROPERTIES')
-        //    ->insertGetId([
-        //         'ENTITY_SELECT'              =>$request->ENTITY_SELECT,
-        //         'PROPERTY_SELECT'            =>$request->PROPERTY_SELECT,
-        //        'TOTAL_PROPERTIES_VALUE'     =>$request->TOTAL_PROPERTIES_VALUE ,
-        //     ]);
+           $insert_entity_properties=DB::table('ENTITY_PROPERTIES')
+           ->insertGetId([
+                'ENTITY_SELECT'              =>$request->ENTITY_SELECT,
+                'PROPERTY_SELECT'            =>$getid,
+               'TOTAL_PROPERTIES_VALUE'     =>$request->TOTAL_PROPERTIES_VALUE ,
+            ]);
       
         $data = new INVESTMENT();
  
         $data-> INVESTOR_ID                         = $request-> INVESTOR_ID;
+        $data-> ENTITY_PROPERTIES_ID                = $insert_entity_properties;
         $data-> FIRST_NAME                          = $request-> FIRST_NAME; 
         $data-> LAST_NAME                           = $request-> LAST_NAME;  
         $data-> CASH                                = $request-> CASH;
