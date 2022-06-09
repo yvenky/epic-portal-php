@@ -118,7 +118,6 @@
                             <tbody class="view-icon-table">
                                 @php($i=1)
                                 @foreach ($files as $file)
-                                 @if($user->ID == $file->entityPropertiesget->ENTITY_SELECT)
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$file->FIRST_NAME.' '.$file->LAST_NAME}}</td>
@@ -159,8 +158,8 @@
                                         </div>
                                     </td>
                                 </tr>
-                                 @endif
                                 @endforeach
+
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -180,7 +179,6 @@
                       <!--  tota tble-->
                     </div>   
               </div>
-              @endif
            </div>
         </section>
 @endsection
