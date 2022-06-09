@@ -165,7 +165,7 @@
                                 <tr>
                                     <th></th>
                                     <th class="table-text-right">Total:</th>
-                                    <th>$2,100,000.00</th>
+                                    <th>{{$result}}</th>
                                     <th>$705,000.00</th>
                                     <th>$1,395,000.00</th>
                                     <th>$42,000.00</th>

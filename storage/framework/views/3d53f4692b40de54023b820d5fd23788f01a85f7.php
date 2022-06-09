@@ -119,7 +119,6 @@
                             </thead>
                             <tbody class="view-icon-table">
                                 <?php ($i=1); ?>
-                                <?php if($user->ID == $files->entityPropertiesget->ENTITY_SELECT): ?>
                                 <?php $__currentLoopData = $files; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td><?php echo e($i++); ?></td>
@@ -161,9 +160,8 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                <?php endif; ?>
+
                             </tbody>
                             <tfoot>
                                 <tr>
