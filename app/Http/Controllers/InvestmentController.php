@@ -54,7 +54,7 @@ class InvestmentController extends Controller
         $request->validate([
 
             'INVESTOR_ID'               => 'required',
-            'ENTITY_PROPERTIES_ID'         => 'required',
+            'ENTITY_PROPERTIES_ID'      => 'required',
             'FIRST_NAME'                =>'required',
             'LAST_NAME'                 =>'required',
             'CASH'                      => 'required',
@@ -76,7 +76,7 @@ class InvestmentController extends Controller
            ->insertGetId([
                 'ENTITY_SELECT'              =>$request->ENTITY_SELECT,
                 'PROPERTY_SELECT'            =>$getid,
-               'TOTAL_PROPERTIES_VALUE'     =>$request->TOTAL_PROPERTIES_VALUE ,
+               'TOTAL_PROPERTIES_VALUE'      =>$request->TOTAL_PROPERTIES_VALUE,
             ]);
       
         $data = new INVESTMENT();
@@ -95,7 +95,7 @@ class InvestmentController extends Controller
   
         $data->save();
      
-
+            return $data;
        return redirect('/entity-shareholding')->with('success-message',' Investment Partner Added Successfully');
     }
     /**

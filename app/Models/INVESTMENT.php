@@ -29,7 +29,6 @@ class INVESTMENT extends Model
         'FINDER_FEES',
         'CLOSING_FEES',
         'TOTAL_CASH',
-        'ENTITY_PROPERTIES_ID',
         'INVESTOR_ID',
 
     ];
@@ -39,11 +38,6 @@ class INVESTMENT extends Model
     {
    
         return $this->belongsTo(INVESTOR::class,'INVESTOR_ID');
-    }
-    public function EntityPropertiesget()
-    {
-   
-        return $this->belongsTo(ENTITY_PROPERTIES::class,'ENTITY_PROPERTIES_ID');
     }
 
 }
