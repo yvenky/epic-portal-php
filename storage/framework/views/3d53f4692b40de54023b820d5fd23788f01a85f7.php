@@ -85,9 +85,21 @@
                     </div>
                    <?php endif; ?> 
                 <div class="form-heading d-flex justify-content-between align-items-center">
+                        <div class="col-lg-6">
+                            <div class="form-flex-item-box order-error-select">
+                                <label for="entity_select-list">Select Entity</label>
+                                    <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
+                                    <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
+                                        <option value="">Please Select</option>
+                                        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                            <option value="<?php echo e($user->ID); ?>"><?php echo e($user->ENTITY_NAME); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </optgroup>
+                                </select>
+                            </div>     
+                        </div>
                     <h6>Entity Shareholding Partner</h6>
                 </div>
-               
                 <div class="container-fluid table-container-wrap">
                     <div class="table-responsive">
                         <table id="expense_datatable" class="table table-striped table-bordered table-data-table">
@@ -108,7 +120,7 @@
                             <tbody class="view-icon-table">
                                 <?php ($i=1); ?>
                                 <?php $__currentLoopData = $files; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                
+                                 <?php if($user->ID == $file->entityPropertiesget->ENTITY_SELECT): ?>
                                 <tr>
                                     <td><?php echo e($i++); ?></td>
                                     <td><?php echo e($file->FIRST_NAME.' '.$file->LAST_NAME); ?></td>
@@ -149,6 +161,7 @@
                                         </div>
                                     </td>
                                 </tr>
+                                 <?php endif; ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                             <tfoot>
@@ -169,6 +182,7 @@
                       <!--  tota tble-->
                     </div>   
               </div>
+              <?php endif; ?>
            </div>
         </section>
 <?php $__env->stopSection(); ?>

@@ -53,8 +53,7 @@ class InvestmentController extends Controller
     {
         $request->validate([
 
-            'INVESTOR_ID'               => 'required',
-            'ENTITY_PROPERTIES_ID'      => 'required',
+            'INVESTOR_ID'               =>'required',
             'FIRST_NAME'                =>'required',
             'LAST_NAME'                 =>'required',
             'CASH'                      => 'required',
@@ -67,22 +66,18 @@ class InvestmentController extends Controller
             
            
         ]);
-
         
-     $getarrayReq = $request->PROPERTY_SELECT;
-        $getid = implode(',', $getarrayReq);
+        
+ 
 
-           $insert_entity_properties=DB::table('ENTITY_PROPERTIES')
-           ->insertGetId([
-                'ENTITY_SELECT'              =>$request->ENTITY_SELECT,
-                'PROPERTY_SELECT'            =>$getid,
-               'TOTAL_PROPERTIES_VALUE'      =>$request->TOTAL_PROPERTIES_VALUE,
-            ]);
+    $getlastid=DB::table('ENTITY_PROPERTIES')->orderBy('id','desc')->first(); 
+    $getId= $getlastid->ID;
+       
       
         $data = new INVESTMENT();
  
         $data-> INVESTOR_ID                         = $request-> INVESTOR_ID;
-        $data-> ENTITY_PROPERTIES_ID                = $insert_entity_properties;
+        $data-> ENTITY_PROPERTIES_ID                = $getId;
         $data-> FIRST_NAME                          = $request-> FIRST_NAME; 
         $data-> LAST_NAME                           = $request-> LAST_NAME;  
         $data-> CASH                                = $request-> CASH;
@@ -94,8 +89,8 @@ class InvestmentController extends Controller
         $data-> TOTAL_CASH                          = $request-> TOTAL_CASH;
   
         $data->save();
+        
      
-            return $data;
        return redirect('/entity-shareholding')->with('success-message',' Investment Partner Added Successfully');
     }
     /**
