@@ -112,7 +112,14 @@ class InvestmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $lists=INVESTMENT::find($id);
+        $users = INVESTOR::all();
+        $shares = ENTITY_PROPERTIES::all();
+        $entitys=ENTITY::all();
+        $propertys = PROPERTY::all();
+
+
+        return view('backend.template.entity-shareholding.entity-shareholding-edit' , ['lists' => $lists, 'users' => $users,'shares' => $shares, 'entitys' => $entitys,'propertys' => $propertys]);
     }
 
     /**

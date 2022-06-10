@@ -22,36 +22,46 @@
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box order-error-select">
                                     <label for="entity_select-list">Select Entity</label>
-                                        <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
-                                        <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
+                                    <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2"
+                                        id="entity_select-list" data-select2-id="entity_select-list_select"
+                                        aria-label="Default select example">
+                                        <optgroup label="Please Select Member" data-select2-id="entity_select-list_select"
+                                            disabled>
                                             <option value="">Please Select</option>
-                                            @foreach ( $entitys as $entity ) 
-                                                <option value="{{$entity->ID}}" {{$entity->ID == optional($lists->entityProperties)->ENTITY_SELECT ? "selected": "" }}>{{$entity->ENTITY_NAME}}</option>
+                                            @foreach ($entitys as $entity)
+                                                <option
+                                                    value="{{ $entity->ID }}" {{$entity->ID == $lists->ID? "selected": "" }}>{{ $entity->ENTITY_NAME }}</option>
                                             @endforeach
                                         </optgroup>
                                     </select>
-                                </div>     
+                                </div>
                             </div>
-                               
+    
+    
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box order-error-select">
                                     <label for="PROPERTY_SELECT">Select Property</label>
-                                        <select name="PROPERTY_SELECT[]" class="form-select select-matcher-obj select2" id="property_select-list"  data-select2-id="property_select-list_select"  aria-label="Default select example" multiple="multiple">
-                                        <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
+                                    <select disabled name="PROPERTY_SELECT[]" class="form-select select-matcher-obj select2"
+                                        id="property_select-list" data-select2-id="property_select-list_select"
+                                        aria-label="Default select example" multiple="multiple">
+                                        <optgroup label="Please Select Member" data-select2-id="property_select-list_select"
+                                            disabled>
                                             <option value="">Please Select</option>
-                                            @foreach ( $propertys as $property ) 
-                                                <option value="{{$property->ID}}"  data-price="{{$property->PURCHASE_PRICE}}" {{$property->ID == optional($lists->entityProperties)->PROPERTY_SELECT ? "selected": "" }} >{{$property->PROPERTY_ADDRESS}}</option>
+                                            @foreach ($propertys as $property)
+                                                <option
+                                                    value="{{ $property->ID }}"{{$property->ID == $lists->ID ? "selected": "" }}
+                                                    data-price="{{ $property->PURCHASE_PRICE }}">
+                                                    {{ $property->PROPERTY_ADDRESS }}</option>
                                             @endforeach
                                         </optgroup>
                                     </select>
-                                </div>     
+                                </div>
                             </div>
-                   
-                            
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box">
-                                    <label for="total_value">Total Value</label>   
-                                    <input type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE" value="{{ optional($lists->entityProperties)->TOTAL_PROPERTIES_VALUE}}"  id="TOTAL_PROPERTIES_VALUE" readonly> 
+                                    <label for="total_value">Total Value</label>
+                                    <input value="{{$lists->TOTAL_PROPERTIES_VALUE}} type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE"
+                                        id="TOTAL_PROPERTIES_VALUE"  readonly>
                                 </div>
                             </div>
 

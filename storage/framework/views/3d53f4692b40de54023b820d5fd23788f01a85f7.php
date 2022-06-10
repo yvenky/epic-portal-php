@@ -25,8 +25,6 @@
                             </div>     
                         </div>
                         
-                     
-
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="PROPERTY_SELEC">Select Property</label>
@@ -167,10 +165,10 @@
                                 <tr>
                                     <th></th>
                                     <th class="table-text-right">Total:</th>
-                                    <th>$2,100,000.00</th>
-                                    <th>$705,000.00</th>
-                                    <th>$1,395,000.00</th>
-                                    <th>$42,000.00</th>
+                                    <th><?php echo e(number_format($sum_total_share, 4)); ?></th>
+                                    <th><?php echo e(number_format($sum_total_shareholding, 4)); ?>%</th>
+                                    <th><?php echo e(number_format($sum_total_cash, 4)); ?></th>
+                                    <th><?php echo e(number_format($sum_total_loan, 4)); ?></th>
                                     <th></th>
                                     <th></th>
                                     <th></th>

@@ -23,9 +23,14 @@ class  EntityShareholdingController extends Controller
         $users= ENTITY::all();
         $lists= PROPERTY::all();
         $files= INVESTMENT::all();
+        $sum_total_share = DB::table("INVESTMENT")->sum('TOTAL_SHARE');
+        $sum_total_shareholding = DB::table("INVESTMENT")->sum('SHAREHOLDING');
+        $sum_total_cash = DB::table("INVESTMENT")->sum('CASH');
+        $sum_total_loan = DB::table("INVESTMENT")->sum('LOAN');
  
     
-        return view('backend.template.entity-shareholding.entityshareholding-index',  [ 'users' => $users,'lists' => $lists,'files' => $files]);
+        return view('backend.template.entity-shareholding.entityshareholding-index', 
+         [ 'users' => $users,'lists' => $lists,'files' => $files,'sum_total_share' => $sum_total_share,'sum_total_shareholding' => $sum_total_shareholding,'sum_total_cash' => $sum_total_cash,'sum_total_loan'=> $sum_total_loan ]);
     }
 
     /**

@@ -25,8 +25,6 @@
                             </div>     
                         </div>
                         
-                     
-
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="PROPERTY_SELEC">Select Property</label>
@@ -122,7 +120,7 @@
                                     <td>{{$i++}}</td>
                                     <td>{{$file->FIRST_NAME.' '.$file->LAST_NAME}}</td>
                                     <td>{{$file->TOTAL_SHARE}}</td>
-                                    <td>{{ number_format($file->SHAREHOLDING, 4)}}%</td> 
+                                    <td>{{number_format($file->SHAREHOLDING, 4)}}%</td> 
                                     <td>{{$file->CASH}}</td>
                                     <td>{{$file->LOAN}}</td>
                                     <td>{{$file->FINDER_FEES}}</td>
@@ -165,10 +163,10 @@
                                 <tr>
                                     <th></th>
                                     <th class="table-text-right">Total:</th>
-                                    <th>{{$result}}</th>
-                                    <th>$705,000.00</th>
-                                    <th>$1,395,000.00</th>
-                                    <th>$42,000.00</th>
+                                    <th>{{number_format($sum_total_share, 4) }}</th>
+                                    <th>{{number_format($sum_total_shareholding, 4) }}%</th>
+                                    <th>{{number_format($sum_total_cash, 4) }}</th>
+                                    <th>{{number_format($sum_total_loan, 4) }}</th>
                                     <th></th>
                                     <th></th>
                                     <th></th>
