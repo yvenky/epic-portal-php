@@ -31,16 +31,17 @@ class ENTITY_PROPERTIES extends Model
     //     return $this->hasMany('App\INVESTMENT');
         
     // }
+
     public function entityGet()
     {
-        return $this->hasMany('App\ENTITY');
+        return $this->belongsTo(ENTITY::class,'ENTITY_SELECT');
         
     }
 
     public function propertyGet()
     {
-        return $this->hasMany('App\PROPERTY');
+        return $this->belongsTo(PROPERTY::class,'PROPERTY_SELECT');
         
     }
-
+ 
 }

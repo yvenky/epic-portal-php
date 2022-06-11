@@ -23,14 +23,14 @@
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box order-error-select">
                                     <label for="entity_select-list">Select Entity</label>
-                                    <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2"
+                                    <select disabled name="ENTITY_SELECT" class="form-select select-matcher-obj select2"
                                         id="entity_select-list" data-select2-id="entity_select-list_select"
                                         aria-label="Default select example">
                                         <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
-                                            <option value="">Please Select</option>
+                                            <option value="" >Please Select</option>
                                             <?php $__currentLoopData = $entitys; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $entity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option
-                                                    value="<?php echo e($entity->ID); ?>" <?php echo e(optional($entity->ID == $lists->entityPropertiesget)->ENTITY_SELECT ? "selected": ""); ?>><?php echo e($entity->ENTITY_NAME); ?></option>
+                                                    value="<?php echo e($entity->ID); ?>" <?php echo e($entity->ID == $lists->entityPropertiesget->ENTITY_SELECT ? "selected": ""); ?>><?php echo e($entity->ENTITY_NAME); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </optgroup>
                                     </select>
@@ -48,9 +48,10 @@
                                             <option value="">Please Select</option>
                                             <?php $__currentLoopData = $propertys; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $property): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option
-                                                    value="<?php echo e($property->ID); ?>" <?php echo e(optional($property->ID == $lists->entityPropertiesget)->PROPERTY_SELECT ? "selected": ""); ?>
+                                                    value="<?php echo e($property->ID); ?>" <?php echo e($property->ID  == $lists->entityPropertiesget->PROPERTY_SELECT ? "selected": ""); ?>
 
                                                     data-price="<?php echo e($property->PURCHASE_PRICE); ?>"> <?php echo e($property->PROPERTY_ADDRESS); ?></option>
+                                                   
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </optgroup>
                                     </select>
@@ -59,8 +60,7 @@
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box">
                                     <label for="total_value">Total Value</label>
-                                    <input value="<?php echo e(optional($lists->entityPropertiesget)->TOTAL_PROPERTIES_VALUE); ?>" type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE"
-                                        id="TOTAL_PROPERTIES_VALUE"  readonly>
+                                    <input value="<?php echo e($lists->entityPropertiesget->TOTAL_PROPERTIES_VALUE); ?>" type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE" id="TOTAL_PROPERTIES_VALUE"  readonly>
                                 </div>
                             </div>
 
@@ -113,7 +113,7 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Shareholding">Shareholding</label>
-                            <input type="text" class="form-control" value="<?php echo e($lists->SHAREHOLDING); ?>" step="any" name="SHAREHOLDING" id="SHAREHOLDING" readonly>
+                            <input type="text" class="form-control" value="<?php echo e(number_format($lists->SHAREHOLDING, 2)); ?>" step="any" name="SHAREHOLDING" id="SHAREHOLDING" readonly>
                         </div>
                     </div>
                     <div class="col-lg-6">

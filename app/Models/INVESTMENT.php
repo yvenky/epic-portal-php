@@ -40,6 +40,7 @@ class INVESTMENT extends Model
    
         return $this->belongsTo(INVESTOR::class,'INVESTOR_ID');
     }
+    
     public function entityPropertiesget()
     {
    

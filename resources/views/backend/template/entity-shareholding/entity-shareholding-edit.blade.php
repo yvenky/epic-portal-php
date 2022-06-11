@@ -22,14 +22,14 @@
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box order-error-select">
                                     <label for="entity_select-list">Select Entity</label>
-                                    <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2"
+                                    <select disabled name="ENTITY_SELECT" class="form-select select-matcher-obj select2"
                                         id="entity_select-list" data-select2-id="entity_select-list_select"
                                         aria-label="Default select example">
                                         <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
-                                            <option value="">Please Select</option>
+                                            <option value="" >Please Select</option>
                                             @foreach ($entitys as $entity)
                                                 <option
-                                                    value="{{ $entity->ID }}" {{optional($entity->ID == $lists->entityPropertiesget)->ENTITY_SELECT ? "selected": "" }}>{{ $entity->ENTITY_NAME }}</option>
+                                                    value="{{ $entity->ID }}" {{$entity->ID == $lists->entityPropertiesget->ENTITY_SELECT ? "selected": "" }}>{{ $entity->ENTITY_NAME }}</option>
                                             @endforeach
                                         </optgroup>
                                     </select>
@@ -47,8 +47,9 @@
                                             <option value="">Please Select</option>
                                             @foreach ($propertys as $property)
                                                 <option
-                                                    value="{{ $property->ID }}" {{optional($property->ID == $lists->entityPropertiesget)->PROPERTY_SELECT ? "selected": "" }}
+                                                    value="{{ $property->ID }}" {{$property->ID  == $lists->entityPropertiesget->PROPERTY_SELECT ? "selected": "" }}
                                                     data-price="{{ $property->PURCHASE_PRICE }}"> {{ $property->PROPERTY_ADDRESS }}</option>
+                                                   
                                             @endforeach
                                         </optgroup>
                                     </select>
@@ -57,8 +58,7 @@
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box">
                                     <label for="total_value">Total Value</label>
-                                    <input value="{{optional($lists->entityPropertiesget)->TOTAL_PROPERTIES_VALUE}}" type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE"
-                                        id="TOTAL_PROPERTIES_VALUE"  readonly>
+                                    <input value="{{$lists->entityPropertiesget->TOTAL_PROPERTIES_VALUE}}" type="text" class="form-control tpval" name="TOTAL_PROPERTIES_VALUE" id="TOTAL_PROPERTIES_VALUE"  readonly>
                                 </div>
                             </div>
 
@@ -111,7 +111,7 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Shareholding">Shareholding</label>
-                            <input type="text" class="form-control" value="{{$lists->SHAREHOLDING}}" step="any" name="SHAREHOLDING" id="SHAREHOLDING" readonly>
+                            <input type="text" class="form-control" value="{{ number_format($lists->SHAREHOLDING, 2) }}" step="any" name="SHAREHOLDING" id="SHAREHOLDING" readonly>
                         </div>
                     </div>
                     <div class="col-lg-6">
