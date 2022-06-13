@@ -212,9 +212,9 @@
             'dev_requirement' => false,
         ),
         'guzzlehttp/guzzle' => array(
-            'pretty_version' => '7.4.3',
-            'version' => '7.4.3.0',
-            'reference' => '74a8602c6faec9ef74b7a9391ac82c5e65b1cdab',
+            'pretty_version' => '7.4.4',
+            'version' => '7.4.4.0',
+            'reference' => 'e3ff079b22820c2029d4c2a87796b6a0b8716ad8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../guzzlehttp/guzzle',
             'aliases' => array(),
