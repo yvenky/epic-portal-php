@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+namespace App\Models;
 use App\Models\INVESTOR;
 use App\Models\ADDRESS;
 use Illuminate\Support\Facades\DB;
