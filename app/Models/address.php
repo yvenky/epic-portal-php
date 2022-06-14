@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,13 +25,13 @@ class ADDRESS extends Model
 
     public function investor()
     {
-    return $this->hasMany('App\INVESTOR');
+    return $this->hasMany('App\Models\INVESTOR');
    
     }
 
     public function entity()
     {
-        return $this->hasMany('App\ENTITY');
+        return $this->hasMany('App\Models\ENTITY');
         
     }
 

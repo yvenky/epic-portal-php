@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
 namespace App\Models;
+namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+//use App\Models;
 use App\Models\INVESTOR;
 use App\Models\ADDRESS;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
+
 
 
 class investorController extends Controller

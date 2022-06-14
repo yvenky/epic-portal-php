@@ -122,9 +122,9 @@
             'dev_requirement' => false,
         ),
         'google/auth' => array(
-            'pretty_version' => 'v1.21.0',
-            'version' => '1.21.0.0',
-            'reference' => '73392bad2eb6852eea9084b6bbdec752515cb849',
+            'pretty_version' => 'v1.21.1',
+            'version' => '1.21.1.0',
+            'reference' => 'aa3b9ca29258ac6347ce3c8937a2418c5d78f840',
             'type' => 'library',
             'install_path' => __DIR__ . '/../google/auth',
             'aliases' => array(),

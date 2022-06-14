@@ -636,16 +636,16 @@
         },
         {
             "name": "google/auth",
-            "version": "v1.21.0",
+            "version": "v1.21.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-auth-library-php.git",
-                "reference": "73392bad2eb6852eea9084b6bbdec752515cb849"
+                "reference": "aa3b9ca29258ac6347ce3c8937a2418c5d78f840"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/73392bad2eb6852eea9084b6bbdec752515cb849",
-                "reference": "73392bad2eb6852eea9084b6bbdec752515cb849",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/aa3b9ca29258ac6347ce3c8937a2418c5d78f840",
+                "reference": "aa3b9ca29258ac6347ce3c8937a2418c5d78f840",
                 "shasum": ""
             },
             "require": {
@@ -688,9 +688,9 @@
             "support": {
                 "docs": "https://googleapis.github.io/google-auth-library-php/main/",
                 "issues": "https://github.com/googleapis/google-auth-library-php/issues",
-                "source": "https://github.com/googleapis/google-auth-library-php/tree/v1.21.0"
+                "source": "https://github.com/googleapis/google-auth-library-php/tree/v1.21.1"
             },
-            "time": "2022-04-13T20:35:52+00:00"
+            "time": "2022-05-16T19:34:15+00:00"
         },
         {
             "name": "google/cloud-core",

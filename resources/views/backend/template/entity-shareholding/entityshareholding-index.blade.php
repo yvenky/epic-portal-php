@@ -81,7 +81,7 @@
                     </div>
                    @endif 
                 <div class="form-heading d-flex justify-content-between align-items-center">
-                        <div class="col-lg-6">
+                      <!-- <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="entity_select-list">Select Entity</label>
                                     <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
@@ -93,7 +93,7 @@
                                     </optgroup>
                                 </select>
                             </div>     
-                        </div>
+                        </div> -->
                     <h6>Entity Shareholding Partner</h6>
                 </div>
                 <div class="container-fluid table-container-wrap">
