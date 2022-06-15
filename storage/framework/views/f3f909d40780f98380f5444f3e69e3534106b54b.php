@@ -1,6 +1,6 @@
-@extends('backend.inc.master')
 
-@section('main-content')
+
+<?php $__env->startSection('main-content'); ?>
         
       
         <!--// Main Area Start //-->
@@ -102,11 +102,11 @@
                                     </tr>
                                 </thead>
                                 <tbody class="view-icon-table">
-                                    @php($i=1)
-                                        @foreach ($users as $user)
+                                    <?php ($i=1); ?>
+                                        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td>{{$i++}}</td>
-                                        <td>{{$user->ENTITY_NAME}}</td>
+                                        <td><?php echo e($i++); ?></td>
+                                        <td><?php echo e($user->ENTITY_NAME); ?></td>
                                         <td>Vero Beach Phase - 1</td>
                                         <td>$500,000.00</td>
                                         <td>$175,000.00</td>
@@ -242,7 +242,7 @@
                                             </a>                                          
                                         </td>
                                     </tr> 
-                                    @endforeach        
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>        
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -436,5 +436,6 @@
         </div>
     </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
       
+<?php echo $__env->make('backend.inc.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\epic-portal-php\resources\views/backend/template/customer-profile/customer-profile-index.blade.php ENDPATH**/ ?>

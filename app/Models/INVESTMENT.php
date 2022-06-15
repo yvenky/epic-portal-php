@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\INVESTOR;
 use App\Models\ENTITY_PROPERTIES;
+use App\Models\ENTITY;
 
 class INVESTMENT extends Model
 {
@@ -31,6 +32,7 @@ class INVESTMENT extends Model
         'TOTAL_CASH',
         'ENTITY_PROPERTIES_ID',
         'INVESTOR_ID',
+        'ENTITY_ID',
 
     ];
 
@@ -39,6 +41,12 @@ class INVESTMENT extends Model
     {
    
         return $this->belongsTo(INVESTOR::class,'INVESTOR_ID');
+    }
+    public function entity_select()
+    {
+   
+       return $this->belongsTo(ENTITY::class,'ENTITY_ID');
+       
     }
     
     public function entityPropertiesget()

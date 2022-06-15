@@ -72,11 +72,13 @@ class InvestmentController extends Controller
 
     $getlastid=DB::table('ENTITY_PROPERTIES')->orderBy('id','desc')->first(); 
     $getId= $getlastid->ID;
+    $get_entity=$getlastid->ENTITY_SELECT;
        
       
         $data = new INVESTMENT();
  
         $data-> INVESTOR_ID                         = $request-> INVESTOR_ID;
+        $data-> ENTITY_ID                         = $get_entity;
         $data-> ENTITY_PROPERTIES_ID                = $getId;
         $data-> FIRST_NAME                          = $request-> FIRST_NAME; 
         $data-> LAST_NAME                           = $request-> LAST_NAME;  

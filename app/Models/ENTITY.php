@@ -4,6 +4,7 @@ namespace App\Models;
 use App\Models\ADDRESS;
 use App\Models\INVESTOR;
 use App\Models\ENTITY_PROPERTIES;
+use App\Models\INVESTMENT;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -40,5 +41,12 @@ class ENTITY extends Model
         return $this->belongsTo(INVESTOR::class,'MANAGING_MEMBER_2');
         
     }
+
+    public function entity()
+    {
+        return $this->hasMany('App\Models\INVESTMENT');
+        
+    }
+
 
 }
