@@ -632,7 +632,7 @@ $( '#entity-newpartner-update-form' ).on( 'change', function() {
 $('.entity_filter_item').click(function(){
   $('.entity_filter_item').removeClass('active')
   $(this).addClass('active')
-  var dataFilter = $(this).attr('data-filter');
-  $('.blog-list').hide()
+  var dataFilter = $(this).val();
+  $('.Investment-list').hide()
   $(dataFilter).show()
 })
