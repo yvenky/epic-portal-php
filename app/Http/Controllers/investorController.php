@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-//use App\Models;
 use App\Models\INVESTOR;
 use App\Models\ADDRESS;
+use Illuminate\Http\Request;
+use DB;
 
 
 
