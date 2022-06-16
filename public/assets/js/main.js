@@ -617,7 +617,7 @@ $( '#entity-newpartner-add-form' ).on( 'change', function() {
   var cal=(a/b*100).toFixed(4);
 
       $( 'input[name=SHAREHOLDING]' ).val( cal );
-})
+});
 
 
 $( '#entity-newpartner-update-form' ).on( 'change', function() {
@@ -627,12 +627,12 @@ $( '#entity-newpartner-update-form' ).on( 'change', function() {
   var cal=(a/b*100).toFixed(4);
 
       $( 'input[name=SHAREHOLDING]' ).val( cal );
-})
+});
 
-$('.entity_filter_item').click(function(){
-  $('.entity_filter_item').removeClass('active')
+$('.category-filter_item').click(function(){
+  $('.category-filter_item').removeClass('active')
   $(this).addClass('active')
   var dataFilter = $(this).val();
-  $('.Investment-list').hide()
+  $('.blog-list').hide()
   $(dataFilter).show()
-})
+});

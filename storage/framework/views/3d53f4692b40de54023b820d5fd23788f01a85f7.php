@@ -86,7 +86,7 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="entity_select-list">Select Entity</label>
-                                    <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2 entity_filter_item" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
+                                    <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
                                     <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
                                         <option value="">Please Select</option>
                                         <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
@@ -100,7 +100,7 @@
                 </div>
                 <div class="container-fluid table-container-wrap">
                     <div class="table-responsive">
-                        <table id="expense_datatable" class="table table-striped table-bordered table-data-table Investment-list">
+                        <table id="expense_datatable" class="table table-striped table-bordered table-data-table">
                             <thead>
                                 <tr>
                                     <th>#</th>
