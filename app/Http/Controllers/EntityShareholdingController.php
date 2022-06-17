@@ -27,6 +27,7 @@ class  EntityShareholdingController extends Controller
         $sum_total_shareholding = DB::table("INVESTMENT")->sum('SHAREHOLDING');
         $sum_total_cash = DB::table("INVESTMENT")->sum('CASH');
         $sum_total_loan = DB::table("INVESTMENT")->sum('LOAN');
+
  
     
         return view('backend.template.entity-shareholding.entityshareholding-index', 

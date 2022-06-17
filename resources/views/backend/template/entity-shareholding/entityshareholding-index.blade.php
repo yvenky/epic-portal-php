@@ -27,7 +27,7 @@
                         
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
-                                <label for="PROPERTY_SELEC">Select Property</label>
+                                <label for="PROPERTY_SELECT">Select Property</label>
                                     <select name="PROPERTY_SELECT[]" class="form-select select-matcher-obj select2" id="property_select-list"  data-select2-id="property_select-list_select"  aria-label="Default select example"  multiple="multiple">
                                     <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
                                         <option value="">Please Select</option>
@@ -113,7 +113,7 @@
                                     <th> </th>
                                 </tr>
                             </thead>
-                            <tbody class="view-icon-table">
+                            <tbody class="view-icon-table">   
                                 @php($i=1)
                                 @foreach ($files as $file)
                                 <tr>
@@ -125,8 +125,7 @@
                                     <td>{{$file->LOAN}}</td>
                                     <td>{{$file->FINDER_FEES}}</td>
                                     <td>{{$file->CLOSING_FEES}}</td>
-                                    <td>{{$file->TOTAL_CASH}}</td>
-                                 
+                                    <td>{{$file->TOTAL_CASH}}</td>                               
                                     <td>
                                         <a href="#" class="table-view-btn">
                                             <i class="fa fa-eye"></i>
@@ -157,7 +156,6 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                             <tfoot>
                                 <tr>

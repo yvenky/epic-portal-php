@@ -629,10 +629,3 @@ $( '#entity-newpartner-update-form' ).on( 'change', function() {
       $( 'input[name=SHAREHOLDING]' ).val( cal );
 });
 
-$('.category-filter_item').click(function(){
-  $('.category-filter_item').removeClass('active')
-  $(this).addClass('active')
-  var dataFilter = $(this).val();
-  $('.blog-list').hide()
-  $(dataFilter).show()
-});
