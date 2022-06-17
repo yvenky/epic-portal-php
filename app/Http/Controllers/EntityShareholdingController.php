@@ -28,8 +28,13 @@ class  EntityShareholdingController extends Controller
         $sum_total_cash = DB::table("INVESTMENT")->sum('CASH');
         $sum_total_loan = DB::table("INVESTMENT")->sum('LOAN');
 
- 
-    
+        // $files = INVESTMENT::whereHas('entity_select', function($q) use ($users){
+        //     $q->where("ENTITY_ID",'=',47);
+        // })->get();
+
+
+      
+
         return view('backend.template.entity-shareholding.entityshareholding-index', 
          [ 'users' => $users,'lists' => $lists,'files' => $files,'sum_total_share' => $sum_total_share,'sum_total_shareholding' => $sum_total_shareholding,'sum_total_cash' => $sum_total_cash,'sum_total_loan'=> $sum_total_loan ]);
     }

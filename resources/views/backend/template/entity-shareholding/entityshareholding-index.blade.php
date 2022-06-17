@@ -84,15 +84,21 @@
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="entity_select-list">Select Entity</label>
-                                    <select name="ENTITY_SELECT" class="form-select select-matcher-obj select2" id="entity_select-list"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
+                                    <select name="ENTITY_ID_FOR_INVESTMENT" class="form-select select-matcher-obj select2"  id="select_id"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
                                     <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
                                         <option value="">Please Select</option>
                                         @foreach ( $users as $user ) 
-                                            <option value="{{$user->ID}}">{{$user->ENTITY_NAME}}</option>
+                                            <option value="{{$user->ID}}">{{$user->ENTITY_NAME}}</option> 
                                         @endforeach
                                     </optgroup>
                                 </select>
-                            </div>     
+
+                                @php
+                                    $answer = $user->ID
+                                @endphp
+                              
+                            </div>  
+                            {{$answer}} 
                         </div>
                     <h6>Entity Shareholding Partner</h6>
                 </div>
@@ -116,6 +122,7 @@
                             <tbody class="view-icon-table">   
                                 @php($i=1)
                                 @foreach ($files as $file)
+                                @if( $answer ==$file->ENTITY_ID )
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$file->FIRST_NAME.' '.$file->LAST_NAME}}</td>
@@ -155,6 +162,7 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @endif
                                 @endforeach
                             </tbody>
                             <tfoot>
