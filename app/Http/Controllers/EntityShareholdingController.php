@@ -39,32 +39,6 @@ class  EntityShareholdingController extends Controller
          [ 'users' => $users,'lists' => $lists,'files' => $files,'sum_total_share' => $sum_total_share,'sum_total_shareholding' => $sum_total_shareholding,'sum_total_cash' => $sum_total_cash,'sum_total_loan'=> $sum_total_loan ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
-    }
-
-   
-
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-   
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //

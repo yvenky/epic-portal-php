@@ -80,11 +80,12 @@
                       {{Session::get('success-message-delete')}}
                     </div>
                    @endif 
-                <div class="form-heading d-flex justify-content-between align-items-center">
+
+                   <div class="form-heading d-flex justify-content-between align-items-center">
                         <div class="col-lg-6">
                             <div class="form-flex-item-box order-error-select">
                                 <label for="entity_select-list">Select Entity</label>
-                                    <select name="ENTITY_ID_FOR_INVESTMENT" class="form-select select-matcher-obj select2"  id="select_id"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
+                                    <select name="ENTITY" class="form-select select-matcher-obj select2"  id="select_id"  data-select2-id="entity_select-list_select"  aria-label="Default select example">
                                     <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
                                         <option value="">Please Select</option>
                                         @foreach ( $users as $user ) 
@@ -92,16 +93,12 @@
                                         @endforeach
                                     </optgroup>
                                 </select>
-
-                                @php
-                                    $answer = $user->ID
-                                @endphp
-                              
+                                   
+                                {{-- <input type="text" id="ENTITY_ID_FOR_INVESTMENT" name="ENTITY_ID_FOR_INVESTMENT"> --}}
                             </div>  
-                            {{$answer}} 
                         </div>
-                    <h6>Entity Shareholding Partner</h6>
-                </div>
+                     <h6>Entity Shareholding Partner</h6>
+                   </div>
                 <div class="container-fluid table-container-wrap">
                     <div class="table-responsive">
                         <table id="expense_datatable" class="table table-striped table-bordered table-data-table">
@@ -122,7 +119,6 @@
                             <tbody class="view-icon-table">   
                                 @php($i=1)
                                 @foreach ($files as $file)
-                                @if( $answer ==$file->ENTITY_ID )
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$file->FIRST_NAME.' '.$file->LAST_NAME}}</td>
@@ -162,7 +158,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @endif
                                 @endforeach
                             </tbody>
                             <tfoot>

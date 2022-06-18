@@ -605,8 +605,8 @@ $(document).on("change", ".getvalue", function() {
 });
 
 
-document.querySelector('.fname').defaultValue = " ";
-document.querySelector('.lname').defaultValue = " ";
+//document.querySelector('.fname').defaultValue = " ";
+//document.querySelector('.lname').defaultValue = " ";
 
 
 
@@ -628,4 +628,29 @@ $( '#entity-newpartner-update-form' ).on( 'change', function() {
 
       $( 'input[name=SHAREHOLDING]' ).val( cal );
 });
+
+// $( '#select_id' ).on( 'change', function() {
+
+//   $(this).find('option:selected').each(function() {
+//     entity_id = $(this).val();
+//     alert(entity_id);
+//   })
+
+//   $( 'input[name=ENTITY_ID_FOR_INVESTMENT]' ).val( entity_id);
+// });
+
+// function showUser(str) {
+//   if (str=="") {
+//     document.getElementById("expense_datatable").innerHTML="";
+//     return;
+//   }
+//   var xmlhttp=new XMLHttpRequest();
+//   xmlhttp.onreadystatechange=function() {
+//     if (this.readyState==4 && this.status==200) {
+//       document.getElementById("expense_datatable").innerHTML=this.responseText;
+//     }
+//   }
+//   xmlhttp.open("GET","getuser.php?q="+str,true);
+//   xmlhttp.send();
+// }
 
