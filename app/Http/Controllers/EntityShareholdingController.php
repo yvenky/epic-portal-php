@@ -22,7 +22,7 @@ class  EntityShareholdingController extends Controller
 
         $users= ENTITY::all();
         $lists= PROPERTY::all();
-        $files= INVESTMENT::all();
+       $files= INVESTMENT::all();
         $sum_total_share = DB::table("INVESTMENT")->sum('TOTAL_SHARE');
         $sum_total_shareholding = DB::table("INVESTMENT")->sum('SHAREHOLDING');
         $sum_total_cash = DB::table("INVESTMENT")->sum('CASH');
@@ -32,7 +32,13 @@ class  EntityShareholdingController extends Controller
         //     $q->where("ENTITY_ID",'=',47);
         // })->get();
 
+    //     $files = INVESTMENT::with('entity_select')
+    // ->whereHas('entity_select', function($q) use ($users) {
+    //     $q->where('ENTITY_ID', $users);
+    // })->get();
 
+
+   //return $files;
       
 
         return view('backend.template.entity-shareholding.entityshareholding-index', 
@@ -74,7 +80,7 @@ class  EntityShareholdingController extends Controller
     {
 
         $getarrayReq = $req->PROPERTY_SELECT;
-        $getid = implode(',',$getarrayReq);
+        $getid =implode(',', (array) $getarrayReq);
        
             $lists = DB::table('INVESTMENT')
             ->join('ENTITY_PROPERTIES','ENTITY_PROPERTIES.id' ,'INVESTMENT.ENTITY_PROPERTIES_ID')
@@ -97,7 +103,6 @@ class  EntityShareholdingController extends Controller
     
             
             ]);
-
 
 
             $full_name =  $req-> FIRST_NAME. " " .  $req-> LAST_NAME;

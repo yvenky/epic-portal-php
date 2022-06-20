@@ -23,7 +23,7 @@
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box order-error-select">
                                     <label for="entity_select-list">Select Entity</label>
-                                    <select disabled name="ENTITY_SELECT" class="form-select select-matcher-obj select2"
+                                    <select  name="ENTITY_SELECT" class="form-select select-matcher-obj select2"
                                         id="entity_select-list" data-select2-id="entity_select-list_select"
                                         aria-label="Default select example">
                                         <optgroup label="Please Select Member" data-select2-id="entity_select-list_select">
@@ -41,7 +41,7 @@
                             <div class="col-lg-12">
                                 <div class="form-flex-item-box order-error-select">
                                     <label for="PROPERTY_SELECT">Select Property</label>
-                                    <select disabled name="PROPERTY_SELECT[]" class="form-select select-matcher-obj select2"
+                                    <select  name="PROPERTY_SELECT[]" class="form-select select-matcher-obj select2"
                                         id="property_select-list" data-select2-id="property_select-list_select"
                                         aria-label="Default select example" multiple="multiple">
                                         <optgroup label="Please Select Member" data-select2-id="property_select-list_select">
@@ -113,7 +113,7 @@
                     <div class="col-lg-6">
                         <div class="form-flex-item-box">
                             <label for="Shareholding">Shareholding</label>
-                            <input type="text" class="form-control" value="<?php echo e(number_format($lists->SHAREHOLDING, 2)); ?>" step="any" name="SHAREHOLDING" id="SHAREHOLDING" readonly>
+                            <input type="text" class="form-control" value="<?php echo e(number_format($lists->SHAREHOLDING, 2)); ?>" name="SHAREHOLDING" id="SHAREHOLDING" readonly>
                         </div>
                     </div>
                     <div class="col-lg-6">

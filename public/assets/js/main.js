@@ -605,12 +605,21 @@ $(document).on("change", ".getvalue", function() {
 });
 
 
-//document.querySelector('.fname').defaultValue = " ";
-//document.querySelector('.lname').defaultValue = " ";
+document.querySelector('.fname').defaultValue = " ";
+document.querySelector('.lname').defaultValue = " ";
 
 
 
 $( '#entity-newpartner-add-form' ).on( 'change', function() {
+
+  var a=parseInt($("#TOTAL_SHARE").val());
+  var b=parseInt($("#TOTAL_PROPERTIES_VALUE").val());
+  var cal=(a/b*100).toFixed(4);
+
+      $( 'input[name=SHAREHOLDING]' ).val( cal );
+});
+
+$( '#entity-newpartner-update-form' ).on( 'change', function() {
 
   var a=parseInt($("#TOTAL_SHARE").val());
   var b=parseInt($("#TOTAL_PROPERTIES_VALUE").val());
@@ -624,7 +633,7 @@ $( '#entity-newpartner-update-form' ).on( 'change', function() {
 
   var a=parseInt($(".tsval").val());
   var b=parseInt($(".tpval").val());
-  var cal=(a/b*100).toFixed(4);
+  var cal=(a/b*100).toFixed(2);
 
       $( 'input[name=SHAREHOLDING]' ).val( cal );
 });
@@ -641,13 +650,13 @@ $( '#entity-newpartner-update-form' ).on( 'change', function() {
 
 // function showUser(str) {
 //   if (str=="") {
-//     document.getElementById("expense_datatable").innerHTML="";
+//     document.getElementById("#todos-list").innerHTML="";
 //     return;
 //   }
 //   var xmlhttp=new XMLHttpRequest();
 //   xmlhttp.onreadystatechange=function() {
 //     if (this.readyState==4 && this.status==200) {
-//       document.getElementById("expense_datatable").innerHTML=this.responseText;
+//       document.getElementById("#todos-list").innerHTML=this.responseText;
 //     }
 //   }
 //   xmlhttp.open("GET","getuser.php?q="+str,true);
