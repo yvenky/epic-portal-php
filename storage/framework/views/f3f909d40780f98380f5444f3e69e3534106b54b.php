@@ -106,7 +106,7 @@
                                         <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
                                         <td><?php echo e($i++); ?></td>
-                                        <td><?php echo e($user->ENTITY_NAME); ?></td>
+                                        <td><a href="<?php echo e(url('customer-entity-view/'.$user->ID)); ?>" class="link-warning"><?php echo e($user->ENTITY_NAME); ?></a></td>
                                         <td>Vero Beach Phase - 1</td>
                                         <td>$500,000.00</td>
                                         <td>$175,000.00</td>
@@ -115,121 +115,6 @@
                                         <td>45</td>
                                         <td>$1,125.00</td>
                                         <td>$370.00</td>
-                                        <td>
-                                            <a href="#" class="table-view-btn" title="View Investor">
-                                                <i class="fa fa-eye"></i>
-                                            </a> 
-                                            <a href="#" class="table-edit-btn" title="Edit Investor" data-bs-toggle="modal" data-bs-target="#edit-investment-modal">
-                                                <i class="fa fa-edit"></i>
-                                            </a>  
-                                            <a href="#" class="table-delete-btn" title="Delete Investor" data-bs-toggle="modal" data-bs-target="#delete-investment-modal">
-                                                <i class="fa fa-trash"></i>
-                                            </a>                                          
-                                        </td>
-                                    </tr>       
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Epic Estates 3</td>
-                                        <td>Vero Beach Phase - 2</td>
-                                        <td>$200,000.00</td>
-                                        <td>$70,000.00</td>
-                                        <td>$130,000.00</td>
-                                        <td>$598.00</td>
-                                        <td>15</td>
-                                        <td>$375.00</td>
-                                        <td>$223.00</td>
-                                        <td>
-                                            <a href="#" class="table-view-btn" title="View Investor">
-                                                <i class="fa fa-eye"></i>
-                                            </a> 
-                                            <a href="#" class="table-edit-btn" title="Edit Investor" data-bs-toggle="modal" data-bs-target="#edit-investment-modal">
-                                                <i class="fa fa-edit"></i>
-                                            </a>  
-                                            <a href="#" class="table-delete-btn" title="Delete Investor" data-bs-toggle="modal" data-bs-target="#delete-investment-modal">
-                                                <i class="fa fa-trash"></i>
-                                            </a>                                          
-                                        </td>
-                                    </tr>       
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Epic Estates 4</td>
-                                        <td>Fort Pierce</td>
-                                        <td>$100,000.00</td>
-                                        <td>$35,000.00</td>
-                                        <td>$65,000.00</td>
-                                        <td>$299.00</td>
-                                        <td>5</td>
-                                        <td>$125.00</td>
-                                        <td>$174.00</td>
-                                        <td>
-                                            <a href="#" class="table-view-btn" title="View Investor">
-                                                <i class="fa fa-eye"></i>
-                                            </a> 
-                                            <a href="#" class="table-edit-btn" title="Edit Investor" data-bs-toggle="modal" data-bs-target="#edit-investment-modal">
-                                                <i class="fa fa-edit"></i>
-                                            </a>  
-                                            <a href="#" class="table-delete-btn" title="Delete Investor" data-bs-toggle="modal" data-bs-target="#delete-investment-modal">
-                                                <i class="fa fa-trash"></i>
-                                            </a>                                          
-                                        </td>
-                                    </tr>       
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Epic Estates 5</td>
-                                        <td>Alva</td>
-                                        <td>$100,000.00</td>
-                                        <td>$35,000.00</td>
-                                        <td>$65,000.00</td>
-                                        <td>$299.00</td>
-                                        <td>5</td>
-                                        <td>$125.00</td>
-                                        <td>$174.00</td>
-                                        <td>
-                                            <a href="#" class="table-view-btn" title="View Investor">
-                                                <i class="fa fa-eye"></i>
-                                            </a> 
-                                            <a href="#" class="table-edit-btn" title="Edit Investor" data-bs-toggle="modal" data-bs-target="#edit-investment-modal">
-                                                <i class="fa fa-edit"></i>
-                                            </a>  
-                                            <a href="#" class="table-delete-btn" title="Delete Investor" data-bs-toggle="modal" data-bs-target="#delete-investment-modal">
-                                                <i class="fa fa-trash"></i>
-                                            </a>                                          
-                                        </td>
-                                    </tr>       
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Epic Estates 5</td>
-                                        <td>Basehor</td>
-                                        <td>$100,000.00</td>
-                                        <td>$35,000.00</td>
-                                        <td>$65,000.00</td>
-                                        <td>$299.00</td>
-                                        <td>5</td>
-                                        <td>$125.00</td>
-                                        <td>$174.00</td>
-                                        <td>
-                                            <a href="#" class="table-view-btn" title="View Investor">
-                                                <i class="fa fa-eye"></i>
-                                            </a> 
-                                            <a href="#" class="table-edit-btn" title="Edit Investor" data-bs-toggle="modal" data-bs-target="#edit-investment-modal">
-                                                <i class="fa fa-edit"></i>
-                                            </a>  
-                                            <a href="#" class="table-delete-btn" title="Delete Investor" data-bs-toggle="modal" data-bs-target="#delete-investment-modal">
-                                                <i class="fa fa-trash"></i>
-                                            </a>                                          
-                                        </td>
-                                    </tr>       
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Kentucky</td>
-                                        <td>Basehor</td>
-                                        <td>$100,000.00</td>
-                                        <td>$35,000.00</td>
-                                        <td>$65,000.00</td>
-                                        <td>$299.00</td>
-                                        <td>5</td>
-                                        <td>$125.00</td>
-                                        <td>$174.00</td>
                                         <td>
                                             <a href="#" class="table-view-btn" title="View Investor">
                                                 <i class="fa fa-eye"></i>

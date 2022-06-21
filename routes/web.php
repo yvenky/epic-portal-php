@@ -89,3 +89,7 @@ Route::post('entity_properties-submit', [EntityPropertiesController::class, 'sto
 // Customer Profile Home
 
 Route::get('/customer-profile-index', [CustomerProfilehomeController ::class, 'index']);
+
+
+
+Route::get('customer-entity-view/{id}', [CustomerProfilehomeController ::class, 'view']);
