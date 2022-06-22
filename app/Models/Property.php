@@ -27,8 +27,6 @@ class PROPERTY extends Model
         'POTENTIAL_MARKET_VALUE',    
     ];
 
-
-
     public function entity_id()
     {
         return $this->belongsTo(ENTITY::class,'ENTITY_COMPANY');

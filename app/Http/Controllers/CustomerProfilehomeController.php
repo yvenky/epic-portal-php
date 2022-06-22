@@ -20,8 +20,11 @@ class CustomerProfilehomeController extends Controller
     public function index()
     {
         $users= ENTITY::all();
-        $lists= PROPERTY::all();
         $files= INVESTMENT::all();
+        $lists = PROPERTY::whereHas('entity_id')->get();
+
+
+
         return view('backend.template.customer-profile.customer-profile-index',  [ 'users' => $users,'lists' => $lists,'files' => $files]);
     }
 
@@ -44,10 +47,26 @@ class CustomerProfilehomeController extends Controller
     ->whereHas('entity_select', function($q) use ($id) {
         $q->where('ENTITY_ID', $id);
     })->get();
-    $sum_total_share = DB::table("INVESTMENT")->sum('TOTAL_SHARE');
-    $sum_total_shareholding = DB::table("INVESTMENT")->sum('SHAREHOLDING');
-    $sum_total_cash = DB::table("INVESTMENT")->sum('CASH');
-    $sum_total_loan = DB::table("INVESTMENT")->sum('LOAN');
+
+    $sum_total_share = DB::table('INVESTMENT')
+    ->join('ENTITY', 'INVESTMENT.ENTITY_ID', '=', 'ENTITY.ID')
+    ->where('ENTITY_ID', '=', $id)
+    ->sum('INVESTMENT.TOTAL_SHARE');
+    
+    $sum_total_shareholding = DB::table('INVESTMENT')
+    ->join('ENTITY', 'INVESTMENT.ENTITY_ID', '=', 'ENTITY.ID')
+    ->where('ENTITY_ID', '=', $id)
+    ->sum('INVESTMENT.SHAREHOLDING');
+
+    $sum_total_cash = DB::table('INVESTMENT')
+    ->join('ENTITY', 'INVESTMENT.ENTITY_ID', '=', 'ENTITY.ID')
+    ->where('ENTITY_ID', '=', $id)
+    ->sum('INVESTMENT.CASH');
+
+    $sum_total_loan = DB::table('INVESTMENT')
+    ->join('ENTITY', 'INVESTMENT.ENTITY_ID', '=', 'ENTITY.ID')
+    ->where('ENTITY_ID', '=', $id)
+    ->sum('INVESTMENT.LOAN');
 
       
         return view('backend.template.customer-profile.customer-entity-view' , ['lists' => $users, 'id' => $id,'files'=>$files,'sum_total_share' => $sum_total_share,'sum_total_shareholding' => $sum_total_shareholding,'sum_total_cash' => $sum_total_cash,'sum_total_loan'=> $sum_total_loan]);

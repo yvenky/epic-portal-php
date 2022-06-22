@@ -103,11 +103,11 @@
                                 </thead>
                                 <tbody class="view-icon-table">
                                     @php($i=1)
-                                        @foreach ($users as $user)
+                                        @foreach ( $lists as $list)
                                     <tr>
                                         <td>{{$i++}}</td>
-                                        <td><a href="{{url('customer-entity-view/'.$user->ID)}}" class="link-warning">{{$user->ENTITY_NAME}}</a></td>
-                                        <td>Vero Beach Phase - 1</td>
+                                        <td><a href="{{url('customer-entity-view/'.$list->entity_id->ID)}}" class="link-warning">{{$list->entity_id->ENTITY_NAME}}</a></td>
+                                        <td>{{$list->PROPERTY_ADDRESS}}</td>
                                         <td>$500,000.00</td>
                                         <td>$175,000.00</td>
                                         <td>$325,000.00</td>

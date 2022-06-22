@@ -3,6 +3,7 @@
 namespace App\Models;
 use App\Models\ADDRESS;
 use App\Models\INVESTOR;
+use App\Models\PROPERTY;
 use App\Models\ENTITY_PROPERTIES;
 use App\Models\INVESTMENT;
 
@@ -45,6 +46,11 @@ class ENTITY extends Model
     public function entity()
     {
         return $this->hasMany('App\Models\INVESTMENT');
+        
+    }
+    public function property()
+    {
+        return $this->hasMany('App\Models\PROPERTY','ID');
         
     }
 

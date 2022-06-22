@@ -103,11 +103,11 @@
                                 </thead>
                                 <tbody class="view-icon-table">
                                     <?php ($i=1); ?>
-                                        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php $__currentLoopData = $lists; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $list): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
                                         <td><?php echo e($i++); ?></td>
-                                        <td><a href="<?php echo e(url('customer-entity-view/'.$user->ID)); ?>" class="link-warning"><?php echo e($user->ENTITY_NAME); ?></a></td>
-                                        <td>Vero Beach Phase - 1</td>
+                                        <td><a href="<?php echo e(url('customer-entity-view/'.$list->entity_id->ID)); ?>" class="link-warning"><?php echo e($list->entity_id->ENTITY_NAME); ?></a></td>
+                                        <td><?php echo e($list->PROPERTY_ADDRESS); ?></td>
                                         <td>$500,000.00</td>
                                         <td>$175,000.00</td>
                                         <td>$325,000.00</td>

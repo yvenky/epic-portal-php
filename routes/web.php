@@ -23,9 +23,9 @@ use App\Http\Controllers\CustomerProfilehomeController;
 );	
 */	
 
-Route::get('/', function () {	
-    return view('index');	
-});	
+// Route::get('/', function () {	
+//     return view('/customer-profile-index');	
+// });	
 Route::get('/test', [TestController ::class, 'index']);
 
 // Entity routing	
@@ -88,7 +88,7 @@ Route::post('entity_properties-submit', [EntityPropertiesController::class, 'sto
 
 // Customer Profile Home
 
-Route::get('/customer-profile-index', [CustomerProfilehomeController ::class, 'index']);
+Route::get('/', [CustomerProfilehomeController ::class, 'index']);
 
 
 

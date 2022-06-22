@@ -78,7 +78,7 @@ class InvestmentController extends Controller
         $data = new INVESTMENT();
  
         $data-> INVESTOR_ID                         = $request-> INVESTOR_ID;
-        $data-> ENTITY_ID                         = $get_entity;
+        $data-> ENTITY_ID                           = $get_entity;
         $data-> ENTITY_PROPERTIES_ID                = $getId;
         $data-> FIRST_NAME                          = $request-> FIRST_NAME; 
         $data-> LAST_NAME                           = $request-> LAST_NAME;  
