@@ -108,7 +108,7 @@
                                         <td>{{$i++}}</td>
                                         <td><a href="{{url('customer-entity-view/'.$list->entity_id->ID)}}" class="link-warning">{{$list->entity_id->ENTITY_NAME}}</a></td>
                                         <td>{{$list->PROPERTY_ADDRESS}}</td>
-                                        <td>$500,000.00</td>
+                                        <td>{{$sum_total_investment}}</td>
                                         <td>$175,000.00</td>
                                         <td>$325,000.00</td>
                                         <td>$1,495.00</td>

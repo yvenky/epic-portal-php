@@ -23,9 +23,24 @@ class CustomerProfilehomeController extends Controller
         $files= INVESTMENT::all();
         $lists = PROPERTY::whereHas('entity_id')->get();
 
+        $entity_ids = ENTITY::pluck('id');
+        $post_ids = PROPERTY::pluck('ENTITY_COMPANY');
+
+        // $post = DB::table('INVESTMENT')
+        // ->join('ENTITY', 'INVESTMENT.ENTITY_ID', '=', 'ENTITY.ID')
+        // ->where('ENTITY_ID', '=', 'ENTITY.ID')
+        // ->orderby('ID','ASC')
+        // ->get();
+
+            $sum_total_investment = DB::table('INVESTMENT')
+            ->join('ENTITY', 'INVESTMENT.ENTITY_ID', '=', 'ENTITY.ID')
+            ->where('ENTITY.ID', '=',$entity_ids )
+            ->sum('INVESTMENT.TOTAL_SHARE');
+            
 
 
-        return view('backend.template.customer-profile.customer-profile-index',  [ 'users' => $users,'lists' => $lists,'files' => $files]);
+        return view('backend.template.customer-profile.customer-profile-index',  [ 'users' => $users,'lists' => $lists,'files' => $files,
+        'sum_total_investment' =>$sum_total_investment]);
     }
 
     /**

@@ -50,7 +50,7 @@ class ENTITY extends Model
     }
     public function property()
     {
-        return $this->hasMany('App\Models\PROPERTY','ID');
+        return $this->hasMany('App\Models\PROPERTY');
         
     }
 

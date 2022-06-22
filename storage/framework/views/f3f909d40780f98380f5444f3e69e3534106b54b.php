@@ -108,7 +108,7 @@
                                         <td><?php echo e($i++); ?></td>
                                         <td><a href="<?php echo e(url('customer-entity-view/'.$list->entity_id->ID)); ?>" class="link-warning"><?php echo e($list->entity_id->ENTITY_NAME); ?></a></td>
                                         <td><?php echo e($list->PROPERTY_ADDRESS); ?></td>
-                                        <td>$500,000.00</td>
+                                        <td><?php echo e($sum_total_investment); ?></td>
                                         <td>$175,000.00</td>
                                         <td>$325,000.00</td>
                                         <td>$1,495.00</td>
