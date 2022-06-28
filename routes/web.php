@@ -1,6 +1,6 @@
-<?php	
+<?php
 
-use Illuminate\Support\Facades\Route;	
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\entityController;	
 use App\Http\Controllers\masterTemplate;	
 use App\Http\Controllers\investorController;	
@@ -11,21 +11,29 @@ use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\EntityPropertiesController;
 use App\Http\Controllers\CustomerProfilehomeController;
 
-/*	
-|--------------------------------------------------------------------------	
-| Web Routes	
-|--------------------------------------------------------------------------	
-|	
-| Here is where you can register web routes for your application. These	
-| routes are loaded by the RouteServiceProvider within a group which	
-| contains the "web" middleware group. Now create something great!	
-|	
-);	
-*/	
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
-// Route::get('/', function () {	
-//     return view('/customer-profile-index');	
-// });	
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+// 
+
 Route::get('/test', [TestController ::class, 'index']);
 
 // Entity routing	
